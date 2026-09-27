@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>قاعات هدب للاحتفالات والمؤتمرات | أربع قاعات في الرياض</title>
+<meta name="description" content="قارن قاعات هدب الأربع في الرياض: القيروان، درة هدب الصحافة، هدب نجد العقيق، هدب الرمال. احجز عبر واتساب.">
+<meta name="theme-color" content="#141619">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#board">تخطَّ إلى لوحة القاعات</a>
+
+<p class="pitch-strip">نموذج مقترح لموقع قاعات هدب للاحتفالات والمؤتمرات، للعرض فقط</p>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="قاعات هدب">
+    <span class="brand-mark">هدب</span>
+    <span class="brand-name">قاعات هدب<small>للاحتفالات والمؤتمرات</small></span>
+  </a>
+  <nav class="top-nav" aria-label="أقسام الصفحة">
+    <a href="#halls">القاعات</a>
+    <a href="#occasions">المناسبات</a>
+    <a href="#included">الباقات</a>
+    <a href="#visit">الزيارة</a>
+  </nav>
+  <a class="btn btn-sign" href="https://wa.me/966531237724?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D9%82%D8%A7%D8%B9%D8%A9%20%D9%85%D9%86%20%D9%82%D8%A7%D8%B9%D8%A7%D8%AA%20%D9%87%D8%AF%D8%A8" data-wa="group"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>واتساب</a>
+</header>
+
+<main>
+<!-- HERO: headline + planner + departures board -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">أربع قاعات في الرياض.<br>لوحة واحدة تختار منها.</h1>
+    <p class="lede">من القيروان إلى الرمال: حدد مناسبتك وموقع ضيوفك، ونرتّب لك القاعات الأقرب، وكل قاعة تُحجز برسالة واتساب واحدة.</p>
+  </div>
+
+  <form class="planner" id="planner" aria-label="خطّط مناسبتك">
+    <fieldset class="field field-chips">
+      <legend>المناسبة</legend>
+      <div class="chips">
+        <label><input type="radio" name="occ" value="زواج" checked><span>زواج</span></label>
+        <label><input type="radio" name="occ" value="ملكة أو خطوبة"><span>ملكة وخطوبة</span></label>
+        <label><input type="radio" name="occ" value="حفل تخرج أو مناسبة خاصة"><span>تخرج ومناسبات</span></label>
+        <label><input type="radio" name="occ" value="مؤتمر أو معرض"><span>مؤتمر ومعرض</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="field field-chips">
+      <legend>ضيوفك قادمون من</legend>
+      <div class="chips">
+        <button type="button" class="chip-btn" id="locate"><i class="ph ph-crosshair" aria-hidden="true"></i><span>موقعي</span></button>
+        <label><input type="radio" name="area" value="north" checked><span>شمال الرياض</span></label>
+        <label><input type="radio" name="area" value="east"><span>الشرق</span></label>
+        <label><input type="radio" name="area" value="west"><span>الغرب</span></label>
+        <label><input type="radio" name="area" value="center"><span>الوسط</span></label>
+      </div>
+    </fieldset>
+    <div class="field-row">
+      <div class="field">
+        <label for="date">التاريخ المبدئي</label>
+        <input id="date" name="date" type="date">
+      </div>
+      <div class="field">
+        <label for="guests">عدد الضيوف</label>
+        <input id="guests" name="guests" type="number" inputmode="numeric" min="10" max="3000" step="10" placeholder="مثلًا 150">
+      </div>
+    </div>
+    <p class="planner-note" id="planner-note" aria-live="polite">القاعات مرتّبة من الأقرب لشمال الرياض.</p>
+  </form>
+
+  <div class="board-wrap">
+    <div class="board" id="board" role="region" aria-label="لوحة القاعات">
+      <div class="board-head">
+        <span class="board-title">القاعات <span lang="en">HALLS</span></span>
+        <span class="board-clock"><i class="ph ph-clock" aria-hidden="true"></i> الرياض <bdi dir="ltr" id="clock">--:--</bdi></span>
+      </div>
+      <div class="board-cols" aria-hidden="true">
+        <span>الرمز</span><span>القاعة</span><span>المسافة</span><span>التقييم</span><span></span>
+      </div>
+      <ol class="rows" id="rows">
+        <li class="row" data-id="qairawan" data-lat="24.8239" data-lng="46.5577" data-outdoor="1">
+          <span class="code flap">ق</span>
+          <span class="name"><b class="flap">هدب القيروان</b><small>طريق الملك خالد · داخلي وخارجي</small></span>
+          <span class="dist flap"><span class="pre">≈</span><span class="num" dir="ltr">–</span><span>كم</span></span>
+          <span class="rate flap"><i class="ph-fill ph-star" aria-hidden="true"></i><bdi dir="ltr">4.3</bdi></span>
+          <a class="go" data-wa="0531237724" data-hall="قاعة هدب القيروان" href="https://wa.me/966531237724" aria-label="احجز هدب القيروان عبر واتساب"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span>احجز</span></a>
+          <span class="flag" hidden></span>
+        </li>
+        <li class="row" data-id="sahafa" data-lat="24.7958" data-lng="46.6325" data-max="200">
+          <span class="code flap">ص</span>
+          <span class="name"><b class="flap">درة هدب الصحافة</b><small>داخل فندق هدب الصحافة</small></span>
+          <span class="dist flap"><span class="pre">≈</span><span class="num" dir="ltr">–</span><span>كم</span></span>
+          <span class="rate flap"><i class="ph-fill ph-star" aria-hidden="true"></i><bdi dir="ltr">4.4</bdi></span>
+          <a class="go" data-wa="0532233742" data-hall="قاعة درة هدب الصحافة" href="https://wa.me/966532233742" aria-label="احجز درة هدب الصحافة عبر واتساب"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span>احجز</span></a>
+          <span class="flag" hidden></span>
+        </li>
+        <li class="row" data-id="najd" data-lat="24.7864" data-lng="46.6337">
+          <span class="code flap">ع</span>
+          <span class="name"><b class="flap">هدب نجد</b><small>حي العقيق</small></span>
+          <span class="dist flap"><span class="pre">≈</span><span class="num" dir="ltr">–</span><span>كم</span></span>
+          <span class="rate flap"><i class="ph-fill ph-star" aria-hidden="true"></i><bdi dir="ltr">4.2</bdi></span>
+          <a class="go" data-wa="0558938339" data-hall="قاعة هدب نجد العقيق" href="https://wa.me/966558938339" aria-label="احجز هدب نجد عبر واتساب"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span>احجز</span></a>
+          <span class="flag" hidden></span>
+        </li>
+        <li class="row" data-id="raml" data-lat="24.9036" data-lng="46.8269">
+          <span class="code flap">ر</span>
+          <span class="name"><b class="flap">هدب الرمال</b><small>حي الرمال، شرق الرياض</small></span>
+          <span class="dist flap"><span class="pre">≈</span><span class="num" dir="ltr">–</span><span>كم</span></span>
+          <span class="rate flap"><i class="ph-fill ph-star" aria-hidden="true"></i><bdi dir="ltr">4.4</bdi></span>
+          <a class="go" data-wa="0550750078" data-hall="قاعة هدب الرمال" href="https://wa.me/966550750078" aria-label="احجز هدب الرمال عبر واتساب"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span>احجز</span></a>
+          <span class="flag" hidden></span>
+        </li>
+      </ol>
+      <p class="board-foot">المسافة تقريبية بخط مستقيم. التقييم من خرائط Google.</p>
+    </div>
+    <dl class="legend" aria-label="دليل رموز القاعات">
+      <div><dt class="code">ق</dt><dd>القيروان</dd></div>
+      <div><dt class="code">ص</dt><dd>الصحافة</dd></div>
+      <div><dt class="code">ع</dt><dd>العقيق</dd></div>
+      <div><dt class="code">ر</dt><dd>الرمال</dd></div>
+      <p>آخر تحديث للتقييمات: سبتمبر <bdi dir="ltr">2026</bdi></p>
+    </dl>
+  </div>
+
+  <figure class="lightbox">
+    <!-- replace with client photos / footage -->
+      <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline aria-label="أجواء مناسبة مسائية في الهواء الطلق"></video>
+      <figcaption>مناسبات داخلية وخارجية</figcaption>
+    </figure>
+</section>
+
+<!-- THE FOUR HALLS -->
+<section class="halls" id="halls" aria-labelledby="halls-title">
+  <div class="sec-head">
+    <h2 id="halls-title">القاعات الأربع</h2>
+    <p><bdi dir="ltr">1,267</bdi> تقييمًا على خرائط Google لقاعات هدب مجتمعة. هذه كل قاعة وما تعرفه عنها قبل الزيارة.</p>
+  </div>
+
+  <div class="sign-grid">
+    <article class="sign" id="hall-qairawan">
+      <header><span class="code">ق</span><h3>هدب القيروان</h3></header>
+      <dl>
+        <div><dt>الموقع</dt><dd>طريق الملك خالد، حي القيروان</dd></div>
+        <div><dt>تناسب</dt><dd>الزواجات، الحفلات الداخلية والخارجية، المعارض والمؤتمرات</dd></div>
+        <div><dt>السعة</dt><dd>تُؤكَّد عند الحجز حسب التوزيع</dd></div>
+        <div><dt>Google</dt><dd><bdi dir="ltr">4.3</bdi> من <bdi dir="ltr">678</bdi> تقييمًا</dd></div>
+      </dl>
+      <div class="sign-actions">
+        <a class="btn btn-ink" data-wa="0531237724" data-hall="قاعة هدب القيروان" href="https://wa.me/966531237724"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز القيروان</a>
+        <a class="btn btn-line" href="tel:+966531237724"><i class="ph ph-phone" aria-hidden="true"></i><bdi dir="ltr">053 123 7724</bdi></a>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D9%87%D8%AF%D8%A8%20%D9%84%D9%84%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%85%D8%A4%D8%AA%D9%85%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D9%8A%D8%B1%D9%88%D8%A7%D9%86" target="_blank" rel="noopener"><i class="ph ph-map-pin" aria-hidden="true"></i>الموقع على الخريطة</a>
+      </div>
+    </article>
+
+    <article class="sign" id="hall-sahafa">
+      <header><span class="code">ص</span><h3>درة هدب الصحافة</h3></header>
+      <dl>
+        <div><dt>الموقع</dt><dd>داخل فندق هدب الصحافة، شارع وادي المغمس</dd></div>
+        <div><dt>تناسب</dt><dd>الزواج والملكة، التخرج، الاستقبالات واجتماعات العمل</dd></div>
+        <div><dt>السعة</dt><dd>من <bdi dir="ltr">50</bdi> إلى <bdi dir="ltr">200</bdi> ضيف تقريبًا</dd></div>
+        <div><dt>Google</dt><dd><bdi dir="ltr">4.4</bdi> من <bdi dir="ltr">245</bdi> تقييمًا</dd></div>
+      </dl>
+      <div class="sign-actions">
+        <a class="btn btn-ink" data-wa="0532233742" data-hall="قاعة درة هدب الصحافة" href="https://wa.me/966532233742"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز درة هدب</a>
+        <a class="btn btn-line" href="tel:+966532233742"><i class="ph ph-phone" aria-hidden="true"></i><bdi dir="ltr">053 223 3742</bdi></a>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D8%AF%D8%B1%D8%A9%20%D9%87%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B5%D8%AD%D8%A7%D9%81%D8%A9" target="_blank" rel="noopener"><i class="ph ph-map-pin" aria-hidden="true"></i>الموقع على الخريطة</a>
+      </div>
+    </article>
+
+    <article class="sign" id="hall-najd">
+      <header><span class="code">ع</span><h3>هدب نجد</h3></header>
+      <dl>
+        <div><dt>الموقع</dt><dd>حي العقيق، شمال الرياض</dd></div>
+        <div><dt>تناسب</dt><dd>الزواجات والمناسبات العائلية</dd></div>
+        <div><dt>السعة</dt><dd>تُؤكَّد عند الحجز حسب التوزيع</dd></div>
+        <div><dt>Google</dt><dd><bdi dir="ltr">4.2</bdi> من <bdi dir="ltr">256</bdi> تقييمًا</dd></div>
+      </dl>
+      <div class="sign-actions">
+        <a class="btn btn-ink" data-wa="0558938339" data-hall="قاعة هدب نجد العقيق" href="https://wa.me/966558938339"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز هدب نجد</a>
+        <a class="btn btn-line" href="tel:+966558938339"><i class="ph ph-phone" aria-hidden="true"></i><bdi dir="ltr">055 893 8339</bdi></a>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D9%87%D8%AF%D8%A8%20%D9%86%D8%AC%D8%AF%20HDB%20Hall%20Aqiq" target="_blank" rel="noopener"><i class="ph ph-map-pin" aria-hidden="true"></i>الموقع على الخريطة</a>
+      </div>
+    </article>
+
+    <article class="sign" id="hall-raml">
+      <header><span class="code">ر</span><h3>هدب الرمال</h3></header>
+      <dl>
+        <div><dt>الموقع</dt><dd>حي الرمال، شرق الرياض</dd></div>
+        <div><dt>تناسب</dt><dd>الاحتفالات والفعاليات والمناسبات</dd></div>
+        <div><dt>السعة</dt><dd>تُؤكَّد عند الحجز حسب التوزيع</dd></div>
+        <div><dt>Google</dt><dd><bdi dir="ltr">4.4</bdi> من <bdi dir="ltr">88</bdi> تقييمًا</dd></div>
+      </dl>
+      <div class="sign-actions">
+        <a class="btn btn-ink" data-wa="0550750078" data-hall="قاعة هدب الرمال" href="https://wa.me/966550750078"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز هدب الرمال</a>
+        <a class="btn btn-line" href="tel:+966550750078"><i class="ph ph-phone" aria-hidden="true"></i><bdi dir="ltr">055 075 0078</bdi></a>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D9%87%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%85%D8%A7%D9%84%20%D9%84%D9%84%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D8%A7%D8%AA" target="_blank" rel="noopener"><i class="ph ph-map-pin" aria-hidden="true"></i>الموقع على الخريطة</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- TWO AUDIENCES -->
+<section class="occasions" id="occasions" aria-labelledby="occ-title">
+  <h2 id="occ-title" class="visually-hidden">المناسبات</h2>
+  <article class="path path-family">
+    <figure>
+      <!-- replace with client photos -->
+      <img src="assets/bridal-suite.jpg" alt="غرفة تجهيز العروس بمرآة مضيئة وفستان أبيض وورد طبيعي" loading="lazy" width="1250" height="1600">
+    </figure>
+    <div class="path-copy">
+      <h3>للعائلات: ليلة الزواج والملكة</h3>
+      <p>جناح لتجهيز العروس، وفريق من العاملات والصبابات، وكوشة وممر يُصمَّمان على ذوقكم. أنتم تستقبلون الضيوف، ونحن نتولى الباقي.</p>
+      <a class="btn btn-sign" data-wa="0531237724" data-hall="قاعات هدب" data-occ="زواج" href="https://wa.me/966531237724"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>اسأل عن ليلة الزواج</a>
+    </div>
+  </article>
+  <article class="path path-company">
+    <div class="path-copy">
+      <h3>للشركات: مؤتمر، اجتماع، معرض</h3>
+      <p>قاعات بتجهيزات صوت وعرض وإنترنت عالي السرعة، ومقاعد تُرتَّب حسب فعاليتكم، وضيافة من القهوة السعودية إلى البوفيه.</p>
+      <a class="btn btn-sign" data-wa="0531237724" data-hall="قاعات هدب" data-occ="مؤتمر أو معرض" href="https://wa.me/966531237724"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>اطلب عرضًا لفعاليتك</a>
+    </div>
+    <figure>
+      <!-- replace with client photos -->
+      <img src="assets/hall-conference.jpg" alt="قاعة مؤتمرات بصفوف مقاعد وشاشة عرض ومنصة" loading="lazy" width="1600" height="900">
+    </figure>
+  </article>
+</section>
+
+<!-- INCLUDED -->
+<section class="included" id="included" aria-labelledby="inc-title">
+  <div class="sec-head">
+    <h2 id="inc-title">مما تشمله الباقات</h2>
+    <p>تختلف حسب القاعة والمناسبة، ونرسل لكم تفاصيل الباقة.</p>
+  </div>
+  <ul class="inc-list">
+    <li><i class="ph ph-coffee" aria-hidden="true"></i><b>ركن القهوة والشاي</b><span>قهوة سعودية وشاي وكابتشينو.</span></li>
+    <li><i class="ph ph-flower-lotus" aria-hidden="true"></i><b>ورد طبيعي</b><span>تنسيقات على الطاولات تتماشى مع طابع مناسبتكم.</span></li>
+    <li><i class="ph ph-fork-knife" aria-hidden="true"></i><b>بوفيه العشاء</b><span>أطباق متنوعة لضيوفكم.</span></li>
+    <li><i class="ph ph-sparkle" aria-hidden="true"></i><b>كوشة وممر حسب ذوقكم</b><span>تصميم المنصة والممر قابل للتخصيص.</span></li>
+    <li><i class="ph ph-drop" aria-hidden="true"></i><b>روائح المناسبة</b><span>مزيج عطري شرقي وزهري.</span></li>
+    <li><i class="ph ph-cake" aria-hidden="true"></i><b>طاولة ما بعد العشاء</b><span>حلى وقهوة لختام هادئ.</span></li>
+    <li><i class="ph ph-door-open" aria-hidden="true"></i><b>جناح العروس</b><span>مساحة خاصة للتجهيز بعيدًا عن الأنظار.</span></li>
+    <li><i class="ph ph-users-three" aria-hidden="true"></i><b>عاملات وصبابات</b><span>فريق ضيافة يخدم ضيوفكم.</span></li>
+  </ul>
+</section>
+
+<!-- VISIT / CTA -->
+<section class="visit" id="visit" aria-labelledby="visit-title">
+  <div class="visit-sign">
+    <h2 id="visit-title">شوفوا القاعة بعيونكم قبل ما تحجزون</h2>
+    <p>نرتّب لكم زيارة في الوقت المناسب لكم، ونجاوب على أسئلة السعة والتوزيع والباقات.</p>
+    <div class="visit-actions">
+      <a class="btn btn-ink btn-lg" data-wa="0531237724" data-hall="قاعات هدب" data-visit="1" href="https://wa.me/966531237724"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز موعد زيارة</a>
+      <a class="btn btn-line-ink btn-lg" href="tel:+966531237724"><i class="ph ph-phone" aria-hidden="true"></i><bdi dir="ltr">053 123 7724</bdi></a>
+    </div>
+  </div>
+  <ul class="visit-list" aria-label="مواقع القاعات">
+    <li><span class="code">ق</span><span>هدب القيروان<small>طريق الملك خالد، القيروان</small></span><a href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D9%87%D8%AF%D8%A8%20%D9%84%D9%84%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%85%D8%A4%D8%AA%D9%85%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D9%8A%D8%B1%D9%88%D8%A7%D9%86" target="_blank" rel="noopener" aria-label="هدب القيروان على الخريطة"><i class="ph ph-arrow-up-left" aria-hidden="true"></i></a></li>
+    <li><span class="code">ص</span><span>درة هدب الصحافة<small>شارع وادي المغمس، الصحافة</small></span><a href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D8%AF%D8%B1%D8%A9%20%D9%87%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B5%D8%AD%D8%A7%D9%81%D8%A9" target="_blank" rel="noopener" aria-label="درة هدب الصحافة على الخريطة"><i class="ph ph-arrow-up-left" aria-hidden="true"></i></a></li>
+    <li><span class="code">ع</span><span>هدب نجد<small>حي العقيق</small></span><a href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D9%87%D8%AF%D8%A8%20%D9%86%D8%AC%D8%AF%20HDB%20Hall%20Aqiq" target="_blank" rel="noopener" aria-label="هدب نجد على الخريطة"><i class="ph ph-arrow-up-left" aria-hidden="true"></i></a></li>
+    <li><span class="code">ر</span><span>هدب الرمال<small>حي الرمال</small></span><a href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9%20%D9%87%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%85%D8%A7%D9%84%20%D9%84%D9%84%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D8%A7%D8%AA" target="_blank" rel="noopener" aria-label="هدب الرمال على الخريطة"><i class="ph ph-arrow-up-left" aria-hidden="true"></i></a></li>
+  </ul>
+  <p class="visit-hours"><i class="ph ph-clock" aria-hidden="true"></i> مواعيد الزيارة بالتنسيق المسبق عبر واتساب أو الاتصال.</p>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand">
+    <span class="brand-mark">هدب</span>
+    <p>قاعات هدب للاحتفالات والمؤتمرات، من <a href="https://hdbhotels.com/ar/" target="_blank" rel="noopener">فنادق ومنتجعات هدب</a>.<br>شريك لحظاتكم السعيدة.</p>
+  </div>
+  <div class="foot-social">
+    <a href="https://www.instagram.com/hdbhalls/" target="_blank" rel="noopener" aria-label="إنستقرام"><i class="ph ph-instagram-logo" aria-hidden="true"></i><bdi dir="ltr">@hdbhalls</bdi></a>
+    <a href="https://www.tiktok.com/@hdbhalls" target="_blank" rel="noopener" aria-label="تيك توك"><i class="ph ph-tiktok-logo" aria-hidden="true"></i><bdi dir="ltr">@hdbhalls</bdi></a>
+  </div>
+  <p class="pitch-strip pitch-strip-foot">نموذج مقترح لموقع قاعات هدب للاحتفالات والمؤتمرات، للعرض فقط</p>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مجمع عناية ونضارة الطبي | الجلدية والليزر والأسنان في النسيم الشرقي</title>
+<meta name="description" content="مجمع عناية ونضارة الطبي في حي النسيم الشرقي بالرياض: عيادات الجلدية والتجميل والليزر والأسنان. الحجز عبر واتساب أو الهاتف.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4F5F2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;600&family=Readex+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-poster.jpg">
+<style>
+:root{
+  --bg:#F4F5F2; --surface:#FBFBF9; --ink:#1F2624; --ink-2:#3A4240; --muted:#5B6360; --line:#E1E4DF;
+  --skin:#ECE7F2; --skin-ink:#4F416A;
+  --laser:#E2EEE8; --laser-ink:#2B5A4C;
+  --dental:#E0EBF3; --dental-ink:#28567A;
+  --note-bg:#E7E2D3;
+  --display:"Markazi Text", "Noto Naskh Arabic", serif;
+  --body:"Readex Pro", system-ui, "Noto Sans Arabic", sans-serif;
+  --r:12px; --r-btn:6px;
+  --wrap:72rem;
+  --section:clamp(4.5rem, 10vw, 8rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  /* z-index scale: 10 header, 20 mobile booking bar */
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:300;font-size:1.0625rem;line-height:1.75;overflow-x:clip}
+button,input,select,textarea{font:inherit;color:inherit}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.3em;text-decoration-thickness:1px}
+::selection{background:var(--laser);color:var(--laser-ink)}
+:focus-visible{outline:2px solid var(--dental-ink);outline-offset:3px;border-radius:4px}
+html{scrollbar-color:#C9CEC8 var(--bg)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.2;margin:0;text-wrap:balance;color:var(--ink)}
+p{margin:0}
+bdi{unicode-bidi:isolate}
+.num{font-variant-numeric:tabular-nums}
+.wrap{width:min(100% - 2.5rem, var(--wrap));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.icon{width:1.25em;height:1.25em;flex:none}
+
+/* demo strip */
+.demo-strip{background:var(--note-bg);color:var(--ink);font-size:.8125rem;text-align:center;padding:.45rem 1rem;line-height:1.5}
+
+/* header */
+.site-head{position:sticky;top:0;z-index:10;background:var(--surface);border-block-end:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;gap:1.5rem;min-height:4.25rem}
+.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1.2;margin-inline-end:auto}
+.brand b{font-family:var(--display);font-weight:600;font-size:1.6rem}
+.brand small{font-size:.75rem;color:var(--muted);white-space:nowrap}
+.nav{display:none;gap:1.75rem;font-size:.9375rem}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.btn.head-call{display:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3rem;padding:.7rem 1.35rem;border-radius:var(--r-btn);font-weight:400;font-size:1rem;text-decoration:none;border:1px solid transparent;transition:background-color .2s var(--ease),transform .15s var(--ease),border-color .2s var(--ease);white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--ink);color:#F8F8F5}
+.btn-primary:hover{background:var(--ink-2)}
+.btn-ghost{border-color:#B9BFBA;color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{min-height:2.75rem;padding:.45rem 1rem;font-size:.9375rem}
+
+/* hero */
+.hero{padding-block:clamp(2rem,5vw,4rem) clamp(2rem,4vw,3rem)}
+.hero .wrap{display:grid;gap:2rem}
+.hero h1{font-size:clamp(2.5rem, 8.4vw, 4.6rem);font-weight:600}
+.hero-lede{margin-block-start:1.1rem;max-width:40ch;color:var(--muted);font-size:1.0625rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-block-start:1.75rem}
+.hero-media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:#E6E8E3 url("assets/hero-poster.jpg") center/cover no-repeat}
+.hero-media .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{display:inline-block;font-size:.8125rem;font-weight:400;padding:.2rem .75rem;border-radius:999px;line-height:1.6}
+.hero-depts{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:1.5rem 0 0;padding:0}
+.hero-depts .tag{display:inline-flex;align-items:center;min-height:2.75rem;padding:.3rem 1.1rem;font-size:.9375rem;text-decoration:none;transition:filter .2s var(--ease)}
+.hero-depts .tag:hover{filter:brightness(.96)}
+.tag-skin{background:var(--skin);color:var(--skin-ink)}
+.tag-laser{background:var(--laser);color:var(--laser-ink)}
+.tag-dental{background:var(--dental);color:var(--dental-ink)}
+
+/* sections */
+.section{padding-block:var(--section)}
+.section + .section{padding-block-start:0}
+.sec-head{max-width:40rem;margin-block-end:2.25rem}
+.sec-head h2{font-size:clamp(2rem,5vw,3rem)}
+.sec-head p{margin-block-start:.75rem;color:var(--muted)}
+
+/* departments (signature) */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:.25rem;padding:.25rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;max-width:34rem}
+.tab{appearance:none;border:0;background:transparent;border-radius:7px;padding:.7rem .5rem;min-height:3rem;cursor:pointer;font-size:.9375rem;font-weight:400;color:var(--muted);transition:background-color .32s var(--ease),color .32s var(--ease)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--c-ink)}
+.tab[data-dept="skin"]{--c:var(--skin);--c-ink:var(--skin-ink)}
+.tab[data-dept="laser"]{--c:var(--laser);--c-ink:var(--laser-ink)}
+.tab[data-dept="dental"]{--c:var(--dental);--c-ink:var(--dental-ink)}
+.tab[aria-selected="true"]{background:var(--c)}
+.panels{margin-block-start:1rem}
+.panel{--c:var(--skin);--c-ink:var(--skin-ink);background:var(--c);border-radius:var(--r);padding:clamp(1.5rem,4vw,3rem);display:grid;gap:2rem}
+.panel[data-dept="laser"]{--c:var(--laser);--c-ink:var(--laser-ink)}
+.panel[data-dept="dental"]{--c:var(--dental);--c-ink:var(--dental-ink)}
+.panel h3{font-size:clamp(1.9rem,4.4vw,2.6rem);color:var(--c-ink)}
+.panel .intro p{margin-block:.75rem 1.5rem;color:var(--ink-2);max-width:34ch}
+.panel .btn-primary{background:var(--c-ink)}
+.panel .btn-primary:hover{background:var(--ink)}
+.svc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;column-gap:2rem}
+.svc li{padding-block:.8rem;border-block-end:1px solid color-mix(in srgb, var(--c-ink) 16%, transparent);font-weight:400}
+.svc li:last-child{border-block-end:0}
+.js .panel[hidden]{display:none}
+.js .panels{background:var(--c);border-radius:var(--r);transition:background-color .32s var(--ease)}
+.js .panels[data-dept="skin"]{--c:var(--skin)}
+.js .panels[data-dept="laser"]{--c:var(--laser)}
+.js .panels[data-dept="dental"]{--c:var(--dental)}
+.js .panel{background:transparent}
+.js .panel.is-in{animation:panel-in .32s var(--ease)}
+@keyframes panel-in{from{opacity:0}to{opacity:1}}
+
+/* facts */
+.facts{display:grid;gap:2.5rem}
+.rating{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.75rem,4vw,3rem);display:flex;flex-direction:column;gap:1rem;align-self:start}
+.rating{text-decoration:none;transition:border-color .2s var(--ease)}
+.rating:hover{border-color:#B9BFBA}
+.rating-line{font-family:var(--display);font-weight:600;font-size:1.9rem;line-height:1.4;max-width:18ch}
+.rating-more{color:var(--ink);font-weight:400;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;text-decoration:underline;text-underline-offset:.3em;text-decoration-thickness:1px}
+.fact-list{list-style:none;margin:0;padding:0}
+.fact-list li{display:grid;grid-template-columns:2.75rem 1fr;gap:1rem;padding-block:1.35rem;border-block-end:1px solid var(--line)}
+.fact-list li:first-child{padding-block-start:0}
+.fact-list li:last-child{border-block-end:0}
+.fact-ic{width:2.75rem;height:2.75rem;border-radius:10px;display:grid;place-items:center}
+.fact-list h3{font-family:var(--body);font-size:1.0625rem;font-weight:500;line-height:1.5}
+.fact-list p{color:var(--muted);margin-block-start:.25rem}
+
+/* gallery */
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-block-end:.75rem;scrollbar-width:thin}
+.gallery figure{margin:0;scroll-snap-align:start}
+.gallery img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);background:#E6E8E3}
+.gallery figcaption{font-size:.875rem;color:var(--muted);margin-block-start:.5rem}
+.img-note{font-size:.8125rem;color:var(--muted);margin-block-start:1rem}
+
+/* visit */
+.visit{display:grid;gap:1rem;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.5rem,4vw,2.5rem)}
+.addr{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.35}
+.card .btn{margin-block-start:1.5rem}
+.phones{list-style:none;padding:0;margin:1.75rem 0 0;border-block-start:1px solid var(--line)}
+.phones li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.9rem;border-block-end:1px solid var(--line)}
+.phones li:last-child{border-block-end:0}
+.phones span{color:var(--muted)}
+.phones a{font-weight:400;text-decoration:none;font-size:1.0625rem;min-height:44px;display:inline-flex;align-items:center}
+.hours-title{display:flex;align-items:center;gap:.6rem;font-family:var(--body);font-size:1.0625rem;font-weight:500}
+.hours{width:100%;border-collapse:collapse;margin-block-start:1rem}
+.hours th,.hours td{text-align:start;padding:.7rem .75rem;font-weight:300}
+.hours th{font-weight:400}
+.hours td{text-align:end;font-variant-numeric:tabular-nums}
+.hours tr{border-block-end:1px solid var(--line)}
+.hours tr:last-child{border-block-end:0}
+.hours tr.today{background:var(--laser);color:var(--laser-ink)}
+.hours tr.today th,.hours tr.today td{font-weight:500}
+.hours-note{font-size:.8125rem;color:var(--muted);margin-block-start:1rem}
+
+/* close */
+.close{background:var(--skin);border-radius:var(--r);padding:clamp(2.25rem,6vw,4.5rem);display:grid;gap:1.5rem;justify-items:start}
+.close h2{font-size:clamp(2.1rem,5.4vw,3.4rem);color:var(--skin-ink)}
+.close p{color:var(--ink-2);max-width:40ch}
+.close .hero-cta{margin:0}
+.close .btn-ghost{border-color:color-mix(in srgb, var(--skin-ink) 40%, transparent)}
+
+/* footer */
+.foot{padding-block:3rem 7rem;border-block-start:1px solid var(--line);font-size:.9375rem;color:var(--muted)}
+.foot .wrap{display:grid;gap:1.25rem}
+.foot .brand b{color:var(--ink)}
+.social{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;list-style:none;margin:0;padding:0}
+.social a{text-decoration:none;display:inline-block;padding-block:.7rem}
+.social a:hover{color:var(--ink);text-decoration:underline}
+
+/* mobile booking bar */
+.book-bar{position:fixed;inset-inline:0;bottom:0;z-index:20;display:grid;transition:transform .3s var(--ease);grid-template-columns:1fr auto;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:var(--surface);border-block-start:1px solid var(--line)}
+.book-bar .btn{min-height:3rem}
+.book-bar.is-off{transform:translateY(110%)} /* rtl-check: ignore (vertical) */
+
+@media (max-width:899px){
+  .site-head .btn-primary{display:none}
+}
+@media (min-width:600px){
+  .gallery{grid-auto-columns:46%}
+  .svc{grid-template-columns:1fr 1fr}
+  .svc li:nth-last-child(2):nth-child(odd){border-block-end:0}
+}
+@media (min-width:900px){
+  .nav{display:flex}
+  .btn.head-call{display:inline-flex}
+  .book-bar{display:none}
+  .foot{padding-block-end:3rem}
+  .hero .wrap{grid-template-columns:1.12fr .88fr;align-items:center;gap:4rem}
+  .hero h1{font-size:clamp(2.8rem, 4.4vw, 4.2rem)}
+  .hero-media{aspect-ratio:1/1;max-height:min(40rem, calc(100dvh - 10rem));width:100%}
+  .panel{grid-template-columns:1fr 1.6fr;align-items:start}
+  .facts{grid-template-columns:1fr 1.35fr;gap:4rem}
+  .gallery{grid-auto-flow:row;grid-template-columns:1.9fr 1fr;grid-template-rows:16rem 16rem;overflow:visible}
+  .gallery figure{display:flex;flex-direction:column;min-height:0}
+  .gallery img{aspect-ratio:auto;height:100%;flex:1;min-height:0}
+  .gallery .g-reception{grid-row:span 2}
+  .visit{grid-template-columns:1.2fr 1fr}
+  .close{grid-template-columns:1fr auto;align-items:end}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 256 256"><path fill="currentColor" d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.550,40.550,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.580,144.840ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.470,56.470,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 256 256"><path fill="currentColor" d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.530,27.73,37.060,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 256 256"><path fill="currentColor" d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 256 256"><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol>
+  <symbol id="i-out" viewBox="0 0 256 256"><path fill="currentColor" d="M197.66,197.66a8,8,0,0,1-11.32,0L72,83.31V168a8,8,0,0,1-16,0V64a8,8,0,0,1,8-8H168a8,8,0,0,1,0,16H83.31L197.66,186.34A8,8,0,0,1,197.66,197.66Z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 256 256"><path fill="currentColor" d="M208,48H48A24,24,0,0,0,24,72V184a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V72A24,24,0,0,0,208,48ZM40,96H216v16H160a8,8,0,0,0-8,8,24,24,0,0,1-48,0,8,8,0,0,0-8-8H40Zm8-32H208a8,8,0,0,1,8,8v8H40V72A8,8,0,0,1,48,64ZM208,192H48a8,8,0,0,1-8-8V128H88.8a40,40,0,0,0,78.4,0H216v56A8,8,0,0,1,208,192Z"/></symbol>
+</svg>
+
+<div class="demo-strip">نموذج مقترح لموقع مجمع عناية ونضارة الطبي — للعرض فقط</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="عناية ونضارة، الصفحة الرئيسية">
+      <b>عناية ونضارة</b>
+      <small>مجمع طبي، النسيم الشرقي</small>
+    </a>
+    <nav class="nav" aria-label="أقسام الصفحة">
+      <a href="#departments">العيادات</a>
+      <a href="#place">المجمع</a>
+      <a href="#visit">الموقع والمواعيد</a>
+    </nav>
+    <a class="btn btn-ghost btn-sm head-call" href="tel:+966112389000"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><bdi dir="ltr" class="num">011 238 9000</bdi></a>
+    <a class="btn btn-primary btn-sm" href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D9%88%D9%86%D8%B6%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A."><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>الحجز</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-text">
+        <h1 id="hero-title">عناية ببشرتك وابتسامتك، تحت سقف واحد.</h1>
+        <p class="hero-lede">مجمع طبي في حي النسيم الشرقي بالرياض، يضم عيادات الجلدية والتجميل والليزر والأسنان. والحجز برسالة واتساب.</p>
+        <ul class="hero-depts" aria-label="العيادات">
+          <li><a class="tag tag-skin" href="#departments" data-open="tab-skin">الجلدية</a></li>
+          <li><a class="tag tag-laser" href="#departments" data-open="tab-laser">الليزر</a></li>
+          <li><a class="tag tag-dental" href="#departments" data-open="tab-dental">الأسنان</a></li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D9%88%D9%86%D8%B6%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A."><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>الحجز عبر واتساب</a>
+          <a class="btn btn-ghost" href="tel:+966112389000"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>اتصال</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <!-- replace with client photos: poster is an illustrative generated image -->
+        <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="departments" aria-labelledby="dept-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="dept-title">ثلاث عيادات في مجمع واحد</h2>
+        <p>اختر العيادة لتعرف خدماتها، ثم أرسل لنا سؤالك أو موعدك المناسب.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="العيادات">
+        <button class="tab" role="tab" id="tab-skin" data-dept="skin" aria-controls="panel-skin" aria-selected="true">الجلدية</button>
+        <button class="tab" role="tab" id="tab-laser" data-dept="laser" aria-controls="panel-laser" aria-selected="false" tabindex="-1">الليزر</button>
+        <button class="tab" role="tab" id="tab-dental" data-dept="dental" aria-controls="panel-dental" aria-selected="false" tabindex="-1">الأسنان</button>
+      </div>
+
+      <div class="panels">
+        <div class="panel" id="panel-skin" data-dept="skin" role="tabpanel" aria-labelledby="tab-skin">
+          <div class="intro">
+            <h3>الجلدية والتجميل</h3>
+            <p>علاجات للبشرة وإجراءات تجميلية غير جراحية، يحدد الطبيب ما يناسبك منها بعد الاستشارة.</p>
+            <a class="btn btn-primary" href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%A7%D9%84%D8%AC%D9%84%D8%AF%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D9%8A%D9%84."><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>استفسار عن الجلدية</a>
+          </div>
+          <ul class="svc">
+            <li>تنظيف البشرة العميق</li>
+            <li>تقشير البشرة</li>
+            <li>جلسات البلازما</li>
+            <li>حقن الفيلر</li>
+            <li>حقن تجميلية يحددها الطبيب بعد الاستشارة</li>
+            <li>توريد الشفاه</li>
+          </ul>
+        </div>
+
+        <div class="panel" id="panel-laser" data-dept="laser" role="tabpanel" aria-labelledby="tab-laser">
+          <div class="intro">
+            <h3>الليزر</h3>
+            <p>جلسات إزالة الشعر بالليزر للجسم كامل، للنساء وللرجال.</p>
+            <a class="btn btn-primary" href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AC%D9%84%D8%B3%D8%A7%D8%AA%20%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1."><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>استفسار عن الليزر</a>
+          </div>
+          <ul class="svc">
+            <li>إزالة الشعر للجسم كامل</li>
+            <li>جلسات الليزر للرجال</li>
+            <li>الفراكشنال ليزر</li>
+          </ul>
+        </div>
+
+        <div class="panel" id="panel-dental" data-dept="dental" role="tabpanel" aria-labelledby="tab-dental">
+          <div class="intro">
+            <h3>الأسنان</h3>
+            <p>من الكشف والتنظيف إلى التركيبات والتقويم والزراعة، في عيادة واحدة.</p>
+            <a class="btn btn-primary" href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B3%D9%86%D8%A7%D9%86."><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>استفسار عن الأسنان</a>
+          </div>
+          <ul class="svc">
+            <li>الكشف والأشعة</li>
+            <li>تنظيف الأسنان</li>
+            <li>الحشوات التجميلية</li>
+            <li>علاج العصب</li>
+            <li>الخلع وضرس العقل</li>
+            <li>تركيبات الزيركون</li>
+            <li>تبييض الأسنان بالليزر</li>
+            <li>قص اللثة وتجميلها</li>
+            <li>تقويم الأسنان</li>
+            <li>زراعة الأسنان</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="facts-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="facts-title">ما يهمك قبل الزيارة</h2>
+      </div>
+      <div class="facts">
+        <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=%D9%85%D8%AC%D9%85%D8%B9%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D9%88%D9%86%D8%B6%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%20%D8%A7%D9%84%D9%86%D8%B3%D9%8A%D9%85%20%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6&amp;query_place_id=ChIJ9YgTHA-qLz4RaItyPQ21nGU" target="_blank" rel="noopener">
+          <span class="rating-line">تقييم <bdi dir="ltr" class="num">4.3</bdi> من <bdi dir="ltr" class="num">5</bdi> على خرائط Google، من <bdi dir="ltr" class="num">1,603</bdi> مراجعة</span>
+          <span class="rating-more">قراءة التقييمات <svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span>
+        </a>
+        <ul class="fact-list">
+          <li>
+            <span class="fact-ic tag-skin"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <div><h3>ثلاث عيادات في مبنى واحد</h3><p>الجلدية والليزر والأسنان في شارع حسان بن ثابت بحي النسيم الشرقي.</p></div>
+          </li>
+          <li>
+            <span class="fact-ic tag-laser"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></span>
+            <div><h3>الحجز من جوالك</h3><p>أرسل رسالة واتساب واختر الوقت المناسب، أو اتصل على هاتف المجمع.</p></div>
+          </li>
+          <li>
+            <span class="fact-ic tag-dental"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <div><h3>مواعيد حتى المساء</h3><p>نستقبل المراجعين من الظهر حتى العاشرة مساءً، من السبت إلى الخميس.</p></div>
+          </li>
+          <li>
+            <span class="fact-ic tag-skin"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span>
+            <div><h3>بطاقات الخصم الطبية</h3><p>المجمع ضمن شبكتي تكافل العربية وتكافل وطن. اسأل عن خصم بطاقتك عند الحجز.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="place" aria-labelledby="place-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="place-title">جولة في المجمع</h2>
+        <p>من الاستقبال إلى غرف العلاج.</p>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="صور المجمع">
+        <figure class="g-reception">
+          <!-- replace with client photos -->
+          <img src="assets/reception.jpg" alt="منطقة الاستقبال والانتظار" loading="lazy" width="1536" height="1024">
+          <figcaption>الاستقبال والانتظار</figcaption>
+        </figure>
+        <figure class="g-laser">
+          <!-- replace with client photos -->
+          <img src="assets/room-laser.jpg" alt="غرفة جلسات الليزر" loading="lazy" width="852" height="1402">
+          <figcaption>غرفة الليزر</figcaption>
+        </figure>
+        <figure class="g-skin">
+          <!-- replace with client photos -->
+          <img src="assets/room-skin.jpg" alt="غرفة علاجات البشرة" loading="lazy" width="380" height="760">
+          <figcaption>غرفة الجلدية والتجميل</figcaption>
+        </figure>
+      </div>
+      <p class="img-note">الصور في هذا النموذج توضيحية، وتُستبدل بصور المجمع الفعلية.</p>
+    </div>
+  </section>
+
+  <section class="section" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="visit-title">الموقع والمواعيد</h2>
+      </div>
+      <div class="visit">
+        <div class="card">
+          <p class="addr">شارع حسان بن ثابت، حي النسيم الشرقي، الرياض</p>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=%D9%85%D8%AC%D9%85%D8%B9%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D9%88%D9%86%D8%B6%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%20%D8%A7%D9%84%D9%86%D8%B3%D9%8A%D9%85%20%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6&amp;query_place_id=ChIJ9YgTHA-qLz4RaItyPQ21nGU" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>فتح في خرائط Google</a>
+          <ul class="phones">
+            <li><span>الهاتف</span><a href="tel:+966112389000"><bdi dir="ltr" class="num">011 238 9000</bdi></a></li>
+            <li><span>واتساب الحجز</span><a href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D9%88%D9%86%D8%B6%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A."><bdi dir="ltr" class="num">055 611 5106</bdi></a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="hours-title"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>ساعات العمل</h3>
+          <!-- verify hours with the clinic -->
+          <table class="hours">
+            <tbody>
+              <tr data-day="6"><th scope="row">السبت</th><td><bdi dir="ltr" class="num">12:00 – 22:00</bdi></td></tr>
+              <tr data-day="0"><th scope="row">الأحد</th><td><bdi dir="ltr" class="num">12:00 – 22:00</bdi></td></tr>
+              <tr data-day="1"><th scope="row">الاثنين</th><td><bdi dir="ltr" class="num">12:00 – 22:00</bdi></td></tr>
+              <tr data-day="2"><th scope="row">الثلاثاء</th><td><bdi dir="ltr" class="num">12:00 – 22:00</bdi></td></tr>
+              <tr data-day="3"><th scope="row">الأربعاء</th><td><bdi dir="ltr" class="num">12:00 – 22:00</bdi></td></tr>
+              <tr data-day="4"><th scope="row">الخميس</th><td><bdi dir="ltr" class="num">12:00 – 22:00</bdi></td></tr>
+              <tr data-day="5"><th scope="row">الجمعة</th><td>تواصل معنا</td></tr>
+            </tbody>
+          </table>
+          <p class="hours-note">قد تتغير المواعيد في رمضان والإجازات، يُرجى التأكيد عند الحجز.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="book" aria-labelledby="book-title">
+    <div class="wrap">
+      <div class="close">
+        <div>
+          <h2 id="book-title">الحجز والاستفسار</h2>
+          <p>أرسل اسم العيادة والوقت المناسب لك، ونرد عليك لتأكيد الموعد.</p>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D9%88%D9%86%D8%B6%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A."><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>الحجز عبر واتساب</a>
+          <a class="btn btn-ghost" href="tel:+966112389000"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>اتصال</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="brand"><b>عناية ونضارة</b><small>مجمع طبي، النسيم الشرقي، الرياض</small></span>
+    <ul class="social" aria-label="حسابات المجمع">
+      <li><a href="https://www.instagram.com/carefreshness1" target="_blank" rel="noopener">انستقرام</a></li>
+      <li><a href="https://www.snapchat.com/add/carefreshness1" target="_blank" rel="noopener">سناب شات</a></li>
+      <li><a href="https://www.tiktok.com/@carefreshness1" target="_blank" rel="noopener">تيك توك</a></li>
+      <li><a href="https://x.com/carefreshness1" target="_blank" rel="noopener">إكس</a></li>
+      <li><a href="https://youtube.com/channel/UCvMYQQ1WstimkT3KF-F-w8g" target="_blank" rel="noopener">يوتيوب</a></li>
+    </ul>
+    <p>رقم ترخيص وزارة الصحة: يُضاف من المجمع</p>
+    <p>هذه الصفحة نموذج مقترح للعرض، وليست الموقع الرسمي للمجمع.</p>
+  </div>
+</footer>
+
+<div class="book-bar">
+  <a class="btn btn-primary" href="https://wa.me/966556115106?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D9%88%D9%86%D8%B6%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A."><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>الحجز عبر واتساب</a>
+  <a class="btn btn-ghost" href="tel:+966112389000" aria-label="اتصال بالمجمع"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+(() => {
+  const tabs = [...document.querySelectorAll('[role=tab]')];
+  const show = (tab, focus) => {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      const p = document.getElementById(t.getAttribute('aria-controls'));
+      p.hidden = !on;
+      p.classList.toggle('is-in', on);
+    });
+    document.querySelector('.panels').dataset.dept = tab.dataset.dept;
+    if (focus) tab.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => show(t));
+    t.addEventListener('keydown', e => {
+      // RTL: the visual "next" tab is to the left
+      const step = { ArrowLeft: 1, ArrowRight: -1, Home: -i, End: tabs.length - 1 - i }[e.key];
+      if (step === undefined) return;
+      e.preventDefault();
+      show(tabs[(i + step + tabs.length) % tabs.length], true);
+    });
+  });
+  show(tabs[0]);
+  document.querySelectorAll('[data-open]').forEach(a => a.addEventListener('click', () => show(document.getElementById(a.dataset.open))));
+  const v = document.querySelector('.hero-video');
+  v.addEventListener('error', () => v.remove(), true);
+  const bar = document.querySelector('.book-bar');
+  const heroCta = document.querySelector('.hero .hero-cta'), bookCta = document.querySelector('#book .hero-cta');
+  const seen = new Map();
+  bar.classList.add('is-off');
+  new IntersectionObserver(es => {
+    es.forEach(e => seen.set(e.target, e.isIntersecting || (e.target === heroCta && e.boundingClientRect.top > 0)));
+    bar.classList.toggle('is-off', [...seen.values()].some(Boolean));
+  }).observe(heroCta);
+  new IntersectionObserver(es => {
+    es.forEach(e => seen.set(e.target, e.isIntersecting));
+    bar.classList.toggle('is-off', [...seen.values()].some(Boolean));
+  }).observe(bookCta);
+  const row = document.querySelector(`.hours tr[data-day="${new Date().getDay()}"]`);
+  if (row) { row.classList.add('today'); row.setAttribute('aria-current', 'date'); row.querySelector('th').insertAdjacentHTML('beforeend', '<span class="sr"> (اليوم)</span>'); }
+})();
+</script>
+</body>
+</html>

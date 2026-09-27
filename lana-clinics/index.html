@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لنا كلينك | عيادة أسنان وتجميل في الحمراء، الرياض</title>
+<meta name="description" content="لنا كلينك في حي الحمراء بالرياض: الأسنان والبشرة والتجميل. احجز على الرقم الموحد 920015532 أو عبر واتساب.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1E0B2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;900&family=Readex+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="preload" as="image" href="assets/hero-poster.jpg">
+<style>
+:root{
+  --ink:#1E0B2B;        /* aubergine */
+  --ink-2:#3A1E4F;
+  --violet:#6B2FC2;     /* Lana violet, the one accent */
+  --violet-deep:#521E9E;
+  --lilac:#EFE6F8;      /* page ground */
+  --lilac-2:#E2D3F3;
+  --mist:#C9B3EA;       /* light type on ink */
+  --paper:#FBF8FE;
+  --muted:#5B4870;      /* secondary text on lilac, 6.7:1 */
+  --radius:0;           /* shape lock: square everywhere */
+  --pad:clamp(1.25rem,5vw,4rem);
+  --max:78rem;
+  --display:"Alexandria",system-ui,sans-serif;
+  --body:"Readex Pro",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  /* z scale: 10 header, 20 mobile bar */
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--body);color:var(--ink);background:var(--lilac);line-height:1.75;font-size:1.0625rem;overflow-x:clip}
+button,input,select,textarea{font:inherit}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.3em}
+::selection{background:var(--violet);color:var(--paper)}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.on-ink :focus-visible{outline-color:var(--mist)}
+html{scrollbar-color:var(--violet) var(--lilac-2)}
+bdi.num{unicode-bidi:isolate;direction:ltr;font-variant-numeric:tabular-nums}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;inset-inline-start:1rem;top:-4rem;background:var(--paper);padding:.5rem 1rem;z-index:30}
+.skip:focus{top:1rem}
+
+/* pitch strip */
+.pitch{background:var(--violet);color:var(--paper);font-size:.8125rem;text-align:center;padding:.4rem 1rem;line-height:1.6}
+
+/* header */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--ink) 94%,transparent);color:var(--paper);backdrop-filter:saturate(1.4) blur(10px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.mark{font-family:var(--display);font-weight:900;font-size:1.6rem;line-height:1;text-decoration:none;display:flex;align-items:baseline;gap:.45rem}
+.mark small{font-weight:500;font-size:.8rem;color:var(--mist)}
+.mark small span{font-family:var(--body)}
+.nav{display:none;gap:1.75rem;font-size:.95rem}
+.nav a{text-decoration:none;color:var(--mist)}
+.nav a:hover{color:var(--paper)}
+.call-top{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:600;border:1px solid var(--mist);padding:.45rem .9rem;min-height:2.75rem}
+.call-top:hover{background:var(--paper);color:var(--ink)}
+@media (min-width:900px){.nav{display:flex}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.25rem;padding:.8rem 1.5rem;font-weight:600;text-decoration:none;border:2px solid transparent;transition:background .25s var(--ease),color .25s var(--ease),transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn i{font-size:1.35rem}
+.btn-wa{background:var(--violet);color:var(--paper)}
+.btn-wa:hover{background:var(--paper);color:var(--ink)}
+.btn-line{border-color:currentColor}
+.btn-line:hover{background:var(--paper);color:var(--ink)}
+.on-lilac .btn-wa:hover{background:var(--ink);color:var(--paper)}
+.on-lilac .btn-line:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{background:var(--ink);color:var(--paper);position:relative;overflow:clip}
+.hero-grid{display:grid;gap:2rem;padding-block:2.25rem 0}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,11vw,6rem);line-height:1.2;text-wrap:balance;padding-block-end:.15em}
+.hero h1 em{font-style:normal;color:var(--mist);display:block}
+.hero .lede{margin-top:1.5rem;color:var(--mist);font-size:clamp(1.05rem,2.6vw,1.25rem);max-width:34ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero .ctas .btn{flex:1 1 12rem}
+.hero-media{position:relative;aspect-ratio:4/5;background:var(--ink-2) url(assets/hero-poster.jpg) center/cover;margin-inline:calc(var(--pad)*-1)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rating{position:absolute;inset-block-end:0;inset-inline-start:0;background:var(--paper);color:var(--ink);padding:.9rem 1.2rem;display:flex;align-items:center;gap:.75rem;line-height:1.35}
+.rating strong{font-family:var(--display);font-weight:900;font-size:2rem;line-height:1}
+.rating i{color:var(--violet);font-size:1.25rem}
+.rating span{font-size:.85rem;color:var(--muted)}
+.bignum{border-top:1px solid var(--ink-2);margin-top:0;padding-block:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.25rem 1.5rem}
+.bignum a{font-family:var(--display);font-weight:900;font-size:clamp(2.5rem,12.5vw,9.5rem);line-height:1;text-decoration:none;color:var(--paper);white-space:nowrap}
+.bignum a:hover{color:var(--mist)}
+.bignum p{color:var(--mist);font-size:.95rem;max-width:22ch}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.2fr .8fr;align-items:stretch;padding-block:4rem 0}
+  .hero h1{font-size:clamp(3.5rem,6vw,5.5rem)}
+  .hero h1 em{white-space:nowrap}
+  .hero-copy{padding-block-end:3rem}
+  .hero-media{margin-inline:0;aspect-ratio:auto;min-height:26rem;margin-block-end:3rem}
+}
+
+/* departments (signature) */
+section{scroll-margin-top:4.5rem}
+.sec{padding-block:clamp(3.5rem,9vw,7rem)}
+.h2{font-family:var(--display);font-weight:900;font-size:clamp(2rem,6.5vw,3.75rem);line-height:1.2;text-wrap:balance;max-width:18ch}
+.sub{color:var(--muted);margin-top:.9rem;max-width:44ch}
+.tabs{display:grid;grid-template-columns:1fr 1fr;margin-top:2.25rem;border:2px solid var(--ink)}
+.tab{appearance:none;background:transparent;border:0;color:var(--ink);font-family:var(--display);font-weight:700;font-size:clamp(1.05rem,3.6vw,1.6rem);padding:1rem .75rem;min-height:4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:background .3s var(--ease),color .3s var(--ease)}
+.tab + .tab{border-inline-start:2px solid var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.tab:not([aria-selected="true"]):hover{background:var(--lilac-2)}
+.tab i{font-size:1.5rem}
+.panel{display:grid;gap:0;border:2px solid var(--ink);border-top:0;background:var(--paper)}
+.panel[hidden]{display:none}
+.panel figure{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--lilac-2)}
+.panel img{width:100%;height:100%;object-fit:cover}
+.panel.enter img{animation:wipe .9s var(--ease) both}
+@keyframes wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.panel.enter img{animation:none}}
+.svc{list-style:none;padding:0}
+.svc li{border-bottom:1px solid var(--lilac-2)}
+.svc li:last-child{border-bottom:0}
+.svc a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 1.25rem;text-decoration:none;min-height:3.5rem;transition:background .2s}
+.svc a:hover{background:var(--lilac)}
+.svc b{font-family:var(--display);font-weight:700;font-size:1.2rem}
+.svc span{display:block;color:var(--muted);font-size:.9rem;line-height:1.5}
+.svc .ask{flex:none;display:inline-flex;align-items:center;gap:.35rem;color:var(--violet);font-weight:600;font-size:.9rem}
+.svc .ask i{font-size:1.1rem}
+.flip{display:inline-block}
+[dir="rtl"] .flip{transform:scaleX(-1)}
+.panel-foot{padding:1.1rem 1.25rem;background:var(--ink);color:var(--mist);font-size:.95rem;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.panel-foot a{color:var(--paper);font-weight:600}
+@media (min-width:900px){
+  .panel{grid-template-columns:1fr 1fr}
+  .panel figure{aspect-ratio:auto;min-height:22rem}
+  .panel figure img{position:absolute;inset:0}
+  .panel-foot{grid-column:1/-1}
+}
+
+/* gallery */
+.gal{display:grid;gap:.75rem;margin-top:2.25rem;grid-template-columns:1fr 1fr}
+.gal figure{overflow:hidden;background:var(--lilac-2)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gal figure:hover img{transform:scale(1.03)}
+.gal .g1{grid-column:1/-1;aspect-ratio:3/2}
+.gal .g2{grid-column:1/-1;aspect-ratio:3/2}
+.gallery{background:var(--violet);color:var(--paper)}
+.gal figcaption{font-size:.85rem;color:var(--muted);padding:.5rem .25rem 0;background:var(--lilac)}
+.gal-note{margin-top:1rem;font-size:.85rem;color:#E6DAF7}
+@media (min-width:900px){
+  .gal{grid-template-columns:1.4fr 1fr}
+  .gal .g1,.gal .g2{grid-column:auto;aspect-ratio:auto;height:26rem}
+}
+
+/* visit */
+.visit{background:var(--paper)}
+.vgrid{display:grid;gap:2.5rem;margin-top:2.25rem}
+.facts{display:grid;gap:0;border-top:2px solid var(--ink)}
+.fact{display:grid;grid-template-columns:2.5rem 1fr;gap:.25rem 1rem;padding-block:1.1rem;border-bottom:1px solid var(--lilac-2)}
+.fact i{font-size:1.6rem;color:var(--violet);grid-row:span 2}
+.fact h3{font-size:.9rem;font-weight:500;color:var(--muted)}
+.fact p,.fact a{font-weight:600;font-size:1.1rem;line-height:1.6}
+.fact a,.panel-foot a,.mark{display:inline-flex;align-items:center;min-height:2.75rem}
+.fact a{justify-self:start}
+.fact .small{font-weight:400;font-size:.9rem;color:var(--muted)}
+.mapcard{background:var(--ink);color:var(--paper);padding:clamp(1.5rem,4vw,2.5rem);display:flex;flex-direction:column;gap:1.25rem;justify-content:space-between;min-height:18rem}
+.mapcard .district{font-family:var(--display);font-weight:900;font-size:clamp(2.5rem,9vw,4.5rem);line-height:1.1}
+.mapcard p{color:var(--mist)}
+@media (min-width:900px){.vgrid{grid-template-columns:1.1fr .9fr;align-items:stretch}}
+
+/* close */
+.close{background:var(--ink);color:var(--paper);text-align:start}
+.close .h2{color:var(--paper);max-width:16ch}
+.close .ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.close .note{margin-top:2.5rem;color:var(--mist);font-size:.875rem;max-width:60ch}
+footer{background:var(--ink);color:var(--mist);border-top:1px solid var(--ink-2);padding-block:2rem 7rem;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+.social{display:flex;gap:.5rem;list-style:none;padding:0}
+.social a{display:inline-grid;place-items:center;width:2.75rem;height:2.75rem;border:1px solid var(--ink-2);color:var(--paper);text-decoration:none;font-size:1.25rem}
+.social a:hover{background:var(--paper);color:var(--ink)}
+@media (min-width:900px){footer{padding-block-end:2rem}}
+
+/* mobile action bar */
+.bar{position:fixed;inset-inline:0;bottom:0;z-index:20;display:grid;grid-template-columns:1.4fr 1fr;background:var(--ink);padding:.6rem .6rem calc(.6rem + env(safe-area-inset-bottom));gap:.5rem;box-shadow:0 -8px 24px rgba(30,11,43,.25)}
+.bar{visibility:hidden;transform:translateY(110%);transition:transform .35s var(--ease),visibility 0s .35s}
+.bar.show{visibility:visible;transform:none;transition:transform .35s var(--ease)}
+@media (prefers-reduced-motion:reduce){.bar,.bar.show{transition:none}}
+.bar .btn{min-height:3rem;padding:.6rem .8rem}
+.bar .btn-line{color:var(--paper)}
+.bar .btn-line:hover{color:var(--ink)}
+@media (min-width:900px){.bar{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<div class="pitch">نموذج مقترح لموقع لنا كلينك — للعرض فقط</div>
+
+<header class="top on-ink">
+  <div class="wrap">
+    <a class="mark" href="#main" aria-label="لنا كلينك، أعلى الصفحة">لنا <small>كلينك · <span lang="en">Lana Clinics</span></small></a>
+    <nav class="nav" aria-label="أقسام الصفحة">
+      <a href="#departments">الأقسام</a>
+      <a href="#gallery">أجواء العلاج</a>
+      <a href="#visit">الموقع والتواصل</a>
+    </nav>
+    <a class="call-top" href="tel:920015532"><i class="ph ph-phone" aria-hidden="true"></i><bdi class="num">920015532</bdi></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero on-ink" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">ابتسامتك وبشرتك <em>في عيادة واحدة.</em></h1>
+          <p class="lede">لنا كلينك في حي الحمراء بالرياض: أسنان، وجلدية وتجميل. احجز بمكالمة أو برسالة واتساب.</p>
+          <div class="ctas">
+            <a class="btn btn-wa" href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أحجز%20موعد%20في%20لنا%20كلينك"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز عبر واتساب</a>
+            <a class="btn btn-line" href="tel:920015532"><i class="ph ph-phone" aria-hidden="true"></i>اتصل بنا</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <!-- replace with client photos -->
+          <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline aria-hidden="true" onerror="this.remove()"></video>
+          <p class="rating"><strong><bdi class="num">4.4</bdi></strong><i class="ph-fill ph-star" aria-hidden="true"></i><span>من <bdi class="num">302</bdi> تقييمًا على Google<br>— سبتمبر <bdi class="num">2026</bdi></span></p>
+        </div>
+      </div>
+      <div class="bignum">
+        <a href="tel:920015532" aria-label="اتصل على الرقم الموحد 920015532"><bdi class="num">920 015 532</bdi></a>
+        <p>رقم موحد واحد لحجز كل الأقسام.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec on-lilac" id="departments" aria-labelledby="dep-title">
+    <div class="wrap">
+      <h2 class="h2" id="dep-title">اختر القسم، ونرتب لك الموعد.</h2>
+      <p class="sub">موعد أسنانك وموعد بشرتك في المكان نفسه، بلا تنقّل بين عيادتين. اضغط على أي خدمة لتفتح محادثة واتساب جاهزة باسمها، واسأل عن عرض الموسم الحالي.</p>
+
+      <div class="tabs" role="tablist" aria-label="الأقسام">
+        <button class="tab" role="tab" id="t-dental" aria-controls="p-dental" aria-selected="true"><i class="ph ph-tooth" aria-hidden="true"></i>الأسنان</button>
+        <button class="tab" role="tab" id="t-skin" aria-controls="p-skin" aria-selected="false" tabindex="-1"><i class="ph ph-sparkle" aria-hidden="true"></i>البشرة والتجميل</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-dental" aria-labelledby="t-dental">
+        <figure>
+          <!-- replace with client photos -->
+          <img src="assets/dental.jpg" alt="أدوات فحص الأسنان على طاولة معقمة" width="1400" height="1866" loading="lazy">
+        </figure>
+        <ul class="svc">
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أستفسر%20عن%20زراعة%20الأسنان%20في%20لنا%20كلينك"><div><b>زراعة الأسنان</b><span>تبدأ باستشارة وفحص لتحديد الخطة المناسبة لك.</span></div><span class="ask">اسأل <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أستفسر%20عن%20تيجان%20الأسنان%20في%20لنا%20كلينك"><div><b>تيجان الأسنان</b><span>لترميم السن وحمايته، بعد تقييم الطبيب.</span></div><span class="ask">اسأل <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أستفسر%20عن%20تجميل%20الأسنان%20في%20لنا%20كلينك"><div><b>تجميل الأسنان</b><span>خيارات تجميلية تُناقش مع الطبيب حسب حالتك.</span></div><span class="ask">اسأل <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أحجز%20كشف%20أسنان%20في%20لنا%20كلينك"><div><b>كشف واستشارة</b><span>لا تعرف ما تحتاجه؟ ابدأ من هنا.</span></div><span class="ask">احجز <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+        </ul>
+        <p class="panel-foot">تفضّل الاتصال؟ <a href="tel:920015532"><bdi class="num">920015532</bdi></a></p>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-skin" aria-labelledby="t-skin" hidden>
+        <figure>
+          <!-- replace with client photos -->
+          <img src="assets/skin.jpg" alt="جلسة عناية بالبشرة بجهاز تنظيف في غرفة العلاج" width="1400" height="933" loading="lazy">
+        </figure>
+        <ul class="svc">
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أستفسر%20عن%20الفيلر%20والحقن%20التجميلية%20في%20لنا%20كلينك"><div><b>الفيلر والحقن التجميلية</b><span>بعد استشارة طبية تحدد ما يناسبك وما لا يناسبك.</span></div><span class="ask">اسأل <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أستفسر%20عن%20الخيوط%20التجميلية%20في%20لنا%20كلينك"><div><b>الخيوط التجميلية وشد الخيوط</b><span>يحدد الطبيب مدى مناسبته بعد التقييم.</span></div><span class="ask">اسأل <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أستفسر%20عن%20الهايدرافيشل%20في%20لنا%20كلينك"><div><b>هايدرافيشل</b><span>جلسة تنظيف وترطيب للبشرة.</span></div><span class="ask">اسأل <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أستفسر%20عن%20جلسات%20البلازما%20في%20لنا%20كلينك"><div><b>البلازما</b><span>اسأل عن مدى مناسبتها لك وعدد الجلسات.</span></div><span class="ask">اسأل <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+          <li><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أحجز%20موعد%20جلدية%20في%20لنا%20كلينك"><div><b>الجلدية</b><span>موعد كشف جلدية لتقييم حالة البشرة.</span></div><span class="ask">احجز <i class="ph ph-arrow-right flip" aria-hidden="true"></i></span></a></li>
+        </ul>
+        <p class="panel-foot">تفضّل الاتصال؟ <a href="tel:920015532"><bdi class="num">920015532</bdi></a></p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="sec gallery on-ink" id="gallery" aria-labelledby="gal-title">
+    <div class="wrap">
+      <h2 class="h2" id="gal-title">أجواء العلاج</h2>
+      <div class="gal">
+        <figure class="g1">
+          <!-- replace with client photos -->
+          <img src="assets/room.jpg" alt="غرفة علاج أسنان مجهزة" width="1400" height="936" loading="lazy">
+        </figure>
+        <figure class="g2">
+          <!-- replace with client photos -->
+          <img src="assets/facial.jpg" alt="جلسة عناية بالبشرة" width="1400" height="931" loading="lazy">
+        </figure>
+      </div>
+      <p class="gal-note">صور توضيحية، تُستبدل بصور العيادة.</p>
+    </div>
+  </section>
+
+  <section class="sec visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <h2 class="h2" id="visit-title">زورونا في الحمراء</h2>
+      <div class="vgrid">
+        <div class="facts">
+          <div class="fact"><i class="ph ph-map-pin" aria-hidden="true"></i><h3>العنوان</h3><p>شارع خالد بن الوليد، حي الحمراء، الرياض <bdi class="num">12211</bdi></p></div>
+          <div class="fact"><i class="ph ph-clock" aria-hidden="true"></i><h3>المواعيد</h3><p>نفتح عادةً من <bdi class="num">12</bdi> ظهرًا <span class="small">· يُرجى تأكيد الوقت بالاتصال قبل الزيارة</span></p></div>
+          <div class="fact"><i class="ph ph-phone" aria-hidden="true"></i><h3>الرقم الموحد للحجز</h3><a href="tel:920015532"><bdi class="num">920015532</bdi></a></div>
+          <div class="fact"><i class="ph ph-headset" aria-hidden="true"></i><h3>للاستفسارات</h3><a href="tel:+966112394145"><bdi class="num">011 239 4145</bdi></a></div>
+          <div class="fact"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><h3>واتساب</h3><a href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أحجز%20موعد%20في%20لنا%20كلينك"><bdi class="num">053 200 2301</bdi></a></div>
+        </div>
+        <div class="mapcard on-ink">
+          <div>
+            <p class="district">الحمراء، الرياض</p>
+            <p>على شارع خالد بن الوليد · رمز الموقع <bdi class="num">QQF4+48</bdi></p>
+          </div>
+          <a class="btn btn-wa" href="https://www.google.com/maps/search/?api=1&amp;query=Lana%20Clinics%20لنا%20كلينك%20الحمراء%20الرياض&amp;query_place_id=ChIJWWOsZ5YTig4RIxcD48TkPiU"><i class="ph ph-navigation-arrow" aria-hidden="true"></i>افتح الموقع في الخرائط</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec close on-ink" aria-labelledby="close-title">
+    <div class="wrap">
+      <h2 class="h2" id="close-title">موعدك القادم على بُعد رسالة.</h2>
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أحجز%20موعد%20في%20لنا%20كلينك"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز عبر واتساب</a>
+        <a class="btn btn-line" href="tel:920015532"><i class="ph ph-phone" aria-hidden="true"></i>اتصل بنا</a>
+      </div>
+      <p class="note">المعلومات في هذه الصفحة عامة ولا تغني عن الاستشارة الطبية. يحدد الطبيب العلاج المناسب بعد الفحص، وتختلف النتائج من شخص لآخر.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="on-ink">
+  <div class="wrap">
+    <p>لنا كلينك · <span lang="en">Lana Clinics</span> · الرياض</p>
+    <p>رقم ترخيص وزارة الصحة: يُضاف من العيادة</p>
+    <ul class="social" aria-label="حسابات لنا كلينك">
+      <li><a href="https://www.instagram.com/lanaclinics" aria-label="إنستغرام"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.tiktok.com/@lanaclinics" aria-label="تيك توك"><i class="ph ph-tiktok-logo" aria-hidden="true"></i></a></li>
+      <li><a href="https://snapchat.com/t/Xg0G8b5N" aria-label="سناب شات"><i class="ph ph-snapchat-logo" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.threads.com/@lanaclinics" aria-label="ثريدز"><i class="ph ph-threads-logo" aria-hidden="true"></i></a></li>
+    </ul>
+    <p>نموذج مقترح لموقع لنا كلينك — للعرض فقط</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="تواصل سريع">
+  <a class="btn btn-wa" href="https://wa.me/966532002301?text=السلام%20عليكم،%20أبغى%20أحجز%20موعد%20في%20لنا%20كلينك"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجز عبر واتساب</a>
+  <a class="btn btn-line" href="tel:920015532"><i class="ph ph-phone" aria-hidden="true"></i>اتصل</a>
+</nav>
+
+<script>
+// Tabs: click + arrow keys; panel image wipes in on switch.
+const tabs=[...document.querySelectorAll('[role=tab]')];
+function select(t){
+  tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+    const p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;
+    if(on){p.classList.remove('enter');void p.offsetWidth;p.classList.add('enter')}});
+}
+tabs.forEach((t,i)=>{
+  t.addEventListener('click',()=>select(t));
+  t.addEventListener('keydown',e=>{
+    if(e.key==='Home'||e.key==='End'){e.preventDefault();const n=tabs[e.key==='Home'?0:tabs.length-1];select(n);n.focus();return}
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+    // RTL: ArrowLeft moves to the next tab
+    const d=(e.key==='ArrowLeft')===(document.dir==='rtl')?1:-1;
+    const n=tabs[(i+d+tabs.length)%tabs.length];select(n);n.focus();
+  });
+});
+// hero.mp4 missing: drop the video so the poster background shows (onerror covers the late case).
+const v=document.querySelector('.hero-video');
+if(v&&v.networkState===3)v.remove();
+// Mobile bar appears once the hero CTAs scroll out of view.
+const bar=document.querySelector('.bar'),heroCtas=document.querySelector('.hero .ctas');
+new IntersectionObserver(([e])=>bar.classList.toggle('show',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(heroCtas);
+</script>
+</body>
+</html>

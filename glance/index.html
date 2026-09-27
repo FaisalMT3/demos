@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قلانس | مركز وصالون نسائي في الفيحاء، الرياض</title>
+<meta name="description" content="مركز قلانس للتزيين النسائي في حي الفيحاء شرق الرياض: شعر، بشرة ورموش، أظافر، مساج وحمام مغربي. الأسعار منشورة والحجز عبر واتساب.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F5EFE4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="preload" as="image" href="assets/hero-poster.jpg">
+<style>
+:root{
+  --bg:#F5EFE4; --bg-2:#ECE4D4; --card:#FBF8F2;
+  --ink:#2B2519; --ink-2:#5E5646; --olive:#6B6230; --gold:#958A55;
+  --deep:#2F2C1C; --cream-on-deep:#EFE8D8; --muted-on-deep:#C9C1A8;
+  --line:rgba(43,37,25,.12);
+  --ease:cubic-bezier(.32,.72,0,1);
+  --r:2rem; --r-in:calc(2rem - 6px);
+  --pad-x:clamp(1.25rem,5vw,4rem); --pad-y:clamp(5rem,12vw,9rem);
+  --shadow:0 30px 60px -30px rgba(43,37,25,.22);
+  --display:"Amiri",serif; --body:"IBM Plex Sans Arabic",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1.0625rem/1.9 var(--body);overflow-x:clip}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.3em;text-decoration-thickness:1px}
+button{font:inherit;color:inherit}
+::selection{background:var(--olive);color:var(--card)}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px;border-radius:6px}
+html{scrollbar-color:var(--gold) var(--bg-2)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.35;margin:0;text-wrap:balance;color:var(--ink)}
+p{margin:0}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--pad-x)}
+section{scroll-margin-top:6rem}
+.skip{position:absolute;inset-inline-start:1rem;top:-4rem;background:var(--deep);color:var(--cream-on-deep);padding:.6rem 1rem;border-radius:999px;z-index:60}
+.skip:focus{top:1rem}
+
+/* pitch strip */
+.pitch{background:var(--deep);color:var(--muted-on-deep);font-size:.8125rem;text-align:center;padding:.5rem var(--pad-x);line-height:1.6}
+
+/* nav island */
+.nav{position:fixed;z-index:40;top:calc(2.4rem + env(safe-area-inset-top));inset-inline:0;display:flex;justify-content:center;pointer-events:none;transition:top .6s var(--ease)}
+.nav.stuck{top:.9rem}
+.nav-in{pointer-events:auto;display:flex;align-items:center;gap:1.5rem;padding:.45rem .45rem .45rem .45rem;padding-inline-start:1.4rem;border-radius:999px;
+  background:rgba(251,248,242,.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:0 0 0 1px var(--line),0 18px 40px -24px rgba(43,37,25,.35);width:min(100% - 2rem,760px);justify-content:space-between}
+.brand{display:flex;align-items:baseline;gap:.55rem;text-decoration:none}
+.brand b{font:700 1.6rem/1 var(--display)}
+.brand span{font:400 .95rem/1 var(--display);color:var(--olive)}
+.nav-links{display:flex;gap:1.4rem;font-size:.95rem;font-weight:400}
+.nav-links a{text-decoration:none;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+@media (max-width:767px){.nav-links{display:none}}
+@media (prefers-reduced-transparency:reduce){.nav-in{background:var(--card);backdrop-filter:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.9rem;border-radius:999px;padding:.5rem .5rem .5rem .5rem;padding-inline-start:1.4rem;
+  text-decoration:none;font-weight:500;font-size:1rem;line-height:1.4;white-space:nowrap;transition:transform .5s var(--ease),background-color .5s var(--ease),box-shadow .5s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn .ic{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:999px;font-size:1.15rem;transition:transform .6s var(--ease)}
+.btn:hover .ic{transform:translateX(-3px) scale(1.06)}
+.btn-primary{background:var(--deep);color:var(--cream-on-deep);box-shadow:var(--shadow)}
+.btn-primary .ic{background:rgba(239,232,216,.12)}
+.btn-primary:hover{background:#3b3724}
+.btn-ghost{color:var(--ink);box-shadow:inset 0 0 0 1px rgba(43,37,25,.22)}
+.btn-ghost .ic{background:var(--bg-2)}
+.btn-ghost:hover{background:var(--card)}
+.btn-sm{padding-inline-start:1.05rem;font-size:.9375rem}
+.btn-sm .ic{width:2.1rem;height:2.1rem;font-size:1rem}
+.btn-light{background:var(--cream-on-deep);color:var(--deep)}
+.btn-light .ic{background:rgba(47,44,28,.1)}
+.btn-light:hover{background:#fff8ea}
+.btn-line-light{color:var(--cream-on-deep);box-shadow:inset 0 0 0 1px rgba(239,232,216,.35)}
+.btn-line-light .ic{background:rgba(239,232,216,.1)}
+
+/* bezel */
+.bezel{padding:6px;border-radius:var(--r);background:var(--bg-2);box-shadow:0 0 0 1px var(--line),var(--shadow)}
+.bezel>.core{border-radius:var(--r-in);overflow:hidden;position:relative;background:var(--card)}
+
+/* hero */
+.hero{padding-top:clamp(7.5rem,14vw,9.5rem);padding-bottom:clamp(3.5rem,8vw,6rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.9rem);line-height:1.25;letter-spacing:0}
+.hero h1 em{font-style:normal;color:var(--olive)}
+.hero h1 .ln{display:inline-block;white-space:nowrap}
+.hero .lede{margin-top:1.4rem;font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--ink-2);max-width:38ch}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.2rem}
+.hero-media .core{aspect-ratio:4/5;background:#d9cdb6 url(assets/hero-poster.jpg) 72% 50%/cover}
+.hero-video{width:100%;height:100%;object-fit:cover;object-position:72% 50%}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-top:2rem;color:var(--ink-2);font-size:.9375rem}
+.hero-meta span{display:inline-flex;align-items:center;gap:.4rem}
+.hero-meta i{color:var(--olive);font-size:1.1rem}
+@media (max-width:899px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-media .core{aspect-ratio:4/3}
+}
+/* the one authored moment: frame unveils, picture settles */
+@media (prefers-reduced-motion:no-preference){
+  .hero-media{animation:unveil 1.4s var(--ease) .15s both}
+  .hero-media .core>*{animation:settle 2.4s var(--ease) .15s both}
+  .hero-copy>*{animation:rise .9s var(--ease) both}
+  .hero-copy>:nth-child(2){animation-delay:.12s}
+  .hero-copy>:nth-child(3){animation-delay:.24s}
+  .hero-copy>:nth-child(4){animation-delay:.36s}
+}
+@keyframes unveil{from{clip-path:inset(18% 10% 18% 10% round 2rem);opacity:.4}to{clip-path:inset(0 0 0 0 round 2rem);opacity:1}}
+@keyframes settle{from{transform:scale(1.1)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* rating statement */
+.proof{padding-block:clamp(3rem,7vw,5rem)}
+.proof .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;border-block:1px solid var(--line);padding-block:clamp(2rem,4vw,3rem)}
+.proof .score{font:700 clamp(4.5rem,11vw,8rem)/1 var(--display);color:var(--olive)}
+.proof p{font:400 clamp(1.4rem,2.8vw,2.1rem)/1.6 var(--display);max-width:30ch}
+.proof a{font:400 .95rem/1.6 var(--body);display:inline-flex;align-items:center;gap:.35rem;margin-top:.8rem;color:var(--olive)}
+@media (max-width:599px){.proof .wrap{grid-template-columns:1fr;gap:.5rem}}
+
+/* menu */
+.menu{padding-block:calc(var(--pad-y)*.55) calc(var(--pad-y)*.6)}
+.head{max-width:40rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.head h2{font-size:clamp(2.1rem,5vw,3.4rem)}
+.head p{margin-top:.9rem;color:var(--ink-2);max-width:48ch}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.25rem .1rem 1rem;margin-inline:calc(var(--pad-x) * -1);padding-inline:var(--pad-x);scrollbar-width:none;scroll-padding-inline:var(--pad-x)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;scroll-snap-align:start;border:0;background:transparent;border-radius:999px;padding:.6rem 1.15rem;font-size:.9375rem;font-weight:400;color:var(--ink-2);box-shadow:inset 0 0 0 1px rgba(43,37,25,.18);cursor:pointer;transition:background-color .5s var(--ease),color .5s var(--ease)}
+.tab:hover{color:var(--ink);background:var(--card)}
+.tab[aria-selected="true"]{background:var(--deep);color:var(--cream-on-deep);box-shadow:none}
+.menu-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.panel .core{padding:clamp(1.4rem,4vw,2.6rem);min-height:578px} /* ~median panel height: stops the page jumping on tab switch */
+.panel h3{font-size:1.6rem;margin-bottom:.4rem}
+.panel .note{color:var(--ink-2);font-size:.9375rem;margin-bottom:1.2rem}
+.rows{list-style:none;margin:0;padding:0;display:grid;gap:.15rem}
+.rows li{display:flex;align-items:baseline;gap:.6rem;padding-block:.45rem}
+.rows .n{font-weight:400}
+.rows .n small{display:block;font-size:.8125rem;color:var(--ink-2);font-weight:300;line-height:1.5}
+.rows .d{flex:1;min-width:1.5rem;border-bottom:1px dotted rgba(43,37,25,.3);transform:translateY(-.35em)}
+.rows .p{white-space:nowrap;color:var(--olive);font-weight:500;font-variant-numeric:tabular-nums}
+.menu-aside{display:grid;gap:1.25rem;position:sticky;top:6.5rem}
+.menu-aside .core{padding:1.6rem}
+.menu-aside h3{font-size:1.35rem}
+.menu-aside p{color:var(--ink-2);font-size:.9375rem;margin-top:.5rem}
+.menu-aside .btn{margin-top:1.2rem}
+.vat{font-size:.8125rem;color:var(--ink-2);margin-top:1rem}
+.full-menu{display:inline-flex;align-items:center;gap:.4rem;color:var(--olive);font-weight:400;margin-top:1rem}
+@media (max-width:899px){.menu-grid{grid-template-columns:1fr}.menu-aside{position:static}}
+
+/* signature: hammam */
+.sig{padding-block:calc(var(--pad-y) * .6) var(--pad-y)}
+.sig .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,6vw,6rem);align-items:center}
+.sig-img{margin-inline-start:calc(var(--pad-x) * -1);aspect-ratio:4/5;overflow:hidden;border-start-end-radius:999px 60%}
+.sig-img>div{height:100%}
+.sig img{width:100%;height:100%;object-fit:cover}
+.sig h2{font-size:clamp(2.1rem,5vw,3.4rem)}
+.sig p.body{margin-top:1rem;color:var(--ink-2);max-width:40ch}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.duo div{padding-block:1rem;border-top:1px solid var(--line)}
+.duo b{display:block;font:700 1.25rem/1.5 var(--display)}
+.duo div>span{display:block;font-size:.875rem;color:var(--ink-2);line-height:1.6;margin-top:.2rem}
+.duo strong{display:block;margin-top:.5rem;color:var(--olive);font-weight:500;font-size:1.1rem}
+@media (max-width:899px){.sig .wrap{grid-template-columns:1fr}.sig-img{aspect-ratio:4/3;margin-inline:calc(var(--pad-x) * -1);border-start-end-radius:0}}
+
+/* why */
+.why{background:var(--bg-2);padding-block:var(--pad-y)}
+.why h2{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:clamp(2rem,5vw,3.5rem)}
+.why ol{list-style:none;margin:0;padding:0;counter-reset:w}
+.why li{counter-increment:w;display:grid;grid-template-columns:3rem minmax(0,6fr) minmax(0,5fr);gap:clamp(1rem,3vw,3rem);align-items:baseline;padding-block:clamp(1.6rem,3.5vw,2.6rem);border-top:1px solid rgba(43,37,25,.18)}
+.why li::before{content:counter(w,arabic-indic);font:400 1.5rem/1 var(--display);color:var(--gold)}
+.why .k{font:700 clamp(2.4rem,5.4vw,4.4rem)/1.2 var(--display);color:var(--olive)}
+.why .k-brands>span{display:inline-block;white-space:nowrap}
+.why .k-brands{text-align:end;font:400 clamp(1.3rem,2.4vw,1.9rem)/1.5 var(--display);color:var(--ink)}
+.why h3{font-size:1.35rem}
+.why li p{color:var(--ink-2);margin-top:.35rem;max-width:44ch}
+@media (max-width:767px){.why li{grid-template-columns:2rem minmax(0,1fr)}.why li>div{grid-column:2}}
+
+/* gallery */
+.gallery{padding-block:var(--pad-y)}
+.g-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:clamp(.75rem,2vw,1.25rem);align-items:end}
+.g-grid .core{height:100%}
+.g-grid img{width:100%;height:100%;object-fit:cover}
+.g-a .core{aspect-ratio:4/5}
+.g-b .core{aspect-ratio:1/1}
+.g-cap{margin-top:1.1rem;font-size:.8125rem;color:var(--ink-2)}
+@media (max-width:767px){
+  .g-grid{grid-template-columns:1fr 1fr;align-items:stretch}
+  .g-a .core,.g-b .core{aspect-ratio:3/4}
+}
+
+/* tap targets */
+.proof a,.full-menu,.info .mini,.info p a{min-height:44px;display:inline-flex;align-items:center}
+
+/* visit (the one declared theme switch: dark olive close) */
+.visit{background:var(--deep);color:var(--cream-on-deep);padding-block:var(--pad-y) calc(var(--pad-y) * .6)}
+.visit h2{color:var(--cream-on-deep);font-size:clamp(2.3rem,6vw,4.4rem);max-width:14ch}
+.visit .lede{margin-top:1rem;color:var(--muted-on-deep);max-width:44ch}
+.visit .ctas{margin-top:2rem}
+.info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,4vw,3rem);margin-top:clamp(3rem,7vw,5rem);padding-top:2rem;border-top:1px solid rgba(239,232,216,.16)}
+.info h3{font:500 .875rem/1.6 var(--body);color:var(--muted-on-deep)}
+.info p,.info a{font-size:1.05rem;color:var(--cream-on-deep)}
+.info .mini{display:inline-flex;align-items:center;gap:.4rem;margin-top:.5rem;font-size:.9375rem;color:#DCD3B8}
+.social{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
+.social a{display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(239,232,216,.25);font-size:1.25rem;text-decoration:none;transition:background-color .5s var(--ease)}
+.social a:hover{background:rgba(239,232,216,.1)}
+@media (max-width:767px){.info{grid-template-columns:1fr}}
+footer{background:var(--deep);color:var(--muted-on-deep);font-size:.8125rem;padding:1.5rem var(--pad-x) calc(1.5rem + env(safe-area-inset-bottom));text-align:center;border-top:1px solid rgba(239,232,216,.1);line-height:1.8}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">تخطَّي إلى المحتوى</a>
+<div class="pitch">نموذج مقترح لموقع مركز قلانس — للعرض فقط</div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="قلانس، الصفحة الرئيسية"><b>قلانس</b><span lang="en">Glance</span></a>
+    <nav class="nav-links" aria-label="أقسام الصفحة">
+      <a href="#menu">الخدمات والأسعار</a>
+      <a href="#hammam">الحمام المغربي</a>
+      <a href="#visit">الموقع</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="https://wa.me/966566933756?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%82%D9%84%D8%A7%D9%86%D8%B3%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" rel="noopener">احجزي <span class="ic"><i class="ph-light ph-whatsapp-logo" aria-hidden="true"></i></span></a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1><span class="ln">ساعة لكِ وحدكِ،</span> <em class="ln">في قلب الفيحاء</em></h1>
+      <p class="lede">شعر، بشرة ورموش، أظافر، مساج وحمام مغربي. مركز نسائي شرق الرياض، وأسعاره واضحة قبل الحجز.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://wa.me/966566933756?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%82%D9%84%D8%A7%D9%86%D8%B3%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" rel="noopener">احجزي عبر واتساب <span class="ic"><i class="ph-light ph-arrow-left" aria-hidden="true"></i></span></a>
+        <a class="btn btn-ghost" href="#menu">الأسعار <span class="ic"><i class="ph-light ph-list-dashes" aria-hidden="true"></i></span></a>
+      </div>
+      <div class="hero-meta">
+        <span><i class="ph-light ph-map-pin" aria-hidden="true"></i>حي الفيحاء، الرياض</span>
+      </div>
+    </div>
+    <div class="hero-media bezel">
+      <div class="core">
+        <!-- replace with client photos: poster is an illustrative AI render of a salon interior -->
+        <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="التقييمات">
+  <div class="wrap">
+    <div class="score"><bdi>4.5</bdi></div>
+    <div>
+      <p>متوسط تقييم قلانس على خرائط Google، من <bdi>493</bdi> تقييمًا.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Glance%20beauty%20center%20Al%20Fayha%20Riyadh" target="_blank" rel="noopener">اقرئي التقييمات على Google <i class="ph-light ph-arrow-up-left" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="head">
+      <h2>الخدمات والأسعار</h2>
+      <p>مختارات من قائمة أسعار المركز. اختاري القسم، واحجزي الخدمة برسالة واتساب واحدة.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="أقسام الخدمات">
+      <button class="tab" role="tab" id="t-hair" aria-controls="p-hair" aria-selected="true">الشعر</button>
+      <button class="tab" role="tab" id="t-skin" aria-controls="p-skin" aria-selected="false">البشرة والرموش</button>
+      <button class="tab" role="tab" id="t-nails" aria-controls="p-nails" aria-selected="false">الأظافر</button>
+      <button class="tab" role="tab" id="t-body" aria-controls="p-body" aria-selected="false">الحلاوة والفتلة</button>
+      <button class="tab" role="tab" id="t-spa" aria-controls="p-spa" aria-selected="false">المساج والحمام</button>
+      <button class="tab" role="tab" id="t-kids" aria-controls="p-kids" aria-selected="false">الأطفال</button>
+    </div>
+
+    <div class="menu-grid">
+      <div>
+        <div class="panel bezel" role="tabpanel" id="p-hair" aria-labelledby="t-hair"><div class="core">
+          <h3>خدمات الشعر</h3>
+          <p class="note">غسيل، قص، تسريح، صبغات ومعالجات.</p>
+          <ul class="rows">
+            <li><span class="n">غسيل شعر كلاسيك</span><span class="d"></span><span class="p"><bdi>28</bdi> ريال</span></li>
+            <li><span class="n">حمام كريمي لترطيب الشعر</span><span class="d"></span><span class="p"><bdi>65</bdi> ريال</span></li>
+            <li><span class="n">قص أطراف الشعر</span><span class="d"></span><span class="p"><bdi>45</bdi> ريال</span></li>
+            <li><span class="n">قص موديل لكامل الشعر</span><span class="d"></span><span class="p"><bdi>92</bdi> ريال</span></li>
+            <li><span class="n">استشوار</span><span class="d"></span><span class="p">من <bdi>80</bdi> ريال</span></li>
+            <li><span class="n">تسريحة أو ويفي<small>للشعر المتوسط</small></span><span class="d"></span><span class="p"><bdi>130–150</bdi> ريال</span></li>
+            <li><span class="n">صبغة جذور</span><span class="d"></span><span class="p"><bdi>120</bdi> ريال</span></li>
+            <li><span class="n">هايلايت، لولايت أو أمبريه</span><span class="d"></span><span class="p">من <bdi>300</bdi> ريال</span></li>
+            <li><span class="n">بروتين برازيلي</span><span class="d"></span><span class="p">من <bdi>300</bdi> ريال</span></li>
+            <li><span class="n">غسيل هيدرا سبا<small>مع مساج اليدين والقدمين</small></span><span class="d"></span><span class="p"><bdi>230</bdi> ريال</span></li>
+          </ul>
+        </div></div>
+
+        <div class="panel bezel" role="tabpanel" id="p-skin" aria-labelledby="t-skin"><div class="core">
+          <h3>البشرة والرموش والمكياج</h3>
+          <p class="note">تنظيف البشرة بمنتجات <span lang="en">Greentech</span> الفرنسية.</p>
+          <ul class="rows">
+            <li><span class="n">تنظيف بشرة عميق<small>ديتوكس أو نضارة</small></span><span class="d"></span><span class="p"><bdi>230</bdi> ريال</span></li>
+            <li><span class="n">تنظيف البشرة كلاسيك</span><span class="d"></span><span class="p"><bdi>115</bdi> ريال</span></li>
+            <li><span class="n">رموش أسبوعية كلاسيك</span><span class="d"></span><span class="p"><bdi>150</bdi> ريال</span></li>
+            <li><span class="n">رموش أسبوعية فوليوم</span><span class="d"></span><span class="p"><bdi>200</bdi> ريال</span></li>
+            <li><span class="n">رموش دائمة كلاسيك</span><span class="d"></span><span class="p"><bdi>350</bdi> ريال</span></li>
+            <li><span class="n">رفع رموش أو حواجب مع صبغة</span><span class="d"></span><span class="p"><bdi>230</bdi> ريال</span></li>
+            <li><span class="n">مكياج ناعم</span><span class="d"></span><span class="p"><bdi>130</bdi> ريال</span></li>
+            <li><span class="n">مكياج ناعم مع رموش لاين</span><span class="d"></span><span class="p"><bdi>150</bdi> ريال</span></li>
+          </ul>
+        </div></div>
+
+        <div class="panel bezel" role="tabpanel" id="p-nails" aria-labelledby="t-nails"><div class="core">
+          <h3>الأظافر والعناية باليدين والقدمين</h3>
+          <p class="note">طلاء وشيلاك من <span lang="en">Emi</span>.</p>
+          <ul class="rows">
+            <li><span class="n">منيكير كلاسيك</span><span class="d"></span><span class="p"><bdi>80</bdi> ريال</span></li>
+            <li><span class="n">بديكير كلاسيك</span><span class="d"></span><span class="p"><bdi>90</bdi> ريال</span></li>
+            <li><span class="n">منيكير سبا</span><span class="d"></span><span class="p"><bdi>115</bdi> ريال</span></li>
+            <li><span class="n">بديكير سبا</span><span class="d"></span><span class="p"><bdi>115</bdi> ريال</span></li>
+            <li><span class="n">طلاء جل شيلاك</span><span class="d"></span><span class="p"><bdi>115</bdi> ريال</span></li>
+            <li><span class="n">طلاء فرنسي</span><span class="d"></span><span class="p"><bdi>50</bdi> ريال</span></li>
+            <li><span class="n">نيل آرت لكل الأظافر</span><span class="d"></span><span class="p"><bdi>90</bdi> ريال</span></li>
+            <li><span class="n">أظافر جل أو أكريليك دائمة</span><span class="d"></span><span class="p"><bdi>300</bdi> ريال</span></li>
+          </ul>
+        </div></div>
+
+        <div class="panel bezel" role="tabpanel" id="p-body" aria-labelledby="t-body"><div class="core">
+          <h3>الحلاوة والشمع والفتلة</h3>
+          <p class="note">حلاوة أو شمع، حسب ما تفضّلين.</p>
+          <ul class="rows">
+            <li><span class="n">حلاوة جسم كامل<small>لا تشمل منطقة البكيني</small></span><span class="d"></span><span class="p"><bdi>250</bdi> ريال</span></li>
+            <li><span class="n">حلاوة منطقة البكيني</span><span class="d"></span><span class="p"><bdi>115</bdi> ريال</span></li>
+            <li><span class="n">حلاوة أو شمع للقدمين والأفخاذ</span><span class="d"></span><span class="p"><bdi>100</bdi> ريال</span></li>
+            <li><span class="n">شمع أو فتلة للوجه</span><span class="d"></span><span class="p"><bdi>48</bdi> ريال</span></li>
+            <li><span class="n">فتلة حواجب</span><span class="d"></span><span class="p"><bdi>40</bdi> ريال</span></li>
+            <li><span class="n">تشقير مع صبغة حواجب</span><span class="d"></span><span class="p"><bdi>48</bdi> ريال</span></li>
+            <li><span class="n">حلاوة أو شمع للإبطين</span><span class="d"></span><span class="p"><bdi>35</bdi> ريال</span></li>
+          </ul>
+        </div></div>
+
+        <div class="panel bezel" role="tabpanel" id="p-spa" aria-labelledby="t-spa"><div class="core">
+          <h3>المساج والحمام المغربي</h3>
+          <p class="note">جلسات بمدد محددة، وحمام مغربي بخيارين.</p>
+          <ul class="rows">
+            <li><span class="n">مساج الاسترخاء<small><bdi>45</bdi> دقيقة</small></span><span class="d"></span><span class="p"><bdi>140</bdi> ريال</span></li>
+            <li><span class="n">مساج ريفلكسولوجي<small><bdi>60</bdi> دقيقة</small></span><span class="d"></span><span class="p"><bdi>185</bdi> ريال</span></li>
+            <li><span class="n">مساج الأحجار الساخنة<small><bdi>60</bdi> دقيقة</small></span><span class="d"></span><span class="p"><bdi>220</bdi> ريال</span></li>
+            <li><span class="n">مساج الحوامل<small><bdi>45</bdi> دقيقة</small></span><span class="d"></span><span class="p"><bdi>150</bdi> ريال</span></li>
+            <li><span class="n">دلكة سودانية</span><span class="d"></span><span class="p"><bdi>150</bdi> ريال</span></li>
+            <li><span class="n">حمام مغربي كلاسيك</span><span class="d"></span><span class="p"><bdi>200</bdi> ريال</span></li>
+            <li><span class="n">حمام مغربي <span lang="en">VIP</span><small>يشمل حمامًا كريميًا واستشوار</small></span><span class="d"></span><span class="p"><bdi>350</bdi> ريال</span></li>
+          </ul>
+        </div></div>
+
+        <div class="panel bezel" role="tabpanel" id="p-kids" aria-labelledby="t-kids"><div class="core">
+          <h3>خدمات الأطفال</h3>
+          <p class="note">قائمة خاصة للصغار ترافقك في الزيارة.</p>
+          <ul class="rows">
+            <li><span class="n">منيكير أطفال كلاسيك</span><span class="d"></span><span class="p"><bdi>45</bdi> ريال</span></li>
+            <li><span class="n">بديكير أطفال كلاسيك</span><span class="d"></span><span class="p"><bdi>50</bdi> ريال</span></li>
+            <li><span class="n">قص أطراف الشعر للأطفال</span><span class="d"></span><span class="p"><bdi>35</bdi> ريال</span></li>
+            <li><span class="n">قص موديل للأطفال</span><span class="d"></span><span class="p"><bdi>65</bdi> ريال</span></li>
+            <li><span class="n">حمام كريمي للأطفال</span><span class="d"></span><span class="p"><bdi>65</bdi> ريال</span></li>
+          </ul>
+        </div></div>
+      </div>
+
+      <aside class="menu-aside">
+        <div class="bezel"><div class="core">
+          <h3>ما لقيتِ خدمتك؟</h3>
+          <p>القائمة الكاملة فيها أكثر من <bdi>100</bdi> خدمة، من الصبغات إلى الرموش الدائمة.</p>
+          <a class="full-menu" href="https://ugc.production.linktr.ee/5c7c6044-18e3-4e28-8c75-357230668e1d_Glance-Menu-edit.pdf" target="_blank" rel="noopener"><i class="ph-light ph-file-text" aria-hidden="true"></i>قائمة الأسعار كاملة <span lang="en">(PDF)</span></a>
+          <p class="vat">الأسعار شاملة ضريبة القيمة المضافة، حسب قائمة المركز المنشورة.</p>
+          <a class="btn btn-primary" href="https://wa.me/966566933756?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%82%D9%84%D8%A7%D9%86%D8%B3%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" rel="noopener">احجزي عبر واتساب <span class="ic"><i class="ph-light ph-arrow-left" aria-hidden="true"></i></span></a>
+        </div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sig" id="hammam">
+  <div class="wrap">
+    <div class="sig-img">
+      <div>
+        <!-- replace with client photos -->
+        <img src="assets/details.jpg" alt="أدوات عناية على سطح حجري: زيوت في قوارير كهرمانية، حناء، ومنشفة قطنية" loading="lazy" width="1254" height="1254">
+      </div>
+    </div>
+    <div>
+      <h2>الحمام المغربي</h2>
+      <p class="body">تقشير كامل للجسم على الطريقة المغربية. اختاري الكلاسيك، أو زيدي عليه حمامًا كريميًا واستشوار.</p>
+      <div class="duo">
+        <div><b>كلاسيك</b><span>حمام مغربي تقليدي</span><strong><bdi>200</bdi> ريال</strong></div>
+        <div><b><span lang="en">VIP</span></b><span>مع حمام كريمي للشعر واستشوار</span><strong><bdi>350</bdi> ريال</strong></div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://wa.me/966566933756?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%82%D9%84%D8%A7%D9%86%D8%B3%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%AD%D9%85%D8%A7%D9%85%20%D9%85%D8%BA%D8%B1%D8%A8%D9%8A" target="_blank" rel="noopener">احجزي الحمام المغربي <span class="ic"><i class="ph-light ph-arrow-left" aria-hidden="true"></i></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <h2 id="why-h">ليش قلانس؟</h2>
+    <ol>
+      <li><span class="k"><bdi>+100</bdi></span><div><h3>خدمة في قائمة واحدة</h3><p>من غسيل الشعر إلى الرموش الدائمة والمساج، وكل سعر منشور وشامل للضريبة قبل ما تحجزين.</p></div></li>
+      <li><span class="k k-brands" lang="en" dir="ltr"><span>Greentech ·</span> <span>L'Oréal ·</span> <span>Schwarzkopf ·</span> <span>Emi</span></span><div><h3>منتجات تعرفين أسماءها</h3><p>منتجات <span lang="en">Greentech</span> الفرنسية للبشرة، و&nbsp;<span lang="en">L'Oréal</span> و&nbsp;<span lang="en">Schwarzkopf</span> للشعر، و&nbsp;<span lang="en">Emi</span> للأظافر.</p></div></li>
+      <li><span class="k">حمام مغربي</span><div><h3>كلاسيك أو&nbsp;<span lang="en">VIP</span></h3><p>من <bdi>200</bdi> ريال، والـ <span lang="en">VIP</span> يشمل حمامًا كريميًا للشعر واستشوار.</p></div></li>
+      <li><span class="k">وللصغيرات</span><div><h3>قائمة خاصة بالأطفال</h3><p>منيكير وبديكير وقص وحمام كريمي، وقص أطراف الشعر للأطفال بـ <bdi>35</bdi> ريال.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="gallery" aria-labelledby="g-h">
+  <div class="wrap">
+    <div class="head"><h2 id="g-h">من داخل المركز</h2></div>
+    <div class="g-grid">
+      <div class="bezel g-a"><div class="core">
+        <!-- replace with client photos -->
+        <img src="assets/hair.jpg" alt="تصفيف شعر طويل بالاستشوار والفرشاة الدائرية" loading="lazy" width="1370" height="1148">
+      </div></div>
+      <div class="bezel g-b"><div class="core">
+        <!-- replace with client photos -->
+        <img src="assets/nails.jpg" alt="جلسة منيكير بطلاء بلون البيج" loading="lazy" width="1370" height="1148">
+      </div></div>
+    </div>
+    <p class="g-cap">صور توضيحية للنموذج، تُستبدل بصور المركز.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <h2>موعدك على بُعد رسالة</h2>
+    <p class="lede">راسلينا على واتساب بالخدمة واليوم اللي يناسبك، ونأكد لك الموعد.</p>
+    <div class="ctas">
+      <a class="btn btn-light" href="https://wa.me/966566933756?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%82%D9%84%D8%A7%D9%86%D8%B3%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" rel="noopener">احجزي عبر واتساب <span class="ic"><i class="ph-light ph-whatsapp-logo" aria-hidden="true"></i></span></a>
+      <a class="btn btn-line-light" href="tel:+966566933756">اتصلي بنا <span class="ic"><i class="ph-light ph-phone" aria-hidden="true"></i></span></a>
+    </div>
+    <div class="info">
+      <div>
+        <h3>العنوان</h3>
+        <p>طريق الأمير سعد بن عبدالرحمن الأول، حي الفيحاء، الرياض</p>
+        <a class="mini" href="https://www.google.com/maps/search/?api=1&amp;query=Glance%20beauty%20center%20Al%20Fayha%20Riyadh" target="_blank" rel="noopener"><i class="ph-light ph-map-trifold" aria-hidden="true"></i>افتحي في خرائط Google</a>
+      </div>
+      <div>
+        <h3>الهاتف وواتساب</h3>
+        <p><a href="tel:+966566933756" dir="ltr"><bdi>056 693 3756</bdi></a></p>
+        <a class="mini" href="mailto:glance_center@hotmail.com"><i class="ph-light ph-envelope-simple" aria-hidden="true"></i><bdi>glance_center@hotmail.com</bdi></a>
+      </div>
+      <div>
+        <h3>تابعينا</h3>
+        <div class="social">
+          <a href="https://www.instagram.com/glancecenter" target="_blank" rel="noopener" aria-label="إنستغرام"><i class="ph-light ph-instagram-logo" aria-hidden="true"></i></a>
+          <a href="https://www.tiktok.com/@glance_center" target="_blank" rel="noopener" aria-label="تيك توك"><i class="ph-light ph-tiktok-logo" aria-hidden="true"></i></a>
+          <a href="https://www.snapchat.com/add/glance_sa" target="_blank" rel="noopener" aria-label="سناب شات"><i class="ph-light ph-snapchat-logo" aria-hidden="true"></i></a>
+          <a href="https://x.com/glance_center" target="_blank" rel="noopener" aria-label="إكس"><i class="ph-light ph-x-logo" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>نموذج مقترح لموقع مركز قلانس — للعرض فقط. الأسعار والعنوان من مصادر المركز المنشورة، والصور توضيحية.</p>
+</footer>
+
+<script>
+// tabs: without JS every panel stays visible
+(() => {
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const cta = document.querySelector('.menu-aside .btn-primary');
+  const show = t => { tabs.forEach(x => {
+    const on = x === t;
+    x.setAttribute('aria-selected', on);
+    x.tabIndex = on ? 0 : -1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+  });
+  cta.href = 'https://wa.me/966566933756?text=' + encodeURIComponent('مرحبًا قلانس، أبغى أحجز من قسم ' + t.textContent.trim());
+};
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { show(t); t.scrollIntoView({block: 'nearest', inline: 'nearest'}); });
+    t.addEventListener('keydown', e => {
+      // RTL: ArrowLeft moves forward
+      const d = {ArrowLeft: 1, ArrowRight: -1}[e.key];
+      if (!d) return;
+      const n = tabs[(i + d + tabs.length) % tabs.length];
+      show(n); n.focus(); n.scrollIntoView({block: 'nearest', inline: 'nearest'});
+    });
+  });
+  show(tabs[0]);
+  // nav tucks up once the pitch strip scrolls away
+  const nav = document.getElementById('nav');
+  new IntersectionObserver(([e]) => nav.classList.toggle('stuck', !e.isIntersecting))
+    .observe(document.querySelector('.pitch'));
+})();
+</script>
+</body>
+</html>

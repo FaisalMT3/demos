@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قاعة ليالي العرب للاحتفالات | حي الخليج، الرياض</title>
+<meta name="description" content="قاعة ليالي العرب في حي الخليج بالرياض: قاعتان منفصلتان للرجال والنساء حتى 500 ضيف لكل قسم، مع العشاء والتنسيق. نموذج مقترح للعرض فقط.">
+<meta name="theme-color" content="#0E1231">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0E1231;        /* the canvas: one continuous night */
+  --night-deep:#090C22;
+  --raised:#161B45;       /* lit panels: form, visit card */
+  --ink:#EDEEF6;          /* moonlight */
+  --muted:#AEB3D1;
+  --line:#2A3163;
+  --lantern:#F2A93E;      /* the one accent: lantern flame */
+  --on-lantern:#1B1204;
+  --glow:rgba(242,169,62,.16);
+  --display:"Aref Ruqaa", "Noto Naskh Arabic", serif;
+  --body:"Rubik", system-ui, "Noto Sans Arabic", sans-serif;
+  --wrap:min(1180px, 100% - 2.5rem);
+  --sec:clamp(5rem, 11vw, 8.5rem);
+  /* z-scale: 0 canvas light, 1 content, 2 stage copy, 5 header */
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--night);color-scheme:dark;scroll-behavior:smooth}
+body{font-family:var(--body);font-size:1.0625rem;line-height:1.8;color:var(--ink);background:var(--night);overflow-x:clip;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.3em;text-decoration-thickness:1px}
+::selection{background:var(--lantern);color:var(--on-lantern)}
+:focus-visible{outline:2px solid var(--lantern);outline-offset:3px;border-radius:4px}
+html{scrollbar-color:var(--line) var(--night-deep)}
+bdi{unicode-bidi:isolate}
+.num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+
+/* lantern light on the canvas: drifts down as the night goes on */
+body::before{content:"";position:fixed;inset:-20vh -10vw auto;height:90vh;pointer-events:none;z-index:0;
+  background:radial-gradient(60% 55% at 70% 30%, var(--glow), transparent 70%)}
+@supports (animation-timeline: scroll()){
+  body::before{animation:drift linear both;animation-timeline:scroll(root)}
+  @keyframes drift{to{transform:translateY(55vh);opacity:.55}}
+}
+main,header,footer,.strip{position:relative;z-index:1}
+
+.strip{background:var(--night-deep);color:var(--muted);font-size:.8125rem;text-align:center;padding:.45rem 1rem;border-bottom:1px solid var(--line)}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:var(--wrap);margin-inline:auto;min-height:72px}
+.mark{font-family:var(--display);font-weight:700;font-size:1.75rem;line-height:1.4;text-decoration:none;color:var(--ink)}
+.top nav{display:flex;gap:1.75rem;font-size:.9375rem;color:var(--muted)}
+.top nav a{text-decoration:none;padding-block:.75rem}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:760px){.top nav{display:none}.top .btn{display:none}}
+
+/* buttons: pills only */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:48px;padding:.7rem 1.4rem;border-radius:999px;font-weight:500;font-size:1rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .25s,box-shadow .25s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-lantern{background:var(--lantern);color:var(--on-lantern);box-shadow:0 8px 20px -8px rgba(3,4,14,.8)}
+.btn-lantern:hover{transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(3,4,14,.9)}
+.btn-ghost{border-color:rgba(237,238,246,.35);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(237,238,246,.06)}
+.btn:active{transform:translateY(1px)}
+.btn-sm{min-height:44px;padding:.5rem 1.1rem;font-size:.9375rem}
+
+/* ---------- stage: the doorway opens ---------- */
+.stage{position:relative}
+.stage-sentinel{position:absolute;top:0;inset-inline:0;height:calc(100dvh + 45vh);pointer-events:none}
+.stage-pin{position:relative;min-height:calc(100dvh - 110px);display:grid}
+.window{position:absolute;inset:var(--win);border-radius:var(--r) var(--r) 0 0;overflow:hidden;
+  background:radial-gradient(50% 45% at 50% 55%, rgba(242,169,62,.35), transparent 70%), var(--night-deep)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.window::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(9,12,34,.92) 0%, rgba(9,12,34,.35) 32%, transparent 55%);opacity:0}
+.hero-copy{position:relative;z-index:2;align-self:center;padding-block:2.5rem}
+.hero-copy h1{font-family:var(--display);font-weight:700;font-size:clamp(3rem, 7.4vw, 6rem);line-height:1.45;text-wrap:balance}
+.hero-copy p{color:var(--muted);max-width:30ch;margin-top:1rem;font-size:1.125rem}
+.hero-copy .ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.stage-caption{position:absolute;z-index:2;inset-inline:0;bottom:0;width:var(--wrap);margin-inline:auto;padding-block-end:clamp(2rem,6vh,4rem);opacity:0;pointer-events:none}
+.stage-caption h2{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.75rem);line-height:1.4}
+.stage-caption p{color:var(--ink);opacity:.85;max-width:40ch}
+
+/* desktop: copy on the reading side, the arch on the far side */
+@media (min-width:900px){
+  .stage-pin{grid-template-columns:var(--wrap);justify-content:center}
+  .hero-copy{max-width:44%}
+  /* the arch window sits on the inline-end side (left in RTL) */
+  .window{inset-block:6% 7%;inset-inline-start:50%;inset-inline-end:6vw;--r:21vw}
+}
+@media (max-width:899px){
+  .stage-pin{grid-template-rows:auto 1fr;min-height:calc(100dvh - 104px)}
+  .hero-copy{width:var(--wrap);margin-inline:auto;padding-block:1.5rem 1rem;align-self:start}
+  .hero-copy h1{font-size:clamp(2.6rem, 12vw, 3.6rem);line-height:1.5}
+  .hero-copy p{font-size:1rem;margin-top:.5rem}
+  .hero-copy .ctas{margin-top:1.25rem}
+  .hero-copy .ctas .btn{flex:1 1 auto}
+  .window{--win:var(--copy-h, 52%) 5% 2.5%;--r:45vw}
+}
+
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .stage{height:250vh;view-timeline:--stage block}
+    .stage-pin{position:sticky;top:0;height:100dvh;min-height:0}
+    .window{animation:open linear both;animation-timeline:--stage;animation-range:contain 0% contain 55%}
+    .window::after{animation:shade linear both;animation-timeline:--stage;animation-range:contain 35% contain 65%}
+    .hero-copy{animation:recede linear both;animation-timeline:--stage;animation-range:contain 0% contain 30%}
+    .stage-caption{animation:arrive linear both;animation-timeline:--stage;animation-range:contain 55% contain 75%}
+    @keyframes open{to{inset:0;border-radius:0}}
+    @keyframes shade{to{opacity:1}}
+    @keyframes recede{to{opacity:0;transform:translateY(-6vh);filter:blur(6px);visibility:hidden}}
+    @keyframes arrive{from{opacity:0;transform:translateY(3vh)}to{opacity:1;transform:none}}
+  }
+}
+
+/* ---------- sections ---------- */
+.sec{padding-block:var(--sec)}
+.wrap{width:var(--wrap);margin-inline:auto}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,5.2vw,3.9rem);line-height:1.45;text-wrap:balance}
+h3{font-size:1.25rem;font-weight:700;line-height:1.5}
+.lede{color:var(--muted);max-width:52ch;margin-top:.75rem;font-size:1.125rem}
+
+/* proof: quotes hang like lanterns */
+.proof .score{font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.6;max-width:40ch;margin-top:.5rem}
+.proof .score strong{font-family:var(--body);font-weight:700;color:var(--lantern);font-size:1.9em;line-height:1;vertical-align:-.1em;margin-inline-end:.2rem}
+.hang{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,3rem);margin-top:clamp(2.5rem,5vw,4rem);list-style:none;padding:0}
+.hang li{position:relative;padding-top:4.25rem}
+.hang li:nth-child(2){margin-top:3rem}
+.hang li:nth-child(3){margin-top:1.25rem}
+.hang li::before{content:"";position:absolute;top:0;inset-inline-start:11px;width:1px;height:3.2rem;background:linear-gradient(var(--line),var(--lantern))}
+.hang .star{position:absolute;top:3rem;inset-inline-start:0;width:23px;height:23px;color:var(--lantern);filter:drop-shadow(0 0 10px rgba(242,169,62,.8))}
+.hang blockquote{font-size:clamp(1.125rem,1.6vw,1.375rem);line-height:1.85}
+.hang cite{display:block;margin-top:.75rem;font-style:normal;color:var(--muted);font-size:.875rem}
+@media (max-width:760px){.hang{grid-template-columns:1fr}.hang li:nth-child(n){margin-top:0}}
+
+/* halls: two arched windows */
+.halls-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);margin-top:clamp(2.5rem,5vw,4rem)}
+.hall:nth-child(2){margin-top:clamp(0rem,8vw,7rem)}
+.arch{position:relative;border-radius:999px 999px 0 0;overflow:hidden;aspect-ratio:4/5;background:radial-gradient(50% 40% at 50% 60%, rgba(242,169,62,.3), transparent 70%), var(--night-deep);box-shadow:0 30px 60px -30px rgba(3,4,14,.9)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.hall .figure{display:flex;align-items:baseline;gap:.6rem;margin-top:1.5rem}
+.hall .figure .num{font-size:clamp(3rem,6vw,4.5rem);font-weight:700;line-height:1;color:var(--lantern)}
+.hall .figure span:last-child{color:var(--muted)}
+.hall h3{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.4rem);margin-top:.5rem}
+.hall p{color:var(--muted);max-width:44ch;margin-top:.5rem}
+.note{margin-top:clamp(2.5rem,5vw,3.5rem);color:var(--muted);border-top:1px solid var(--line);padding-top:1.25rem;max-width:60ch}
+@media (max-width:760px){.halls-grid{grid-template-columns:1fr}.hall:nth-child(2){margin-top:0}}
+
+/* coordination: one wide statement */
+.craft{text-align:center}
+.craft h2{font-size:clamp(2.8rem,8vw,6rem)}
+.craft .lede{margin-inline:auto}
+.craft ul{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2.25rem;list-style:none;padding:0;margin-top:2.25rem;font-size:1.125rem}
+.craft li{display:inline-flex;align-items:center;gap:.6rem}
+.craft li svg{width:14px;height:14px;color:var(--lantern)}
+
+/* dinner: wide arch, text laid over its foot */
+.feast .wide{position:relative;border-radius:50vw 50vw 0 0 / 22vw 22vw 0 0;overflow:hidden;aspect-ratio:16/8;background:var(--night-deep)}
+.feast .wide img{width:100%;height:100%;object-fit:cover}
+.feast .wide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, var(--night) 2%, transparent 45%)}
+.feast .body{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(1.5rem,4vw,4rem);margin-top:-3rem;position:relative}
+.feast dl{display:grid;gap:1rem;align-content:start;padding-top:3.4rem}
+.feast dt{font-weight:700}
+.feast dd{color:var(--muted)}
+@media (max-width:760px){.feast .wide{aspect-ratio:4/3;border-radius:50vw 50vw 0 0 / 40vw 40vw 0 0}.feast .body{grid-template-columns:1fr;margin-top:-1.5rem}.feast dl{padding-top:0}}
+
+/* team: grouped columns */
+.team-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);margin-top:clamp(2rem,4vw,3rem)}
+.team-cols h3{color:var(--lantern);font-size:1.0625rem;padding-bottom:.75rem;border-bottom:1px solid var(--line)}
+.team-cols ul{list-style:none;padding:0;margin-top:.75rem;display:grid;gap:.4rem}
+@media (max-width:760px){.team-cols{grid-template-columns:1fr}}
+
+/* occasions: a row of lit names */
+.occ ul{display:flex;gap:.75rem;list-style:none;padding:0;margin-top:2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem;scrollbar-width:thin}
+.occ li{flex:none;scroll-snap-align:start;border:1px solid var(--line);border-radius:999px;padding:.6rem 1.3rem;white-space:nowrap;background:rgba(22,27,69,.6)}
+.occ li:first-child{border-color:var(--lantern);color:var(--lantern)}
+@media (min-width:900px){.occ ul{flex-wrap:wrap;overflow:visible}}
+
+/* booking */
+.book-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.panel{background:var(--raised);border:1px solid var(--line);border-radius:28px;padding:clamp(1.25rem,3vw,2.25rem)}
+form{display:grid;gap:1.1rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+label,.legend{display:block;font-size:.9375rem;font-weight:500;margin-bottom:.4rem}
+input,select{width:100%;min-height:48px;background:var(--night-deep);border:1px solid var(--line);border-radius:14px;padding:.6rem .9rem;color:var(--ink)}
+input::placeholder{color:#8C92B8}
+input:focus-visible,select:focus-visible{outline:2px solid var(--lantern);outline-offset:1px}
+input[aria-invalid="true"]{border-color:#F08A7E}
+.err{color:#F6A196;font-size:.875rem;margin-top:.35rem;min-height:1.2em}
+fieldset{border:0;padding:0;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips label{margin:0}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:.45rem 1.1rem;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-weight:400;transition:background-color .2s,border-color .2s}
+.chips input:checked+span{background:var(--lantern);border-color:var(--lantern);color:var(--on-lantern);font-weight:500}
+.chips input:focus-visible+span{outline:2px solid var(--lantern);outline-offset:2px}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:.25rem}
+.form-foot small{color:var(--muted);font-size:.875rem}
+@media (max-width:899px){.book-grid{grid-template-columns:1fr}}
+.direct{margin-top:2rem;display:grid;gap:.75rem;justify-items:start}
+.direct a.tel{display:inline-flex;align-items:center;min-height:44px;font-size:1.5rem;font-weight:700;text-decoration:none}
+footer a[href^="tel:"]{display:inline-flex;align-items:center;min-height:44px}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem)}
+.facts{display:grid;gap:1.4rem;margin-top:2rem}
+.facts > div{display:grid;grid-template-columns:28px 1fr;gap:.9rem;align-items:start}
+.facts svg{width:24px;height:24px;color:var(--lantern);margin-top:.2rem}
+.facts dt{font-weight:700}
+.facts dd{color:var(--muted)}
+.mapcard{align-self:start}
+.mapcard .place{font-family:var(--display);font-size:1.9rem;line-height:1.5}
+.mapcard p{color:var(--muted);margin-top:.5rem}
+.mapcard .btn{margin-top:1.5rem}
+@media (max-width:760px){.visit-grid{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding-block:2.5rem 3rem;color:var(--muted);font-size:.9375rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center}
+footer .name{font-family:var(--display);font-size:1.4rem;color:var(--ink);line-height:1.5}
+footer .social{display:flex;gap:.5rem}
+footer .social a{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:999px}
+footer .social a:hover{border-color:var(--lantern);color:var(--lantern)}
+footer .social svg{width:20px;height:20px}
+footer .disclaimer{flex-basis:100%;font-size:.8125rem}
+
+/* mobile sticky booking bar, hidden while the form is on screen */
+.dock{position:fixed;z-index:5;inset-inline:0;bottom:0;display:none;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(9,12,34,.94);border-top:1px solid var(--line)}
+.dock .btn{flex:1;white-space:nowrap}.dock .btn-ghost{flex:0 0 auto}
+@media (max-width:760px){.dock{display:flex}body{padding-bottom:72px}}
+.dock[hidden]{display:none}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Tabler icons (MIT), stroke 1.75 -->
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></symbol>
+    <symbol id="i-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M11 7l0 8l4 0l4 5"/><path d="M11 11l5 0"/><path d="M7 11.5a5 5 0 1 0 6 7.5"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z"/><path d="M3 10l18 0"/><path d="M7 15l.01 0"/><path d="M11 15l2 0"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M16.5 7.5v.01"/></symbol>
+    <symbol id="i-tt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z"/></symbol>
+    <!-- eight-point star: two squares, the lantern's cut-out -->
+    <symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h14v14H5z M12 2.1l9.9 9.9-9.9 9.9L2.1 12z"/></symbol>
+  </defs>
+</svg>
+
+<div class="strip">نموذج مقترح لموقع قاعة ليالي العرب — للعرض فقط</div>
+
+<header>
+  <div class="top">
+    <a class="mark" href="#top">ليالي العرب</a>
+    <nav aria-label="أقسام الصفحة">
+      <a href="#halls">القاعتان</a>
+      <a href="#feast">العشاء</a>
+      <a href="#visit">الموقع</a>
+    </nav>
+    <a class="btn btn-lantern btn-sm" href="#book">احجز عبر واتساب</a>
+  </div>
+</header>
+
+<main>
+  <section class="stage" id="top" aria-labelledby="hero-title">
+    <div class="stage-sentinel" id="stageSentinel" aria-hidden="true"></div>
+    <div class="stage-pin" id="pin">
+      <div class="window">
+        <!-- replace with client photos / video of the women's hall -->
+        <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      </div>
+      <div class="hero-copy" id="copy">
+        <h1 id="hero-title">ليلة من ليالي العمر</h1>
+        <p>قاعتان منفصلتان للرجال والنساء في حي الخليج بالرياض، تتسع كل منهما حتى <bdi class="num">500</bdi> ضيف، والتنسيق على ذوقكم.</p>
+        <div class="ctas">
+          <a class="btn btn-lantern" href="#book"><svg aria-hidden="true"><use href="#i-wa"/></svg>احجز عبر واتساب</a>
+          <a class="btn btn-ghost" href="tel:+966510010977"><svg aria-hidden="true"><use href="#i-phone"/></svg>اتصل بنا</a>
+        </div>
+      </div>
+      <div class="stage-caption" aria-hidden="true">
+        <h2>قاعة النساء</h2>
+        <p>إضاءة حالمة، ومسرح وكوشة مضاءة.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec proof" aria-labelledby="proof-title">
+    <div class="wrap">
+      <h2 id="proof-title">ماذا قالوا بعد ليلتهم</h2>
+      <p class="score"><strong class="num">4.0</strong> من <bdi class="num">5</bdi> في أكثر من <bdi class="num">1,800</bdi> تقييم على خرائط قوقل.</p>
+      <ul class="hang">
+        <li>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <blockquote>«الكوشة والقاعه كلها صارت تجنن من تنسيق وابداع المشرفة… كانت الليلة من اجمل ليالي العمر»</blockquote>
+          <cite>تقييم على خرائط قوقل</cite>
+        </li>
+        <li>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <blockquote>«تعامل طيب والعشاء لذيذ والقاعه نظيفه ومرتبه…»</blockquote>
+          <cite>تقييم على خرائط قوقل</cite>
+        </li>
+        <li>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <blockquote>«قاعه جميله… تنسيق المنسقة… اهتمت بالتفاصيل مثل ماحبيت»</blockquote>
+          <cite>تقييم على خرائط قوقل</cite>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="halls" aria-labelledby="halls-title" style="padding-top:0">
+    <div class="wrap">
+      <h2 id="halls-title">قاعتان، ولكل قسم ليلته</h2>
+      <div class="halls-grid">
+        <article class="hall">
+          <div class="arch">
+            <!-- replace with client photos -->
+            <img src="assets/kosha.jpg" alt="كوشة العروس بين الورد والفوانيس (صورة توضيحية)" loading="lazy" width="1122" height="1402">
+          </div>
+          <div class="figure"><span>حتى</span><span class="num">500</span><span>ضيفة</span></div>
+          <h3>قاعة النساء</h3>
+          <p>مسرح وكوشة مضاءة، ومدخل مستقل للعروس وغرفة لتجهيزها، ودرج للزفة.</p>
+        </article>
+        <article class="hall">
+          <div class="arch">
+            <!-- replace with client photos -->
+            <img src="assets/majlis.jpg" alt="قاعة الرجال بجلساتها وأباريق القهوة (صورة توضيحية)" loading="lazy" width="1400" height="933" style="object-position:40% 50%">
+          </div>
+          <div class="figure"><span>حتى</span><span class="num">500</span><span>ضيف</span></div>
+          <h3>قاعة الرجال</h3>
+          <p>أثاث فخم بتصميم عصري، وجلسات موزعة تترك للضيوف مساحة للحركة، وقهوجية لخدمتهم.</p>
+        </article>
+      </div>
+      <p class="note">يمكن حجز قاعة النساء وحدها أو القسمين معاً، والسعر يختلف حسب القسم ويوم المناسبة.</p>
+    </div>
+  </section>
+
+  <section class="sec craft" aria-labelledby="craft-title" style="padding-top:0">
+    <div class="wrap">
+      <h2 id="craft-title">التنسيق على ذوقكم</h2>
+      <p class="lede">الكوشة وترتيب القاعة من خدمات القاعة، والمنسقة معكم في التفاصيل. و«الترتيب» من أكثر ما يتكرر في تقييمات قوقل.</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#star"/></svg>الكوشة وتنسيق القاعة</li>
+        <li><svg aria-hidden="true"><use href="#star"/></svg>درج الزفة</li>
+        <li><svg aria-hidden="true"><use href="#star"/></svg>غرفة تجهيز العروس</li>
+        <li><svg aria-hidden="true"><use href="#star"/></svg>كيك الزفاف</li>
+        <li><svg aria-hidden="true"><use href="#star"/></svg>نظام صوت</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec feast" id="feast" aria-labelledby="feast-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="wide">
+        <!-- replace with client photos -->
+        <img src="assets/dinner.jpg" alt="بوفيه عشاء فيه ذبيحة على الرز وحلويات شرقية (صورة توضيحية)" loading="lazy" width="1400" height="933">
+      </div>
+      <div class="body">
+        <div>
+          <h2 id="feast-title">العشاء من مطبخ القاعة</h2>
+          <p class="lede">بوفيه مفتوح بأطباق محلية وعالمية، وذبائح تُطهى في القاعة، وحلويات شرقية وغربية.</p>
+        </div>
+        <dl>
+          <div><dt>طوال الحفل</dt><dd>عصائر طازجة ومشروبات ساخنة وباردة.</dd></div>
+          <div><dt>مع العشاء أو بدونه</dt><dd>السعر يشمل العشاء، ويمكن الحجز من دونه.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="team-title" style="padding-top:0">
+    <div class="wrap">
+      <h2 id="team-title">فريق الليلة</h2>
+      <p class="lede">كل من تحتاجونه موجود في القاعة، فتتفرغون لضيوفكم.</p>
+      <div class="team-cols">
+        <div>
+          <h3>في قسم النساء</h3>
+          <ul><li>مشرفة قاعة</li><li>صبابات ومباشرات</li><li>مسؤولة عبايات</li><li>مفتشة جوالات</li><li>عاملات</li></ul>
+        </div>
+        <div>
+          <h3>في قسم الرجال</h3>
+          <ul><li>قهوجية لخدمة الضيوف</li></ul>
+        </div>
+        <div>
+          <h3>للجميع</h3>
+          <ul><li>حراسة أمنية</li><li>مواقف سيارات</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec occ" aria-labelledby="occ-title" style="padding-top:0">
+    <div class="wrap">
+      <h2 id="occ-title">ليست للأعراس فقط</h2>
+      <p class="lede">ويمكن إقامة أكثر من حفل في الوقت نفسه.</p>
+      <ul>
+        <li>ليلة الزواج</li><li>الخطوبة</li><li>ليلة الغمرة</li><li>حفلات التخرج</li><li>استقبال المولود</li><li>أعياد الميلاد</li><li>الاجتماعات والمؤتمرات</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="book" aria-labelledby="book-title" style="padding-top:0">
+    <div class="wrap book-grid">
+      <div>
+        <h2 id="book-title">احجزوا ليلتكم</h2>
+        <p class="lede">الأسعار تختلف حسب القسم واليوم والعشاء. اكتبوا تفاصيل مناسبتكم وتصلنا رسالة جاهزة على واتساب.</p>
+        <div class="direct">
+          <a class="tel" href="tel:+966510010977"><bdi dir="ltr">051 001 0977</bdi></a>
+          <a class="btn btn-ghost btn-sm" href="tel:+966510010977"><svg aria-hidden="true"><use href="#i-phone"/></svg>اتصل بنا</a>
+        </div>
+      </div>
+      <div class="panel">
+        <form id="bookForm" novalidate>
+          <div class="row2">
+            <div>
+              <label for="f-name">الاسم</label>
+              <input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
+              <p class="err" id="e-name" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="f-date">تاريخ المناسبة</label>
+              <input id="f-date" name="date" type="date" required aria-describedby="e-date">
+              <p class="err" id="e-date" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="row2">
+            <div>
+              <label for="f-occ">المناسبة</label>
+              <select id="f-occ" name="occ">
+                <option>ليلة الزواج</option><option>الخطوبة</option><option>ليلة الغمرة</option><option>حفل تخرج</option><option>استقبال مولود</option><option>عيد ميلاد</option><option>اجتماع أو مؤتمر</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-guests">عدد الضيوف تقريباً</label>
+              <select id="f-guests" name="guests">
+                <option>أقل من 100</option><option>من 100 إلى 300</option><option>من 300 إلى 500</option><option>أكثر من 500</option>
+              </select>
+            </div>
+          </div>
+          <fieldset>
+            <legend class="legend">القسم</legend>
+            <div class="chips">
+              <label><input type="radio" name="side" value="القسمين" checked><span>القسمين</span></label>
+              <label><input type="radio" name="side" value="قاعة النساء فقط"><span>النساء فقط</span></label>
+              <label><input type="radio" name="side" value="أخرى (نوضحها في الرسالة)"><span>أخرى (نوضحها في الرسالة)</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class="legend">العشاء</legend>
+            <div class="chips">
+              <label><input type="radio" name="dinner" value="مع عشاء القاعة" checked><span>مع عشاء القاعة</span></label>
+              <label><input type="radio" name="dinner" value="بدون عشاء"><span>بدون عشاء</span></label>
+            </div>
+          </fieldset>
+          <div class="form-foot">
+            <button class="btn btn-lantern" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>احجز عبر واتساب</button>
+            <small>تفتح واتساب برسالة جاهزة، ولا يُرسل شيء قبل أن تضغط إرسال.</small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="visit" aria-labelledby="visit-title" style="padding-top:0">
+    <div class="wrap visit-grid">
+      <div>
+        <h2 id="visit-title">الطريق إلى القاعة</h2>
+        <dl class="facts">
+          <div><svg aria-hidden="true"><use href="#i-pin"/></svg><div><dt>العنوان</dt><dd>شارع محمد بن أيمن، حي الخليج، الرياض <bdi class="num">13224</bdi></dd></div></div>
+          <div><svg aria-hidden="true"><use href="#i-clock"/></svg><div><dt>المواعيد</dt><dd>الاتصال والاستفسار على مدار الساعة، والحفلات حتى الساعة <bdi class="num">2</bdi> بعد منتصف الليل.</dd></div></div>
+          <div><svg aria-hidden="true"><use href="#i-access"/></svg><div><dt>سهولة الوصول</dt><dd>مدخل ومواقف ودورة مياه مهيأة للكراسي المتحركة.</dd></div></div>
+          <div><svg aria-hidden="true"><use href="#i-card"/></svg><div><dt>الدفع</dt><dd>بطاقات الصراف والائتمان، والدفع بالجوال.</dd></div></div>
+        </dl>
+      </div>
+      <div class="panel mapcard">
+        <p class="place">قاعة درة ليالي العرب للاحتفالات والمؤتمرات</p>
+        <p>للاستفسار والحجز: اتصلوا بنا أو راسلونا على واتساب.</p>
+        <a class="btn btn-lantern" href="https://www.google.com/maps/search/?api=1&amp;query=%D9%82%D8%A7%D8%B9%D8%A9%20%D8%AF%D8%B1%D8%A9%20%D9%84%D9%8A%D8%A7%D9%84%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%20%D9%84%D9%84%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6&amp;query_place_id=ChIJ7bbehwIALz4RUw9J2n7Y8eQ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>افتح في خرائط قوقل</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="name">قاعة ليالي العرب للاحتفالات</p>
+      <p>حي الخليج، الرياض · <a href="tel:+966510010977"><bdi dir="ltr">051 001 0977</bdi></a></p>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/layalialarab_hall/" target="_blank" rel="noopener" aria-label="انستقرام"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+      <a href="https://www.tiktok.com/@layalialarab_hall" target="_blank" rel="noopener" aria-label="تيك توك"><svg aria-hidden="true"><use href="#i-tt"/></svg></a>
+    </div>
+    <p class="disclaimer">نموذج مقترح لموقع قاعة ليالي العرب — للعرض فقط. الصور توضيحية.</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <a class="btn btn-lantern" href="#book"><svg aria-hidden="true"><use href="#i-wa"/></svg>احجز عبر واتساب</a>
+  <a class="btn btn-ghost" href="tel:+966510010977" aria-label="اتصل بنا"><svg aria-hidden="true"><use href="#i-phone"/></svg>اتصل</a>
+</div>
+
+<script>
+// reduced motion: no autoplay
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) { const v = document.querySelector('.hero-video'); v.removeAttribute('autoplay'); v.pause(); }
+
+// mobile: the arch starts just under the hero copy
+const pin = document.getElementById('pin'), copy = document.getElementById('copy');
+const setCopy = () => pin.style.setProperty('--copy-h', (copy.offsetTop + copy.offsetHeight + 8) + 'px');
+new ResizeObserver(setCopy).observe(copy); setCopy();
+
+// hide the dock through the hero stage and while the booking form is on screen
+const dock = document.getElementById('dock');
+const seen = new Set();
+const dockIO = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)); dock.hidden = seen.size > 0; });
+['stageSentinel','book'].forEach(id => dockIO.observe(document.getElementById(id)));
+
+// booking -> WhatsApp
+const form = document.getElementById('bookForm');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const f = new FormData(form);
+  const need = [['name', 'اكتب اسمك حتى نعرف من نخاطب.'], ['date', 'اختر تاريخ المناسبة، ولو تقريبياً.']];
+  let ok = true;
+  for (const [k, msg] of need) {
+    const el = form.elements[k], bad = !String(f.get(k) || '').trim();
+    el.setAttribute('aria-invalid', bad); document.getElementById('e-' + k).textContent = bad ? msg : '';
+    if (bad && ok) { el.focus(); ok = false; }
+  }
+  if (!ok) return;
+  const lines = [
+    'السلام عليكم، أرغب في الاستفسار عن حجز في قاعة ليالي العرب.',
+    'الاسم: ' + f.get('name').trim(),
+    'المناسبة: ' + f.get('occ'),
+    'التاريخ: ⁦' + f.get('date') + '⁩',
+    'القسم: ' + f.get('side'),
+    'عدد الضيوف: ' + f.get('guests'),
+    'العشاء: ' + f.get('dinner')
+  ];
+  window.open('https://wa.me/966510010977?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+});
+</script>
+</body>
+</html>

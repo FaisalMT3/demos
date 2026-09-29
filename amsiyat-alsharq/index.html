@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>قصر أمسيات الشرق للاحتفالات | الجنادرية، شرق الرياض</title>
+<meta name="description" content="قصر أفراح في حي الجنادرية بشرق الرياض: قسم للرجال وقسم للنساء حتى 400 ضيف لكل قسم، ومطبخ يطبخ حتى 12 ذبيحة. نموذج مقترح للعرض فقط.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#C9D2F3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600;700&family=Mada:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+:root{
+  --paper:#FBF9FE; --haze:#EFEAFA; --sky:#C9D2F3; --belt:#F4B8CD; --belt-2:#E994B6;
+  --shade:#5A5DA6; --dusk:#34306F; --night:#1B1736;
+  --ink:#211B45; --muted:#524A7A; --star:#F4F1FC; --star-muted:#BDB6DE;
+  --accent:#6A2BD4; --accent-hover:#5920BA; --accent-night:#C7A8FF;
+  --line:#D9D1EE;
+  --r-panel:32px; --r-pill:999px;
+  --lift:0 30px 60px -28px rgb(52 48 111 / .45);
+  --display:"Lemonada", system-ui, sans-serif;
+  --body:"Mada", system-ui, sans-serif;
+  --wrap:1200px;
+  --pad:clamp(80px, 11vw, 160px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.8;overflow-x:clip}
+button,input,select,textarea{font:inherit;color:inherit}
+img,svg,video{display:block;max-width:100%}
+a{color:var(--accent);text-underline-offset:.3em}
+::selection{background:var(--belt);color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.night :focus-visible{outline-color:var(--accent-night)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.35;margin:0;text-wrap:balance}
+p{margin:0}
+bdi{unicode-bidi:isolate}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;background:var(--ink);color:var(--star);padding:8px 16px;border-radius:var(--r-pill);z-index:30}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* pitch strip */
+.pitch{background:var(--haze);color:var(--ink);font-size:14px;text-align:center;padding:6px 16px;line-height:1.6}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:10px 26px;border-radius:var(--r-pill);font-weight:700;font-size:17px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background-color .2s,transform .15s,color .2s,border-color .2s}
+.btn:active{transform:scale(.98)}
+.btn i{font-size:22px}
+.btn-primary{background:var(--accent);color:var(--paper)}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:rgb(33 27 69 / .08)}
+.night .btn-primary{background:var(--accent-night);color:var(--night)}
+.night .btn-primary:hover{background:#D8C2FF}
+.night .btn-ghost{border-color:var(--star);color:var(--star)}
+.night .btn-ghost:hover{background:rgb(244 241 252 / .1)}
+
+/* header */
+.site-head{position:absolute;inset-inline:0;z-index:5}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
+.brand{font-family:var(--display);font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;line-height:1.3}
+.nav{display:flex;gap:28px;font-weight:500}
+.nav a{color:var(--ink);text-decoration:none;font-size:16px}
+.nav a:hover{text-decoration:underline}
+.head-call{min-height:44px;padding:6px 18px;font-size:15px}
+@media (max-width:860px){.nav{display:none}}
+.brand{white-space:nowrap}
+@media (max-width:520px){.head-call{width:48px;min-height:48px;padding:0}.head-call bdi{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}}
+
+/* hero: the eastern sky at dusk */
+.hero{position:relative;isolation:isolate;overflow:hidden;
+  background:linear-gradient(180deg,var(--sky) 0%,#D9D3F1 30%,#EEC6DC 52%,var(--belt) 66%,#EFA9C4 74%);
+  --earth:clamp(96px,11vw,170px);padding-top:calc(76px + clamp(24px,5vw,72px))}
+.hero .earth{position:absolute;inset-inline:0;bottom:0;height:var(--earth);z-index:-1;
+  background:linear-gradient(180deg,#8E8DC6 0%,var(--shade) 22%,#474A92 60%,#3D3F86 100%);
+  animation:rise 1.6s var(--ease) both .2s}
+.hero .earth::before{content:"";position:absolute;inset-inline:0;top:-40px;height:40px;background:linear-gradient(180deg,transparent,rgb(142 141 198 / .7))}
+@keyframes rise{from{transform:translateY(70%)}to{transform:none}}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center;padding-bottom:calc(var(--earth) + 8px)}
+.hero-grid > :first-child{padding-bottom:clamp(0px,4vw,56px)}
+@media (min-width:861px){.window{margin-bottom:calc(-1 * var(--earth) + 24px)}}
+.hero h1{font-size:clamp(40px,6.4vw,88px);line-height:1.3;color:var(--ink)}
+.hero .lede{margin-top:24px;max-width:34ch;font-size:clamp(18px,1.6vw,21px);color:var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.window{position:relative;aspect-ratio:4/5;border-radius:var(--r-panel);overflow:hidden;box-shadow:var(--lift);
+  background:linear-gradient(180deg,#B8C2EE 0%,#E8BEDA 48%,#F2A6C2 60%,#5A5DA6 64%,#34306F 100%)}
+.window::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgb(251 249 254 / .45);pointer-events:none}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .window{max-width:520px;width:100%;margin-inline:auto}
+}
+
+/* numbers on the horizon */
+.horizon{background:linear-gradient(180deg,#3D3F86 0%,var(--dusk) 100%);color:var(--star)}
+.horizon ul{list-style:none;margin:0;padding:clamp(40px,5vw,64px) 0 clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.horizon ul::before{content:"";position:absolute;inset-inline:0;top:calc(clamp(40px,5vw,64px) + clamp(56px,6vw,84px));height:1px;background:rgb(244 241 252 / .35)}
+.horizon li{display:flex;flex-direction:column;gap:14px}
+.horizon .n{font-family:var(--display);font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1.2;height:clamp(56px,6vw,84px);display:flex;align-items:flex-end}
+.horizon .l{font-size:16px;color:var(--star-muted);max-width:22ch;line-height:1.6}
+.horizon .l strong{color:var(--star);font-weight:700;display:block;font-size:18px}
+@media (max-width:760px){
+  .horizon ul{grid-template-columns:1fr 1fr;row-gap:40px}
+  .horizon ul::before{display:none}
+  .horizon li{border-top:1px solid rgb(244 241 252 / .3);padding-top:12px}
+}
+
+/* section base */
+section{scroll-margin-top:24px}
+.sec{padding-block:var(--pad)}
+.sec-head{max-width:40rem;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head h2{font-size:clamp(30px,3.6vw,48px)}
+.sec-head p{margin-top:16px;color:var(--muted);font-size:19px;max-width:52ch}
+
+/* the evening, hour by hour */
+.hours-strip{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-radius:var(--r-panel);overflow:hidden;box-shadow:var(--lift)}
+.hours-strip li{padding:clamp(28px,3vw,40px) clamp(22px,2.4vw,32px) clamp(36px,4vw,56px);min-height:360px;display:flex;flex-direction:column;gap:14px}
+.hours-strip li:nth-child(1){background:linear-gradient(180deg,#D3D9F5,#E6D8F0)}
+.hours-strip li:nth-child(2){background:linear-gradient(180deg,#F1CBDD,var(--belt))}
+.hours-strip li:nth-child(3){background:linear-gradient(180deg,#4F5299,#43458C);color:var(--star)}
+.hours-strip li:nth-child(4){background:linear-gradient(180deg,#2E2A63,var(--night));color:var(--star)}
+.hours-strip i{font-size:34px}
+.hours-strip .when{font-size:15px;font-weight:700;opacity:.85}
+.hours-strip h3{font-size:clamp(22px,2vw,28px)}
+.hours-strip p{font-size:17px;line-height:1.75}
+.hours-strip li:nth-child(n+3) p{color:#EEEBFA}
+@media (max-width:900px){
+  .hours-strip{grid-template-columns:1fr}
+  .hours-strip li{min-height:0}
+}
+
+/* plan */
+.plan{background:var(--haze)}
+.plan-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,5vw,72px);align-items:start}
+.plan-fig{margin:0;background:var(--paper);border-radius:var(--r-panel);padding:clamp(16px,2.5vw,32px);box-shadow:var(--lift)}
+.plan-fig figcaption{font-size:14px;color:var(--muted);margin-top:12px}
+.plan-fig svg text{font-family:var(--body);font-weight:700}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{display:grid;grid-template-columns:36px 1fr;gap:14px;padding-block:18px;border-top:1px solid var(--line)}
+.facts li:first-child{border-top:0;padding-top:0}
+.facts i{font-size:28px;color:var(--accent)}
+.facts strong{display:block;font-size:19px}
+.facts span{color:var(--muted);font-size:17px}
+@media (max-width:900px){.plan-grid{grid-template-columns:1fr}}
+@media (max-width:600px){.plan-fig svg text{font-size:30px}.plan-fig svg .sec-l{display:none}.plan-fig svg .tight{font-size:25px}}
+
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:1.35fr .65fr;grid-template-rows:auto auto;gap:clamp(14px,2vw,24px)}
+.gal-grid figure{margin:0;position:relative}
+.gal-grid img{width:100%;height:100%;object-fit:cover;border-radius:var(--r-panel);box-shadow:var(--lift)}
+.g-a{grid-row:1 / span 2}
+.g-a img{aspect-ratio:4/3.4}
+.g-b img,.g-c img{aspect-ratio:4/3;height:auto}
+.gal-grid figcaption{font-size:15px;color:var(--muted);margin-top:10px}
+.g-a{display:flex;flex-direction:column}
+.g-a img{flex:1;min-height:0}
+.gal-note{margin-top:28px;color:var(--muted);font-size:16px}
+.gal-note a{font-weight:700;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+@media (max-width:760px){.gal-grid{grid-template-columns:1fr 1fr}.g-a{grid-column:1 / -1;grid-row:auto}.g-a img{aspect-ratio:4/3;flex:none;height:auto}.gal-note a{display:flex;flex-wrap:wrap}}
+
+/* coordination statement */
+.coord{position:relative;overflow:hidden;padding-bottom:0}
+.coord-inner{display:grid;gap:28px}
+.coord .rule{width:clamp(120px,18vw,220px);height:6px;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--shade),var(--belt-2),var(--belt))}
+.coord .coord-line{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.3vw,46px);line-height:1.55;max-width:26ch}
+.coord .note{margin-top:24px;color:var(--muted);max-width:56ch}
+
+/* quote builder */
+.quote{background:linear-gradient(180deg,var(--paper) 0%,#F3E4F0 100%)}
+.quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:start}
+.checklist{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px}
+.checklist li{display:flex;gap:10px;align-items:baseline}
+.checklist i{color:var(--accent);font-size:20px;flex:none;transform:translateY(3px)}
+form{background:var(--paper);border-radius:var(--r-panel);padding:clamp(22px,3vw,40px);box-shadow:var(--lift);display:grid;gap:24px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,label.lbl{display:block;font-weight:700;font-size:16px;margin-bottom:10px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:var(--r-pill);border:1.5px solid var(--line);background:var(--haze);font-size:16px;transition:background-color .2s,border-color .2s,color .2s}
+.chip input:checked+span{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.chip input:focus-visible+span{outline:3px solid var(--accent);outline-offset:3px}
+.chip:hover span{border-color:var(--accent)}
+.field{width:100%;min-height:52px;border-radius:16px;border:1.5px solid var(--line);background:var(--haze);padding:10px 16px}
+.field:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgb(106 43 212 / .25)}
+.hint{font-size:14px;color:var(--muted);margin-top:6px}
+.err{font-size:14px;color:#A3163F;margin-top:6px;min-height:1.6em}
+form .btn{justify-self:start}
+@media (max-width:900px){.quote-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.row2{grid-template-columns:1fr} form .btn{justify-self:stretch}}
+
+/* night: visit */
+.night{background:linear-gradient(180deg,var(--dusk) 0%,var(--night) 38%);color:var(--star)}
+.night a:not(.btn){color:var(--accent-night)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px)}
+.night .sec-head p{color:var(--star-muted)}
+.times{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.times th,.times td{text-align:start;padding:14px 0;font-weight:400;border-bottom:1px solid rgb(244 241 252 / .16)}
+.times th{font-weight:700;padding-inline-end:16px}
+.times td{color:var(--star-muted)}
+.times caption{text-align:start;font-weight:700;font-size:19px;margin-bottom:8px}
+.place{display:grid;gap:22px;align-content:start}
+.place .addr{color:var(--star);font-family:var(--display);font-size:clamp(24px,2.6vw,34px);font-weight:600;line-height:1.5}
+.place p{color:var(--star-muted)}
+.stars-bg{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(1.5px 1.5px at 12% 18%,#fff8 50%,transparent),radial-gradient(1px 1px at 72% 12%,#fff7 50%,transparent),radial-gradient(1.5px 1.5px at 44% 32%,#fff6 50%,transparent),radial-gradient(1px 1px at 88% 40%,#fff6 50%,transparent),radial-gradient(1px 1px at 26% 60%,#fff5 50%,transparent),radial-gradient(1.5px 1.5px at 62% 70%,#fff5 50%,transparent)}
+.night{position:relative}
+.night > .wrap{position:relative}
+@media (max-width:860px){.visit-grid{grid-template-columns:1fr}}
+
+.closing{text-align:center;padding-block:clamp(72px,10vw,140px) clamp(48px,6vw,72px)}
+.closing h2{font-size:clamp(32px,4.6vw,64px);max-width:16ch;margin-inline:auto}
+.closing p{margin:18px auto 0;color:var(--star-muted);max-width:44ch}
+.closing .cta-row{justify-content:center}
+.foot{border-top:1px solid rgb(244 241 252 / .14);padding-block:28px;font-size:14px;color:var(--star-muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<div class="pitch">نموذج مقترح لموقع قصر أمسيات الشرق للاحتفالات، للعرض فقط</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">أمسيات الشرق</a>
+    <nav class="nav" aria-label="أقسام الصفحة">
+      <a href="#evening">ليلة الفرح</a>
+      <a href="#plan">القصر</a>
+      <a href="#quote">عرض السعر</a>
+      <a href="#visit">الموقع والمواعيد</a>
+    </nav>
+    <a class="btn btn-ghost head-call" href="tel:+966500843111" aria-label="اتصال 050 084 3111"><i class="ph ph-phone" aria-hidden="true"></i><bdi dir="ltr">050 084 3111</bdi></a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="earth" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="hero-title">المساء يبدأ<br>من الشرق</h1>
+      <p class="lede">قصر أفراح في حي الجنادرية بشرق الرياض. قسم للرجال وقسم للنساء، حتى <bdi>400</bdi> ضيف في كل قسم.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary js-wa" href="https://wa.me/966500843111?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D9%82%D8%B5%D8%B1%20%D8%A3%D9%85%D8%B3%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%B1%D9%82"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجزوا عبر واتساب</a>
+        <a class="btn btn-ghost" href="tel:+966500843111"><i class="ph ph-phone" aria-hidden="true"></i>اتصال</a>
+      </div>
+    </div>
+    <div class="window">
+      <!-- hero loop: type/graphic-led sky animation (no client photos yet) -->
+      <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+    </div>
+  </div>
+</section>
+
+<div class="horizon" aria-label="أرقام القصر">
+  <div class="wrap">
+    <ul>
+      <li><span class="n"><bdi>400</bdi></span><span class="l"><strong>قسم الرجال</strong>ضيف كحد أعلى</span></li>
+      <li><span class="n"><bdi>400</bdi></span><span class="l"><strong>قسم النساء</strong>ضيفة كحد أعلى</span></li>
+      <li><span class="n"><bdi>12</bdi></span><span class="l"><strong>ذبيحة كحد أعلى</strong>تُطبخ في مطبخ القصر</span></li>
+      <li><span class="n"><bdi>4.2</bdi></span><span class="l"><strong>في خرائط قوقل</strong>من <bdi>1,255</bdi> تقييم</span></li>
+    </ul>
+  </div>
+</div>
+
+<section class="sec" id="evening" aria-labelledby="evening-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="evening-title">ليلة الفرح، من أولها لآخرها</h2>
+      <p>كل ما تحتاجه الليلة تحت سقف واحد، من استقبال الضيوف إلى آخر فنجال.</p>
+    </div>
+    <ol class="hours-strip">
+      <li>
+        <i class="ph ph-door-open" aria-hidden="true"></i>
+        <span class="when">أول الليل</span>
+        <h3>الاستقبال</h3>
+        <p>مدخل للرجال ومدخل للنساء. في قسم الرجال فريق ضيافة يدور بالقهوة والشاي والزنجبيل طوال الحفل.</p>
+      </li>
+      <li>
+        <i class="ph ph-sparkle" aria-hidden="true"></i>
+        <span class="when">قبل الزفة</span>
+        <h3>التجهيز</h3>
+        <p>غرفة لتجهيز العروس بمدخل مستقل، وتنسيق القاعة والكوشة مع منسقة القصر أو منسقتكم.</p>
+      </li>
+      <li>
+        <i class="ph ph-crown-simple" aria-hidden="true"></i>
+        <span class="when">قلب الليل</span>
+        <h3>الزفة</h3>
+        <p>درج لزفة العروس وممر ينتهي بمنصة الكوشة المرتفعة في قسم النساء.</p>
+      </li>
+      <li>
+        <i class="ph ph-cooking-pot" aria-hidden="true"></i>
+        <span class="when">آخر الليل</span>
+        <h3>العشاء</h3>
+        <p>مطبخ القصر يطبخ حتى <bdi>12</bdi> ذبيحة، وبوفيه للنساء بقائمة تختارونها، والحفل يمتد لآخر الليل حسب أنظمة القصر.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec plan" id="plan" aria-labelledby="plan-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="plan-title">قسمان منفصلان، ولكل قسم بابه</h2>
+      <p>مدخل مستقل لكل قسم، وقسم للرجال واسع للاستقبال.</p>
+    </div>
+    <div class="plan-grid">
+      <figure class="plan-fig">
+        <svg viewBox="0 0 640 470" role="img" aria-labelledby="plan-svg-title">
+          <title id="plan-svg-title">مخطط توضيحي للقصر: قسم الرجال، قسم النساء مع درج الزفة ومنصة الكوشة، صالة الطعام، غرفة العروس، المطبخ، وساحة المواقف المقابلة</title>
+          <defs>
+            <linearGradient id="gW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7D3E1"/><stop offset="1" stop-color="#F4B8CD"/></linearGradient>
+            <linearGradient id="gM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6DCF6"/><stop offset="1" stop-color="#BFC8EF"/></linearGradient>
+          </defs>
+          <rect x="16" y="16" width="608" height="318" rx="22" fill="#FBF9FE" stroke="#34306F" stroke-width="3"/>
+          <!-- men's hall (right) -->
+          <rect x="332" y="32" width="276" height="190" rx="14" fill="url(#gM)"/>
+          <text x="470" y="118" text-anchor="middle" direction="rtl" font-size="27" fill="#211B45">قسم الرجال</text>
+          <text class="sec-l" x="470" y="150" text-anchor="middle" direction="rtl" font-size="20" fill="#524A7A">حتى 400 ضيف</text>
+          <!-- women's hall (left) with aisle + stage -->
+          <rect x="32" y="32" width="284" height="190" rx="14" fill="url(#gW)"/>
+          <rect x="120" y="44" width="108" height="30" rx="8" fill="#6A2BD4"/>
+          <text class="sec-l" x="174" y="65" text-anchor="middle" direction="rtl" font-size="18" fill="#FBF9FE">منصة الكوشة</text>
+          <line x1="174" y1="78" x2="174" y2="192" stroke="#FBF9FE" stroke-width="10" stroke-linecap="round"/>
+          <g fill="#E994B6"><circle cx="82" cy="104" r="15"/><circle cx="82" cy="152" r="15"/><circle cx="266" cy="104" r="15"/><circle cx="266" cy="152" r="15"/></g>
+          <text x="174" y="126" text-anchor="middle" direction="rtl" font-size="25" fill="#211B45" stroke="#F6C9DA" stroke-width="6" paint-order="stroke">قسم النساء</text>
+          <g stroke="#34306F" stroke-width="2"><line x1="150" y1="200" x2="198" y2="200"/><line x1="150" y1="207" x2="198" y2="207"/><line x1="150" y1="214" x2="198" y2="214"/></g>
+          <text class="sec-l" x="258" y="213" text-anchor="middle" direction="rtl" font-size="17" fill="#524A7A">درج الزفة</text>
+          <!-- lower rooms -->
+          <rect x="32" y="236" width="284" height="84" rx="14" fill="#F7D3E1"/>
+          <text x="174" y="274" text-anchor="middle" direction="rtl" font-size="21" fill="#211B45">غرفة العروس</text>
+          <text class="sec-l" x="174" y="300" text-anchor="middle" direction="rtl" font-size="17" fill="#524A7A">بمدخل مستقل</text>
+          <rect x="332" y="236" width="172" height="84" rx="14" fill="#E3DDF6"/>
+          <text x="418" y="285" text-anchor="middle" direction="rtl" font-size="22" fill="#211B45">صالة الطعام</text>
+          <rect x="514" y="236" width="94" height="84" rx="14" fill="#5A5DA6"/>
+          <text class="tight" x="561" y="285" text-anchor="middle" direction="rtl" font-size="19" fill="#F4F1FC">المطبخ</text>
+          <!-- entrances -->
+          <g fill="#6A2BD4">
+            <path d="M462 334 l12 -16 l12 16 z"/>
+            <path d="M162 334 l12 -16 l12 16 z"/>
+          </g>
+          <text x="474" y="362" text-anchor="middle" direction="rtl" font-size="17" fill="#211B45">مدخل الرجال</text>
+          <text x="174" y="362" text-anchor="middle" direction="rtl" font-size="17" fill="#211B45">مدخل النساء</text>
+          <!-- parking -->
+          <rect x="16" y="382" width="608" height="72" rx="18" fill="none" stroke="#5A5DA6" stroke-width="2" stroke-dasharray="8 8"/>
+          <text x="320" y="425" text-anchor="middle" direction="rtl" font-size="20" fill="#34306F">ساحة المواقف المقابلة للقصر</text>
+        </svg>
+        <figcaption>مخطط توضيحي فقط، ليس بمقياس ولا يطابق توزيع القصر الفعلي.</figcaption>
+      </figure>
+      <ul class="facts">
+        <li><i class="ph ph-users-three" aria-hidden="true"></i><div><strong>حتى <bdi>400</bdi> ضيف لكل قسم</strong></div></li>
+        <li><i class="ph ph-stairs" aria-hidden="true"></i><div><strong>درج للزفة وممر للعروس</strong><span>ينتهي بمنصة مرتفعة للكوشة في قسم النساء.</span></div></li>
+        <li><i class="ph ph-door" aria-hidden="true"></i><div><strong>غرفة للعروس بمدخل مستقل</strong><span>تتجهز العروس بعيدًا عن الضيوف.</span></div></li>
+        <li><i class="ph ph-speaker-high" aria-hidden="true"></i><div><strong>صوت وإضاءة</strong><span>أنظمة صوت وإضاءة في القاعات، وتكييف مركزي.</span></div></li>
+        <li><i class="ph ph-car-simple" aria-hidden="true"></i><div><strong>ساحة مواقف مقابل القصر</strong></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec gallery" id="gallery" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="gallery-title">شوفوا القاعات</h2>
+      <p>صور توضيحية لأجواء الليلة، وصور القصر الحقيقية على حسابه في إنستقرام.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="g-a">
+        <!-- replace with client photos -->
+        <img src="assets/aisle.jpg" alt="صورة توضيحية: ممر رخامي بين الطاولات إلى منصة الكوشة ودرج الزفة في قسم النساء" width="1200" height="900" decoding="async">
+        <figcaption>قسم النساء: الممر ومنصة الكوشة</figcaption>
+      </figure>
+      <figure class="g-b">
+        <!-- replace with client photos -->
+        <img src="assets/facade.jpg" alt="صورة توضيحية: واجهة قصر أفراح مضاءة وقت المغرب" width="1000" height="1250" decoding="async">
+        <figcaption>الواجهة وقت المغرب</figcaption>
+      </figure>
+      <figure class="g-c">
+        <!-- replace with client photos -->
+        <img src="assets/coffee.jpg" alt="صورة توضيحية: دلال قهوة وفناجيل وتمر في مجلس الرجال" width="1200" height="900" decoding="async">
+        <figcaption>ضيافة قسم الرجال</figcaption>
+      </figure>
+    </div>
+    <p class="gal-note">الصور توضيحية وليست من القصر. <a href="https://www.instagram.com/omsiat_alsharq/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i> شوفوا صور القصر على إنستقرام <bdi dir="ltr">@omsiat_alsharq</bdi></a></p>
+  </div>
+</section>
+
+<section class="sec coord" aria-labelledby="coord-title">
+  <div class="wrap coord-inner">
+    <div class="rule" aria-hidden="true"></div>
+    <div>
+      <h2 id="coord-title" class="sr-only">التنسيق</h2>
+      <p class="coord-line">منسقة من القصر تقدر ترتّب القاعة والكوشة والطاولات، وتتابع العاملات من بداية الحفل لآخره.</p>
+      <p class="note">التنسيق هو أكثر ما يشكره الضيوف في تقييماتهم على خرائط قوقل. وإذا عندكم منسقة أو مورّدون من خارج القصر، فالقصر يرحّب بهم. اسألوا عنها في عرض السعر.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec quote" id="quote" aria-labelledby="quote-title">
+  <div class="wrap quote-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <h2 id="quote-title">اطلبوا عرض سعر مكتوب</h2>
+        <p>السعر يختلف بين وسط الأسبوع ونهايته، وحسب الأقسام التي تحجزونها. اختاروا ما تحتاجون وأرسلوا طلبكم على واتساب.</p>
+      </div>
+      <ul class="checklist">
+        <li><i class="ph ph-check-circle" aria-hidden="true"></i>القسمين أو قسم واحد</li>
+        <li><i class="ph ph-check-circle" aria-hidden="true"></i>الطبخ والذبائح والبوفيه</li>
+        <li><i class="ph ph-check-circle" aria-hidden="true"></i>التنسيق والكوشة</li>
+        <li><i class="ph ph-check-circle" aria-hidden="true"></i>العصيرات والماء والعاملات</li>
+      </ul>
+    </div>
+    <form id="quote-form" novalidate>
+      <div class="row2">
+        <div>
+          <label class="lbl" for="occasion">المناسبة</label>
+          <select class="field" id="occasion" name="occasion">
+            <option>زواج</option><option>ملكة</option><option>خطوبة</option><option>تخرج</option><option>استقبال مولود</option><option>مناسبة أخرى</option>
+          </select>
+        </div>
+        <div>
+          <label class="lbl" for="date">التاريخ المبدئي</label>
+          <input class="field" id="date" name="date" type="date">
+          <p class="hint">اختياري</p>
+        </div>
+      </div>
+      <fieldset>
+        <legend>الأقسام</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="sections" value="الرجال والنساء" checked><span>الرجال والنساء</span></label>
+          <label class="chip"><input type="radio" name="sections" value="قسم النساء فقط"><span>النساء فقط</span></label>
+          <label class="chip"><input type="radio" name="sections" value="قسم الرجال فقط"><span>الرجال فقط</span></label>
+        </div>
+      </fieldset>
+      <div class="row2">
+        <div>
+          <label class="lbl" for="guests">عدد الضيوف التقريبي</label>
+          <input class="field" id="guests" name="guests" type="number" inputmode="numeric" min="1" max="800" placeholder="مثلًا 300" dir="ltr" aria-describedby="guests-err">
+          <p class="err" id="guests-err" role="alert"></p>
+        </div>
+        <div>
+          <label class="lbl" for="day">اليوم</label>
+          <select class="field" id="day" name="day">
+            <option>وسط الأسبوع</option><option>نهاية الأسبوع</option><option>لم نحدد بعد</option>
+          </select>
+          <p class="hint">إذا حددتم التاريخ، يُكتفى به</p>
+        </div>
+      </div>
+      <fieldset>
+        <legend>أبغى أعرف هل السعر يشمل</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="extras" value="الطبخ والذبائح"><span>الطبخ والذبائح</span></label>
+          <label class="chip"><input type="checkbox" name="extras" value="بوفيه النساء"><span>بوفيه النساء</span></label>
+          <label class="chip"><input type="checkbox" name="extras" value="التنسيق والكوشة"><span>التنسيق والكوشة</span></label>
+          <label class="chip"><input type="checkbox" name="extras" value="العصيرات والماء"><span>العصيرات والماء</span></label>
+          <label class="chip"><input type="checkbox" name="extras" value="مساعدات للعروس"><span>مساعدات للعروس</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary" type="submit"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>اطلبوا عرض السعر</button>
+    </form>
+  </div>
+</section>
+
+<section class="night" id="visit" aria-labelledby="visit-title">
+  <div class="stars-bg" aria-hidden="true"></div>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <h2 id="visit-title">زوروا القصر قبل الحجز</h2>
+      <p>شوفوا القاعتين بأنفسكم في أوقات الزيارة، أو اتصلوا ونرتّب لكم موعدًا. يُفضّل الاتصال قبل الزيارة.</p>
+    </div>
+    <div class="visit-grid">
+      <table class="times">
+        <caption>ساعات العمل (حسب خرائط قوقل)</caption>
+        <tbody>
+          <tr><th scope="row">الأحد والاثنين والأربعاء</th><td><bdi dir="ltr">10:00</bdi> ص إلى <bdi dir="ltr">10:30</bdi> م</td></tr>
+          <tr><th scope="row">الثلاثاء</th><td><bdi dir="ltr">10:30</bdi> ص إلى <bdi dir="ltr">10:30</bdi> م</td></tr>
+          <tr><th scope="row">الخميس</th><td><bdi dir="ltr">10:30</bdi> ص إلى <bdi dir="ltr">11:00</bdi> م</td></tr>
+          <tr><th scope="row">الجمعة والسبت</th><td><bdi dir="ltr">10:00</bdi> ص إلى <bdi dir="ltr">11:00</bdi> م</td></tr>
+        </tbody>
+      </table>
+      <div class="place">
+        <p class="addr">حي الجنادرية، شرق الرياض</p>
+        <p>الرمز: <bdi dir="ltr">RV39+JV</bdi>، الرياض <bdi dir="ltr">13611</bdi>. ساحة المواقف مقابل القصر.</p>
+        <div class="cta-row" style="margin-top:0">
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=%D9%82%D8%B5%D8%B1%20%D8%A3%D9%85%D8%B3%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%B1%D9%82%20%D9%84%D9%84%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D8%A7%D8%AA&amp;query_place_id=ChIJuY417iWrLz4RzVSkXZXoLgc" target="_blank" rel="noopener"><i class="ph ph-map-pin" aria-hidden="true"></i>افتح في الخرائط</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing">
+      <h2>احجزوا أمسيتكم في الشرق</h2>
+      <p>أرسلوا لنا التاريخ وعدد الضيوف، ونرد عليكم بالتفاصيل.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary js-wa" href="https://wa.me/966500843111"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>احجزوا عبر واتساب</a>
+        <a class="btn btn-ghost" href="tel:+966500843111"><i class="ph ph-phone" aria-hidden="true"></i>اتصال</a>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <span>قصر أمسيات الشرق للاحتفالات، الرياض</span>
+      <span>نموذج مقترح للعرض فقط، ليس الموقع الرسمي للقصر</span>
+    </footer>
+  </div>
+</section>
+</main>
+
+<script>
+(() => {
+  const WA = 'https://wa.me/966500843111?text=';
+  const hello = 'السلام عليكم، أبغى أستفسر عن حجز قصر أمسيات الشرق';
+  document.querySelectorAll('.js-wa').forEach(a => a.href = WA + encodeURIComponent(hello));
+
+  const f = document.getElementById('quote-form');
+  const err = document.getElementById('guests-err');
+  const guests = f.guests;
+  f.querySelectorAll('input[name=sections]').forEach(r => r.addEventListener('change', () => { guests.max = r.value === 'الرجال والنساء' ? 800 : 400; err.textContent = ''; guests.removeAttribute('aria-invalid'); }));
+  guests.addEventListener('input', () => { err.textContent = ''; guests.removeAttribute('aria-invalid'); });
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const n = guests.value.trim();
+    const sec = f.querySelector('input[name=sections]:checked').value;
+    const max = sec === 'الرجال والنساء' ? 800 : 400;
+    if (n && (+n < 1 || +n > max || !Number.isInteger(+n))) {
+      err.textContent = max === 800
+        ? 'اكتبوا عددًا من 1 إلى 800 ضيف للقسمين (حتى 400 لكل قسم)، أو اتركوه فاضي.'
+        : 'القسم الواحد يتسع حتى 400 ضيف. اكتبوا عددًا من 1 إلى 400، أو اختاروا القسمين.';
+      guests.setAttribute('aria-invalid', 'true');
+      guests.focus();
+      return;
+    }
+    const extras = [...f.querySelectorAll('input[name=extras]:checked')].map(i => i.value);
+    const lines = [
+      'السلام عليكم، أبغى عرض سعر مكتوب من قصر أمسيات الشرق:',
+      '- المناسبة: ' + f.occasion.value,
+      '- الأقسام: ' + sec,
+    ];
+    if (!f.date.value) lines.push('- اليوم: ' + f.day.value);
+    if (f.date.value) lines.push('- التاريخ: ⁦' + f.date.value + '⁩');
+    if (n) lines.push('- عدد الضيوف: ⁦' + n + '⁩');
+    if (extras.length) lines.push('- أبغى أعرف هل يشمل: ' + extras.join('، '));
+    lines.push('ممكن توضحون لنا وش يشمله السعر؟ شكرًا');
+    window.open(WA + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>

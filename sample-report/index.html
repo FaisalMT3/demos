@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Pre-launch test report — faisalmt3.github.io</title>
+<style>
+@page{size:A4;margin:16mm}body{font:10.5pt/1.5 system-ui,sans-serif;color:#1a1a1a}h1{font-size:18pt;margin:0}h2{font-size:12.5pt;margin:18px 0 6px;border-bottom:1px solid #ddd;padding-bottom:3px}
+.m{color:#666}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:5px 7px;text-align:left;vertical-align:top}th{background:#f4f4f2}
+.hi,.md,.lo,.ok{font-weight:600;border-radius:3px;padding:1px 6px}.md{background:#fde9c8}.lo{background:#e6eefc}.ok{background:#dcf2e0}
+.shots{display:flex;gap:10px;align-items:flex-start}.shots img{border:1px solid #ccc}code{background:#f4f4f2;padding:0 3px}
+</style>
+<h1>Pre-launch test report</h1>
+<p class="m">Site: <b>https://faisalmt3.github.io/</b> (my own portfolio — real test, used as a sample) · Tested 30 Sep 2026 · Tester: Faisal Almutairi<br>
+Method: Playwright + Chromium 152 on Linux at 1440×900 (desktop) and 375×740 (phone-size viewport), manual review of every link and section. No real phones used.</p>
+
+<h2>Summary</h2>
+<p>2 issues found, both Low, both fixed and re-tested the same day. 1 suspected issue checked and ruled out. No blockers for launch.</p>
+
+<h2>Issues</h2>
+<table><tr><th>#</th><th>Issue</th><th>Where</th><th>Severity</th><th>Steps / evidence</th><th>Fix</th><th>Status</th></tr>
+<tr><td>1</td><td>No favicon: browser requests <code>/favicon.ico</code>, gets 404 on every visit; tab shows a blank icon</td><td>All pages</td><td><span class="lo">Low</span></td><td>Open DevTools console on load → "Failed to load resource: 404". <code>curl /favicon.ico</code> → 404</td><td>Added an inline SVG <code>&lt;link rel="icon"&gt;</code></td><td><span class="ok">Fixed</span></td></tr>
+<tr><td>2</td><td>Top menu links are 20 px tall — below the 24 px minimum target size (WCAG 2.2, 2.5.8)</td><td>Header, desktop</td><td><span class="lo">Low</span></td><td>Measured link boxes: 83×20, 95×20, 66×20</td><td>Vertical padding on menu links → 50 px tall</td><td><span class="ok">Fixed</span></td></tr>
+</table>
+
+<h2>Checked and ruled out</h2>
+<table><tr><th>Suspected</th><th>Result</th></tr>
+<tr><td>Checkout button returns 404 (seen from a script fetch)</td><td>Not a bug: the store redirects scripted requests; in a real browser the checkout page loads with the right product and price.</td></tr>
+<tr><td>Image wider than the phone screen (1020 px)</td><td>Intended: the workflow diagram sits in a swipe box with a "swipe to see it all" hint. Page itself has no sideways scroll.</td></tr>
+</table>
+
+<h2>Passed</h2>
+<table><tr><th>Check</th><th>Result</th></tr>
+<tr><td>Links</td><td>All 22 links work: 5 in-page anchors resolve, 13 outside links load (200), WhatsApp and email links correct</td></tr>
+<tr><td>Layout</td><td>No horizontal scroll at 375 px or 1440 px; Arabic RTL (<code>lang="ar" dir="rtl"</code>) correct; phone number and email shown left-to-right</td></tr>
+<tr><td>Accessibility basics</td><td>All 13 images have Arabic alt text; 0 buttons/links without a name; skip-to-content link present; one H1, logical H2/H3 order</td></tr>
+<tr><td>Speed</td><td>Loaded in ~1.0 s desktop / ~0.9 s phone-size (fast connection); 3.2 MB desktop, 1.4 MB phone-size; below-the-fold images lazy-load</td></tr>
+<tr><td>Search &amp; sharing</td><td>Title, meta description, Open Graph image and viewport tag present</td></tr>
+<tr><td>Console</td><td>No JavaScript errors (only the favicon 404, now fixed)</td></tr>
+</table>
+
+<h2>Screenshots</h2>
+<div class="shots"><img src="assets/desktop.png" style="width:72%"><img src="assets/mobile.png" style="width:24%"></div>
+</html>

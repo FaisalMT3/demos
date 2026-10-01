@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>منصة اختبارات — نموذج عرض</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1116;--panel:#161B22;--line:#262D38;--ink:#E9EDF2;--mute:#8B95A3;--gold:#D4B26A;--ok:#3FB97F;--bad:#E5625C;--flag:#E8A33D;--r:16px}
+*{box-sizing:border-box;margin:0}
+body{font:16px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.demo{background:#000;color:#bbb;text-align:center;font-size:13px;padding:6px}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,40px);border-bottom:1px solid var(--line)}
+.brand{font-weight:700;letter-spacing:.2px}.brand b{color:var(--gold)}
+.tabs{display:flex;gap:6px;background:var(--panel);padding:4px;border-radius:12px}
+.tabs button{background:none;color:var(--mute);padding:6px 14px}.tabs button[aria-selected=true]{background:var(--line);color:var(--ink)}
+main{max-width:1100px;margin:0 auto;padding:clamp(12px,4vw,40px)}
+@media (max-width:520px){header{padding:10px 12px}.brand{font-size:14px}.tabs button{padding:5px 10px}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(18px,3vw,32px)}
+.gold{background:var(--gold);color:#1a1405;font-weight:700;padding:12px 26px}
+.ghost{background:var(--line);color:var(--ink);padding:10px 18px}
+h1{font-size:clamp(26px,4vw,40px);line-height:1.3}
+.muted{color:var(--mute)}
+.start{display:grid;gap:22px;max-width:640px;margin:6vh auto;text-align:center}
+.facts{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}.facts b{display:block;font-size:24px;color:var(--gold)}
+.exam{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:22px;direction:ltr;background:var(--panel);border:1px solid var(--line);padding:6px 14px;border-radius:12px}
+.timer.low{color:var(--bad);border-color:var(--bad)}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-bottom:18px}.bar i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.q{font-size:20px;font-weight:600;margin:6px 0 18px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;text-align:start;background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:14px 16px}
+.opt kbd{display:grid;place-items:center;min-width:30px;height:30px;border-radius:8px;background:var(--line);font:600 14px inherit}
+.opt[aria-pressed=true]{border-color:var(--gold);background:#1d1a12}.opt[aria-pressed=true] kbd{background:var(--gold);color:#1a1405}
+.nav{display:flex;justify-content:space-between;margin-top:22px;gap:10px}
+.side h3{font-size:15px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.grid button{aspect-ratio:1;background:var(--bg);border:1px solid var(--line);color:var(--ink);font-weight:600;position:relative}
+.grid .ans{background:#18241d;border-color:var(--ok)}.grid .cur{outline:2px solid var(--gold)}
+.grid .fl::after{content:"";position:absolute;top:4px;left:4px;width:7px;height:7px;border-radius:50%;background:var(--flag)}
+.legend{display:grid;gap:6px;margin-top:14px;font-size:13px;color:var(--mute)}.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-left:6px;vertical-align:middle;background:var(--c)}
+.flag[aria-pressed=true]{background:#2a2112;color:var(--flag)}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:26px;max-width:420px}
+dialog::backdrop{background:#000a}
+.score{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.ring{--p:0;width:150px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--gold) calc(var(--p)*1%),var(--line) 0)}
+.ring b{display:grid;place-items:center;width:118px;aspect-ratio:1;border-radius:50%;background:var(--panel);font-size:30px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stats div{background:var(--bg);border-radius:12px;padding:12px}.stats b{display:block;font-size:22px}
+.rev{display:grid;gap:12px;margin-top:22px}.meta{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--mute);font-size:14px;margin:4px 0}.rev .item{border-inline-start:4px solid var(--c);background:var(--bg);border-radius:12px;padding:14px 16px}
+table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:start;padding:10px;border-bottom:1px solid var(--line)}th{color:var(--mute);font-weight:500}
+form.add{display:grid;gap:10px;margin-top:18px}input,select,textarea{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.pill{font-size:12px;padding:2px 10px;border-radius:20px;background:var(--line)}
+@media (max-width:820px){.exam{grid-template-columns:1fr}.side{order:-1}.grid{grid-template-columns:repeat(10,minmax(0,1fr));gap:4px}.grid button{border-radius:8px;font-size:13px}.score{grid-template-columns:1fr;justify-items:center}.row{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">نموذج عرض لمنصة اختبارات — الأسئلة والبيانات للتوضيح فقط</div>
+<header>
+  <div class="brand"><b>◆</b> منصة الاختبارات</div>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-v="student">الطالب</button>
+    <button role="tab" aria-selected="false" data-v="admin">لوحة الإدارة</button>
+  </div>
+</header>
+<main id="app"></main>
+<dialog id="dlg"><h3 style="margin-bottom:8px">إنهاء الاختبار؟</h3><p class="muted" id="dlgMsg"></p><div class="nav"><button class="ghost" value="no" id="dlgNo">رجوع</button><button class="gold" id="dlgYes">إنهاء وتسليم</button></div></dialog>
+<script>
+const KEY='quiz-demo-v1';
+const SEED=[
+ {s:'كمي',q:'إذا كان ٣س + ٥ = ٢٠، فما قيمة س؟',o:['٣','٥','٦','١٥'],a:1,e:'٣س = ١٥ ← س = ٥'},
+ {s:'كمي',q:'سعر منتج ٢٠٠ ريال، خُصم منه ١٥٪. كم السعر بعد الخصم؟',o:['١٥٠','١٧٠','١٨٥','١٧٥'],a:1,e:'١٥٪ من ٢٠٠ = ٣٠ ← ٢٠٠ − ٣٠ = ١٧٠'},
+ {s:'كمي',q:'ما العدد التالي في المتتابعة: ٢، ٦، ١٨، ٥٤، ...؟',o:['١٠٨','١٦٢','٧٢','١٤٨'],a:1,e:'كل حد = السابق × ٣ ← ٥٤ × ٣ = ١٦٢'},
+ {s:'كمي',q:'متوسط ٤ أعداد هو ١٢. ما مجموعها؟',o:['٣','١٦','٤٨','٣٦'],a:2,e:'المجموع = المتوسط × العدد = ١٢ × ٤ = ٤٨'},
+ {s:'كمي',q:'مستطيل طوله ٨ سم وعرضه ٥ سم. ما محيطه؟',o:['٤٠ سم','٢٦ سم','١٣ سم','٣٠ سم'],a:1,e:'المحيط = ٢ × (٨ + ٥) = ٢٦'},
+ {s:'لفظي',q:'اختر الكلمة الأقرب لمعنى «الإيجاز»:',o:['الإطالة','الاختصار','الغموض','التكرار'],a:1,e:'الإيجاز: التعبير بأقل الألفاظ'},
+ {s:'لفظي',q:'قلم : كتابة ::',o:['مقص : قص','كتاب : مكتبة','ورق : شجرة','حبر : لون'],a:0,e:'الأداة ووظيفتها'},
+ {s:'لفظي',q:'اختر ضد كلمة «يُسهب»:',o:['يُطيل','يُفصّل','يوجز','يشرح'],a:2,e:'أسهب: أطال، وضدها أوجز'},
+ {s:'لفظي',q:'الكلمة المختلفة عن البقية:',o:['الرياض','جدة','الدمام','النيل'],a:3,e:'النيل نهر، والبقية مدن'},
+ {s:'كمي',q:'إذا قطعت سيارة ١٢٠ كم في ساعة ونصف، فما سرعتها؟',o:['٦٠ كم/س','٨٠ كم/س','٩٠ كم/س','١٠٠ كم/س'],a:1,e:'١٢٠ ÷ ١٫٥ = ٨٠'}
+];
+const L=['أ','ب','ج','د'];
+const db=JSON.parse(localStorage[KEY]||'null')||{bank:SEED,results:[]};
+const save=()=>localStorage[KEY]=JSON.stringify(db);
+const $=s=>document.querySelector(s), app=$('#app');
+const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const fmt=s=>`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+let st=null,tick=null;
+
+function startScreen(){
+  app.innerHTML=`<section class="card start"><span class="pill" style="justify-self:center">اختبار تجريبي</span>
+  <h1>اختبار القدرات العامة — نموذج</h1>
+  <p class="muted">أجب عن الأسئلة قبل انتهاء الوقت. يمكنك التنقل بين الأسئلة، ووضع علامة للمراجعة، والتسليم في أي وقت.</p>
+  <div class="facts"><div><b>${ar(db.bank.length)}</b><span class="muted">سؤال</span></div><div><b>${ar(db.bank.length)}</b><span class="muted">دقيقة</span></div><div><b>٣</b><span class="muted">اختصارات: ١-٤ ← →</span></div></div>
+  <button class="gold" id="go" style="justify-self:center">ابدأ الاختبار</button></section>`;
+  $('#go').onclick=begin;
+}
+function begin(){
+  st={i:0,ans:Array(db.bank.length).fill(null),fl:Array(db.bank.length).fill(false),left:db.bank.length*60,t0:Date.now(),spent:Array(db.bank.length).fill(0),seen:Date.now()};
+  clearInterval(tick);tick=setInterval(()=>{st.left--;const t=$('#tm');if(t){t.textContent=fmt(st.left);t.classList.toggle('low',st.left<60)}if(st.left<=0)finish()},1000);
+  exam();
+}
+function mark(){st.spent[st.i]+=Date.now()-st.seen;st.seen=Date.now()}
+function go(i){if(i<0||i>=db.bank.length)return;mark();st.i=i;exam()}
+function exam(){
+  const q=db.bank[st.i],n=db.bank.length,done=st.ans.filter(x=>x!==null).length;
+  app.innerHTML=`<div class="exam"><section class="card">
+   <div class="top"><span class="muted">السؤال ${ar(st.i+1)} من ${ar(n)} <span class="pill">${q.s}</span></span><span class="timer" id="tm" aria-live="off">${fmt(st.left)}</span></div>
+   <div class="bar"><i style="width:${done/n*100}%"></i></div>
+   <p class="q">${q.q}</p>
+   <div class="opts">${q.o.map((o,k)=>`<button class="opt" aria-pressed="${st.ans[st.i]===k}" data-k="${k}"><kbd>${L[k]}</kbd>${o}</button>`).join('')}</div>
+   <div class="nav"><button class="ghost" id="prev" ${st.i?'':'disabled'}>→ السابق</button>
+   <button class="ghost flag" id="flag" aria-pressed="${st.fl[st.i]}">⚑ ${st.fl[st.i]?'معلّم للمراجعة':'تعليم للمراجعة'}</button>
+   ${st.i<n-1?'<button class="gold" id="next">التالي ←</button>':'<button class="gold" id="end">إنهاء الاختبار</button>'}</div></section>
+   <aside class="card side"><h3>خريطة الأسئلة</h3><div class="grid">${db.bank.map((_,k)=>`<button aria-label="السؤال ${k+1}" class="${st.ans[k]!==null?'ans':''} ${st.fl[k]?'fl':''} ${k===st.i?'cur':''}" data-g="${k}">${ar(k+1)}</button>`).join('')}</div>
+   <div class="legend"><span style="--c:var(--ok)">مُجاب (${ar(done)})</span><span style="--c:var(--flag)">للمراجعة (${ar(st.fl.filter(Boolean).length)})</span><span style="--c:var(--line)">لم يُجب (${ar(n-done)})</span></div>
+   <button class="ghost" id="end2" style="width:100%;margin-top:16px">تسليم الاختبار</button></aside></div>`;
+  app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{st.ans[st.i]=+b.dataset.k;exam()});
+  app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>go(+b.dataset.g));
+  $('#prev').onclick=()=>go(st.i-1);$('#flag').onclick=()=>{st.fl[st.i]=!st.fl[st.i];exam()};
+  ($('#next')||{}).onclick=()=>go(st.i+1);($('#end')||{}).onclick=confirmEnd;$('#end2').onclick=confirmEnd;
+}
+function confirmEnd(){const u=st.ans.filter(x=>x===null).length,f=st.fl.filter(Boolean).length;
+  $('#dlgMsg').textContent=u||f?`لديك ${ar(u)} سؤال بلا إجابة و${ar(f)} معلّم للمراجعة.`:'أجبت عن كل الأسئلة.';$('#dlg').showModal()}
+$('#dlgNo').onclick=()=>$('#dlg').close();$('#dlgYes').onclick=()=>{$('#dlg').close();finish()};
+function finish(){
+  if(!st)return;clearInterval(tick);mark();
+  const n=db.bank.length,right=st.ans.filter((a,k)=>a===db.bank[k].a).length,pct=Math.round(right/n*100),used=n*60-Math.max(st.left,0);
+  db.results.unshift({d:new Date().toLocaleString('ar-SA'),score:pct,right,n,used});save();
+  const by=s=>{const ks=db.bank.map((q,k)=>q.s===s?k:-1).filter(k=>k>-1);return ks.length?Math.round(ks.filter(k=>st.ans[k]===db.bank[k].a).length/ks.length*100):0};
+  app.innerHTML=`<section class="card"><div class="score"><div class="ring" style="--p:${pct}"><b>${ar(pct)}٪</b></div>
+   <div><h1 style="margin-bottom:8px">${pct>=80?'أداء ممتاز':pct>=50?'أداء جيد':'تحتاج مراجعة'}</h1>
+   <div class="stats"><div><span class="muted">صحيحة</span><b>${ar(right)} / ${ar(n)}</b></div><div><span class="muted">الكمي</span><b>${ar(by('كمي'))}٪</b></div><div><span class="muted">اللفظي</span><b>${ar(by('لفظي'))}٪</b></div></div>
+   <p class="muted" style="margin-top:10px">الوقت المستخدم ${fmt(used)}</p></div></div>
+   <div class="rev">${db.bank.map((q,k)=>{const ok=st.ans[k]===q.a;return `<div class="item" style="--c:${st.ans[k]===null?'var(--mute)':ok?'var(--ok)':'var(--bad)'}"><b>${ar(k+1)}. ${q.q}</b><div class="meta"><span>إجابتك: <bdi>${st.ans[k]===null?'—':q.o[st.ans[k]]}</bdi></span><span>الصحيحة: <bdi>${q.o[q.a]}</bdi></span><span>الوقت: <bdi>${ar(Math.round(st.spent[k]/1000))}</bdi> ث</span></div><div>${q.e}</div></div>`}).join('')}</div>
+   <div class="nav"><button class="gold" id="again">إعادة الاختبار</button></div></section>`;
+  st=null;$('#again').onclick=begin;
+}
+function admin(){
+  clearInterval(tick);st=null;
+  const avg=db.results.length?Math.round(db.results.reduce((s,r)=>s+r.score,0)/db.results.length):0;
+  app.innerHTML=`<section class="card"><div class="top"><h1 style="font-size:26px">لوحة الإدارة</h1><span class="muted">${ar(db.results.length)} محاولة · المتوسط ${ar(avg)}٪</span></div>
+  <table><thead><tr><th>#</th><th>السؤال</th><th>القسم</th><th>الإجابة</th><th></th></tr></thead><tbody>
+  ${db.bank.map((q,k)=>`<tr><td>${ar(k+1)}</td><td>${q.q}</td><td><span class="pill">${q.s}</span></td><td>${q.o[q.a]}</td><td><button class="ghost" data-del="${k}" aria-label="حذف السؤال ${k+1}">حذف</button></td></tr>`).join('')}</tbody></table>
+  <form class="add"><h3>إضافة سؤال</h3><input name="q" required placeholder="نص السؤال"><div class="row">${L.map((l,k)=>`<input name="o${k}" required placeholder="الخيار ${l}">`).join('')}</div>
+  <div class="row"><select name="a">${L.map((l,k)=>`<option value="${k}">الصحيحة: ${l}</option>`).join('')}</select><select name="s"><option>كمي</option><option>لفظي</option></select><input name="e" placeholder="شرح الإجابة" style="grid-column:span 2"></div>
+  <button class="gold" style="justify-self:start">حفظ السؤال</button></form>
+  <h3 style="margin:26px 0 10px">آخر النتائج</h3>
+  <table><thead><tr><th>التاريخ</th><th>الدرجة</th><th>الصحيحة</th><th>الوقت</th></tr></thead><tbody>${db.results.slice(0,8).map(r=>`<tr><td>${r.d}</td><td>${ar(r.score)}٪</td><td>${ar(r.right)}/${ar(r.n)}</td><td>${fmt(r.used)}</td></tr>`).join('')||'<tr><td colspan=4 class="muted">لا توجد محاولات بعد — جرّب الاختبار من تبويب الطالب.</td></tr>'}</tbody></table>
+  <div class="nav"><button class="ghost" id="reset">استعادة الأسئلة الأصلية</button></div></section>`;
+  app.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(db.bank.length>1){db.bank.splice(+b.dataset.del,1);save();admin()}});
+  app.querySelector('form').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);db.bank.push({q:f.get('q'),o:[0,1,2,3].map(k=>f.get('o'+k)),a:+f.get('a'),s:f.get('s'),e:f.get('e')||''});save();admin()};
+  $('#reset').onclick=()=>{db.bank=SEED;db.results=[];save();admin()};
+}
+document.querySelectorAll('[role=tab]').forEach(t=>t.onclick=()=>{document.querySelectorAll('[role=tab]').forEach(x=>x.setAttribute('aria-selected',x===t));t.dataset.v==='admin'?admin():startScreen()});
+document.addEventListener('keydown',e=>{if(!st||$('#dlg').open||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+  const k='1234١٢٣٤'.indexOf(e.key);if(k>-1){st.ans[st.i]=k%4;exam()}if(e.key==='ArrowLeft')go(st.i+1);if(e.key==='ArrowRight')go(st.i-1)});
+startScreen();
+</script>
+</body>
+</html>

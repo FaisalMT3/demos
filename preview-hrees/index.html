@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حريص — حمّل التطبيق</title>
+<meta name="description" content="حريص — مركز صيانة سيارات في الرياض منذ 2018. احجز موعد الصيانة، اطلب سطحة، وتابع طلبك خطوة بخطوة من تطبيق حريص.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<style>
+  :root {
+    --cream: #F5F2EB;
+    --cream-2: #EFEAE0;
+    --ink: #16130F;
+    --ink-soft: #4A443C;
+    --orange: #CD6528;
+    --maroon: #8F272C;
+    --white: #FFFFFF;
+    --line: rgba(22,19,15,0.10);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  /* ---------- decorative rings (signature element, echoing the app's health rings) ---------- */
+  .ring-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid var(--line);
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---------- header ---------- */
+  header {
+    padding: 28px 0 8px;
+  }
+  .brandmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+  }
+  .brandmark .z {
+    width: 26px; height: 26px;
+    position: relative;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 40px;
+    padding: 56px 0 40px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--maroon);
+    background: rgba(143,39,42,0.08);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+  h1 {
+    font-size: 46px;
+    line-height: 1.18;
+    font-weight: 700;
+    margin: 0 0 20px;
+    letter-spacing: -0.5px;
+  }
+  h1 span { color: var(--orange); }
+  .lede {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 0 32px;
+  }
+
+  .store-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 12px 22px;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .store-btn:hover { transform: translateY(-2px); background: #26211a; }
+  .store-btn svg { width: 24px; height: 24px; flex-shrink: 0; }
+  .store-btn .txt { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25; }
+  .store-btn .txt small { font-size: 11px; opacity: 0.72; font-weight: 400; }
+  .store-btn .txt strong { font-size: 15.5px; font-weight: 600; }
+
+  .trust-line {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .trust-line b { color: var(--ink); font-weight: 700; }
+
+  /* ---------- phone frame ---------- */
+  .phone-stage {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .phone {
+    width: 280px;
+    border-radius: 42px;
+    background: var(--ink);
+    padding: 12px;
+    box-shadow: 0 40px 70px -25px rgba(22,19,15,0.45), 0 0 0 1px rgba(22,19,15,0.06);
+    position: relative;
+    transform: rotate(-2deg);
+  }
+  .phone .screen {
+    width: 100%;
+    aspect-ratio: 9 / 19.3;
+    border-radius: 32px;
+    overflow: hidden;
+    background: var(--cream);
+    position: relative;
+  }
+  .phone .screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  .phone .notch {
+    position: absolute;
+    top: 12px; left: 50%;
+    transform: translateX(-50%);
+    width: 84px; height: 22px;
+    background: var(--ink);
+    border-radius: 14px;
+    z-index: 2;
+  }
+  .float-badge {
+    position: absolute;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 12px 16px;
+    box-shadow: 0 18px 34px -14px rgba(22,19,15,0.28);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .float-badge .dot {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(205,101,40,0.12);
+    color: var(--orange);
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .badge-1 { top: 8%; right: -6%; }
+  .badge-2 { bottom: 10%; left: -8%; }
+
+  /* ---------- features ---------- */
+  .section-head {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 52px;
+  }
+  .section-head .eyebrow { margin-bottom: 16px; }
+  .section-head h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -0.3px;
+  }
+  .section-head p {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .features {
+    padding: 80px 0;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .feature-card {
+    background: var(--white);
+    border-radius: 28px;
+    padding: 28px 28px 0;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .feature-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .feature-card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+  .feature-shot {
+    margin-top: auto;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    height: 260px;
+    position: relative;
+    background: var(--cream-2);
+  }
+  .feature-shot img {
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+  .tag-1 { background: rgba(205,101,40,0.12); color: var(--orange); }
+  .tag-2 { background: rgba(143,39,42,0.10); color: var(--maroon); }
+  .tag-3 { background: rgba(22,19,15,0.06); color: var(--ink); }
+
+  /* ---------- CTA / download band ---------- */
+  .cta-band {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 36px;
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(245,242,235,0.10);
+    top: -140px; left: -120px;
+  }
+  .cta-band::after {
+    content: '';
+    position: absolute;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(245,242,235,0.08);
+    top: -60px; left: -30px;
+  }
+  .cta-band h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 14px;
+    position: relative;
+  }
+  .cta-band p {
+    color: rgba(245,242,235,0.72);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 420px;
+    margin: 0 0 30px;
+    position: relative;
+  }
+  .cta-band .store-row { position: relative; margin-bottom: 0; }
+  .cta-band .store-btn {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .cta-band .store-btn:hover { background: #fff; }
+
+  .qr-card {
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+    justify-self: center;
+  }
+  .qr-card img { width: 96px; height: 96px; border-radius: 10px; }
+  .qr-card .txt { color: var(--ink); }
+  .qr-card .txt strong { display: block; font-size: 15px; margin-bottom: 4px; }
+  .qr-card .txt span { font-size: 12.5px; color: var(--ink-soft); }
+
+  footer {
+    padding: 36px 0 48px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ---------- motion system ---------- */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes ringPulse {
+    0%, 100% { transform: scale(1); opacity: 0.55; }
+    50% { transform: scale(1.03); opacity: 0.9; }
+  }
+  @keyframes ringSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmerIn {
+    from { opacity: 0; transform: translateX(18px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .load-in {
+    opacity: 0;
+    animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(24px);
+    transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .feature-grid .feature-card:nth-child(1) { transition-delay: 0s; }
+  .feature-grid .feature-card:nth-child(2) { transition-delay: 0.12s; }
+  .feature-grid .feature-card:nth-child(3) { transition-delay: 0.24s; }
+
+  .ring { animation: ringPulse 7s ease-in-out infinite; transform-origin: center; }
+  .ring:nth-child(2) { animation-duration: 9s; animation-delay: 0.6s; }
+  .ring:nth-child(3) { animation-duration: 8s; animation-delay: 1.2s; }
+
+  .float-badge { animation: floatY 4.5s ease-in-out infinite; }
+  .float-badge.badge-2 { animation-delay: 1.4s; }
+
+  .phone { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+  .phone-stage:hover .phone { transform: rotate(0deg) scale(1.015); }
+
+  .store-btn { position: relative; overflow: hidden; }
+  .store-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.16), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .store-btn:hover::after { opacity: 1; }
+  .store-btn:active { transform: translateY(0) scale(0.97); }
+
+  .feature-card {
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(205,101,40,0.35);
+    box-shadow: 0 24px 48px -24px rgba(22,19,15,0.22);
+  }
+  .feature-card .feature-shot img {
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .feature-card:hover .feature-shot img {
+    transform: scale(1.045);
+  }
+  .tag { transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+  .feature-card:hover .tag { transform: rotate(-6deg) scale(1.08); }
+
+  .cta-band::before { animation: ringSpin 40s linear infinite; }
+  .cta-band::after { animation: ringSpin 30s linear infinite reverse; }
+
+  .qr-card img { transition: transform 0.4s ease; }
+  .qr-card:hover img { transform: scale(1.05) rotate(-2deg); }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal, .reveal-right { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 36px; }
+    .hero .phone-stage { order: -1; margin-bottom: 12px; }
+    h1 { font-size: 34px; }
+    .lede { max-width: 100%; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .cta-band { grid-template-columns: 1fr; padding: 36px 24px; text-align: center; }
+    .cta-band p { max-width: 100%; margin-inline: auto; }
+    .cta-band .store-row { justify-content: center; }
+    .qr-card { justify-self: center; }
+    .badge-1, .badge-2 { display: none; }
+    footer { justify-content: center; text-align: center; }
+  }
+</style>
+</head>
+<body><div id="pv-banner" dir="rtl" style="all:initial;display:block;background:#1f2937;color:#f9fafb;font:13px/1.7 Tahoma,Arial,sans-serif;text-align:center;padding:5px 10px;position:relative;z-index:2147483646">نسخة تجريبية للمقارنة — الموقع الأصلي: <a href="https://hrees.co/" style="color:#f9fafb;text-decoration:underline;font:inherit">hrees.co</a></div>
+
+<div class="ring-field">
+  <div class="ring" style="width:640px;height:640px;top:-220px;right:-200px;"></div>
+  <div class="ring" style="width:420px;height:420px;top:-100px;right:-80px;"></div>
+  <div class="ring" style="width:300px;height:300px;bottom:-120px;left:-100px;"></div>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="brandmark">
+      <img src="assets/img-1.webp" alt="شعار حريص" style="height:34px;width:auto;display:block;">
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="load-in">
+      <div class="eyebrow">تطبيق حريص متاح الآن</div>
+      <h1>مركبتك بأمان <span>في كل خطوة</span>، من جوالك</h1>
+      <p class="lede">
+        احجز الصيانة، اطلب سطحة، تابع طلباتك، وكلّم المستشار الفني — كل شي يخص سيارتك صار بين يديك.
+        حمّل تطبيق حريص وابدأ تجربة صيانة مرتبة من أول يوم.
+      </p>
+
+      <div class="store-row">
+        <a href="https://apps.apple.com/app/hrees-%D8%AD%D8%B1%D9%8A%D8%B5/id6790761979" target="_blank" rel="noopener" class="store-btn" aria-label="حمّل من App Store">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.462 2.147-1.213 2.885-.828.812-2.116 1.44-3.19 1.354-.135-1.09.42-2.24 1.166-2.95C13.9 1.86 15.24 1.28 16.365 1.43zM20.6 17.06c-.42.97-.62 1.4-1.16 2.26-.76 1.2-1.83 2.7-3.16 2.71-1.18.01-1.48-.77-3.08-.76-1.6.01-1.93.77-3.11.75-1.33-.02-2.34-1.36-3.1-2.56-2.12-3.34-2.34-7.26-1.03-9.35.93-1.48 2.4-2.35 3.78-2.35 1.4 0 2.29.78 3.45.78 1.13 0 1.82-.78 3.45-.78 1.23 0 2.53.68 3.46 1.85-3.04 1.67-2.55 6.03.44 7.41z"/></svg>
+          <span class="txt"><small>حمّل من</small><strong>App Store</strong></span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=co.hrees.app" target="_blank" rel="noopener" class="store-btn" aria-label="حمّل من Google Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6c-.35.36-.55.9-.55 1.6v15.6c0 .7.2 1.24.55 1.6l.1.1L13 12.2v-.4L3.7 2.5z"/><path d="M16.4 15.6l-3.4-3.4v-.4l3.4-3.4 3.86 2.2c1.1.63 1.1 1.66 0 2.29z" opacity="0.7"/><path d="M13 12l-9.3 9.7c.34.24.8.26 1.3-.03l10.6-6z" opacity="0.85"/><path d="M13 12.4l-9.3-9.7c-.5-.3-.96-.27-1.3-.03z" opacity="0.55"/></svg>
+          <span class="txt"><small>حمّل من</small><strong>Google Play</strong></span>
+        </a>
+      </div>
+
+      <div class="trust-line">
+        <div><b>2018</b> · خدمتك منذ</div>
+        <div><b>2</b> فرع في الرياض</div>
+        <div><b>4.8★</b> تقييم العملاء</div>
+      </div>
+    </div>
+
+    <div class="phone-stage load-in" style="animation-delay:0.15s;">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <img fetchpriority="high" src="assets/img-2.webp" alt="الشاشة الرئيسية لتطبيق حريص">
+        </div>
+      </div>
+      <div class="float-badge badge-1">
+        <div class="dot">87%</div>
+        صحة المركبة
+      </div>
+      <div class="float-badge badge-2">
+        <div class="dot">21</div>
+        نقطة فحص شامل
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="section-head">
+      <div class="eyebrow">لماذا حريص</div>
+      <h2>كل تفاصيل سيارتك، في تطبيق واحد</h2>
+      <p>من أول طلب صيانة إلى تتبّع صحة المركبة، صممنا التطبيق ليكون بديلك عن دفتر الملاحظات والاتصالات المتكررة بالورشة.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="tag tag-1">🧾</span>
+        <h3>شفافية كاملة في السعر</h3>
+        <p>كل قطعة وخدمة مفصّلة بسعرها قبل ما توافق — بدون مفاجآت، وتقدر تضيف أو تحذف بنود حسب رغبتك.</p>
+        <div class="feature-shot"><img loading="lazy" decoding="async" src="assets/img-3.webp" alt="محادثة المستشار الفني"></div>
+      </div>
+
+      <div class="feature-card">
+        <span class="tag tag-2">🗓️</span>
+        <h3>جدولك القادم</h3>
+        <p>كل مواعيد الصيانة الجاية بمكان واحد — عدّ تنازلي واضح، وتقدر تحجز بضغطة وحدة قبل ما يفوتك الموعد.</p>
+        <div class="feature-shot"><img loading="lazy" decoding="async" src="assets/img-4.webp" alt="صحة المركبة"></div>
+      </div>
+
+      <div class="feature-card">
+        <span class="tag tag-3">📋</span>
+        <h3>تتبّع طلبك خطوة بخطوة</h3>
+        <p>من الفحص الأولي إلى تسليم السيارة — تشوف كل مرحلة بالضبط، وتعرف مكانك من العملية لحظة بلحظة.</p>
+        <div class="feature-shot"><img loading="lazy" decoding="async" src="assets/img-5.webp" alt="تتبع الطلبات"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div>
+      <h2>جاهز تجرّب حريص؟</h2>
+      <p>حمّل التطبيق الآن وسجّل مركبتك الأولى في أقل من دقيقة — ما تحتاج بطاقة ائتمان ولا اشتراك مسبق.</p>
+      <div class="store-row">
+        <a href="https://apps.apple.com/app/hrees-%D8%AD%D8%B1%D9%8A%D8%B5/id6790761979" target="_blank" rel="noopener" class="store-btn" aria-label="حمّل من App Store">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.462 2.147-1.213 2.885-.828.812-2.116 1.44-3.19 1.354-.135-1.09.42-2.24 1.166-2.95C13.9 1.86 15.24 1.28 16.365 1.43zM20.6 17.06c-.42.97-.62 1.4-1.16 2.26-.76 1.2-1.83 2.7-3.16 2.71-1.18.01-1.48-.77-3.08-.76-1.6.01-1.93.77-3.11.75-1.33-.02-2.34-1.36-3.1-2.56-2.12-3.34-2.34-7.26-1.03-9.35.93-1.48 2.4-2.35 3.78-2.35 1.4 0 2.29.78 3.45.78 1.13 0 1.82-.78 3.45-.78 1.23 0 2.53.68 3.46 1.85-3.04 1.67-2.55 6.03.44 7.41z"/></svg>
+          <span class="txt"><small>حمّل من</small><strong>App Store</strong></span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=co.hrees.app" target="_blank" rel="noopener" class="store-btn" aria-label="حمّل من Google Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6c-.35.36-.55.9-.55 1.6v15.6c0 .7.2 1.24.55 1.6l.1.1L13 12.2v-.4L3.7 2.5z"/><path d="M16.4 15.6l-3.4-3.4v-.4l3.4-3.4 3.86 2.2c1.1.63 1.1 1.66 0 2.29z" opacity="0.7"/><path d="M13 12l-9.3 9.7c.34.24.8.26 1.3-.03l10.6-6z" opacity="0.85"/><path d="M13 12.4l-9.3-9.7c-.5-.3-.96-.27-1.3-.03z" opacity="0.55"/></svg>
+          <span class="txt"><small>حمّل من</small><strong>Google Play</strong></span>
+        </a>
+      </div>
+    </div>
+    <div class="qr-card">
+      <img loading="lazy" decoding="async" src="assets/img-6.webp" alt="رمز QR لحريص">
+      <div class="txt">
+        <strong>امسح لتحميل التطبيق</strong>
+        <span>lnk.bio/harees</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 حريص — مركز صيانة سيارات سعودي متخصص</div>
+    <div>خدمتك في مركباتك منذ 2018</div>
+  </footer>
+
+</div>
+
+<div id="pv-contact" style="position:fixed;bottom:18px;left:16px;z-index:2147483645;display:flex;flex-direction:column;gap:12px"><a href="https://wa.me/966535422334?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9%20%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%D9%8A" target="_blank" rel="noopener" aria-label="واتساب" style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.25);text-decoration:none;background:#25d366"><svg viewBox="0 0 32 32" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.2-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6 0-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg></a><a href="tel:+966535422334" aria-label="اتصال" style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.25);text-decoration:none;background:#1f2937"><svg viewBox="0 0 24 24" width="24" height="24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div></body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نموذج تفريغ محتوى كتاب أذكار داخل تطبيق جوال</title>
+<meta name="description" content="نموذج يوضح بنية محتوى كتاب أذكار بعد تفريغه: فهرس، أبواب، أذكار بعدّاد ومصدر لكل نص، مع ملف البيانات الجاهز للدمج.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0F1A16">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&family=Amiri+Quran&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1A16; --panel:#15241F; --card:#1B2E27; --line:#274036;
+  --ink:#EDF3F0; --ink-2:#B9C9C2; --muted:#8AA29A;
+  --gold:#C9A961; --green:#3E7D63;
+  --body:"Readex Pro",system-ui,"Noto Sans Arabic",sans-serif;
+  --quran:"Amiri Quran","Noto Naskh Arabic",serif;
+  --display:"Scheherazade New",serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1rem/1.8 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-weight:400;line-height:1.35}
+.wrap{width:min(100% - 2rem,74rem);margin-inline:auto}
+a{color:var(--gold)}
+
+.top{padding:3rem 0 2rem;border-bottom:1px solid var(--line)}
+.top h1{font-family:var(--display);font-size:clamp(1.9rem,4vw,2.9rem)}
+.top p{color:var(--ink-2);max-width:54ch;margin:.9rem 0 0}
+.badge{display:inline-block;font-size:.72rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.8rem}
+
+.cols{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3.5rem);padding:3rem 0;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr;justify-items:center}}
+
+/* phone */
+.phone{width:360px;max-width:100%;border:10px solid #0A120F;border-radius:38px;background:var(--panel);
+  overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5);position:sticky;top:1.5rem}
+.status{display:flex;justify-content:space-between;padding:.55rem 1.2rem .2rem;font-size:.7rem;color:var(--muted)}
+.appbar{display:flex;align-items:center;gap:.7rem;padding:.6rem 1rem 1rem;border-bottom:1px solid var(--line)}
+.appbar h2{font-family:var(--display);font-size:1.4rem;flex:1}
+.ic{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);color:var(--ink-2);background:none;cursor:pointer}
+.ic svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.5}
+.screen{height:560px;overflow-y:auto;scrollbar-width:thin}
+.screen::-webkit-scrollbar{width:4px}
+.screen::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+
+.search{margin:.9rem 1rem;display:flex;align-items:center;gap:.5rem;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;padding:.55rem .8rem;color:var(--muted);font-size:.84rem}
+.search svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.5;flex:none}
+.search input{flex:1;background:none;border:none;color:var(--ink);font:inherit;outline:none}
+.search input::placeholder{color:var(--muted)}
+
+.chapters{list-style:none;margin:0;padding:0 1rem 1.4rem;display:grid;gap:.55rem}
+.chap{display:flex;align-items:center;gap:.8rem;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:.85rem .9rem;cursor:pointer;text-align:start;width:100%;transition:border-color .25s,background .25s}
+.chap:hover{border-color:var(--green)}
+.chap .n{width:30px;height:30px;flex:none;border-radius:8px;background:rgba(201,169,97,.12);color:var(--gold);
+  display:grid;place-items:center;font-size:.78rem}
+.chap .t{flex:1;font-size:.92rem}
+.chap .c{font-size:.72rem;color:var(--muted)}
+.book-tabs{display:flex;gap:.4rem;padding:0 1rem;margin-bottom:.2rem}
+.book-tabs button{flex:1;background:none;border:1px solid var(--line);color:var(--ink-2);border-radius:999px;
+  padding:.4rem;font:inherit;font-size:.76rem;cursor:pointer}
+.book-tabs button[aria-selected=true]{background:var(--green);border-color:var(--green);color:#fff}
+
+.item{padding:1.1rem 1rem;border-bottom:1px solid var(--line)}
+.ayah{font-family:var(--quran);font-size:1.22rem;line-height:2.5;color:#F6F1E4}
+.dhikr{font-family:var(--display);font-size:1.3rem;line-height:2.1}
+.meta{display:flex;align-items:center;gap:.6rem;margin-top:.9rem;flex-wrap:wrap}
+.src{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:.15rem .5rem}
+.virtue{font-size:.78rem;color:var(--ink-2);margin:.5rem 0 0}
+.count{margin-inline-start:auto;display:flex;align-items:center;gap:.45rem}
+.count button{background:var(--green);color:#fff;border:none;border-radius:999px;width:34px;height:34px;font-size:1rem;cursor:pointer}
+.count b{font-weight:400;font-size:.8rem;color:var(--ink-2);min-width:3.2rem;text-align:center}
+.done{opacity:.45}
+
+/* right column */
+.notes h3{font-family:var(--display);font-size:1.6rem;margin-bottom:.6rem}
+.notes p{color:var(--ink-2);margin:.4rem 0 0}
+.block{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.4rem;margin-bottom:1.1rem}
+.block ul{margin:.8rem 0 0;padding-inline-start:1.1rem;color:var(--ink-2);display:grid;gap:.5rem;font-size:.92rem}
+.block li strong{color:var(--ink);font-weight:500}
+pre{background:#0B1512;border:1px solid var(--line);border-radius:10px;padding:1rem;overflow-x:auto;
+  direction:ltr;text-align:left;font:400 .76rem/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;color:#CBDED6}
+pre .k{color:var(--gold)}
+pre .s{color:#9FD3B8}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:.9rem}
+th,td{text-align:start;padding:.55rem .6rem;border-bottom:1px solid var(--line);color:var(--ink-2)}
+th{color:var(--ink);font-weight:400}
+.disc{font-size:.8rem;color:var(--muted);line-height:1.9}
+</style>
+</head>
+<body>
+
+<div class="wrap top">
+  <p class="badge">نموذج عمل</p>
+  <h1>تفريغ كتاب أذكار داخل تطبيق جوال</h1>
+  <p>هذا نموذج مصغّر يوضح شكل المحتوى بعد تفريغه وتنظيمه: فهرس أبواب، نص كل ذكر، عدد مرات التكرار، ومصدر كل نص، إضافة إلى ملف البيانات الذي يُدمج في التطبيق. المحتوى هنا عيّنة محدودة لغرض عرض البنية فقط.</p>
+</div>
+
+<div class="wrap cols">
+
+  <div class="phone">
+    <div class="status"><span>٩:٤١</span><span>٨٧٪</span></div>
+    <div class="appbar">
+      <button class="ic" id="back" hidden aria-label="رجوع"><svg viewBox="0 0 24 24"><path d="m14 6 6 6-6 6"/></svg></button>
+      <h2 id="title">الأذكار</h2>
+      <button class="ic" aria-label="المفضلة"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.7-7 9-7 9Z"/></svg></button>
+    </div>
+
+    <div class="screen" id="screen"></div>
+  </div>
+
+  <div class="notes">
+    <div class="block">
+      <h3>ما الذي يُسلَّم فعليًا</h3>
+      <p>التطبيق موجود عندك، والناقص هو المحتوى. المحتوى لا يُسلَّم نصًا في ملف وورد، بل كملف بيانات منظّم يقرأه التطبيق مباشرة، بنفس الحقول التي تحتاجها الشاشات.</p>
+      <ul>
+        <li><strong>بنية ثابتة لكل عنصر:</strong> الكتاب، الباب، ترتيب العنصر، النص، التشكيل، عدد التكرار، المصدر، الفضل إن وُجد، وملاحظة المحقق إن وُجدت.</li>
+        <li><strong>مصدر لكل نص:</strong> لا يدخل نص بلا مصدر من الكتاب نفسه، وأي موضع يختلف فيه نص الكتاب عن المطبوع يُرسل لك لتقرر أنت، ولا يُعدَّل من طرفي.</li>
+        <li><strong>التشكيل والرسم:</strong> آيات القرآن بالرسم العثماني، والأذكار بالتشكيل الكامل، مع توحيد علامات الترقيم والمسافات في كل الملف.</li>
+        <li><strong>الفهرس والتنقل:</strong> ترقيم الأبواب والعناصر بما يطابق ترتيب الكتاب، حتى يعمل التنقل بين الصفحات والبحث بلا فجوات.</li>
+        <li><strong>مراجعة على الشاشة:</strong> كل باب يُراجع بعد إدخاله على مقاس جوال فعلي، لأن أخطاء التشكيل وتكسّر الأسطر لا تظهر في ملف نصي.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3>شكل ملف البيانات</h3>
+      <p>هذا هو العنصر الواحد كما يصل للتطبيق. الحقول تُضبط على ما يقرأه تطبيقك الحالي قبل بدء الإدخال.</p>
+<pre><span class="k">{</span>
+  <span class="k">"book_id"</span>: <span class="s">"book_1"</span>,
+  <span class="k">"chapter_id"</span>: <span class="s">"morning"</span>,
+  <span class="k">"order"</span>: 3,
+  <span class="k">"text"</span>: <span class="s">"اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا…"</span>,
+  <span class="k">"repeat"</span>: 1,
+  <span class="k">"source"</span>: <span class="s">"سنن الترمذي، باب ما يقول إذا أصبح"</span>,
+  <span class="k">"virtue"</span>: <span class="s">null</span>,
+  <span class="k">"note"</span>: <span class="s">null</span>,
+  <span class="k">"page_in_book"</span>: 24
+<span class="k">}</span></pre>
+    </div>
+
+    <div class="block">
+      <h3>خطة التنفيذ ومراحل التسليم</h3>
+      <table>
+        <tr><th>المرحلة</th><th>المخرج</th></tr>
+        <tr><td>١. الاتفاق على البنية</td><td>جدول الحقول مطابق لما يقرأه تطبيقك، وعيّنة باب كامل للموافقة قبل إدخال الباقي</td></tr>
+        <tr><td>٢. الكتاب الأول</td><td>كل الأبواب مُدخلة ومشكَّلة بمصادرها، مع قائمة المواضع المشكوك فيها لتقرر فيها</td></tr>
+        <tr><td>٣. الكتاب الثاني</td><td>نفس الخطوة، مع توحيد المصطلحات والترقيم بين الكتابين</td></tr>
+        <tr><td>٤. المراجعة على الجهاز</td><td>مرور على كل باب داخل التطبيق، وتصحيح ما ينكسر في العرض أو التشكيل</td></tr>
+      </table>
+    </div>
+
+    <div class="block">
+      <p class="disc">تنبيه مكتوب: النصوص الظاهرة في هذا النموذج عيّنة قصيرة لعرض البنية فقط، وليست محتوى كتابك. عند التنفيذ يكون المصدر الوحيد للنص هو الكتابان اللذان ترسلهما، ولا يُضاف نص من خارجهما ولا يُحذف منهما شيء دون رجوع إليك.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  books: [
+    { id:'b1', name:'الكتاب الأول', chapters:[
+      { id:'morning', title:'أذكار الصباح', items:[
+        { text:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ', q:true, repeat:1, source:'سورة البقرة، الآية ٢٥٥', virtue:'' },
+        { text:'قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ', q:true, repeat:3, source:'سورة الإخلاص', virtue:'' },
+        { text:'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ', q:false, repeat:1, source:'صحيح مسلم، كتاب الذكر والدعاء', virtue:'' },
+        { text:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', q:false, repeat:100, source:'متفق عليه', virtue:'موضع الفضل يُنقل كما ورد في الكتاب، لا يُصاغ من جديد' }
+      ]},
+      { id:'evening', title:'أذكار المساء', items:[
+        { text:'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ', q:false, repeat:1, source:'صحيح مسلم، كتاب الذكر والدعاء', virtue:'' },
+        { text:'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِن شَرِّ مَا خَلَقَ', q:true, repeat:3, source:'سورة الفلق', virtue:'' }
+      ]},
+      { id:'sleep', title:'أذكار النوم', items:[
+        { text:'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا', q:false, repeat:1, source:'صحيح البخاري، كتاب الدعوات', virtue:'' }
+      ]},
+      { id:'prayer', title:'أذكار بعد الصلاة', items:[
+        { text:'أَسْتَغْفِرُ اللَّهَ', q:false, repeat:3, source:'صحيح مسلم، كتاب المساجد', virtue:'' },
+        { text:'سُبْحَانَ اللَّهِ', q:false, repeat:33, source:'متفق عليه', virtue:'' }
+      ]},
+      { id:'home', title:'أذكار دخول المنزل والخروج منه', items:[] },
+      { id:'travel', title:'أذكار السفر', items:[] }
+    ]},
+    { id:'b2', name:'الكتاب الثاني', chapters:[
+      { id:'istighfar', title:'باب الاستغفار', items:[
+        { text:'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ', q:false, repeat:1, source:'صحيح البخاري، كتاب الدعوات، باب أفضل الاستغفار', virtue:'' }
+      ]},
+      { id:'salat', title:'باب الصلاة على النبي ﷺ', items:[] },
+      { id:'hamd', title:'باب الحمد والثناء', items:[] }
+    ]}
+  ]
+};
+
+const screen = document.getElementById('screen');
+const title = document.getElementById('title');
+const back = document.getElementById('back');
+let book = 0;
+
+const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function listView(){
+  back.hidden = true;
+  title.textContent = 'الأذكار';
+  const b = DATA.books[book];
+  screen.innerHTML = `
+    <div class="book-tabs">${DATA.books.map((x,i)=>`<button data-b="${i}" aria-selected="${i===book}">${x.name}</button>`).join('')}</div>
+    <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><input placeholder="ابحث في نص الأذكار" aria-label="بحث"></div>
+    <ul class="chapters">${b.chapters.map((c,i)=>`
+      <li><button class="chap" data-c="${i}">
+        <span class="n">${(i+1).toLocaleString('ar-EG')}</span>
+        <span class="t">${c.title}</span>
+        <span class="c">${c.items.length ? c.items.length.toLocaleString('ar-EG') + ' أذكار' : 'قيد الإدخال'}</span>
+      </button></li>`).join('')}</ul>`;
+  screen.querySelectorAll('[data-b]').forEach(x => x.onclick = () => { book = +x.dataset.b; listView(); });
+  screen.querySelectorAll('[data-c]').forEach(x => x.onclick = () => chapterView(+x.dataset.c));
+  const input = screen.querySelector('input');
+  input.oninput = () => {
+    const q = input.value.trim();
+    screen.querySelectorAll('.chapters li').forEach((li,i) => {
+      const c = DATA.books[book].chapters[i];
+      const hit = !q || c.title.includes(q) || c.items.some(it => it.text.includes(q));
+      li.style.display = hit ? '' : 'none';
+    });
+  };
+}
+
+function chapterView(ci){
+  const c = DATA.books[book].chapters[ci];
+  back.hidden = false;
+  title.textContent = c.title;
+  screen.innerHTML = c.items.length ? c.items.map((it,i) => `
+    <div class="item" data-i="${i}">
+      <div class="${it.q ? 'ayah' : 'dhikr'}">${esc(it.text)}</div>
+      ${it.virtue ? `<p class="virtue">${esc(it.virtue)}</p>` : ''}
+      <div class="meta">
+        <span class="src">${esc(it.source)}</span>
+        <span class="count"><b>${it.repeat.toLocaleString('ar-EG')} / ${it.repeat.toLocaleString('ar-EG')}</b><button aria-label="عدّ">${it.repeat > 1 ? '−' : '✓'}</button></span>
+      </div>
+    </div>`).join('')
+    : `<p style="padding:2rem 1rem;color:var(--muted);font-size:.9rem">هذا الباب لم يُدخل بعد. في العمل الفعلي يُدخل كل باب كاملًا بمصادره قبل الانتقال للذي يليه.</p>`;
+  screen.querySelectorAll('.item').forEach((el,i) => {
+    let left = c.items[i].repeat;
+    const b = el.querySelector('button'), lbl = el.querySelector('b');
+    b.onclick = () => {
+      if (left === 0) return;
+      left--;
+      lbl.textContent = `${left.toLocaleString('ar-EG')} / ${c.items[i].repeat.toLocaleString('ar-EG')}`;
+      if (left === 0){ el.classList.add('done'); b.textContent = '✓'; }
+    };
+  });
+}
+
+back.onclick = listView;
+listView();
+</script>
+</body>
+</html>

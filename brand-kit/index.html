@@ -42,10 +42,12 @@ section+section{border-top:1px solid var(--line)}
 .grid{display:grid; gap:clamp(1.4rem,3vw,2.6rem)}
 .note{color:var(--ink-3); font-size:.86rem; line-height:1.7}
 b,strong{font-weight:700}
+.ltr{unicode-bidi:isolate; direction:ltr}
 .num{font-variant-numeric:tabular-nums; font-feature-settings:"tnum"}
 
 /* ---------- hero ---------- */
-.hero{min-height:88dvh; display:grid; grid-template-rows:auto 1fr auto; padding-top:2.2rem}
+.hero{min-height:88dvh; display:grid; grid-template-rows:auto 1fr auto; max-width:1180px;
+      margin-inline:auto; padding:2.2rem var(--mx) clamp(2.5rem,6vw,4rem)}
 .tag{display:inline-flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--ink-2);
      border:1px solid var(--line); background:var(--surface); padding:.4rem .85rem; border-radius:999px}
 .tag i{width:7px;height:7px;border-radius:50%;background:var(--green);display:block}
@@ -126,7 +128,7 @@ b,strong{font-weight:700}
 .apps figcaption{margin-top:.7rem; color:var(--ink-3); font-size:.85rem}
 
 /* ---------- misuse ---------- */
-.misuse{display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,1fr)); gap:1.1rem; margin-top:1.8rem}
+.misuse{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.1rem; margin-top:1.8rem}
 .misuse figure{margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.1rem; text-align:center}
 .misuse .box{height:104px; display:grid; place-items:center; overflow:hidden}
 .misuse img{max-height:92px; width:auto}
@@ -155,6 +157,7 @@ footer{padding:2.6rem var(--mx) 3.4rem; max-width:1180px; margin-inline:auto; bo
 
 @media (max-width:860px){
   .build,.apps{grid-template-columns:1fr}
+  .misuse{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero{min-height:auto}
 }
 </style>
@@ -204,7 +207,7 @@ footer{padding:2.6rem var(--mx) 3.4rem; max-width:1180px; margin-inline:auto; bo
   </div>
 
   <div style="margin-top:1.8rem; max-width:70ch">
-    <p class="check">ملفات <b>PDF</b> و<b>EPS</b> لا تحتوي على أي خط مرتبط: الحروف محوَّلة إلى مسارات، فالشعار يفتح على أي جهاز ولو لم يكن الخط مثبتاً عليه. فُحص ذلك آلياً بأمر <span class="num">pdffonts</span> على كل ملف، والبناء يتوقف إذا ظهر خط واحد.</p>
+    <p class="check">ملفات <b>PDF</b> و<b>EPS</b> لا تحتوي على أي خط مرتبط: الحروف محوَّلة إلى مسارات، فالشعار يفتح على أي جهاز ولو لم يكن الخط مثبتاً عليه. فُحص ذلك آلياً بأمر <span class="num"><span class="ltr">pdffonts</span></span> على كل ملف، والبناء يتوقف إذا ظهر خط واحد.</p>
     <p class="check">ملف الكرت قيس بعد توليده فخرج <b class="num">٩٦٫٠ × ٥٦٫٠ مم</b>، أي مقاس ٩٠×٥٠ مع ٣ مم قصاصة من كل جهة، وعلامات القص خارج حدود القص.</p>
     <p class="check">قيم <b>CMYK</b> في جدول الألوان مُحوَّلة عبر ملف ICC حقيقي، لا بالتقدير.</p>
   </div>
@@ -227,8 +230,8 @@ footer{padding:2.6rem var(--mx) 3.4rem; max-width:1180px; margin-inline:auto; bo
         <circle cx="60" cy="24" r="9.48" fill="#009B4D"/>
         <circle cx="60" cy="63.96" r="2.2" fill="#0F1B16"/>
         <path d="M60 63.96L78.14 28.36" stroke="#0F1B16" stroke-width=".9"/>
-        <text x="66" y="48" font-size="7" fill="#0F1B16" font-family="monospace">r = 10u</text>
-        <text x="4" y="120" font-size="7" fill="#44564E" font-family="monospace">1u = 12</text>
+        <text x="66" y="48" font-size="7" fill="#0F1B16" font-family="monospace" style="direction:ltr">r = 10u</text>
+        <text x="4" y="120" font-size="7" fill="#44564E" font-family="monospace" style="direction:ltr">1u = 12</text>
       </svg>
     </figure>
 
@@ -287,10 +290,10 @@ footer{padding:2.6rem var(--mx) 3.4rem; max-width:1180px; margin-inline:auto; bo
   <div class="specimen">
     <div class="big">البذرة قبل الشجرة</div>
     <div class="mid">عناوين بخط كوفي هندسي، بنفس منطق الدائرة والخط الواحد في الشعار.</div>
-    <p class="body">أما نصوص الجسم فبخط نسخي واضح على المقاسات الصغيرة، لأن العنوان يُرى والنص يُقرأ. استعملنا Noto Kufi Arabic للعناوين وNoto Sans Arabic للنصوص، وكلاهما برخصة SIL OFL مفتوحة، أي أنك تثبّتهما على أجهزة فريقك وتعطيهما لأي مطبعة أو مطوّر دون رسوم ودون أن تشتري ترخيصاً لكل مستخدم جديد.</p>
+    <p class="body">أما نصوص الجسم فبخط نسخي واضح على المقاسات الصغيرة، لأن العنوان يُرى والنص يُقرأ. استعملنا <span class="ltr">Noto Kufi Arabic</span> للعناوين و<span class="ltr">Noto Sans Arabic</span> للنصوص، وكلاهما برخصة <span class="ltr">SIL OFL</span> مفتوحة، أي أنك تثبّتهما على أجهزة فريقك وتعطيهما لأي مطبعة أو مطوّر دون رسوم ودون أن تشتري ترخيصاً لكل مستخدم جديد.</p>
     <div class="scale">
       <div><b>الشعار نفسه لا يعتمد على أي خط.</b> حروف «نوى» حُوّلت إلى مسارات داخل الملف، فلا تتكسّر على جهاز لا يملك الخط، وهذا أكثر عطب يصل متأخراً في تسليمات الهوية.</div>
-      <div><b>الحروف اللاتينية NAWA مرسومة يدوياً</b> على شبكة الشعار نفسها، لأن الخط الكوفي لا يحوي حروفاً لاتينية أصلاً، واستعارة خط ثانٍ هو ما يجعل الشعارات ثنائية اللغة تبدو مركّبة من قطعتين.</div>
+      <div><b>الحروف اللاتينية <span class="ltr">NAWA</span> مرسومة يدوياً</b> على شبكة الشعار نفسها، لأن الخط الكوفي لا يحوي حروفاً لاتينية أصلاً، واستعارة خط ثانٍ هو ما يجعل الشعارات ثنائية اللغة تبدو مركّبة من قطعتين.</div>
     </div>
   </div>
 </section>
@@ -347,7 +350,7 @@ footer{padding:2.6rem var(--mx) 3.4rem; max-width:1180px; margin-inline:auto; bo
     <div>
       <h3>ما الذي لا تستلمه، بصراحة</h3>
       <ul>
-        <li><b>لا ملف AI أصلي</b>، لأننا لا نعمل داخل Illustrator. ما نسلّمه هو SVG وEPS وPDF، وكلها ملفات متجهة تُفتح وتُعدَّل داخل Illustrator وCorelDRAW وAffinity: المسارات مسارات، والألوان قابلة للتغيير. لو كان وجود ملف <span class="num">.ai</span> بامتداده شرطاً تعاقدياً عندك، فالأفضل أن تعرف ذلك الآن لا بعد التسليم.</li>
+        <li><b>لا ملف AI أصلي</b>، لأننا لا نعمل داخل <span class="ltr">Illustrator</span>. ما نسلّمه هو SVG وEPS وPDF، وكلها ملفات متجهة تُفتح وتُعدَّل داخل <span class="ltr">Illustrator</span> و<span class="ltr">CorelDRAW</span> و<span class="ltr">Affinity</span>: المسارات مسارات، والألوان قابلة للتغيير. لو كان وجود ملف <span class="num">.ai</span> بامتداده شرطاً تعاقدياً عندك، فالأفضل أن تعرف ذلك الآن لا بعد التسليم.</li>
         <li><b>لا رقم بانتون مقطوع به</b> قبل البروفة الورقية، للسبب المشروح في قسم اللون.</li>
         <li><b>لا معرض أعمال هوية سابق.</b> ما تراه هنا أُنجز اليوم، وهو كل ما نقدّمه كدليل. لهذا نبدأ بمسار يحميك: مفهومان مرسومان ومجاناً قبل أي دفع، ولا تدفع شيئاً إن لم يعجبك أحدهما.</li>
       </ul>

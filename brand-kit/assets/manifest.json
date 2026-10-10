@@ -1,14 +1,14 @@
 {
  "files": {
-  "business-card.pdf": 13096,
-  "business-card.png": 27907,
-  "business-card.svg": 61412,
+  "business-card.pdf": 7889,
+  "business-card.png": 21447,
+  "business-card.svg": 36815,
   "colours.json": 1165,
   "logo-horizontal-1200.png": 43606,
   "logo-horizontal-400.png": 13155,
   "logo-horizontal-96.png": 3014,
   "logo-horizontal.eps": 6770,
-  "logo-horizontal.pdf": 2846,
+  "logo-horizontal.pdf": 2845,
   "logo-horizontal.svg": 3595,
   "logo-icon-1200.png": 47484,
   "logo-icon-16.png": 498,
@@ -27,7 +27,7 @@
   "logo-primary.eps": 7018,
   "logo-primary.pdf": 2902,
   "logo-primary.svg": 4131,
-  "manifest.json": 2157,
+  "manifest.json": 2238,
   "social-post.png": 46773,
   "social-post.svg": 16215
  },

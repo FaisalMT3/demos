@@ -1,0 +1,252 @@
+{
+ "files": {
+  "bottle.png": 20016,
+  "bottle.svg": 1464,
+  "colours.json": 1379,
+  "construction-a.png": 28635,
+  "construction-a.svg": 1558,
+  "logo-a-bilingual-1600.png": 87856,
+  "logo-a-bilingual-600.png": 28906,
+  "logo-a-bilingual-96.png": 3942,
+  "logo-a-bilingual.eps": 7147,
+  "logo-a-bilingual.pdf": 2724,
+  "logo-a-bilingual.svg": 3167,
+  "logo-a-ink-1600.png": 72043,
+  "logo-a-ink-600.png": 23820,
+  "logo-a-ink-96.png": 2751,
+  "logo-a-ink.eps": 3348,
+  "logo-a-ink.pdf": 1375,
+  "logo-a-ink.svg": 874,
+  "logo-a-mark-1600.png": 80503,
+  "logo-a-mark-600.png": 26092,
+  "logo-a-mark-96.png": 3762,
+  "logo-a-mark-small-1600.png": 78687,
+  "logo-a-mark-small-600.png": 26249,
+  "logo-a-mark-small-96.png": 3676,
+  "logo-a-mark-small.eps": 2832,
+  "logo-a-mark-small.pdf": 1199,
+  "logo-a-mark-small.svg": 458,
+  "logo-a-mark.eps": 2833,
+  "logo-a-mark.pdf": 1197,
+  "logo-a-mark.svg": 454,
+  "logo-a-primary-1600.png": 76340,
+  "logo-a-primary-600.png": 25087,
+  "logo-a-primary-96.png": 3393,
+  "logo-a-primary.eps": 3345,
+  "logo-a-primary.pdf": 1379,
+  "logo-a-primary.svg": 874,
+  "logo-a-white-1600.png": 59402,
+  "logo-a-white-600.png": 17291,
+  "logo-a-white-96.png": 2163,
+  "logo-a-white.eps": 3319,
+  "logo-a-white.pdf": 1363,
+  "logo-a-white.svg": 874,
+  "logo-b-bilingual-1600.png": 48543,
+  "logo-b-bilingual-600.png": 16537,
+  "logo-b-bilingual-96.png": 2255,
+  "logo-b-bilingual.eps": 6920,
+  "logo-b-bilingual.pdf": 2671,
+  "logo-b-bilingual.svg": 4069,
+  "logo-b-ink-1600.png": 35622,
+  "logo-b-ink-600.png": 12024,
+  "logo-b-ink-96.png": 1532,
+  "logo-b-ink.eps": 3000,
+  "logo-b-ink.pdf": 1247,
+  "logo-b-ink.svg": 532,
+  "logo-b-mark-1600.png": 85852,
+  "logo-b-mark-600.png": 28623,
+  "logo-b-mark-96.png": 4019,
+  "logo-b-mark.eps": 2738,
+  "logo-b-mark.pdf": 1172,
+  "logo-b-mark.svg": 357,
+  "logo-b-primary-1600.png": 38492,
+  "logo-b-primary-600.png": 13096,
+  "logo-b-primary-96.png": 1766,
+  "logo-b-primary.eps": 2997,
+  "logo-b-primary.pdf": 1251,
+  "logo-b-primary.svg": 532,
+  "logo-b-white-1600.png": 28985,
+  "logo-b-white-600.png": 9110,
+  "logo-b-white-96.png": 1130,
+  "logo-b-white.eps": 2971,
+  "logo-b-white.pdf": 1239,
+  "logo-b-white.svg": 532,
+  "manifest.json": 4319,
+  "size-strip.png": 7691
+ },
+ "colours": [
+  {
+   "name": "ذهبي زايون",
+   "role": "اللون الأساسي",
+   "hex": "#C2A05A",
+   "rgb": [
+    194,
+    160,
+    90
+   ],
+   "cmyk": [
+    24.9,
+    35.9,
+    81.4,
+    1.9
+   ],
+   "lab": [
+    67.9,
+    6.7,
+    41.0
+   ],
+   "printed_lab": [
+    67.0,
+    7.2,
+    43.8
+   ],
+   "de": 2.9,
+   "contrast_on_ink": 7.93,
+   "contrast_on_paper": 2.26
+  },
+  {
+   "name": "أسود",
+   "role": "الخلفيات والنص",
+   "hex": "#0B0B0C",
+   "rgb": [
+    11,
+    11,
+    12
+   ],
+   "cmyk": [
+    74.3,
+    68.0,
+    65.3,
+    89.9
+   ],
+   "lab": [
+    3.0,
+    0.1,
+    -0.4
+   ],
+   "printed_lab": [
+    7.7,
+    -0.7,
+    -0.9
+   ],
+   "de": 4.8,
+   "contrast_on_ink": 1.0,
+   "contrast_on_paper": 17.92
+  },
+  {
+   "name": "عاجي",
+   "role": "الخلفيات الفاتحة",
+   "hex": "#F7F4EE",
+   "rgb": [
+    247,
+    244,
+    238
+   ],
+   "cmyk": [
+    1.6,
+    2.7,
+    5.4,
+    0.0
+   ],
+   "lab": [
+    96.3,
+    0.3,
+    3.3
+   ],
+   "printed_lab": [
+    96.4,
+    0.8,
+    3.9
+   ],
+   "de": 0.9,
+   "contrast_on_ink": 17.92,
+   "contrast_on_paper": 1.0
+  },
+  {
+   "name": "ذهبي فاتح",
+   "role": "للمقارنة — غير مُختار",
+   "hex": "#FFD700",
+   "rgb": [
+    255,
+    215,
+    0
+   ],
+   "cmyk": [
+    1.3,
+    13.2,
+    100.0,
+    0.0
+   ],
+   "lab": [
+    87.5,
+    2.9,
+    86.6
+   ],
+   "printed_lab": [
+    87.2,
+    3.0,
+    84.2
+   ],
+   "de": 2.4,
+   "contrast_on_ink": 14.03,
+   "contrast_on_paper": 1.28
+  }
+ ],
+ "min_px": 10,
+ "min_px_probe": [
+  {
+   "w": 10,
+   "rmse": 0.0399
+  },
+  {
+   "w": 12,
+   "rmse": 0.0336
+  },
+  {
+   "w": 14,
+   "rmse": 0.0391
+  },
+  {
+   "w": 16,
+   "rmse": 0.0474
+  },
+  {
+   "w": 20,
+   "rmse": 0.0573
+  },
+  {
+   "w": 24,
+   "rmse": 0.0504
+  },
+  {
+   "w": 28,
+   "rmse": 0.0533
+  },
+  {
+   "w": 32,
+   "rmse": 0.0591
+  },
+  {
+   "w": 40,
+   "rmse": 0.0606
+  },
+  {
+   "w": 48,
+   "rmse": 0.0602
+  },
+  {
+   "w": 64,
+   "rmse": 0.0629
+  },
+  {
+   "w": 96,
+   "rmse": 0.0645
+  }
+ ],
+ "formats": [
+  "svg",
+  "pdf",
+  "eps",
+  "png (alpha)"
+ ]
+}

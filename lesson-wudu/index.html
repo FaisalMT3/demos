@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نموذج: عرض درس صفي بتعليق عربي (الوضوء)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16202b; --cream:#f7f2e7; --gold:#b08430; --teal:#1f6f6b; --soft:#e4dbc7;
+  --red:#9c3524;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0d1319;color:var(--ink);
+  font-family:"Noto Naskh Arabic",system-ui,serif}
+button{font:inherit;color:inherit}
+.wrap{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;padding:.6rem}
+
+/* projector stage: fixed 16:9, every size in em so one font-size scales the whole slide */
+.stage{position:relative;width:min(100vw - 1.2rem, (100vh - 5.5rem) * 1.7778);
+  aspect-ratio:16/9;font-size:calc(min(100vw - 1.2rem, (100vh - 5.5rem) * 1.7778) / 46);
+  background:var(--cream);border-radius:.5em;overflow:hidden;
+  box-shadow:0 1.2em 3em #0009}
+.slide{position:absolute;inset:0;padding:2.2em 2.6em 2.6em;display:none;flex-direction:column}
+.slide.on{display:flex}
+.slide header{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:.12em solid var(--teal);padding-bottom:.3em;margin-bottom:1em;
+  font-family:"Noto Kufi Arabic",system-ui,sans-serif;font-size:.78em;color:var(--teal)}
+h1,h2,h3,.k{font-family:"Noto Kufi Arabic",system-ui,sans-serif;line-height:1.5;margin:0}
+h2{font-size:1.7em;color:var(--teal)}
+p,li{line-height:1.8;margin:0}
+.lead{font-size:1.15em}
+/* cue reveal: driven by the measured audio offsets, not by guesswork */
+[data-cue]{opacity:0;transform:translateY(.5em);transition:opacity .5s,transform .5s}
+[data-cue].lit{opacity:1;transform:none}
+
+/* 1 cover */
+.cover{background:
+  radial-gradient(120% 90% at 85% 10%, #ffffff 0%, transparent 60%), var(--cream);
+  align-items:center;justify-content:center;text-align:center}
+.cover h1{font-size:3.4em;color:var(--ink)}
+.cover .sub{font-size:1.1em;color:var(--teal);margin-top:.3em}
+.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:.7em;margin-top:1.6em;width:100%}
+.goals div{background:#fff;border:.08em solid var(--soft);border-radius:.4em;padding:.7em .6em;
+  font-size:.85em;font-family:"Noto Kufi Arabic",system-ui,sans-serif;line-height:1.6}
+.goals b{display:block;color:var(--gold);font-size:1.5em;line-height:1}
+
+/* 2 concept map (SVG geometry stays LTR, each label carries its own direction) */
+.map{flex:1;display:flex;align-items:center;justify-content:center}
+.map svg{width:100%;height:100%}
+.map text{font-family:"Noto Kufi Arabic",system-ui,sans-serif}
+
+/* 3 ayah */
+.ayah{background:#fff;border:.1em solid var(--gold);border-radius:.5em;padding:1.1em 1.3em;
+  font-size:1.5em;line-height:2.1;text-align:center}
+.ayah .m{background:#fdf3dc;border-radius:.2em;padding:0 .15em}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:.7em;margin-top:1.1em}
+.four div{background:#fff;border:.08em solid var(--soft);border-radius:.4em;padding:.6em;text-align:center;
+  font-family:"Noto Kufi Arabic",system-ui,sans-serif;font-size:.9em}
+.four span{display:block;font-size:1.8em;color:var(--teal)}
+.four em{display:block;font-style:normal;font-size:.8em;color:#6a6456;margin-top:.2em}
+
+/* 4 animated step order */
+.steps{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.1em}
+.track{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:.6em}
+.track .bar{position:absolute;inset-inline:0;top:1.35em;height:.22em;background:var(--soft);border-radius:.2em}
+.track .fill{position:absolute;inset-inline-start:0;top:1.35em;height:.22em;width:0;background:var(--teal);border-radius:.2em}
+.track.run .fill{animation:grow var(--t,8s) linear forwards}
+@keyframes grow{to{width:100%}}
+.st{position:relative;text-align:center;font-family:"Noto Kufi Arabic",system-ui,sans-serif}
+.st b{display:grid;place-items:center;width:2.7em;height:2.7em;margin:0 auto .5em;border-radius:50%;
+  background:#fff;border:.18em solid var(--soft);color:#9a937f;font-size:1em;transition:.35s}
+.st.lit b{background:var(--teal);border-color:var(--teal);color:#fff;transform:scale(1.1)}
+.st span{font-size:.82em;line-height:1.5;display:block}
+.st.lit span{color:var(--teal);font-weight:700}
+
+/* 5 table */
+table{width:100%;border-collapse:collapse;font-size:1em;margin-top:.4em}
+th,td{border:.07em solid var(--soft);padding:.42em .8em;text-align:start}
+th{background:var(--teal);color:#fff;font-family:"Noto Kufi Arabic",system-ui,sans-serif;font-size:.9em}
+td:first-child{font-family:"Noto Kufi Arabic",system-ui,sans-serif;width:34%}
+tbody tr:nth-child(odd){background:#fff}
+.tag{display:inline-block;border-radius:.25em;padding:0 .5em;font-size:.8em;
+  font-family:"Noto Kufi Arabic",system-ui,sans-serif}
+.tag.f{background:#fdf3dc;color:#7c5a14;border:.07em solid var(--gold)}
+.tag.s{background:#e7f1f0;color:var(--teal);border:.07em solid var(--teal)}
+
+/* 6 nawaqid */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:.9em;margin-top:.6em}
+.cards div{background:#fff;border:.08em solid var(--soft);border-inline-start:.35em solid var(--red);
+  border-radius:.4em;padding:.9em 1em;font-size:1.05em;line-height:1.7}
+.note{margin-top:auto;background:#fff6ea;border:.08em dashed var(--gold);border-radius:.4em;
+  padding:.7em .9em;font-size:.85em;line-height:1.7}
+
+.steps .note{margin-top:0}
+
+/* 7 quiz */
+.quiz{align-items:center;justify-content:center;text-align:center}
+.quiz h3{font-size:2.1em;margin-bottom:1.2em}
+.opts{display:flex;gap:1em}
+.opts button{background:#fff;border:.12em solid var(--soft);border-radius:.4em;padding:.7em 2.2em;
+  font-family:"Noto Kufi Arabic",system-ui,sans-serif;font-size:1.2em;cursor:pointer;transition:.25s}
+.opts button:hover{border-color:var(--teal)}
+.opts button.right{background:#e7f1f0;border-color:var(--teal);color:var(--teal)}
+.opts button.wrong{background:#fbeae7;border-color:var(--red);color:var(--red)}
+.ans{margin-top:1.2em;font-size:1.05em;max-width:34em;line-height:1.9}
+
+/* 8 sources */
+.src{font-size:.95em;line-height:2}
+.src li{margin-bottom:.35em}
+.src b{font-family:"Noto Kufi Arabic",system-ui,sans-serif;color:var(--teal)}
+
+/* start overlay + controls */
+.gate{position:absolute;inset:0;display:grid;place-items:center;background:#16202bee;color:#f7f2e7;
+  text-align:center;z-index:5;padding:2em}
+.gate.off{display:none}
+.gate h1{font-size:2.4em;margin-bottom:.4em}
+.gate p{font-size:1em;opacity:.85;max-width:30em;margin:0 auto 1.4em;line-height:1.9}
+.gate button{background:var(--gold);border:0;border-radius:.4em;padding:.7em 2.4em;font-size:1.2em;
+  font-family:"Noto Kufi Arabic",system-ui,sans-serif;color:#16202b;cursor:pointer}
+.bar2{display:flex;align-items:center;gap:.5rem;color:#cfd8e3;font-size:.85rem;
+  font-family:"Noto Kufi Arabic",system-ui,sans-serif;flex-wrap:wrap;justify-content:center}
+.bar2 button{background:#1d2a38;border:1px solid #2d3d4f;border-radius:.4rem;padding:.35rem .8rem;
+  cursor:pointer}
+.bar2 button:hover{background:#27384a}
+.dots{display:flex;gap:.3rem}
+.dots i{width:.55rem;height:.55rem;border-radius:50%;background:#33485e;cursor:pointer}
+.dots i.on{background:var(--gold);transform:scale(1.25)}
+.cap{color:#8fa0b3;font-size:.8rem;max-width:min(96vw,60rem);text-align:center;line-height:1.9}
+.cap a{color:#d9b562}
+bdi{unicode-bidi:isolate}
+@media (max-width:700px){.goals,.four{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}
+  .track{grid-template-columns:repeat(3,1fr)}.track .bar,.track .fill{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="stage" id="stage">
+
+  <section class="slide cover" data-id="cover">
+    <h1 data-cue="0">الوضوء</h1>
+    <div class="sub k" data-cue="0">درس صفي بتعليق عربي، يعرض على البروجكتر</div>
+    <div class="goals">
+      <div data-cue="1"><b>١</b>يعرف فرائض الوضوء من نص الآية</div>
+      <div data-cue="1"><b>٢</b>يرتب خطوات الوضوء بالترتيب</div>
+      <div data-cue="1"><b>٣</b>يميز الفرض من السنة</div>
+      <div data-cue="1"><b>٤</b>يعرف ما ينقض الوضوء</div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="map">
+    <header><span class="k">خريطة المفاهيم</span><span class="k">الوضوء</span></header>
+    <h2 data-cue="0">صورة الدرس كاملة قبل التفصيل</h2>
+    <div class="map" data-cue="1">
+      <svg viewBox="0 0 900 360" role="img" aria-label="خريطة مفاهيم الوضوء">
+        <g fill="none" stroke="#1f6f6b" stroke-width="2.5">
+          <path d="M450 126 C450 172 765 170 765 214"/>
+          <path d="M450 126 C450 172 555 170 555 214"/>
+          <path d="M450 126 C450 172 345 170 345 214"/>
+          <path d="M450 126 C450 172 135 170 135 214"/>
+        </g>
+        <rect x="350" y="46" width="200" height="76" rx="14" fill="#16202b"/>
+        <text x="450" y="96" text-anchor="middle" font-size="36" fill="#f7f2e7">الوضوء</text>
+        <g font-size="23">
+          <rect x="670" y="214" width="190" height="64" rx="12" fill="#fff" stroke="#e4dbc7" stroke-width="2"/>
+          <text x="765.0" y="255" text-anchor="middle" fill="#1f6f6b">شروط قبله</text>
+          <rect x="460" y="214" width="190" height="64" rx="12" fill="#fff" stroke="#b08430" stroke-width="2.5"/>
+          <text x="555.0" y="255" text-anchor="middle" fill="#7c5a14">فرائض</text>
+          <rect x="250" y="214" width="190" height="64" rx="12" fill="#fff" stroke="#e4dbc7" stroke-width="2"/>
+          <text x="345.0" y="255" text-anchor="middle" fill="#1f6f6b">سنن</text>
+          <rect x="40" y="214" width="190" height="64" rx="12" fill="#fff" stroke="#9c3524" stroke-width="2"/>
+          <text x="135.0" y="255" text-anchor="middle" fill="#9c3524">نواقض</text>
+        </g>
+        <g font-size="17" fill="#6a6456">
+          <text x="765.0" y="318" text-anchor="middle">الماء الطهور، النية</text>
+          <text x="555.0" y="318" text-anchor="middle">لا يصح الوضوء بدونها</text>
+          <text x="345.0" y="318" text-anchor="middle">تزيد الأجر ولا تلزم</text>
+          <text x="135.0" y="318" text-anchor="middle">ترفع الوضوء فيعاد</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="slide" data-id="ayah">
+    <header><span class="k">الدليل</span><span class="k">سورة المائدة، الآية <bdi>٦</bdi></span></header>
+    <h2 data-cue="0">أربعة أعضاء مذكورة بالنص</h2>
+    <div class="ayah" data-cue="0">
+      يا أيها الذين آمنوا إذا قمتم إلى الصلاة <span class="m">فاغسلوا وجوهكم</span>
+      <span class="m">وأيديكم إلى المرافق</span> <span class="m">وامسحوا برءوسكم</span>
+      <span class="m">وأرجلكم إلى الكعبين</span>
+    </div>
+    <div class="four">
+      <div data-cue="1"><span>١</span>الوجه<em>غسلا</em></div>
+      <div data-cue="1"><span>٢</span>اليدان إلى المرفقين<em>غسلا</em></div>
+      <div data-cue="1"><span>٣</span>الرأس<em>مسحا</em></div>
+      <div data-cue="1"><span>٤</span>الرجلان إلى الكعبين<em>غسلا</em></div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="steps">
+    <header><span class="k">المقطع المتحرك</span><span class="k">ترتيب الخطوات</span></header>
+    <h2 data-cue="0">الترتيب يثبت بالمشاهدة</h2>
+    <div class="steps">
+      <div class="track" id="track">
+        <div class="bar"></div><div class="fill"></div>
+        <div class="st" data-s="0"><b>١</b><span>غسل الكفين</span></div>
+        <div class="st" data-s="1"><b>٢</b><span>المضمضة والاستنشاق</span></div>
+        <div class="st" data-s="2"><b>٣</b><span>غسل الوجه</span></div>
+        <div class="st" data-s="3"><b>٤</b><span>اليدان إلى المرفقين</span></div>
+        <div class="st" data-s="4"><b>٥</b><span>مسح الرأس والأذنين</span></div>
+        <div class="st" data-s="5"><b>٦</b><span>الرجلان إلى الكعبين</span></div>
+      </div>
+      <p class="note k" data-cue="1">الحركة في العرض المسلم تكون رسما متحركا للخطوة نفسها، لا أرقاما فقط.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-id="table">
+    <header><span class="k">تمييز</span><span class="k">الفرض والسنة</span></header>
+    <h2 data-cue="0">ما في الآية فرض، وما زاد عليه سنة</h2>
+    <table>
+      <thead><tr><th>العمل</th><th>الحكم</th><th>من أين أخذناه</th></tr></thead>
+      <tbody>
+        <tr data-cue="0"><td>غسل الوجه</td><td><span class="tag f">فرض</span></td><td>نص الآية</td></tr>
+        <tr data-cue="0"><td>غسل اليدين إلى المرفقين</td><td><span class="tag f">فرض</span></td><td>نص الآية</td></tr>
+        <tr data-cue="1"><td>السواك عند الوضوء</td><td><span class="tag s">سنة</span></td><td>من السنة الفعلية</td></tr>
+        <tr data-cue="1"><td>البدء بغسل الكفين</td><td><span class="tag s">سنة</span></td><td>حديث صفة الوضوء</td></tr>
+        <tr data-cue="1"><td>تكرار الغسل ثلاثا</td><td><span class="tag s">سنة</span></td><td>حديث صفة الوضوء</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="slide" data-id="nawaqid">
+    <header><span class="k">نواقض الوضوء</span><span class="k">ما لا خلاف فيه</span></header>
+    <h2 data-cue="0">ينتقض الوضوء فيعاد</h2>
+    <div class="cards">
+      <div data-cue="1">خروج شيء من السبيلين</div>
+      <div data-cue="1">زوال العقل بنوم مستغرق أو غيره</div>
+    </div>
+    <p class="note" data-cue="1">بقية النواقض فيها خلاف بين الفقهاء، فتعرض على المدرسة لتقرر ما يوافق منهجها قبل التسجيل، ولا تذكر في العرض بلا قرار.</p>
+  </section>
+
+  <section class="slide quiz" data-id="quiz">
+    <h3 data-cue="1" id="q">غسل اليدين إلى المرفقين: فرض أم سنة؟</h3>
+    <div class="opts" data-cue="1">
+      <button id="o1">فرض</button>
+      <button id="o2">سنة</button>
+    </div>
+    <p class="ans" data-cue="2" id="ans">فرض، لأنه منصوص في الآية. أما غسل الكفين قبل الوضوء فسنة.</p>
+  </section>
+
+  <section class="slide" data-id="sources">
+    <header><span class="k">الإسناد</span><span class="k">ما بني عليه الدرس</span></header>
+    <h2 data-cue="0">كل ما في الدرس مسند</h2>
+    <ul class="src" data-cue="0">
+      <li><b>الفرائض الأربعة:</b> سورة المائدة، الآية <bdi>٦</bdi>، بنصها.</li>
+      <li><b>صفة الوضوء والسنن:</b> حديث عثمان بن عفان رضي الله عنه في صفة وضوء النبي صلى الله عليه وسلم، في الصحيحين.</li>
+      <li><b>الأرقام:</b> رقم كل حديث يراجع على الطبعة المعتمدة قبل التسجيل، ولا يظهر في العرض رقم لم يراجع.</li>
+    </ul>
+    <p class="note" data-cue="1">وما اختلف فيه الفقهاء، مثل النية والترتيب والموالاة وعدد الفرائض، يعرض عليكم مكتوبا قبل التسجيل لتقرروا ما يوافق منهج المدرسة.</p>
+  </section>
+
+  <div class="gate" id="gate">
+    <div>
+      <h1>عرض درس «الوضوء»</h1>
+      <p>نموذج من دقيقتين من عرض صفي مدته عشرون دقيقة. التعليق عربي، والشرائح تنتقل وحدها مع الصوت، والشرح يظهر سطرا سطرا على إيقاع التعليق. يشغل من اللاب توب على البروجكتر، ملء الشاشة.</p>
+      <button id="go">ابدأ العرض</button>
+    </div>
+  </div>
+</div>
+
+<div class="bar2">
+  <button id="prev">السابقة</button>
+  <button id="toggle">إيقاف</button>
+  <button id="next">التالية</button>
+  <div class="dots" id="dots"></div>
+  <span id="pos" class="k"></span>
+  <button id="fs">ملء الشاشة</button>
+</div>
+<p class="cap">نموذج عرض: المحتوى الديني فيه مقتصر على ما لا خلاف فيه، وما فيه خلاف يعرض على المدرسة قبل التسجيل.
+الصوت تعليق رقمي. العرض المسلم يعمل بلا إنترنت، الصوت والخطوط داخل الملف.</p>
+</div>
+
+<script>
+const S = [...document.querySelectorAll('.slide')];
+const stage = document.getElementById('stage'), dots = document.getElementById('dots');
+let meta = [], au = [], i = 0, playing = false;
+
+S.forEach((s, n) => { const d = document.createElement('i'); d.onclick = () => go(n); dots.append(d); });
+
+fetch('assets/cues.json').then(r => r.json()).then(m => {
+  meta = m;
+  au = m.map(x => { const a = new Audio('assets/' + x.id + '.mp3'); a.preload = 'auto'; return a; });
+  au.forEach((a, n) => {
+    a.ontimeupdate = () => paint(n, a.currentTime);
+    a.onended = () => { if (n === i && playing) n + 1 < S.length ? go(n + 1) : stop(); };
+  });
+  show(0);
+});
+
+// reveal every element whose cue offset has been reached; the offsets were measured off the audio
+function paint(n, t) {
+  const c = meta[n].cues;
+  S[n].querySelectorAll('[data-cue]').forEach(el => {
+    el.classList.toggle('lit', t >= c[+el.dataset.cue]);
+  });
+  if (meta[n].id === 'steps' && t >= c[1]) {
+    const track = document.getElementById('track'), span = meta[n].dur - c[1];
+    if (!track.classList.contains('run')) { track.style.setProperty('--t', span + 's'); track.classList.add('run'); }
+    const k = Math.floor((t - c[1]) / span * 6);
+    track.querySelectorAll('.st').forEach(s => s.classList.toggle('lit', +s.dataset.s <= k));
+  }
+}
+
+function show(n) {
+  S.forEach((s, k) => s.classList.toggle('on', k === n));
+  [...dots.children].forEach((d, k) => d.classList.toggle('on', k === n));
+  document.getElementById('pos').textContent = 'الشريحة ' + (n + 1) + ' من ' + S.length;
+  const t = document.getElementById('track'); if (t) { t.classList.remove('run'); t.querySelectorAll('.st').forEach(s => s.classList.remove('lit')); }
+  S[n].querySelectorAll('[data-cue]').forEach(el => el.classList.remove('lit'));
+  paint(n, 0);
+}
+
+function go(n) {
+  au[i].pause(); au[i].currentTime = 0;
+  i = n; show(i);
+  if (playing) au[i].play();
+}
+function stop() { playing = false; au[i].pause(); document.getElementById('toggle').textContent = 'تشغيل'; }
+
+document.getElementById('go').onclick = () => {
+  document.getElementById('gate').classList.add('off');
+  playing = true; show(0); au[0].play();
+  document.getElementById('toggle').textContent = 'إيقاف';
+};
+document.getElementById('toggle').onclick = () => {
+  playing = !playing;
+  playing ? au[i].play() : au[i].pause();
+  document.getElementById('toggle').textContent = playing ? 'إيقاف' : 'تشغيل';
+};
+document.getElementById('next').onclick = () => i + 1 < S.length && go(i + 1);
+document.getElementById('prev').onclick = () => i > 0 && go(i - 1);
+document.getElementById('fs').onclick = () => stage.requestFullscreen ? stage.requestFullscreen() : null;
+// the classroom keys: space pauses, arrows move with the reading direction
+addEventListener('keydown', e => {
+  if (e.key === ' ') { e.preventDefault(); document.getElementById('toggle').click(); }
+  if (e.key === 'ArrowLeft') document.getElementById('next').click();
+  if (e.key === 'ArrowRight') document.getElementById('prev').click();
+});
+document.getElementById('o1').onclick = e => { e.target.classList.add('right'); document.getElementById('ans').classList.add('lit'); };
+document.getElementById('o2').onclick = e => { e.target.classList.add('wrong'); };
+</script>
+</body>
+</html>

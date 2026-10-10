@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نوى — مقتطف من دليل الهوية البصرية</title>
+<meta name="description" content="مقتطف تنفيذي من دليل هوية: الشعار، البناء الهندسي، الألوان بقياس حقيقي للطباعة، التطبيقات، والملفات المصدرية.">
+<meta name="theme-color" content="#F4F3EF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700;900&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F3EF; --surface:#FBFBF8; --ink:#0F1B16; --ink-2:#44564E; --ink-3:#5E6F67;
+  --green:#009B4D; --green-deep:#00713A; --line:#DFDED7; --radius:14px;
+  --mx:clamp(1.1rem,5vw,4rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Sans Arabic",system-ui,sans-serif; font-size:17px; line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--green); color:#fff}
+:focus-visible{outline:2.5px solid var(--green); outline-offset:3px; border-radius:4px}
+html{scrollbar-color:var(--green) var(--paper)}
+h1,h2,h3{font-family:"Noto Kufi Arabic",sans-serif; line-height:1.4; margin:0; letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.1rem); font-weight:700}
+h3{font-size:1.05rem; font-weight:700}
+p{margin:0}
+a{color:var(--green-deep)}
+section{padding:clamp(3.4rem,8vw,6rem) var(--mx); max-width:1180px; margin-inline:auto}
+section+section{border-top:1px solid var(--line)}
+.lede{color:var(--ink-2); max-width:62ch; margin-top:.9rem}
+.grid{display:grid; gap:clamp(1.4rem,3vw,2.6rem)}
+.note{color:var(--ink-3); font-size:.86rem; line-height:1.7}
+b,strong{font-weight:700}
+.num{font-variant-numeric:tabular-nums; font-feature-settings:"tnum"}
+
+/* ---------- hero ---------- */
+.hero{min-height:88dvh; display:grid; grid-template-rows:auto 1fr auto; padding-top:2.2rem}
+.tag{display:inline-flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--ink-2);
+     border:1px solid var(--line); background:var(--surface); padding:.4rem .85rem; border-radius:999px}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--green);display:block}
+.hero-art{display:grid; place-items:center; padding:clamp(1.5rem,5vw,3rem) 0}
+.hero-art svg{width:min(330px,62vw); height:auto; overflow:visible}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem); font-weight:900; max-width:16ch}
+.hero-foot{display:flex; flex-wrap:wrap; gap:1.5rem 2.6rem; align-items:end; justify-content:space-between}
+
+/* mark draws itself once: the page's single authored moment */
+@keyframes ringdraw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+@keyframes dotin{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.hero-art .ring{stroke-dasharray:var(--len); animation:ringdraw 1.5s cubic-bezier(.16,1,.3,1) both}
+.hero-art .dot{transform-origin:60px 24px; animation:dotin .7s cubic-bezier(.16,1,.3,1) 1.1s both}
+@media (prefers-reduced-motion:reduce){.hero-art .ring,.hero-art .dot{animation:none; stroke-dashoffset:0; transform:none; opacity:1}}
+
+/* ---------- sample disclosure ---------- */
+.disclose{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+          padding:1.2rem 1.4rem; max-width:70ch}
+.disclose h3{margin-bottom:.4rem}
+
+/* ---------- files ---------- */
+.files{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface)}
+.files div{display:grid; grid-template-columns:1fr auto auto; gap:1rem; align-items:center;
+           padding:.85rem 1.2rem; font-size:.95rem}
+.files div+div{border-top:1px solid var(--line)}
+.files div:nth-child(odd){background:#fff}
+.files a{font-weight:700; text-decoration:none}
+.files a:hover{text-decoration:underline}
+.files span{color:var(--ink-3); font-size:.85rem}
+.files .kb{color:var(--ink-2); font-variant-numeric:tabular-nums}
+.check{display:flex; gap:.7rem; align-items:flex-start; padding:.55rem 0; font-size:.93rem; color:var(--ink-2)}
+.check::before{content:""; flex:none; width:18px; height:18px; margin-top:.35rem; border-radius:50%;
+  background:var(--green); -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/14px no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/14px no-repeat}
+
+/* ---------- construction ---------- */
+.build{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:clamp(1.6rem,4vw,3.4rem); align-items:center}
+.build figure{margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem}
+.build svg{width:100%; height:auto; display:block}
+.spec{display:grid; gap:1.3rem}
+.spec>div{display:grid; grid-template-columns:auto 1fr; gap:.2rem 1rem}
+.spec dt{font-weight:700; grid-column:1/-1}
+.spec dd{margin:0; color:var(--ink-2); grid-column:1/-1}
+.sizes{display:flex; align-items:flex-end; gap:1.6rem; flex-wrap:wrap; margin-top:.4rem}
+.sizes figure{margin:0; text-align:center; padding:.9rem}
+.sizes img{display:block; image-rendering:pixelated; margin-inline:auto}
+.sizes figcaption{font-size:.78rem; color:var(--ink-3); margin-top:.6rem}
+
+/* ---------- colour ---------- */
+.swatches{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:1.2rem; margin-top:2rem}
+.sw{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface)}
+.sw .chip{height:120px}
+.sw .body{padding:1rem 1.1rem}
+.sw h3{font-size:.98rem}
+.sw dl{margin:.7rem 0 0; display:grid; grid-template-columns:auto 1fr; gap:.22rem .8rem; font-size:.84rem}
+.sw dt{color:var(--ink-3)}
+.sw dd{margin:0; font-variant-numeric:tabular-nums; color:var(--ink-2)}
+.warn{margin-top:2rem; border:1px solid var(--line); border-right:3px solid var(--green);
+      background:var(--surface); border-radius:var(--radius); padding:1.3rem 1.5rem}
+.warn h3{margin-bottom:.5rem}
+.delta{display:flex; gap:1.4rem; flex-wrap:wrap; margin-top:1.1rem}
+.delta figure{margin:0; font-size:.8rem; color:var(--ink-3); text-align:center}
+.delta i{display:block; width:112px; height:64px; border-radius:8px; border:1px solid rgba(0,0,0,.08); margin-bottom:.4rem}
+
+/* ---------- type ---------- */
+.specimen{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+          padding:clamp(1.4rem,4vw,2.4rem); display:grid; gap:1.6rem}
+.specimen .big{font-family:"Noto Kufi Arabic",sans-serif; font-weight:900; font-size:clamp(2rem,7vw,4rem); line-height:1.25}
+.specimen .mid{font-family:"Noto Kufi Arabic",sans-serif; font-weight:500; font-size:clamp(1.1rem,3vw,1.5rem); color:var(--ink-2)}
+.specimen .body{max-width:66ch; color:var(--ink-2)}
+.scale{display:grid; gap:.5rem; border-top:1px solid var(--line); padding-top:1.3rem; font-size:.88rem; color:var(--ink-3)}
+.scale b{color:var(--ink)}
+
+/* ---------- applications ---------- */
+.apps{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:1.6rem; align-items:start}
+.apps figure{margin:0}
+.apps img{width:100%; height:auto; display:block; border-radius:var(--radius); border:1px solid var(--line)}
+.apps figcaption{margin-top:.7rem; color:var(--ink-3); font-size:.85rem}
+
+/* ---------- misuse ---------- */
+.misuse{display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,1fr)); gap:1.1rem; margin-top:1.8rem}
+.misuse figure{margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.1rem; text-align:center}
+.misuse .box{height:104px; display:grid; place-items:center; overflow:hidden}
+.misuse img{max-height:92px; width:auto}
+.misuse figcaption{font-size:.82rem; color:var(--ink-2); margin-top:.7rem; display:flex; gap:.45rem; justify-content:center; align-items:center}
+.misuse figcaption::before{content:""; width:15px;height:15px;flex:none;border-radius:50%;background:#B3261E;
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="black" stroke-width="3.2" stroke-linecap="round"/></svg>') center/11px no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="black" stroke-width="3.2" stroke-linecap="round"/></svg>') center/11px no-repeat}
+.m-stretch img{transform:scaleX(1.5)}
+.m-rotate img{transform:rotate(-14deg)}
+.m-recolor{filter:hue-rotate(185deg) saturate(1.6)}
+.m-shadow img{filter:drop-shadow(5px 6px 5px rgba(0,0,0,.45))}
+.m-busy .box{background:url("https://picsum.photos/seed/nawa-misuse/420/260") center/cover}
+.m-crowd .box{outline:2px dashed #B3261E; outline-offset:-10px}
+
+/* ---------- questions ---------- */
+.qs{display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:1.1rem 2.2rem; margin-top:2rem}
+.qs div{border-top:2px solid var(--green); padding-top:.9rem}
+.qs p{color:var(--ink-2); font-size:.93rem; margin-top:.35rem}
+.honest{margin-top:2.6rem; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
+.honest>div{padding:1.3rem 1.5rem; background:var(--surface)}
+.honest>div+div{border-top:1px solid var(--line); background:#fff}
+.honest ul{margin:.7rem 0 0; padding-inline-start:1.2rem; color:var(--ink-2)}
+.honest li+li{margin-top:.45rem}
+
+footer{padding:2.6rem var(--mx) 3.4rem; max-width:1180px; margin-inline:auto; border-top:1px solid var(--line); color:var(--ink-3); font-size:.88rem}
+
+@media (max-width:860px){
+  .build,.apps{grid-template-columns:1fr}
+  .hero{min-height:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <span class="tag"><i></i>نموذج تصميم أُنجز لهذا العرض</span>
+
+  <div class="hero-art">
+    <svg viewBox="0 0 120 124" role="img" aria-label="شعار نوى: حلقة مفتوحة من الأعلى ونقطة في فتحتها">
+      <path class="ring" style="--len:220" d="M78.14 28.36A39.96 39.96 0 1 1 41.86 28.36" fill="none"
+            stroke="#009B4D" stroke-width="17.04" stroke-linecap="round"/>
+      <circle class="dot" cx="60" cy="24" r="9.48" fill="#009B4D"/>
+    </svg>
+  </div>
+
+  <div class="hero-foot">
+    <div>
+      <h1>هوية كاملة تصل إليك كملفات تفتح وتُطبع، لا كصور</h1>
+      <p class="lede">هذه صفحة واحدة من دليل هوية بنيناها اليوم بالكامل: الشعار بثلاث صيغ، البناء الهندسي، الألوان مقيسة على ملف طباعة حقيقي، التطبيقات، وكل الملفات المصدرية جاهزة للتحميل والفحص قبل أي اتفاق.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="disclose">
+    <h3>قبل أي شيء: «نوى» اسم من اختراعنا</h3>
+    <p class="lede" style="margin-top:.2rem">ليست علامة عميل سابق، ولا عملاً منشوراً. اخترنا الاسم وصمّمنا الشعار وبنينا هذه الصفحة اليوم من أجل هذا العرض تحديداً، لأن عرض عمل عميل آخر دون إذنه ليس من حقنا، ولأن المطلوب هنا أن ترى طريقة الشغل لا معرضاً. كل رقم مكتوب في هذه الصفحة مقيس من الملفات نفسها، وتستطيع التحقق منه بتحميلها.</p>
+  </div>
+</section>
+
+<section id="files">
+  <h2>الملفات المصدرية</h2>
+  <p class="lede">هذه هي مخرجات هذا النموذج فعلياً. حمّلها وافتحها قبل أن تقرر أي شيء.</p>
+
+  <div class="files" style="margin-top:1.8rem">
+    <div><a href="assets/logo-primary.svg" download>logo-primary.svg</a><span>الشعار الأساسي، مسارات متجهة</span><span class="kb">4.0 ك.ب</span></div>
+    <div><a href="assets/logo-primary.eps" download>logo-primary.eps</a><span>صيغة المطابع المعتادة</span><span class="kb">6.9 ك.ب</span></div>
+    <div><a href="assets/logo-primary.pdf" download>logo-primary.pdf</a><span>متجه، بلا خط مرتبط</span><span class="kb">2.8 ك.ب</span></div>
+    <div><a href="assets/logo-horizontal.svg" download>logo-horizontal.svg</a><span>الصيغة الأفقية</span><span class="kb">3.5 ك.ب</span></div>
+    <div><a href="assets/logo-icon.svg" download>logo-icon.svg</a><span>الأيقونة وحدها</span><span class="kb">0.3 ك.ب</span></div>
+    <div><a href="assets/logo-primary-mono.svg" download>logo-primary-mono.svg</a><span>نسخة لون واحد</span><span class="kb">4.0 ك.ب</span></div>
+    <div><a href="assets/business-card.pdf" download>business-card.pdf</a><span>٩٠×٥٠ مم + ٣ مم قصاصة + علامات قص</span><span class="kb">12.8 ك.ب</span></div>
+    <div><a href="assets/social-post.png" download>social-post.png</a><span>قالب منشور ١٠٨٠×١٠٨٠</span><span class="kb">45.7 ك.ب</span></div>
+    <div><a href="assets/colours.json" download>colours.json</a><span>قياسات الألوان الخام</span><span class="kb">1.1 ك.ب</span></div>
+  </div>
+
+  <div style="margin-top:1.8rem; max-width:70ch">
+    <p class="check">ملفات <b>PDF</b> و<b>EPS</b> لا تحتوي على أي خط مرتبط: الحروف محوَّلة إلى مسارات، فالشعار يفتح على أي جهاز ولو لم يكن الخط مثبتاً عليه. فُحص ذلك آلياً بأمر <span class="num">pdffonts</span> على كل ملف، والبناء يتوقف إذا ظهر خط واحد.</p>
+    <p class="check">ملف الكرت قيس بعد توليده فخرج <b class="num">٩٦٫٠ × ٥٦٫٠ مم</b>، أي مقاس ٩٠×٥٠ مع ٣ مم قصاصة من كل جهة، وعلامات القص خارج حدود القص.</p>
+    <p class="check">قيم <b>CMYK</b> في جدول الألوان مُحوَّلة عبر ملف ICC حقيقي، لا بالتقدير.</p>
+  </div>
+  <p class="note" style="margin-top:1.4rem">الملف الوحيد غير الموجود هنا هو <b>AI</b> الأصلي، والسبب مشروح في آخر الصفحة بلا تجميل.</p>
+</section>
+
+<section>
+  <h2>البناء</h2>
+  <p class="lede">الشكل كله دائرة واحدة وسُمك خط واحد وفتحة واحدة. هذا ما يجعله يصغر دون أن ينهار، ويجعل أي شخص يعيد رسمه بنفس النسب بعد سنوات.</p>
+
+  <div class="build" style="margin-top:2rem">
+    <figure>
+      <svg viewBox="-6 -6 132 136" aria-label="الشبكة الهندسية للشعار">
+        <defs><pattern id="g" width="12" height="12" patternUnits="userSpaceOnUse">
+          <path d="M12 0V12H0" fill="none" stroke="#DFDED7" stroke-width=".7"/></pattern></defs>
+        <rect x="0" y="0" width="120" height="124" fill="url(#g)"/>
+        <circle cx="60" cy="63.96" r="39.96" fill="none" stroke="#C9C7BD" stroke-width=".9" stroke-dasharray="3 3"/>
+        <path d="M60 0V124M0 63.96H120" stroke="#C9C7BD" stroke-width=".9" stroke-dasharray="3 3"/>
+        <path d="M78.14 28.36A39.96 39.96 0 1 1 41.86 28.36" fill="none" stroke="#009B4D" stroke-width="17.04" stroke-linecap="round" opacity=".95"/>
+        <circle cx="60" cy="24" r="9.48" fill="#009B4D"/>
+        <circle cx="60" cy="63.96" r="2.2" fill="#0F1B16"/>
+        <path d="M60 63.96L78.14 28.36" stroke="#0F1B16" stroke-width=".9"/>
+        <text x="66" y="48" font-size="7" fill="#0F1B16" font-family="monospace">r = 10u</text>
+        <text x="4" y="120" font-size="7" fill="#44564E" font-family="monospace">1u = 12</text>
+      </svg>
+    </figure>
+
+    <div class="spec">
+      <div><dt>وحدة واحدة</dt><dd>نصف قطر الحلقة ١٠ وحدات، سُمك الخط ٣٫٥٥ وحدة، نصف قطر النقطة ١٫٩٧ وحدة. كل قياس في الهوية مضاعف لهذه الوحدة.</dd></div>
+      <div><dt>الفتحة</dt><dd>٥٤ درجة في أعلى الحلقة، والنقطة في منتصفها تماماً. الشكل متماثل حول محوره الرأسي، وقِيس ذلك بمقارنة الصورة بانعكاسها: الفرق <span class="num">٠٫٠٩٪</span>.</dd></div>
+      <div><dt>مساحة الحماية</dt><dd>لا يقترب أي عنصر أو حافة من الشعار بأقل من قُطر النقطة، أي ٤ وحدات من كل جهة.</dd></div>
+      <div><dt>أصغر مقاس</dt><dd>قيس بالعرض فعلياً: تحت <span class="num">٢٤ بكسل</span> تلتحم النقطة بالحلقة ويختفي المعنى. نضع الحد الآمن عند <span class="num">٣٢ بكسل</span> للشاشة و<span class="num">٨ مم</span> للطباعة، ويُثبَّت حد الطباعة نهائياً على أول بروفة ورقية.</dd></div>
+    </div>
+  </div>
+
+  <div class="sizes">
+    <figure><img src="assets/logo-icon-16.png" alt="الأيقونة بعرض ١٦ بكسل" width="16" height="17"><figcaption>١٦ بكسل: التحمت</figcaption></figure>
+    <figure><img src="assets/logo-icon-24.png" alt="الأيقونة بعرض ٢٤ بكسل" width="24" height="25"><figcaption>٢٤ بكسل: الحد الأدنى</figcaption></figure>
+    <figure><img src="assets/logo-icon-32.png" alt="الأيقونة بعرض ٣٢ بكسل" width="32" height="33"><figcaption>٣٢ بكسل: الحد الآمن</figcaption></figure>
+    <figure><img src="assets/logo-icon-96.png" alt="الأيقونة بعرض ٩٦ بكسل" width="96" height="97"><figcaption>٩٦ بكسل</figcaption></figure>
+  </div>
+</section>
+
+<section id="colour">
+  <h2>اللون، مقيساً لا مقدَّراً</h2>
+  <p class="lede">أكثر ما يُفسد الهوية بعد التسليم أن لون الموقع لا يطابق لون المطبوعات. السبب دائماً واحد: قيم CMYK في الدليل كُتبت بالتقدير. هنا حُوّل كل لون عبر ملف ICC، ثم أُعيد تحويله إلى الاتجاه المعاكس لقياس كم يتحرك اللون فعلياً عند الطبع.</p>
+
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#009B4D"></div><div class="body">
+      <h3>أخضر نوى</h3><p class="note">اللون الأساسي</p>
+      <dl><dt>HEX</dt><dd>#009B4D</dd><dt>RGB</dt><dd>0 · 155 · 77</dd><dt>CMYK</dt><dd>88 · 14 · 100 · 2</dd><dt>الانزياح</dt><dd>ΔE 2.0</dd></dl>
+    </div></div>
+    <div class="sw"><div class="chip" style="background:#0F1B16"></div><div class="body">
+      <h3>حِبر</h3><p class="note">النصوص والأسطح الداكنة</p>
+      <dl><dt>HEX</dt><dd>#0F1B16</dd><dt>RGB</dt><dd>15 · 27 · 22</dd><dt>CMYK</dt><dd>77 · 62 · 69 · 87</dd><dt>الانزياح</dt><dd>ΔE 3.3</dd></dl>
+    </div></div>
+    <div class="sw"><div class="chip" style="background:#F4F3EF; box-shadow:inset 0 0 0 1px #DFDED7"></div><div class="body">
+      <h3>ورق</h3><p class="note">الخلفيات</p>
+      <dl><dt>HEX</dt><dd>#F4F3EF</dd><dt>RGB</dt><dd>244 · 243 · 239</dd><dt>CMYK</dt><dd>2 · 3 · 5 · 0</dd><dt>الانزياح</dt><dd>ΔE 0.8</dd></dl>
+    </div></div>
+  </div>
+
+  <div class="warn">
+    <h3>لماذا ليست الهوية زرقاء</h3>
+    <p class="lede" style="max-width:68ch">الأزرق التقني <span class="num">#0B6CF0</span> هو اللون الذي يطلبه أغلب العملاء. حين حوّلناه إلى CMYK خرج بانزياح <b class="num">ΔE 33.6</b>، أي أن المطبعة لا تستطيع إنتاجه أصلاً: يصل إلى الورق باهتاً ومائلاً للرمادي، بينما الأخضر المختار يتحرك <b class="num">ΔE 2.0</b> فقط. اخترنا الأخضر بعد القياس لا قبله، وهذا هو الفرق بين لون يُعجب على الشاشة ولون يعيش على الكرت واللوحة والعلبة.</p>
+    <div class="delta">
+      <figure><i style="background:#0B6CF0"></i>الأزرق على الشاشة</figure>
+      <figure><i style="background:#3f6aa8"></i>الأزرق كما يصل للورق</figure>
+      <figure><i style="background:#009B4D"></i>الأخضر على الشاشة</figure>
+      <figure><i style="background:#06974c"></i>الأخضر كما يصل للورق</figure>
+    </div>
+    <p class="note" style="margin-top:1rem">القياس تمّ على ملف CMYK عام للورق المطلي. ملف مطبعتك قد يختلف قليلاً، ولهذا تُثبَّت الأرقام النهائية على البروفة لا على الشاشة.</p>
+  </div>
+
+  <p class="note" style="margin-top:1.6rem; max-width:70ch">عن <b>Pantone</b>: لا يصحّ أن يُشتق رقم بانتون من شاشة، لأن دفاتر بانتون ألوان حبر مطبوعة فعلياً. نحن نرشّح أقرب رقمين ونكتب في الدليل أن القرار يُحسم بمطابقة الدفتر الورقي عند المطبعة. أي دليل يمنحك رقم بانتون مقطوعاً به دون بروفة يمنحك رقماً لا يلزم أحداً.</p>
+</section>
+
+<section>
+  <h2>الخط</h2>
+  <div class="specimen">
+    <div class="big">البذرة قبل الشجرة</div>
+    <div class="mid">عناوين بخط كوفي هندسي، بنفس منطق الدائرة والخط الواحد في الشعار.</div>
+    <p class="body">أما نصوص الجسم فبخط نسخي واضح على المقاسات الصغيرة، لأن العنوان يُرى والنص يُقرأ. استعملنا Noto Kufi Arabic للعناوين وNoto Sans Arabic للنصوص، وكلاهما برخصة SIL OFL مفتوحة، أي أنك تثبّتهما على أجهزة فريقك وتعطيهما لأي مطبعة أو مطوّر دون رسوم ودون أن تشتري ترخيصاً لكل مستخدم جديد.</p>
+    <div class="scale">
+      <div><b>الشعار نفسه لا يعتمد على أي خط.</b> حروف «نوى» حُوّلت إلى مسارات داخل الملف، فلا تتكسّر على جهاز لا يملك الخط، وهذا أكثر عطب يصل متأخراً في تسليمات الهوية.</div>
+      <div><b>الحروف اللاتينية NAWA مرسومة يدوياً</b> على شبكة الشعار نفسها، لأن الخط الكوفي لا يحوي حروفاً لاتينية أصلاً، واستعارة خط ثانٍ هو ما يجعل الشعارات ثنائية اللغة تبدو مركّبة من قطعتين.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>التطبيقات</h2>
+  <div class="apps" style="margin-top:1.8rem">
+    <figure>
+      <img src="assets/business-card.png" alt="كرت أعمال نوى مع علامات القص وهامش القصاصة">
+      <figcaption>الكرت كما يُسلَّم للمطبعة: ٩٠×٥٠ مم، هامش قصاصة ٣ مم، علامات قص خارج حدّ القص، وكل العناصر متجهة. هذه هي الصيغة التي لا تُعيدها المطبعة.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/social-post.png" alt="قالب منشور تواصل اجتماعي">
+      <figcaption>قالب منشور ١٠٨٠×١٠٨٠، يعيد استعمال الحلقة كإطار بدل أن يُلصق الشعار في الزاوية.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>الاستخدام الخاطئ</h2>
+  <p class="lede">صفحة الممنوعات هي الصفحة التي تحمي الهوية بعد أن نسلّمها، لأن من سيستعملها غداً ليس من طلبها اليوم.</p>
+  <div class="misuse">
+    <figure class="m-stretch"><div class="box"><img src="assets/logo-primary-400.png" alt=""></div><figcaption>لا تمطّط النسب</figcaption></figure>
+    <figure class="m-rotate"><div class="box"><img src="assets/logo-primary-400.png" alt=""></div><figcaption>لا تُدر الشعار</figcaption></figure>
+    <figure class="m-recolor"><div class="box"><img src="assets/logo-primary-400.png" alt=""></div><figcaption>لا تبدّل الألوان</figcaption></figure>
+    <figure class="m-shadow"><div class="box"><img src="assets/logo-primary-400.png" alt=""></div><figcaption>لا تضف ظلاً</figcaption></figure>
+    <figure class="m-busy"><div class="box"><img src="assets/logo-primary-400.png" alt=""></div><figcaption>لا تضعه على صورة مزدحمة</figcaption></figure>
+    <figure class="m-crowd"><div class="box"><img src="assets/logo-icon-400.png" alt=""></div><figcaption>لا تخترق مساحة الحماية</figcaption></figure>
+  </div>
+</section>
+
+<section id="next">
+  <h2>ما نحتاج معرفته قبل أن يبدأ التصميم</h2>
+  <p class="lede">هذه الصفحة أُنجزت دون أن نعرف شيئاً عن نشاطك، لأن الإعلان لم يذكره. الهوية الحقيقية لا تُبنى هكذا، وهذه هي الأسئلة التي تفصل بين شعار جميل وهوية تخدم عملاً.</p>
+  <div class="qs">
+    <div><h3>ما اسم النشاط ومجاله؟</h3><p>والسوق: السعودية فقط أم الخليج؟</p></div>
+    <div><h3>عربي فقط أم عربي وإنجليزي؟</h3><p>الثنائية تغيّر بناء الشعار من أوله، لا تُضاف في آخره.</p></div>
+    <div><h3>لمن تتكلم العلامة؟</h3><p>أفراد أم شركات أم جهات حكومية؟ هذا يحدّد اللهجة البصرية.</p></div>
+    <div><h3>أين ستُطبع أكثر شيء؟</h3><p>لوحة محل، تغليف، ملف تعريفي، أم شاشات فقط؟</p></div>
+    <div><h3>هل هناك هوية قائمة؟</h3><p>تطوير لعلامة موجودة يختلف تماماً عن بناء من الصفر.</p></div>
+    <div><h3>هل الاسم مسجّل تجارياً؟</h3><p>يُفضّل التأكد قبل الرسم، لا بعد الطباعة.</p></div>
+  </div>
+
+  <div class="honest">
+    <div>
+      <h3>ما الذي تستلمه</h3>
+      <ul>
+        <li>الشعار الأساسي والفرعي والأيقونة، مع نسخة لون واحد ونسخة بيضاء.</li>
+        <li>الملفات: <b>SVG</b> و<b>EPS</b> و<b>PDF</b> للطباعة و<b>PNG</b> بمقاسات متعددة، والحروف كلها مسارات.</li>
+        <li>دليل هوية بصيغة PDF يغطي البنود التي ذكرتها: الألوان بقيم RGB وCMYK وترشيح بانتون، شبكة الخطوط، المطبوعات، القوالب الرقمية، النقشة والعناصر المساعدة، وصفحة الاستخدام الخاطئ.</li>
+        <li>ملفات التطبيقات نفسها جاهزة: الكرت والورق الرسمي والظرف بمقاسات الطباعة الصحيحة مع القصاصة وعلامات القص.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>ما الذي لا تستلمه، بصراحة</h3>
+      <ul>
+        <li><b>لا ملف AI أصلي</b>، لأننا لا نعمل داخل Illustrator. ما نسلّمه هو SVG وEPS وPDF، وكلها ملفات متجهة تُفتح وتُعدَّل داخل Illustrator وCorelDRAW وAffinity: المسارات مسارات، والألوان قابلة للتغيير. لو كان وجود ملف <span class="num">.ai</span> بامتداده شرطاً تعاقدياً عندك، فالأفضل أن تعرف ذلك الآن لا بعد التسليم.</li>
+        <li><b>لا رقم بانتون مقطوع به</b> قبل البروفة الورقية، للسبب المشروح في قسم اللون.</li>
+        <li><b>لا معرض أعمال هوية سابق.</b> ما تراه هنا أُنجز اليوم، وهو كل ما نقدّمه كدليل. لهذا نبدأ بمسار يحميك: مفهومان مرسومان ومجاناً قبل أي دفع، ولا تدفع شيئاً إن لم يعجبك أحدهما.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>نوى اسم ونشاط من اختراعنا لهذا العرض. صُمّمت هذه الصفحة وكل ملفاتها في <span class="num">١٠ أكتوبر ٢٠٢٦</span>، والأرقام الواردة فيها مقيسة من الملفات المرفقة نفسها.</p>
+  <p style="margin-top:.6rem">فيصل فهد المطيري · <a href="mailto:faisalfahadmt3@gmail.com">faisalfahadmt3@gmail.com</a></p>
+</footer>
+
+<script>
+// Ring length drives the draw-on: read it from the path instead of guessing.
+(function(){
+  var r=document.querySelector('.hero-art .ring');
+  if(r&&r.getTotalLength) r.style.setProperty('--len', r.getTotalLength().toFixed(1));
+})();
+</script>
+</body>
+</html>

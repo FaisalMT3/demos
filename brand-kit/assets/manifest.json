@@ -1,0 +1,147 @@
+{
+ "files": {
+  "business-card.pdf": 13096,
+  "business-card.png": 27907,
+  "business-card.svg": 61412,
+  "colours.json": 1165,
+  "logo-horizontal-1200.png": 43606,
+  "logo-horizontal-400.png": 13155,
+  "logo-horizontal-96.png": 3014,
+  "logo-horizontal.eps": 6770,
+  "logo-horizontal.pdf": 2846,
+  "logo-horizontal.svg": 3595,
+  "logo-icon-1200.png": 47484,
+  "logo-icon-16.png": 498,
+  "logo-icon-24.png": 764,
+  "logo-icon-32.png": 1001,
+  "logo-icon-400.png": 13764,
+  "logo-icon-96.png": 2981,
+  "logo-icon.eps": 2927,
+  "logo-icon.pdf": 1248,
+  "logo-icon.svg": 329,
+  "logo-primary-1200.png": 70533,
+  "logo-primary-400.png": 20618,
+  "logo-primary-96.png": 4575,
+  "logo-primary-mono.svg": 4131,
+  "logo-primary-white.svg": 4131,
+  "logo-primary.eps": 7018,
+  "logo-primary.pdf": 2902,
+  "logo-primary.svg": 4131,
+  "manifest.json": 2157,
+  "social-post.png": 46773,
+  "social-post.svg": 16215
+ },
+ "colours": [
+  {
+   "name": "أخضر نوى",
+   "role": "اللون الأساسي",
+   "hex": "#009B4D",
+   "rgb": [
+    0,
+    155,
+    77
+   ],
+   "cmyk": [
+    88.2,
+    13.6,
+    100.0,
+    2.3
+   ],
+   "lab": [
+    56.0,
+    -49.7,
+    30.5
+   ],
+   "printed_lab": [
+    55.2,
+    -51.0,
+    29.3
+   ],
+   "de": 2.0
+  },
+  {
+   "name": "حِبر",
+   "role": "النص والأسطح الداكنة",
+   "hex": "#0F1B16",
+   "rgb": [
+    15,
+    27,
+    22
+   ],
+   "cmyk": [
+    76.7,
+    62.2,
+    68.7,
+    87.1
+   ],
+   "lab": [
+    8.5,
+    -6.5,
+    1.7
+   ],
+   "printed_lab": [
+    10.1,
+    -4.0,
+    0.1
+   ],
+   "de": 3.3
+  },
+  {
+   "name": "ورق",
+   "role": "الخلفيات",
+   "hex": "#F4F3EF",
+   "rgb": [
+    244,
+    243,
+    239
+   ],
+   "cmyk": [
+    2.4,
+    2.6,
+    4.6,
+    0.0
+   ],
+   "lab": [
+    95.8,
+    -0.2,
+    2.1
+   ],
+   "printed_lab": [
+    96.1,
+    0.4,
+    2.6
+   ],
+   "de": 0.8
+  },
+  {
+   "name": "أزرق تِقني (مرفوض)",
+   "role": "مثال على لون لا يُطبع",
+   "hex": "#0B6CF0",
+   "rgb": [
+    11,
+    108,
+    240
+   ],
+   "cmyk": [
+    83.6,
+    61.8,
+    0.0,
+    0.0
+   ],
+   "lab": [
+    47.1,
+    15.7,
+    -74.6
+   ],
+   "printed_lab": [
+    44.3,
+    2.5,
+    -43.9
+   ],
+   "de": 33.6
+  }
+ ],
+ "checks": {
+  "card_mm": "96.0 × 56.0"
+ }
+}

@@ -1,0 +1,514 @@
+<!doctype html>
+<!--
+  نموذج: مُنشئ الباقات التفاعلي — ملف واحد، بدون مكتبات.
+  الزبون يضغط فقط: يختار المنتج والنوع، يزيد العدد، فيتحدّث المجموع في نفس اللحظة.
+  لا سلة، لا تسجيل دخول، لا صفحات كثيرة. المحتوى كله من لوحة التحكم (بدون كود).
+  Interactive bundle builder — one file, no dependencies, RTL Arabic.
+-->
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مُنشئ الباقات التفاعلي | نموذج عرض</title>
+<meta name="description" content="نموذج صفحة باقات: يختار الزبون المنتجات والأنواع بضغطة، ويظهر المجموع فوراً، ثم التوصيل ومعلومات الطلب.">
+<meta name="theme-color" content="#FAF7F2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231F4E46'/><text x='16' y='23' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif'>ب</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F2;--surface:#FFFFFF;--wash:#EFE9DF;--ink:#1C1A17;--muted:#5C564D;--line:#DDD5C8;
+  --accent:#1F4E46;--accent-dk:#143430;--on-accent:#FFFFFF;--ok:#1C7C54;--warn:#A4402A;
+  --font:'IBM Plex Sans Arabic',system-ui,sans-serif;
+  --pad:clamp(16px,4vw,40px);--r:16px;--shadow:0 1px 2px rgb(28 26 23/.06),0 8px 24px rgb(28 26 23/.06);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.75 var(--font);-webkit-font-smoothing:antialiased;padding-block-end:132px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+h1,h2,h3{line-height:1.35;margin:0;font-weight:700;text-wrap:balance}
+h1{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem)}
+h2{font-size:clamp(1.25rem,1.1rem + .8vw,1.6rem)}
+h3{font-size:1.0625rem}
+p{margin:0}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:var(--pad)}
+.num{direction:ltr;unicode-bidi:isolate;display:inline-block;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+
+header{position:sticky;top:0;z-index:30;background:rgb(250 247 242/.95);backdrop-filter:blur(8px);border-block-end:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:16px;min-height:64px}
+.brand{font-weight:700;font-size:1.125rem}
+.nav .right{margin-inline-start:auto;display:flex;gap:8px;align-items:center}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font-weight:700;border:1px solid transparent;cursor:pointer;background:none;transition:background .18s,border-color .18s}
+.btn-fill{background:var(--accent);color:var(--on-accent)}
+.btn-fill:hover{background:var(--accent-dk)}
+.btn-fill[disabled]{background:var(--line);color:var(--muted);cursor:not-allowed}
+.btn-line{border-color:var(--line);background:var(--surface)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-sm{min-height:38px;padding:0 14px;font-size:.9375rem}
+
+/* شريط الخطوات */
+.steps{display:flex;gap:6px;list-style:none;margin:0;padding:18px 0 0;font-size:.875rem;color:var(--muted);flex-wrap:wrap}
+.steps li{display:flex;align-items:center;gap:6px}
+.steps li::after{content:'›';margin-inline-start:6px;opacity:.5}
+.steps li:last-child::after{content:''}
+.steps b{display:grid;place-items:center;width:22px;height:22px;border-radius:999px;background:var(--wash);font-size:.8125rem}
+.steps li[aria-current] {color:var(--ink);font-weight:700}
+.steps li[aria-current] b{background:var(--accent);color:var(--on-accent)}
+
+section{padding-block:28px 8px}
+.intro{padding-block-end:18px}
+.intro h1{margin-block-end:8px}
+
+/* المنتجات */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px;margin-block-start:20px}
+.p{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.p.on{border-color:var(--accent);box-shadow:0 0 0 2px rgb(31 78 70/.18),var(--shadow)}
+.p .thumb{aspect-ratio:16/11;background:var(--wash);display:grid;place-items:center;font-size:3rem;position:relative}
+.p .thumb img{width:100%;height:100%;object-fit:cover}
+.p .thumb .tag{position:absolute;inset-block-start:10px;inset-inline-start:10px;background:var(--accent);color:var(--on-accent);font-size:.8125rem;font-weight:700;border-radius:999px;padding:2px 10px}
+.p .body{padding:16px;display:flex;flex-direction:column;gap:12px;flex:1}
+.p .price{color:var(--muted);font-size:.9375rem}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;border:0}
+.opt{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-size:.9375rem;cursor:pointer}
+.opt:hover{border-color:var(--ink)}
+.opt .sw{width:14px;height:14px;border-radius:999px;border:1px solid rgb(0 0 0/.12);flex:none}
+.opt.on{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.p .foot{margin-block-start:auto;display:flex;align-items:center;gap:10px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
+.qty button{width:38px;height:38px;border:0;background:none;cursor:pointer;font-size:1.25rem;font-weight:700;border-radius:999px}
+.qty button:hover{background:var(--wash)}
+.qty span{min-width:30px;text-align:center;font-weight:700}
+.p .add{flex:1}
+.lines{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:.9375rem}
+.lines li{display:flex;gap:8px;align-items:center;color:var(--muted)}
+.lines .x{border:0;background:none;cursor:pointer;color:var(--warn);font-weight:700;padding:0 4px;margin-inline-start:auto}
+
+/* التوصيل والمعلومات */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(18px,3vw,28px);box-shadow:var(--shadow)}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-block-start:18px}
+label{display:block;font-weight:500;font-size:.9375rem;margin-block-end:6px}
+input,select{width:100%;min-height:48px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+input:invalid:not(:placeholder-shown){border-color:var(--warn)}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-block-start:18px}
+.choice button{text-align:start;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg);cursor:pointer;line-height:1.5}
+.choice button.on{border-color:var(--accent);background:rgb(31 78 70/.06);box-shadow:0 0 0 1px var(--accent) inset}
+.choice b{display:block}
+.recap{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.recap li{display:flex;gap:12px;padding-block-end:8px;border-block-end:1px dashed var(--line)}
+.recap li span:last-child{margin-inline-start:auto;font-weight:700}
+.recap li.total{border:0;font-size:1.125rem;padding-block-start:4px}
+
+/* الشريط السفلي: المجموع لحظيًا */
+.bar{position:fixed;inset-block-end:0;inset-inline:0;z-index:40;background:var(--surface);border-block-start:1px solid var(--line);box-shadow:0 -8px 24px rgb(28 26 23/.07)}
+.bar .wrap{display:flex;align-items:center;gap:14px;padding-block:12px;flex-wrap:wrap}
+.bar .sum{line-height:1.4}
+.bar .sum b{font-size:1.375rem;display:block}
+.bar .go{margin-inline-start:auto}
+.hidden{display:none!important}
+.empty{padding:40px 20px;text-align:center;border:1px dashed var(--line);border-radius:var(--r);color:var(--muted)}
+
+/* لوحة التحكم */
+dialog{border:0;border-radius:var(--r);padding:0;max-width:min(880px,94vw);width:100%;background:var(--surface);color:var(--ink);box-shadow:0 24px 60px rgb(0 0 0/.25)}
+dialog::backdrop{background:rgb(28 26 23/.5)}
+.dlg{padding:clamp(18px,3vw,28px);max-height:86vh;overflow:auto}
+.dlg h2{margin-block-end:4px}
+.rows{display:flex;flex-direction:column;gap:10px;margin-block:16px}
+.row{display:grid;grid-template-columns:1.2fr .7fr 1.6fr auto;gap:8px;align-items:center}
+.row.w{grid-template-columns:1fr 1.4fr .6fr .6fr auto}
+.row input{min-height:42px;font-size:.9375rem}
+.row .del{border:1px solid var(--line);background:var(--bg);border-radius:10px;width:42px;height:42px;cursor:pointer;color:var(--warn);font-weight:700}
+.hdr{font-size:.8125rem;color:var(--muted);font-weight:700}
+.dlg .acts{display:flex;gap:8px;flex-wrap:wrap;margin-block-start:20px;padding-block-start:16px;border-block-start:1px solid var(--line)}
+.note{background:var(--wash);border-radius:12px;padding:14px 16px;font-size:.9375rem;color:var(--muted);margin-block-start:16px}
+@media (max-width:720px){
+  .row,.row.w{grid-template-columns:1fr 1fr;gap:6px}
+  .row .del,.row.w .del{grid-column:span 2;width:100%}
+  .hdr{display:none}
+  .choice{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <span class="brand" id="brandName">باقات هديّة</span>
+    <div class="right">
+      <button class="btn btn-line btn-sm" id="openAdmin">لوحة التحكم</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <ol class="steps" id="stepBar">
+    <li aria-current="step"><b>1</b> اختيار الباقة</li>
+    <li><b>2</b> التوصيل</li>
+    <li><b>3</b> معلومات الطلب</li>
+  </ol>
+
+  <!-- ١ — اختيار المنتجات -->
+  <section id="step1">
+    <div class="intro">
+      <h1>ابنِ باقتك بضغطة</h1>
+      <p class="muted">اختر المنتج ونوعه، وزِد العدد. المجموع يتحدّث في نفس اللحظة — بدون سلة وبدون تسجيل دخول.</p>
+    </div>
+    <div class="grid" id="products"></div>
+    <div class="empty hidden" id="emptyState">
+      لا توجد منتجات بعد. أضِفها من <b>لوحة التحكم</b> في الأعلى.
+    </div>
+  </section>
+
+  <!-- ٢ — التوصيل -->
+  <section id="step2" class="hidden">
+    <div class="intro"><h1>التوصيل</h1><p class="muted">اختر الولاية والبلدية، ثم مكان التسليم.</p></div>
+    <div class="panel">
+      <div class="fields">
+        <div>
+          <label for="wilaya">الولاية</label>
+          <select id="wilaya"></select>
+        </div>
+        <div>
+          <label for="commune">البلدية</label>
+          <select id="commune"></select>
+        </div>
+      </div>
+      <div class="choice">
+        <button type="button" id="toHome" class="on"><b>توصيل إلى المنزل</b><span class="muted" id="homePrice"></span></button>
+        <button type="button" id="toOffice"><b>استلام من المكتب</b><span class="muted" id="officePrice"></span></button>
+      </div>
+      <div class="note" id="shipNote"></div>
+    </div>
+  </section>
+
+  <!-- ٣ — المعلومات -->
+  <section id="step3" class="hidden">
+    <div class="intro"><h1>معلومات الطلب</h1><p class="muted">خمس خانات فقط، ثم تأكيد.</p></div>
+    <div class="panel">
+      <form id="orderForm" novalidate>
+        <div class="fields">
+          <div><label for="fn">الاسم</label><input id="fn" required placeholder="مثال: أمين"></div>
+          <div><label for="ln">اللقب</label><input id="ln" required placeholder="مثال: بن علي"></div>
+          <div><label for="ph">رقم الهاتف</label><input id="ph" required inputmode="tel" pattern="[0-9+ ]{9,15}" placeholder="0xxxxxxxxx"></div>
+        </div>
+        <ul class="recap" id="recap"></ul>
+        <div class="acts" style="display:flex;gap:8px;margin-block-start:20px">
+          <button class="btn btn-fill" type="submit">تأكيد الطلب</button>
+          <button class="btn btn-line" type="button" id="back2">رجوع</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ٤ — تم -->
+  <section id="step4" class="hidden">
+    <div class="panel">
+      <h1>تم تأكيد الطلب ✅</h1>
+      <p class="muted" style="margin-block:10px 18px">هذا نموذج عرض، فلم يُرسل شيء فعلياً. في النسخة المنفَّذة يصلك الطلب في نفس اللحظة على الواتساب والبريد، ويُسجَّل في لوحة الطلبات عندك.</p>
+      <ul class="recap" id="recap2"></ul>
+      <div style="margin-block-start:20px"><button class="btn btn-line" id="again">ابدأ طلباً جديداً</button></div>
+    </div>
+  </section>
+</main>
+
+<!-- الشريط السفلي -->
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div class="sum">
+      <span class="muted" id="count">لم تختر شيئاً بعد</span>
+      <b><span class="num" id="total">0</span> <span id="cur1">دج</span></b>
+    </div>
+    <button class="btn btn-fill go" id="next" disabled>متابعة للتوصيل</button>
+    <button class="btn btn-line go hidden" id="back1">رجوع</button>
+  </div>
+</div>
+
+<!-- لوحة التحكم: كل المحتوى من هنا، بدون كود -->
+<dialog id="admin">
+  <div class="dlg">
+    <h2>لوحة التحكم</h2>
+    <p class="muted">أضِف منتجاتك وأسعار التوصيل هنا. الأنواع أو الألوان تُكتب مفصولة بفاصلة.</p>
+
+    <div style="margin-block-start:18px">
+      <label for="brandIn">اسم المتجر</label>
+      <input id="brandIn">
+    </div>
+
+    <h3 style="margin-block-start:22px">المنتجات</h3>
+    <div class="row hdr"><span>الاسم</span><span>السعر</span><span>الأنواع / الألوان</span><span></span></div>
+    <div class="rows" id="adminProducts"></div>
+    <button class="btn btn-line btn-sm" id="addProduct">+ أضف منتجاً</button>
+
+    <h3 style="margin-block-start:26px">الولايات وأسعار التوصيل</h3>
+    <div class="row w hdr"><span>الولاية</span><span>البلديات</span><span>منزل</span><span>مكتب</span><span></span></div>
+    <div class="rows" id="adminWilayas"></div>
+    <button class="btn btn-line btn-sm" id="addWilaya">+ أضف ولاية</button>
+
+    <div class="note">الصور تُرفَع في النسخة المنفَّذة من نفس اللوحة (سحب وإفلات). هنا تظهر رموز بدل الصور لأن النموذج ملف واحد بدون استضافة.</div>
+
+    <div class="acts">
+      <button class="btn btn-fill" id="save">حفظ</button>
+      <button class="btn btn-line" id="clearAll">تفريغ كل المحتوى</button>
+      <button class="btn btn-line" id="reset">استعادة المحتوى التجريبي</button>
+      <button class="btn btn-line" id="closeAdmin" style="margin-inline-start:auto">إغلاق</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+// ── المحتوى التجريبي (يُستبدل كله من لوحة التحكم) ─────────────────────────────
+const SAMPLE = {
+  brand: 'باقات هديّة',
+  currency: 'دج',
+  products: [
+    {name:'عطر',       emoji:'🌸', price:1800, opts:[['ورد','#E8A0B4'],['عود','#8A5A32'],['مسك','#EFEADF']]},
+    {name:'شوكولاتة',  emoji:'🍫', price:900,  opts:[['حليب','#9C6B3F'],['داكنة','#3E2A1E'],['بالبندق','#C89B6A']]},
+    {name:'دبدوب',     emoji:'🧸', price:1500, opts:[['بيج','#D8C3A5'],['بنّي','#7A5230'],['أبيض','#F5F2EC']]},
+    {name:'ورد طبيعي', emoji:'🌹', price:1200, opts:[['أحمر','#B22234'],['أبيض','#F6F3EE'],['مشكّل','#D98A8A']]},
+    {name:'كوب مطبوع', emoji:'☕', price:700,  opts:[['أسود','#262220'],['أبيض','#F6F3EE']]},
+    {name:'بطاقة إهداء',emoji:'💌',price:200,  opts:[['عيد ميلاد','#E7B84B'],['تهنئة','#88B7A3'],['اعتذار','#C58FA8']]}
+  ],
+  wilayas: [
+    {name:'الجزائر',  communes:['باب الواد','الحراش','بئر مراد رايس','الدار البيضاء'], home:400, office:250},
+    {name:'وهران',    communes:['وهران','بئر الجير','السانيا'],                        home:600, office:350},
+    {name:'قسنطينة',  communes:['قسنطينة','الخروب','عين سمارة'],                       home:600, office:350},
+    {name:'سطيف',     communes:['سطيف','العلمة','عين ولمان'],                          home:650, office:400},
+    {name:'بجاية',    communes:['بجاية','أقبو','خراطة'],                                home:700, office:400}
+  ]
+};
+const KEY = 'bundle-builder-v1';
+const load = () => { try { return JSON.parse(localStorage[KEY]) || SAMPLE } catch { return SAMPLE } };
+let data = load();
+let picked = [];          // [{p:index, opt:'ورد', qty:2}]
+let ship = {home:true};
+
+const $  = s => document.querySelector(s);
+const el = (t,c,h) => { const n=document.createElement(t); if(c)n.className=c; if(h!=null)n.innerHTML=h; return n };
+const money = n => `<span class="num">${n.toLocaleString('en-US')}</span> ${data.currency}`;
+
+// ── ١: شبكة المنتجات ─────────────────────────────────────────────────────────
+function renderProducts(){
+  $('#brandName').textContent = data.brand || 'متجري';
+  $('#cur1').textContent = data.currency;
+  const box = $('#products'); box.innerHTML = '';
+  $('#emptyState').classList.toggle('hidden', data.products.length > 0);
+
+  data.products.forEach((p,i) => {
+    const mine = picked.filter(l => l.p === i);
+    const card = el('article', 'p' + (mine.length ? ' on' : ''));
+    const thumb = el('div','thumb', (p.emoji || '📦') + (mine.length ? `<span class="tag">${mine.reduce((s,l)=>s+l.qty,0)} في الباقة</span>` : ''));
+    card.append(thumb);
+
+    const body = el('div','body');
+    body.append(el('h3',null,p.name), el('p','price', money(p.price) + ' / الوحدة'));
+
+    // اختيار النوع أو اللون
+    let cur = (p.opts[0] || ['',''])[0];
+    const opts = el('div','opts');
+    (p.opts||[]).forEach(([name,sw],k) => {
+      const b = el('button','opt' + (k===0?' on':''), (sw?`<i class="sw" style="background:${sw}"></i>`:'') + name);
+      b.type = 'button';
+      b.onclick = () => { cur = name; opts.querySelectorAll('.opt').forEach(o=>o.classList.remove('on')); b.classList.add('on') };
+      opts.append(b);
+    });
+    if (p.opts && p.opts.length) body.append(opts);
+
+    // العدد + الإضافة
+    let q = 1;
+    const foot = el('div','foot');
+    const qty = el('div','qty');
+    const minus = el('button',null,'−'), plus = el('button',null,'+'), out = el('span',null,'1');
+    minus.type = plus.type = 'button';
+    minus.onclick = () => { q = Math.max(1, q-1); out.textContent = q };
+    plus.onclick  = () => { q = Math.min(99, q+1); out.textContent = q };
+    minus.setAttribute('aria-label','تقليل'); plus.setAttribute('aria-label','زيادة');
+    qty.append(minus, out, plus);
+    const add = el('button','btn btn-fill btn-sm add','أضف للباقة'); add.type='button';
+    add.onclick = () => { addLine(i, cur, q); };
+    foot.append(qty, add);
+    body.append(foot);
+
+    // ما أُضيف من هذا المنتج (يمكن حذف خيار دون غيره)
+    if (mine.length){
+      const ul = el('ul','lines');
+      mine.forEach(l => {
+        const li = el('li', null, `<span>${l.opt||'—'} × <span class="num">${l.qty}</span></span><span>${money(l.qty*p.price)}</span>`);
+        const x = el('button','x','حذف ✕'); x.type='button';
+        x.onclick = () => { picked = picked.filter(o => o !== l); render() };
+        li.append(x); ul.append(li);
+      });
+      body.append(ul);
+    }
+    card.append(body); box.append(card);
+  });
+}
+function addLine(p, opt, qty){
+  const found = picked.find(l => l.p===p && l.opt===opt);
+  if (found) found.qty = Math.min(99, found.qty + qty); else picked.push({p, opt, qty});
+  render();
+}
+
+// ── المجموع اللحظي ───────────────────────────────────────────────────────────
+const itemsTotal = () => picked.reduce((s,l) => s + l.qty * data.products[l.p].price, 0);
+const shipCost = () => { const w = data.wilayas[+$('#wilaya').value] ; return w ? (ship.home ? +w.home : +w.office) : 0 };
+
+function renderBar(){
+  const n = picked.reduce((s,l)=>s+l.qty,0);
+  const onShip = !$('#step2').classList.contains('hidden');
+  const t = itemsTotal() + (onShip ? shipCost() : 0);
+  $('#count').textContent = n ? `${n} قطعة في الباقة` + (onShip ? ' + التوصيل' : '') : 'لم تختر شيئاً بعد';
+  $('#total').textContent = t.toLocaleString('en-US');
+  $('#next').disabled = n === 0;
+}
+
+// ── ٢: التوصيل ───────────────────────────────────────────────────────────────
+function renderWilayas(){
+  const w = $('#wilaya'); const keep = w.value;
+  w.innerHTML = '';
+  data.wilayas.forEach((x,i) => { const o = el('option', null, x.name); o.value = i; w.append(o) });
+  if (keep && data.wilayas[keep]) w.value = keep;
+  renderCommunes();
+}
+function renderCommunes(){
+  const w = data.wilayas[+$('#wilaya').value];
+  const c = $('#commune'); c.innerHTML = '';
+  (w ? w.communes : []).forEach(x => { const o = el('option',null,x); o.value = x; c.append(o) });
+  if (w){
+    $('#homePrice').innerHTML   = 'سعر التوصيل ' + money(+w.home);
+    $('#officePrice').innerHTML = 'سعر التوصيل ' + money(+w.office);
+    $('#shipNote').innerHTML = `المجموع مع التوصيل: <b>${money(itemsTotal() + shipCost())}</b> — ${money(itemsTotal())} للباقة و ${money(shipCost())} للتوصيل.`;
+  }
+  renderBar();
+}
+
+// ── ٣: الملخّص ───────────────────────────────────────────────────────────────
+function renderRecap(target){
+  const ul = $(target); ul.innerHTML = '';
+  picked.forEach(l => {
+    const p = data.products[l.p];
+    ul.append(el('li', null, `<span>${p.name} — ${l.opt||'—'} × <span class="num">${l.qty}</span></span><span>${money(l.qty*p.price)}</span>`));
+  });
+  const w = data.wilayas[+$('#wilaya').value];
+  ul.append(el('li', null, `<span>التوصيل — ${w ? w.name : ''} / ${$('#commune').value||''} (${ship.home?'منزل':'مكتب'})</span><span>${money(shipCost())}</span>`));
+  ul.append(el('li','total', `<span>المجموع الكامل</span><span>${money(itemsTotal()+shipCost())}</span>`));
+}
+
+function render(){ renderProducts(); renderCommunes(); renderBar() }
+
+// ── التنقّل بين الخطوات ──────────────────────────────────────────────────────
+function step(n){
+  [1,2,3,4].forEach(i => $('#step'+i).classList.toggle('hidden', i !== n));
+  [...$('#stepBar').children].forEach((li,i) => i === n-1 ? li.setAttribute('aria-current','step') : li.removeAttribute('aria-current'));
+  $('#stepBar').classList.toggle('hidden', n === 4);
+  $('#bar').classList.toggle('hidden', n > 2);
+  $('#back1').classList.toggle('hidden', n === 1);
+  $('#next').textContent = n === 1 ? 'متابعة للتوصيل' : 'متابعة لمعلومات الطلب';
+  if (n === 3) renderRecap('#recap');
+  renderBar();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+$('#next').onclick  = () => step($('#step1').classList.contains('hidden') ? 3 : 2);
+$('#back1').onclick = () => step(1);
+$('#back2').onclick = () => step(2);
+$('#wilaya').onchange = renderCommunes;
+$('#toHome').onclick   = () => { ship.home = true;  $('#toHome').classList.add('on');  $('#toOffice').classList.remove('on'); renderCommunes() };
+$('#toOffice').onclick = () => { ship.home = false; $('#toOffice').classList.add('on'); $('#toHome').classList.remove('on');  renderCommunes() };
+$('#orderForm').onsubmit = e => {
+  e.preventDefault();
+  if (!e.target.reportValidity()) return;
+  renderRecap('#recap2'); step(4);
+};
+$('#again').onclick = () => { picked = []; render(); step(1) };
+
+// ── لوحة التحكم ──────────────────────────────────────────────────────────────
+function adminRow(p = {name:'',price:'',opts:[]}){
+  const r = el('div','row');
+  r.innerHTML = `<input class="n" placeholder="اسم المنتج" value="${p.name||''}">
+                 <input class="pr" inputmode="numeric" placeholder="0" value="${p.price||''}">
+                 <input class="op" placeholder="أحمر، أزرق، أبيض" value="${(p.opts||[]).map(o=>o[0]).join('، ')}">`;
+  const d = el('button','del','✕'); d.type='button'; d.onclick = () => r.remove(); d.title='حذف';
+  r.append(d); return r;
+}
+function adminWRow(w = {name:'',communes:[],home:'',office:''}){
+  const r = el('div','row w');
+  r.innerHTML = `<input class="n" placeholder="الولاية" value="${w.name||''}">
+                 <input class="cm" placeholder="البلديات، مفصولة بفاصلة" value="${(w.communes||[]).join('، ')}">
+                 <input class="h" inputmode="numeric" placeholder="منزل" value="${w.home??''}">
+                 <input class="o" inputmode="numeric" placeholder="مكتب" value="${w.office??''}">`;
+  const d = el('button','del','✕'); d.type='button'; d.onclick = () => r.remove(); d.title='حذف';
+  r.append(d); return r;
+}
+function fillAdmin(){
+  $('#brandIn').value = data.brand || '';
+  $('#adminProducts').innerHTML = ''; data.products.forEach(p => $('#adminProducts').append(adminRow(p)));
+  $('#adminWilayas').innerHTML = ''; data.wilayas.forEach(w => $('#adminWilayas').append(adminWRow(w)));
+}
+const split = s => s.split(/[،,]/).map(x => x.trim()).filter(Boolean);
+$('#openAdmin').onclick  = () => { fillAdmin(); $('#admin').showModal() };
+$('#closeAdmin').onclick = () => $('#admin').close();
+$('#addProduct').onclick = () => $('#adminProducts').append(adminRow());
+$('#addWilaya').onclick  = () => $('#adminWilayas').append(adminWRow());
+$('#save').onclick = () => {
+  const old = data.products;
+  data = {
+    brand: $('#brandIn').value.trim() || 'متجري',
+    currency: data.currency,
+    products: [...$('#adminProducts').children].map((r,i) => ({
+      name: r.querySelector('.n').value.trim(),
+      price: +r.querySelector('.pr').value || 0,
+      emoji: (old[i]||{}).emoji || '📦',
+      // نحافظ على لون كل خيار إن كان موجوداً، وإلا بلا لون
+      opts: split(r.querySelector('.op').value).map(n => [n, ((old[i]||{opts:[]}).opts.find(o => o[0]===n)||[])[1] || ''])
+    })).filter(p => p.name),
+    wilayas: [...$('#adminWilayas').children].map(r => ({
+      name: r.querySelector('.n').value.trim(),
+      communes: split(r.querySelector('.cm').value),
+      home: +r.querySelector('.h').value || 0,
+      office: +r.querySelector('.o').value || 0
+    })).filter(w => w.name)
+  };
+  localStorage[KEY] = JSON.stringify(data);
+  picked = []; renderWilayas(); render(); step(1); $('#admin').close();
+};
+$('#clearAll').onclick = () => {
+  data = {brand:'متجري', currency:data.currency, products:[], wilayas:[]};
+  localStorage[KEY] = JSON.stringify(data);
+  picked = []; fillAdmin(); renderWilayas(); render(); step(1);
+};
+$('#reset').onclick = () => {
+  data = JSON.parse(JSON.stringify(SAMPLE));
+  localStorage.removeItem(KEY);
+  picked = []; fillAdmin(); renderWilayas(); render(); step(1);
+};
+
+renderWilayas(); render(); step(1);
+
+// فحص سريع: المجموع والتوصيل وحذف خيار واحد — يظهر في الـ console عند ?selftest
+if (location.search.includes('selftest')) (() => {
+  const t = (c,m) => console[c?'log':'error']((c?'✓ ':'✗ ')+m);
+  const p0 = data.products[0].price, p1 = data.products[1].price;
+  picked = [{p:0,opt:'ورد',qty:2},{p:1,opt:'حليب',qty:1}];
+  t(itemsTotal() === p0*2 + p1, 'المجموع = مجموع الأسطر');
+  addLine(0,'ورد',3);
+  t(picked.length === 2 && picked[0].qty === 5, 'إضافة نفس الخيار تزيد العدد ولا تكرّر السطر');
+  addLine(0,'عود',1);
+  t(picked.length === 3, 'خيار مختلف من نفس المنتج = سطر جديد');
+  picked = picked.filter(l => l.opt !== 'عود');
+  t(picked.length === 2, 'حذف خيار لا يحذف بقية الخيارات');
+  const w = data.wilayas[0]; $('#wilaya').value = 0;
+  ship.home = true;  t(shipCost() === +w.home,   'سعر التوصيل للمنزل من جدول الولاية');
+  ship.home = false; t(shipCost() === +w.office, 'سعر الاستلام من المكتب من جدول الولاية');
+  ship.home = true; picked = []; render();
+})();
+</script>
+</body>
+</html>

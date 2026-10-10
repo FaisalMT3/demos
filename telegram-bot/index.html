@@ -1,0 +1,537 @@
+<!doctype html>
+<!--
+  نموذج: بوت تلجرام للقناة — ملف واحد، بدون مكتبات.
+  ثلاث شاشات: محادثة العميل، محادثة الإدارة (وصول الاستفسارات والرد عليها)، ولوحة التحكم.
+  كل المحتوى (الروابط، الأسئلة الشائعة، نص الترحيب) من لوحة التحكم بدون كود.
+  Telegram bot flow demo — one file, no dependencies, RTL Arabic.
+-->
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بوت تلجرام للقناة | نموذج تفاعلي</title>
+<meta name="description" content="نموذج بوت تلجرام: قائمة روابط بأزرار، أسئلة شائعة بردود فورية، واستفسارات تصل للإدارة ويُرد عليها من نفس البوت.">
+<meta name="theme-color" content="#17212b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235288c1'/><text x='16' y='23' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif'>ب</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#0f1720;--panel:#17212b;--chat:#0e1621;--in:#182533;--out:#2b5278;--ink:#e9edf1;
+  --muted:#8d9aa7;--line:#22303d;--accent:#5288c1;--accent-dk:#3f6f9f;--link:#62bcf9;--ok:#4db6ac;
+  --font:'IBM Plex Sans Arabic',system-ui,sans-serif;--r:14px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:400 1rem/1.7 var(--font);-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+h1,h2,h3{margin:0;line-height:1.35;font-weight:700;text-wrap:balance}
+h1{font-size:clamp(1.4rem,1.1rem + 1.2vw,2rem)}
+h2{font-size:1.15rem}
+h3{font-size:1rem}
+p{margin:0}
+a{color:var(--link)}
+.num{direction:ltr;unicode-bidi:isolate;display:inline-block;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.wrap{max-width:1060px;margin-inline:auto;padding:clamp(16px,4vw,32px)}
+
+/* الترويسة */
+.top{border-block-end:1px solid var(--line);background:var(--panel)}
+.top .wrap{padding-block:18px 20px}
+.top p{color:var(--muted);margin-block-start:6px;font-size:.95rem;max-width:62ch}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-block-start:16px}
+.tab{min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:#111b24;cursor:pointer;font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.tab:hover{border-color:var(--accent)}
+.tab[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.tab .dot{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:#c0392b;color:#fff;font-size:.75rem;font-weight:700}
+.tab[aria-selected=true] .dot{background:#fff;color:#c0392b}
+
+/* الهاتف والمحادثة */
+.stage{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.stage.two{grid-template-columns:360px minmax(0,1fr)}}
+.phone{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;height:min(78vh,640px)}
+.phone .bar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);border-block-end:1px solid var(--line)}
+.ava{width:38px;height:38px;border-radius:999px;background:var(--accent);display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+.bar .t{min-width:0}
+.bar .t b{display:block;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .t span{display:block;font-size:.8rem;color:var(--muted)}
+.bar .badge{margin-inline-start:auto;font-size:.7rem;background:#2a3b4c;color:var(--muted);padding:2px 7px;border-radius:6px;letter-spacing:.04em}
+.feed{flex:1;overflow-y:auto;padding:14px;background:var(--chat);display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.msg{max-width:84%;padding:9px 12px;border-radius:var(--r);background:var(--in);box-shadow:0 1px 1px rgb(0 0 0/.2);white-space:pre-wrap;word-break:break-word;font-size:.95rem;line-height:1.65}
+.msg.me{background:var(--out);align-self:flex-start;border-end-end-radius:4px}
+.msg.bot{align-self:flex-end;border-end-start-radius:4px}
+.msg .time{display:block;font-size:.7rem;color:rgb(233 237 241/.55);margin-block-start:3px;text-align:end}
+.msg b{font-weight:700}
+.sys{align-self:center;font-size:.8rem;color:var(--muted);background:#141f29;padding:3px 10px;border-radius:999px}
+.kb{display:flex;flex-direction:column;gap:4px;align-self:flex-end;max-width:84%;width:100%}
+.kb .row{display:flex;gap:4px}
+.kb button,.kb a{flex:1;min-height:40px;padding:6px 10px;border-radius:10px;border:0;background:#20303f;color:var(--link);cursor:pointer;font-size:.9rem;font-weight:500;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background .15s}
+.kb button:hover,.kb a:hover{background:#2a3e52}
+.kb .cmd{color:var(--ink)}
+.compose{display:flex;gap:8px;padding:10px;background:var(--panel);border-block-start:1px solid var(--line)}
+.compose input{flex:1;min-width:0;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#101a23}
+.compose button{min-height:44px;padding:0 18px;border-radius:999px;border:0;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+.compose button:hover{background:var(--accent-dk)}
+.typing{align-self:flex-end;display:flex;gap:4px;padding:10px 14px;background:var(--in);border-radius:var(--r)}
+.typing i{width:6px;height:6px;border-radius:999px;background:var(--muted);animation:b 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes b{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+
+/* الشرح والبطاقات */
+.side{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.card h3{margin-block-end:8px}
+.card p,.card li{color:var(--muted);font-size:.95rem}
+.card ul{margin:0;padding-inline-start:1.1em;display:flex;flex-direction:column;gap:6px}
+.card .hint{color:var(--ink)}
+
+/* لوحة التحكم */
+.panel-grid{display:grid;gap:14px}
+@media (min-width:760px){.panel-grid{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:.85rem;color:var(--muted);margin-block-end:4px}
+.f{margin-block-end:12px}
+input[type=text],input[type=url],textarea{width:100%;min-height:42px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#101a23}
+textarea{min-height:76px;resize:vertical;line-height:1.6}
+.rowlist{display:flex;flex-direction:column;gap:8px}
+.item{display:grid;gap:8px;grid-template-columns:1fr 1fr auto;align-items:start}
+.item.faq{grid-template-columns:1fr 1.4fr auto}
+@media (max-width:620px){.item,.item.faq{grid-template-columns:1fr}}
+.x{min-height:42px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#20303f;cursor:pointer;color:var(--muted)}
+.x:hover{border-color:#c0392b;color:#e74c3c}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-block-start:14px}
+.btn{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:#111b24;cursor:pointer;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn-fill{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.btn-fill:hover{background:var(--accent-dk)}
+.saved{color:var(--ok);font-size:.9rem;opacity:0;transition:opacity .2s}
+.saved.on{opacity:1}
+.empty{color:var(--muted);font-size:.9rem;padding:6px 0}
+footer{border-block-start:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer .wrap{padding-block:18px}
+[hidden]{display:none!important}
+#selftest{position:fixed;inset-block-end:12px;inset-inline-start:12px;z-index:50;background:#101a23;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.85rem;max-width:min(92vw,520px);white-space:pre-wrap}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <h1>بوت تلجرام للقناة — نموذج تفاعلي</h1>
+    <p>اضغط في المحادثة كما يضغط المشترك: قائمة الروابط بأزرار، أسئلة شائعة بردود فورية، واستفسار يصل للإدارة ويُرد عليه من نفس البوت. المحتوى كله من «لوحة التحكم» بدون كود.</p>
+    <div class="tabs" role="tablist" aria-label="شاشات النموذج">
+      <button class="tab" role="tab" id="t-user" aria-selected="true" aria-controls="v-user">👤 محادثة المشترك</button>
+      <button class="tab" role="tab" id="t-admin" aria-selected="false" aria-controls="v-admin">🛡️ محادثة الإدارة <span class="dot" id="badge" hidden>0</span></button>
+      <button class="tab" role="tab" id="t-cfg" aria-selected="false" aria-controls="v-cfg">⚙️ لوحة التحكم</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- محادثة المشترك -->
+  <section id="v-user" role="tabpanel" aria-labelledby="t-user">
+    <div class="stage two">
+      <div class="phone">
+        <div class="bar">
+          <div class="ava" id="u-ava">ق</div>
+          <div class="t"><b id="u-name">بوت القناة</b><span>متصل دائماً</span></div>
+          <span class="badge">BOT</span>
+        </div>
+        <div class="feed" id="feed-user" aria-live="polite"></div>
+        <form class="compose" id="form-user">
+          <input id="in-user" placeholder="اكتب رسالة…" autocomplete="off" aria-label="رسالة المشترك">
+          <button type="submit">إرسال</button>
+        </form>
+      </div>
+      <div class="side">
+        <div class="card">
+          <h3>ما تراه هنا</h3>
+          <ul>
+            <li><b class="hint"><span class="num">/start</span></b> يفتح القائمة الرئيسية بأزرار — لا كتابة أوامر على المشترك.</li>
+            <li><b class="hint">روابطنا</b> أزرار تفتح روابطك مباشرة (قناة، متجر، واتساب، أي رابط تضيفه).</li>
+            <li><b class="hint">الأسئلة الشائعة</b> رد فوري بدون انتظارك، وهو ما يقلّل الرسائل المتكررة.</li>
+            <li><b class="hint">تواصل مع الإدارة</b> يرسل استفسار المشترك إليك مع اسمه ورقم تسلسلي، وردّك يرجع له في نفس البوت.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>جرّب هذا</h3>
+          <ul>
+            <li>اضغط «تواصل مع الإدارة» ثم اكتب سؤالاً، وانتقل لتبويب <b class="hint">محادثة الإدارة</b> لتراه وصل، وردّ عليه.</li>
+            <li>افتح <b class="hint">لوحة التحكم</b> واكتب روابطك وأسئلتك، ثم ارجع هنا — المحادثة تتغير فوراً.</li>
+            <li>اضغط «تفريغ كل المحتوى» في اللوحة لترى الشكل الذي سيصلك فارغاً قبل أن تضيف محتواك.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- محادثة الإدارة -->
+  <section id="v-admin" role="tabpanel" aria-labelledby="t-admin" hidden>
+    <div class="stage two">
+      <div class="phone">
+        <div class="bar">
+          <div class="ava">🛡️</div>
+          <div class="t"><b>إشعارات الإدارة</b><span>يصلك هنا كل استفسار</span></div>
+          <span class="badge">ADMIN</span>
+        </div>
+        <div class="feed" id="feed-admin" aria-live="polite"></div>
+        <form class="compose" id="form-admin">
+          <input id="in-admin" placeholder="اختر «رد» على استفسار أولاً…" autocomplete="off" aria-label="رد الإدارة" disabled>
+          <button type="submit" id="send-admin" disabled>رد</button>
+        </form>
+      </div>
+      <div class="side">
+        <div class="card">
+          <h3>كيف تصلك الاستفسارات</h3>
+          <ul>
+            <li>كل استفسار يصل برقم تسلسلي واسم المشترك ومعرّفه، فلا يضيع سؤال.</li>
+            <li>زر «رد» يفتح الكتابة، وردّك يظهر للمشترك داخل البوت — بدون أن يعرف رقمك أو حسابك الشخصي.</li>
+            <li>في التسليم الحقيقي تختار أن تصل لحسابك الخاص أو لمجموعة إدارة فيها أكثر من شخص.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- لوحة التحكم -->
+  <section id="v-cfg" role="tabpanel" aria-labelledby="t-cfg" hidden>
+    <div class="card" style="margin-block-end:14px">
+      <h3>لوحة التحكم — كل المحتوى من هنا</h3>
+      <p>هذه هي الإجابة على «يوصلني فاضي وأنا أضيف المحتوى»: تكتب هنا، والبوت يتغيّر فوراً بدون كود. في التسليم الحقيقي نفس اللوحة محمية بكلمة مرور وتُحفظ على الخادم.</p>
+    </div>
+    <div class="panel-grid">
+      <div class="card">
+        <h3>هوية البوت</h3>
+        <div class="f"><label for="c-name">اسم البوت كما يظهر للمشترك</label><input type="text" id="c-name"></div>
+        <div class="f"><label for="c-welcome">رسالة الترحيب (/start)</label><textarea id="c-welcome"></textarea></div>
+        <div class="f"><label for="c-admin">تصل الاستفسارات إلى</label><input type="text" id="c-admin" placeholder="‏@حسابك أو مجموعة الإدارة"></div>
+      </div>
+      <div class="card">
+        <h3>الروابط <span class="muted" id="n-links"></span></h3>
+        <div class="rowlist" id="list-links"></div>
+        <div class="acts"><button class="btn" id="add-link" type="button">+ رابط</button></div>
+      </div>
+      <div class="card" style="grid-column:1/-1">
+        <h3>الأسئلة الشائعة <span class="muted" id="n-faq"></span></h3>
+        <div class="rowlist" id="list-faq"></div>
+        <div class="acts"><button class="btn" id="add-faq" type="button">+ سؤال</button></div>
+      </div>
+    </div>
+    <div class="acts">
+      <button class="btn btn-fill" id="apply" type="button">تطبيق وفتح المحادثة</button>
+      <button class="btn" id="clear" type="button">تفريغ كل المحتوى</button>
+      <button class="btn" id="reset" type="button">استرجاع نموذج البداية</button>
+      <span class="saved" id="saved">تم التطبيق ✓</span>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">نموذج عرض — فيصل فهد المطيري. البوت الحقيقي يُسلَّم على حسابك: التوكن باسمك، الكود عندك، واللوحة محمية بكلمة مرور.</div></footer>
+
+<script>
+'use strict';
+/* ---------- المحتوى الافتراضي (نموذج قناة عامة) ---------- */
+const DEFAULT = {
+  name: 'بوت قناة متجرنا',
+  welcome: 'أهلاً بك 👋\nأنا بوت القناة. اختر من الأزرار تحت، أو اكتب سؤالك وسيصل للإدارة مباشرة.',
+  admin: '@channel_admin',
+  links: [
+    {label: '📣 قناتنا على تلجرام', url: 'https://t.me/telegram'},
+    {label: '🛒 المتجر', url: 'https://example.com'},
+    {label: '💬 واتساب', url: 'https://wa.me/966500000000'},
+    {label: '📸 إنستقرام', url: 'https://instagram.com'}
+  ],
+  faq: [
+    {q: 'كيف أطلب؟', a: 'اختر المنتج من المتجر، أضفه للسلة، وأكمل الطلب. يوصلك تأكيد فوري مع رقم الطلب.'},
+    {q: 'مدة التوصيل؟', a: 'داخل الرياض من يوم إلى يومين عمل، وبقية المدن من ٢ إلى ٤ أيام.'},
+    {q: 'طرق الدفع؟', a: 'مدى، آبل باي، والتحويل البنكي. الدفع عند الاستلام متاح داخل الرياض.'},
+    {q: 'سياسة الاستبدال؟', a: 'الاستبدال والإرجاع خلال ١٤ يوماً للمنتجات غير المستخدمة مع الفاتورة.'}
+  ]
+};
+const clone = o => JSON.parse(JSON.stringify(o));
+let cfg = clone(DEFAULT);
+
+/* ---------- عناصر ---------- */
+const $ = s => document.querySelector(s);
+const feedUser = $('#feed-user'), feedAdmin = $('#feed-admin');
+const TABS = [['#t-user','#v-user'],['#t-admin','#v-admin'],['#t-cfg','#v-cfg']];
+let ticket = 1022, pending = null, unread = 0, awaitingInquiry = false, replyTo = null;
+
+const now = () => new Date().toLocaleTimeString('ar-SA', {hour:'2-digit', minute:'2-digit'});
+
+/* ---------- رسم الرسائل ---------- */
+function bubble(feed, who, text){
+  const d = document.createElement('div');
+  d.className = 'msg ' + who;
+  d.innerHTML = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*(.+?)\*/g,'<b>$1</b>')
+    .replace(/#\d+|@[A-Za-z_][\w.]*|\/start/g, m => '<span class="num">' + m + '</span>')   // عزل ثنائي الاتجاه: #1023 و @mohd لا تنقلب
+    .replace(/\n/g,'<br>')
+    + '<span class="time">' + now() + '</span>';
+  feed.append(d); feed.scrollTop = feed.scrollHeight; return d;
+}
+function sys(feed, text){
+  const d = document.createElement('div'); d.className = 'sys'; d.textContent = text;
+  feed.append(d); feed.scrollTop = feed.scrollHeight;
+}
+/* لوحة أزرار: صفوف من [نص, دالة] أو {label,url} للروابط */
+function keyboard(feed, rows){
+  const kb = document.createElement('div'); kb.className = 'kb';
+  for (const row of rows){
+    const r = document.createElement('div'); r.className = 'row';
+    for (const b of row){
+      if (b.url){
+        const a = document.createElement('a');
+        a.href = b.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = b.label;
+        r.append(a);
+      } else {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.textContent = b.label; if (b.cmd) btn.className = 'cmd';
+        btn.addEventListener('click', () => { kb.remove(); bubble(feedUser, 'me', b.label); b.run(); });
+        r.append(btn);
+      }
+    }
+    kb.append(r);
+  }
+  feed.append(kb); feed.scrollTop = feed.scrollHeight; return kb;
+}
+/* رد البوت بعد تأخير قصير مع مؤشر كتابة، كما في بوت حقيقي */
+function botSay(text, rows, delay = 420){
+  const t = document.createElement('div'); t.className = 'typing';
+  t.innerHTML = '<i></i><i></i><i></i>';
+  feedUser.append(t); feedUser.scrollTop = feedUser.scrollHeight;
+  return new Promise(res => setTimeout(() => {
+    t.remove(); if (text) bubble(feedUser, 'bot', text);
+    if (rows && rows.length) keyboard(feedUser, rows);
+    res();
+  }, SPEED ? 0 : delay));
+}
+let SPEED = false;   // الاختبار الذاتي يشغّله ليعمل بدون تأخير
+
+/* ---------- القوائم ---------- */
+function mainMenu(){
+  const rows = [
+    [{label:'🔗 روابطنا', run: showLinks}],
+    [{label:'❓ الأسئلة الشائعة', run: showFaq}],
+    [{label:'✉️ تواصل مع الإدارة', run: askInquiry}]
+  ];
+  return rows;
+}
+async function start(){
+  feedUser.replaceChildren();
+  sys(feedUser, 'بدأت المحادثة مع ' + cfg.name);
+  bubble(feedUser, 'me', '/start');
+  await botSay(cfg.welcome || 'أهلاً بك.', mainMenu());
+}
+async function showLinks(){
+  if (!cfg.links.length) return botSay('لم تُضَف روابط بعد. أضفها من لوحة التحكم.', [[{label:'⬅️ رجوع', run: backMenu}]]);
+  await botSay('*روابطنا* — اضغط الزر ليفتح مباشرة:', cfg.links.map(l => [{label: l.label, url: l.url}]).concat([[{label:'⬅️ رجوع', run: backMenu}]]));
+}
+async function showFaq(){
+  if (!cfg.faq.length) return botSay('لا توجد أسئلة شائعة بعد. أضفها من لوحة التحكم.', [[{label:'⬅️ رجوع', run: backMenu}]]);
+  const rows = cfg.faq.map((f, i) => [{label: f.q, run: () => answerFaq(i)}]);
+  rows.push([{label:'⬅️ رجوع', run: backMenu}]);
+  await botSay('*الأسئلة الشائعة* — اختر سؤالك:', rows);
+}
+async function answerFaq(i){
+  await botSay(cfg.faq[i].a, [[{label:'❓ سؤال آخر', run: showFaq}], [{label:'✉️ تواصل مع الإدارة', run: askInquiry}]]);
+}
+async function askInquiry(){
+  awaitingInquiry = true;
+  $('#in-user').focus();
+  await botSay('اكتب استفسارك في رسالة واحدة وسيصل للإدارة فوراً مع اسمك.', [[{label:'⬅️ إلغاء', run: backMenu}]]);
+}
+async function backMenu(){
+  awaitingInquiry = false;
+  await botSay('القائمة الرئيسية:', mainMenu());
+}
+
+/* ---------- رسائل المشترك ---------- */
+$('#form-user').addEventListener('submit', async e => {
+  e.preventDefault();
+  const v = $('#in-user').value.trim(); if (!v) return;
+  $('#in-user').value = '';
+  bubble(feedUser, 'me', v);
+  if (v === '/start') return start();
+  if (awaitingInquiry){ awaitingInquiry = false; return sendInquiry(v); }
+  const hit = cfg.faq.find(f => matches(v, f.q));
+  if (hit) return botSay(hit.a, [[{label:'✉️ تواصل مع الإدارة', run: askInquiry}], [{label:'⬅️ القائمة', run: backMenu}]]);
+  return sendInquiry(v);   // أي رسالة غير معروفة تُعامل كاستفسار بدل «لم أفهم»
+});
+/* مطابقة بسيطة: كلمة مشتركة طولها ٣ أحرف أو أكثر بعد تطبيع الهمزات والتاء المربوطة */
+function norm(s){ return s.replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[ًٌٍَُِّْـ؟!.,]/g,'').trim(); }
+function matches(msg, q){
+  const a = norm(msg), words = norm(q).split(/\s+/).filter(w => w.length >= 3);
+  return words.some(w => a.includes(w));
+}
+async function sendInquiry(text){
+  const id = ++ticket;
+  await botSay('وصل استفسارك ✅\nرقمه *#' + id + '*. الإدارة ترد عليك هنا في نفس البوت.', [[{label:'⬅️ القائمة', run: backMenu}]]);
+  const d = bubble(feedAdmin, 'me', '*استفسار جديد #' + id + '*\nمن: محمد العبدالله (‏@mohd)\n\n' + text);
+  const kb = document.createElement('div'); kb.className = 'kb';
+  const r = document.createElement('div'); r.className = 'row';
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'cmd'; b.textContent = '↩️ رد على #' + id;
+  b.addEventListener('click', () => {
+    replyTo = id; kb.remove();
+    $('#in-admin').disabled = $('#send-admin').disabled = false;
+    $('#in-admin').placeholder = 'ردّك على الاستفسار رقم ' + id + '…';
+    $('#in-admin').focus();
+  });
+  r.append(b); kb.append(r); feedAdmin.append(kb); feedAdmin.scrollTop = feedAdmin.scrollHeight;
+  bump();
+  return id;
+}
+function bump(){
+  unread++;
+  const badge = $('#badge');
+  if ($('#t-admin').getAttribute('aria-selected') === 'true'){ unread = 0; badge.hidden = true; return; }
+  badge.hidden = false; badge.textContent = unread;
+}
+
+/* ---------- رد الإدارة ---------- */
+$('#form-admin').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = $('#in-admin').value.trim(); if (!v || !replyTo) return;
+  $('#in-admin').value = '';
+  bubble(feedAdmin, 'bot', v);
+  sys(feedAdmin, 'أُرسل للمشترك على الاستفسار #' + replyTo);
+  bubble(feedUser, 'bot', '*رد الإدارة على استفسارك #' + replyTo + ':*\n' + v);
+  replyTo = null;
+  $('#in-admin').disabled = $('#send-admin').disabled = true;
+  $('#in-admin').placeholder = 'اختر «رد» على استفسار أولاً…';
+});
+
+/* ---------- التبويبات ---------- */
+TABS.forEach(([t, v]) => $(t).addEventListener('click', () => {
+  TABS.forEach(([tt, vv]) => {
+    const on = tt === t;
+    $(tt).setAttribute('aria-selected', String(on));
+    $(vv).hidden = !on;
+  });
+  if (t === '#t-admin'){ unread = 0; $('#badge').hidden = true; }
+}));
+const openTab = t => $(t).click();
+
+/* ---------- لوحة التحكم ---------- */
+function linkRow(l = {label:'', url:''}){
+  const d = document.createElement('div'); d.className = 'item';
+  d.innerHTML = '<input type="text" placeholder="نص الزر" aria-label="نص الزر"><input type="url" placeholder="https://" aria-label="الرابط"><button class="x" type="button" aria-label="حذف">حذف</button>';
+  d.children[0].value = l.label; d.children[1].value = l.url;
+  d.children[2].addEventListener('click', () => { d.remove(); counts(); });
+  return d;
+}
+function faqRow(f = {q:'', a:''}){
+  const d = document.createElement('div'); d.className = 'item faq';
+  d.innerHTML = '<input type="text" placeholder="السؤال" aria-label="السؤال"><textarea placeholder="الجواب" aria-label="الجواب"></textarea><button class="x" type="button" aria-label="حذف">حذف</button>';
+  d.children[0].value = f.q; d.children[1].value = f.a;
+  d.children[2].addEventListener('click', () => { d.remove(); counts(); });
+  return d;
+}
+function fillPanel(){
+  $('#c-name').value = cfg.name; $('#c-welcome').value = cfg.welcome; $('#c-admin').value = cfg.admin;
+  $('#list-links').replaceChildren(...cfg.links.map(linkRow));
+  $('#list-faq').replaceChildren(...cfg.faq.map(faqRow));
+  counts();
+}
+function counts(){
+  const nl = $('#list-links').children.length, nf = $('#list-faq').children.length;
+  $('#n-links').textContent = nl ? '(' + nl + ')' : '(لا شيء)';
+  $('#n-faq').textContent = nf ? '(' + nf + ')' : '(لا شيء)';
+  $('#list-links').nextElementSibling.previousElementSibling === null;
+}
+function readPanel(){
+  cfg.name = $('#c-name').value.trim() || 'بوت القناة';
+  cfg.welcome = $('#c-welcome').value.trim();
+  cfg.admin = $('#c-admin').value.trim();
+  cfg.links = [...$('#list-links').children].map(d => ({label: d.children[0].value.trim(), url: d.children[1].value.trim()}))
+    .filter(l => l.label && l.url);
+  cfg.faq = [...$('#list-faq').children].map(d => ({q: d.children[0].value.trim(), a: d.children[1].value.trim()}))
+    .filter(f => f.q && f.a);
+  $('#u-name').textContent = cfg.name;
+  $('#u-ava').textContent = (cfg.name.trim()[0] || 'ب');
+}
+$('#add-link').addEventListener('click', () => { $('#list-links').append(linkRow()); counts(); });
+$('#add-faq').addEventListener('click', () => { $('#list-faq').append(faqRow()); counts(); });
+$('#apply').addEventListener('click', async () => {
+  readPanel();
+  $('#saved').classList.add('on'); setTimeout(() => $('#saved').classList.remove('on'), 1600);
+  openTab('#t-user'); await start();
+});
+$('#clear').addEventListener('click', async () => {
+  cfg = {name:'بوت القناة', welcome:'', admin:'', links:[], faq:[]};
+  fillPanel(); readPanel(); openTab('#t-user'); await start();
+});
+$('#reset').addEventListener('click', async () => { cfg = clone(DEFAULT); fillPanel(); readPanel(); openTab('#t-user'); await start(); });
+
+/* ---------- الإقلاع ---------- */
+fillPanel(); readPanel(); start();
+
+/* ---------- اختبار ذاتي: ?selftest ---------- */
+if (/[?&]selftest\b/.test(location.search)) (async () => {
+ try {
+  SPEED = true;
+  const out = [], ok = (n, c) => out.push((c ? '✅' : '❌') + ' ' + n);
+  const click = txt => { const b = [...document.querySelectorAll('#feed-user .kb button')].find(x => x.textContent.includes(txt)); if (b) b.click(); return !!b; };
+  const last = () => [...document.querySelectorAll('#feed-user .msg')].pop().innerText;
+
+  cfg = clone(DEFAULT); fillPanel(); readPanel(); await start();
+  ok('الترحيب والقائمة', last().includes('أهلاً بك') && document.querySelectorAll('#feed-user .kb button').length === 3);
+
+  ok('زر الروابط موجود', click('روابطنا')); await 0;
+  await new Promise(r => setTimeout(r, 10));
+  ok('الروابط ظهرت كأزرار تفتح الرابط', document.querySelectorAll('#feed-user .kb a[href^="https://"]').length === DEFAULT.links.length);
+
+  click('رجوع'); await new Promise(r => setTimeout(r, 10));
+  click('الأسئلة الشائعة'); await new Promise(r => setTimeout(r, 10));
+  ok('قائمة الأسئلة', document.querySelectorAll('#feed-user .kb button').length === DEFAULT.faq.length + 1);
+  click('مدة التوصيل'); await new Promise(r => setTimeout(r, 10));
+  ok('الرد الفوري على السؤال', last().includes('يوم إلى يومين'));
+
+  // سؤال مكتوب بصيغة أخرى يُطابق الأسئلة الشائعة
+  $('#in-user').value = 'كم مدة التوصيل للدمام؟'; $('#form-user').dispatchEvent(new Event('submit'));
+  await new Promise(r => setTimeout(r, 20));
+  ok('مطابقة سؤال مكتوب بصيغة مختلفة', last().includes('يوم إلى يومين'));
+
+  // استفسار جديد يصل للإدارة ويُرد عليه
+  const before = document.querySelectorAll('#feed-admin .msg').length;
+  $('#in-user').value = 'عندي طلب خاص بكمية كبيرة'; $('#form-user').dispatchEvent(new Event('submit'));
+  await new Promise(r => setTimeout(r, 20));
+  ok('إقرار وصول الاستفسار برقم', /#\d+/.test(last()));
+  ok('الاستفسار وصل لمحادثة الإدارة', document.querySelectorAll('#feed-admin .msg').length === before + 1);
+  ok('شارة غير المقروء', !$('#badge').hidden);
+  document.querySelector('#feed-admin .kb button').click();
+  ok('زر الرد يفتح الكتابة', !$('#in-admin').disabled);
+  $('#in-admin').value = 'أبشر، أرسل لي الكمية والمدينة.'; $('#form-admin').dispatchEvent(new Event('submit'));
+  await new Promise(r => setTimeout(r, 10));
+  ok('رد الإدارة وصل للمشترك', last().includes('أبشر'));
+  ok('الكتابة أُغلقت بعد الرد', $('#in-admin').disabled);
+
+  // الحالة الفارغة
+  $('#clear').click(); await new Promise(r => setTimeout(r, 20));
+  click('روابطنا'); await new Promise(r => setTimeout(r, 10));
+  ok('الحالة الفارغة تشرح نفسها', last().includes('لم تُضَف روابط'));
+
+  $('#reset').click(); await new Promise(r => setTimeout(r, 20));
+  ok('الاسترجاع يعيد النموذج', document.querySelectorAll('#feed-user .kb button').length === 3);
+  SPEED = false;
+
+  const box = document.createElement('div'); box.id = 'selftest';
+  box.textContent = out.join('\n') + '\n' + (out.every(l => l[0] === '✅') ? 'كل الفحوص سليمة' : 'فيه فحص فاشل');
+  document.body.append(box);
+ } catch (e) {
+  const box = document.createElement('div'); box.id = 'selftest';
+  box.textContent = 'اختبار متوقف: ' + (e && e.stack || e);
+  document.body.append(box);
+ }
+})();
+</script>
+</body>
+</html>

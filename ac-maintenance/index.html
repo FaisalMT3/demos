@@ -169,7 +169,7 @@ design(){
 
 function render(){
  const h=decodeURIComponent(location.hash.slice(1))||'admin', [k,arg]=h.split('=');
- const v=views[k]?k:'admin';
+ const v=Object.hasOwn(views,k)?k:'admin';
  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===v||(v==='u'||v==='r')&&a.dataset.v==='admin'));
  $('#app').innerHTML=views[v](arg); scrollTo(0,0);
  const f=$('#f'); if(!f) return;

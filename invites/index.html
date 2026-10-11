@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نموذج منصة دعوات إلكترونية: قوالب + استوديو تعديل + حضور</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2433;--mut:#5d6b7a;--line:#e2e6ec;--bg:#f5f3f0;--card:#fff;--acc:#8a6a3b;--ok:#1d7a3a;--warn:#b25e00;--bad:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--ink);color:#fff;padding:.7rem 1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+nav{display:flex;gap:.3rem;flex-wrap:wrap}
+nav a{color:#e3d7c3;text-decoration:none;padding:.25rem .7rem;border-radius:6px;cursor:pointer}
+nav a.on{background:#ffffff1f;color:#fff}
+.note{background:#fff8e6;border-bottom:1px solid #f0dca8;padding:.45rem 1rem;font-size:.85rem}
+main{max-width:1040px;margin:1rem auto;padding:0 1rem 3rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;margin-bottom:1rem;overflow-x:auto}
+h1{font-size:1.25rem;margin:.2rem 0 .7rem}h2{font-size:1.02rem;margin:.2rem 0 .5rem}h3{font-size:.93rem;margin:.8rem 0 .3rem}
+.row{display:grid;grid-template-columns:1fr 1.1fr;gap:1rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+@media(max-width:760px){.row,.g3{grid-template-columns:1fr}}
+label{display:block;font-weight:600;font-size:.85rem;margin-top:.5rem}
+input,select,textarea{font:inherit;width:100%;padding:.35rem .5rem;border:1px solid var(--line);border-radius:7px;background:#fff}
+input:disabled,textarea:disabled{background:#f1f3f5;color:#9aa5b1}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:8px;padding:.45rem 1rem;font:inherit;font-weight:600;cursor:pointer}
+.btn.alt{background:#fff;color:var(--acc);border:1px solid var(--acc)}
+.btn.sm{padding:.22rem .6rem;font-size:.85rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+table{width:100%;border-collapse:collapse;min-width:430px}
+th,td{text-align:start;padding:.4rem;border-bottom:1px solid var(--line);font-size:.9rem;vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:.83rem}
+.tag{display:inline-block;padding:0 .5rem;border-radius:99px;font-size:.8rem;font-weight:600}
+.ok{color:var(--ok);background:#e5f3e9}.warn{color:var(--warn);background:#fdf0e1}.bad{color:var(--bad);background:#fbe9e7}.neu{color:var(--mut);background:#eef1f4}
+.hint{color:var(--mut);font-size:.83rem;font-weight:400}
+ul{margin:.3rem 0;padding-inline-start:1.2rem}li{margin-bottom:.3rem}
+.wm{position:fixed;inset-inline-end:.6rem;inset-block-end:.6rem;background:#1d2433e6;color:#fff;font-size:.78rem;padding:.3rem .6rem;border-radius:99px;z-index:9;pointer-events:none}
+.stamp{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:8;overflow:hidden}
+.stamp span{font:700 clamp(2rem,9vw,5rem)/1 "IBM Plex Sans Arabic",sans-serif;color:#1d2433;opacity:.05;transform:rotate(-24deg);white-space:nowrap}
+num{direction:ltr;unicode-bidi:isolate}
+code{background:#eef1f4;padding:0 .25rem;border-radius:4px;direction:ltr;unicode-bidi:isolate;font-size:.9em}
+/* ===== القوالب: كل قالب ستايل مستقل، والمحتوى يأتي من البيانات ===== */
+.inv{border-radius:12px;padding:1.6rem 1.2rem;text-align:center;min-height:330px;display:flex;flex-direction:column;justify-content:center;gap:.35rem}
+.inv .pre{letter-spacing:.14em;font-size:.78rem;opacity:.75;margin:0}
+.inv h4{margin:.2rem 0;font-size:1.5rem;line-height:1.35}
+.inv .mid{opacity:.6;font-size:1.1rem}
+.inv .when{margin:.5rem 0 .1rem;font-weight:600}
+.inv .where{font-size:.9rem;opacity:.85}
+.inv .msg{font-size:.86rem;opacity:.8;margin-top:.5rem}
+.inv a{color:inherit}
+.t-gold{background:#11161f;color:#efe3cc;font-family:Amiri,serif;border:1px solid #c6a86b}
+.t-gold h4{color:#dcc08a}
+.t-rose{background:#fdf6f4;color:#5b3a3a;font-family:Amiri,serif;border:1px solid #e8c9c2}
+.t-rose h4{color:#9c4f4f}
+.t-modern{background:#f2f4f6;color:#1d2433;font-family:"Reem Kufi",sans-serif;border:1px solid #cfd6de}
+.t-modern h4{letter-spacing:.02em}
+.t-sand{background:#efe7d8;color:#3f3728;font-family:Amiri,serif;border:1px solid #cdbda0}
+.pick{border:2px solid transparent;border-radius:12px;padding:.25rem;cursor:pointer}
+.pick.on{border-color:var(--acc)}
+.pick .inv{min-height:230px;padding:1rem .8rem}
+.pick .inv h4{font-size:1.1rem}
+.lock{background:#fbe9e7;border:1px solid #f3c9c3;border-radius:9px;padding:.5rem .7rem;font-size:.87rem;margin:.5rem 0}
+</style>
+</head>
+<body>
+<header><b>✦ نموذج منصة دعوات إلكترونية</b>
+<nav id="nav"><a data-v="gal" class="on">معرض القوالب</a><a data-v="studio">الاستوديو</a><a data-v="guest">صفحة المدعو</a><a data-v="admin">لوحة الإدارة</a><a data-v="notes">قرارات قبل البناء</a></nav></header>
+<div class="note">نموذج يعمل: اختر قالبًا، اشترِ، عدّل الدعوة، افتح صفحة المدعو، أكّد الحضور، ثم أضف قالبًا جديدًا من لوحة الإدارة ببيانات فقط.</div>
+<main id="app"></main>
+<div class="stamp"><span>نموذج عرض — فيصل فهد</span></div>
+<div class="wm">نموذج — فيصل فهد المطيري</div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const AR=s=>String(s).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+
+/* ======================= القوالب = بيانات، لا كود =======================
+   كل قالب: اسم، ستايل، سعر، خط مع حالة ترخيصه، وتخطيط فيه {{حقول}}.
+   الحقول تُستخرج من التخطيط نفسه، فإضافة قالب جديد لا تحتاج مبرمجًا. */
+const FIELDS={
+ pre:{label:'سطر الافتتاح',type:'text'},
+ name1:{label:'الاسم الأول',type:'text',req:true},
+ name2:{label:'الاسم الثاني',type:'text',req:true},
+ date:{label:'التاريخ',type:'date',req:true},
+ time:{label:'الوقت',type:'time',req:true},
+ place:{label:'المكان',type:'text',req:true},
+ map:{label:'رابط الموقع على الخريطة',type:'url'},
+ msg:{label:'ملاحظة للمدعوين',type:'text'},
+ host:{label:'الجهة الداعية',type:'text'}
+};
+const TEMPLATES=[
+ {id:'gold',name:'ليل ذهبي',style:'t-gold',price:49,font:{name:'Amiri',licence:'ok',src:'خط مفتوح المصدر (OFL)'},
+  layout:'<p class="pre">{{pre}}</p><h4>{{name1}}</h4><div class="mid">و</div><h4>{{name2}}</h4><p class="when">{{date}} · {{time}}</p><p class="where">{{place}}</p><p class="msg">{{msg}}</p>'},
+ {id:'rose',name:'وردي هادئ',style:'t-rose',price:39,font:{name:'Amiri',licence:'ok',src:'خط مفتوح المصدر (OFL)'},
+  layout:'<p class="pre">{{pre}}</p><h4>{{name1}} &amp; {{name2}}</h4><p class="when">{{date}} · {{time}}</p><p class="where">{{place}}</p><p class="msg">{{msg}}</p>'},
+ {id:'modern',name:'حديث بسيط',style:'t-modern',price:35,font:{name:'Reem Kufi',licence:'ok',src:'خط مفتوح المصدر (OFL)'},
+  layout:'<p class="pre">{{host}}</p><h4>{{name1}}</h4><p class="when">{{date}} · {{time}}</p><p class="where">{{place}}</p><p class="msg">{{msg}}</p>'}
+];
+const placeholders=t=>[...new Set((t.layout.match(/{{(\w+)}}/g)||[]).map(m=>m.slice(2,-2)))];
+const fieldsOf=t=>placeholders(t).filter(k=>FIELDS[k]);
+const canPublish=t=>t.font.licence==='ok' && placeholders(t).every(k=>FIELDS[k]);
+
+function renderInv(t,v,opt){
+ const o=opt||{};
+ const body=t.layout.replace(/{{(\w+)}}/g,(m,k)=>{
+  let x=v[k]||'';
+  if(k==='date'&&x) x=AR(x.split('-').reverse().join('/'));
+  if(k==='time'&&x) x=AR(x);
+  return esc(x);                       // نص العميل يُهرَّب دائمًا قبل العرض
+ });
+ const map=v.map?`<p class="where"><a href="${esc(v.map)}" target="_blank" rel="noopener">الموقع على الخريطة</a></p>`:'';
+ return `<div class="inv ${t.style}">${body}${o.map===false?'':map}</div>`;
+}
+
+/* ======================= الحالة ======================= */
+const S={tpl:'gold',paid:false,
+ v:{pre:'بسم الله الرحمن الرحيم',name1:'عبدالعزيز',name2:'سارة',date:'2026-11-14',time:'20:30',place:'قاعة الماسة، الرياض',map:'https://maps.google.com/?q=24.7136,46.6753',msg:'حضوركم شرف لنا',host:'عائلة المطيري'},
+ guests:[
+  {n:'أبو محمد العتيبي',seats:2,st:'yes'},{n:'سعود الدوسري',seats:1,st:'yes'},
+  {n:'منى القحطاني',seats:4,st:'yes'},{n:'خالد الشهري',seats:2,st:'no'},
+  {n:'نواف الحربي',seats:3,st:'yes'},{n:'هيا السبيعي',seats:2,st:'?'},
+  {n:'تركي الزهراني',seats:1,st:'?'}],
+ seatsAvailable:12};
+const tpl=()=>TEMPLATES.find(t=>t.id===S.tpl);
+const tally=g=>({yes:g.filter(x=>x.st==='yes').reduce((a,x)=>a+x.seats,0),
+ no:g.filter(x=>x.st==='no').length, wait:g.filter(x=>x.st==='?').length});
+const overCapacity=()=>tally(S.guests).yes>S.seatsAvailable;
+const missing=()=>fieldsOf(tpl()).filter(k=>FIELDS[k].req&&!String(S.v[k]||'').trim());
+
+/* الرابط المُرسل للمدعو: الحالة مُرمَّزة في الرابط نفسه، بلا أي أدوات تعديل */
+const encodeLink=()=>'#guest/'+btoa(unescape(encodeURIComponent(JSON.stringify({t:S.tpl,v:S.v}))));
+function decodeLink(h){
+ try{return JSON.parse(decodeURIComponent(escape(atob(h.replace('#guest/','')))))}catch(e){return null}
+}
+
+/* ======================= الشاشات ======================= */
+function vGal(){
+ return `<div class="card"><h1>معرض القوالب</h1>
+ <p class="hint">ثلاثة قوالب، كل واحد ببياناته وخطه وسعره. اختر قالبًا ثم انتقل للاستوديو.</p>
+ <div class="g3">${TEMPLATES.map(t=>`<div class="pick ${S.tpl===t.id?'on':''}" data-t="${t.id}">
+   ${renderInv(t,S.v,{map:false})}
+   <p style="margin:.4rem .2rem 0"><b>${esc(t.name)}</b> <span class="tag neu"><num>${AR(t.price)}</num> ريال</span><br>
+   <span class="hint">خط ${esc(t.font.name)} · ${esc(t.font.src)}</span></p></div>`).join('')}</div>
+ </div>
+ <div class="card"><h2>الشراء</h2>
+  <p>القالب المختار: <b>${esc(tpl().name)}</b> بسعر <num>${AR(tpl().price)}</num> ريال.</p>
+  ${S.paid?'<p><span class="tag ok">مدفوع</span> الاستوديو مفتوح لهذا القالب.</p>':
+  '<p><span class="tag warn">غير مدفوع</span> الاستوديو مقفل حتى يتم الشراء.</p>'}
+  <p><button class="btn" id="pay" ${S.paid?'disabled':''}>إتمام الشراء (محاكاة)</button>
+   <button class="btn alt" id="reset">إرجاع الحالة</button></p>
+  <p class="hint">في النسخة الحقيقية تُستبدل هذه الخطوة ببوابة دفع، والدعوة تبقى غير قابلة للنشر حتى يتأكد الدفع من جهة البوابة، لا من المتصفح.</p>
+ </div>`;
+}
+
+function vStudio(){
+ const t=tpl(), ks=fieldsOf(t), miss=missing();
+ return `<div class="row">
+ <div class="card"><h1>الاستوديو: تعديل الدعوة بعد الشراء</h1>
+  ${S.paid?'':'<div class="lock">مقفل: لم يتم شراء هذا القالب بعد. انتقل لمعرض القوالب وأتمم الشراء، ثم عد.</div>'}
+  <p class="hint">الحقول هنا ليست مكتوبة في الكود: هي الحقول الموجودة في تخطيط القالب نفسه (<num>${AR(ks.length)}</num> حقلًا في «${esc(t.name)}»). قالب جديد بحقل جديد يظهر حقله هنا تلقائيًا.</p>
+  ${ks.map(k=>`<label>${esc(FIELDS[k].label)}${FIELDS[k].req?' <span class="tag bad">مطلوب</span>':''}
+   <input data-k="${k}" type="${FIELDS[k].type}" value="${esc(S.v[k]||'')}" ${S.paid?'':'disabled'}></label>`).join('')}
+  <p style="margin-top:.8rem">
+   <button class="btn" id="pub" ${S.paid&&!miss.length?'':'disabled'}>نشر الدعوة ونسخ الرابط</button></p>
+  ${miss.length?`<p class="hint">ينقص: ${miss.map(k=>esc(FIELDS[k].label)).join('، ')}</p>`:''}
+  <p class="hint" id="pubmsg"></p>
+ </div>
+ <div class="card"><h2>المعاينة الفورية</h2>
+  ${renderInv(t,S.v)}
+  <p class="hint" style="margin-top:.6rem">جرّب أن تكتب في «الاسم الأول» وسمًا مثل <code>&lt;img src=x onerror=alert(1)&gt;</code>: يظهر نصًّا كما كُتب ولا يُنفَّذ. إدخال العميل في منصة دعوات يُهرَّب دائمًا، وإلا صار كل زبون قادرًا على حقن سكربت في صفحة يفتحها مئات المدعوين.</p>
+ </div></div>`;
+}
+
+function vGuest(){
+ const data=decodeLink(location.hash)||{t:S.tpl,v:S.v};
+ const t=TEMPLATES.find(x=>x.id===data.t)||tpl(), tl=tally(S.guests);
+ return `<div class="row">
+ <div class="card"><h1>صفحة المدعو</h1>
+  <p class="hint">هذا ما يفتحه المدعو من الرابط: الدعوة وتأكيد الحضور فقط، بلا أي أداة تعديل.</p>
+  ${renderInv(t,data.v)}
+  <h3>تأكيد الحضور</h3>
+  <p><button class="btn sm" data-rsvp="yes">سأحضر</button>
+   <button class="btn alt sm" data-rsvp="no">أعتذر</button></p>
+  <p class="hint" id="rsvpmsg"></p>
+ </div>
+ <div class="card"><h2>لوحة الحضور (لصاحب الدعوة)</h2>
+  <p><span class="tag ok">مؤكد: <num>${AR(tl.yes)}</num> مقعدًا</span>
+   <span class="tag neu">بانتظار الرد: <num>${AR(tl.wait)}</num></span>
+   <span class="tag bad">اعتذر: <num>${AR(tl.no)}</num></span></p>
+  ${overCapacity()?`<div class="lock">المؤكدون <num>${AR(tl.yes)}</num> مقعدًا والقاعة <num>${AR(S.seatsAvailable)}</num>. المنصة تنبّه هنا بدل أن يُكتشف العدد ليلة المناسبة.</div>`:
+   `<p class="hint">سعة القاعة <num>${AR(S.seatsAvailable)}</num> مقعدًا، والمتاح <num>${AR(S.seatsAvailable-tl.yes)}</num>.</p>`}
+  <table><thead><tr><th>المدعو</th><th>المقاعد</th><th>الحالة</th><th></th></tr></thead><tbody>
+  ${S.guests.map((g,i)=>`<tr><td>${esc(g.n)}</td><td><num>${AR(g.seats)}</num></td>
+   <td>${g.st==='yes'?'<span class="tag ok">سيحضر</span>':g.st==='no'?'<span class="tag bad">اعتذر</span>':'<span class="tag neu">لم يرد</span>'}</td>
+   <td><button class="btn alt sm" data-cyc="${i}">تبديل</button></td></tr>`).join('')}
+  </tbody></table>
+  <p class="hint">يُصدَّر هذا الجدول ملف إكسل لقاعة الأفراح، وهو أكثر ما يُطلب بعد الدعوة نفسها.</p>
+ </div></div>`;
+}
+
+function vAdmin(){
+ return `<div class="card"><h1>لوحة الإدارة: إضافة قالب مستقبلًا</h1>
+ <p class="hint">هذا هو بند «إمكانية إضافة قوالب جديدة بالمستقبل». القالب هنا سجل بيانات: اسم وستايل وسعر وخط وتخطيط فيه حقول. اضغط الزر وسيُضاف قالب رابع بحقل جديد («الجهة الداعية») ويظهر في المعرض وفي الاستوديو بلا سطر كود واحد.</p>
+ <p><button class="btn" id="addt">أضف قالبًا رابعًا الآن</button>
+  <button class="btn alt" id="addbad">أضف قالبًا بخط غير مرخّص</button></p>
+ <p class="hint" id="admmsg"></p>
+ <table><thead><tr><th>القالب</th><th>السعر</th><th>الخط</th><th>الحقول</th><th>قابل للنشر</th></tr></thead><tbody>
+ ${TEMPLATES.map(t=>`<tr><td>${esc(t.name)}</td><td><num>${AR(t.price)}</num></td>
+  <td>${esc(t.font.name)}<br><span class="hint">${esc(t.font.src)}</span></td>
+  <td><num>${AR(fieldsOf(t).length)}</num></td>
+  <td>${canPublish(t)?'<span class="tag ok">نعم</span>':'<span class="tag bad">لا: ترخيص الخط غير مثبت</span>'}</td></tr>`).join('')}
+ </tbody></table>
+ <h3>لماذا عمود الترخيص موجود</h3>
+ <p>أجمل خطوط الدعوات العربية تجارية الترخيص، وبعضها يمنع الاستخدام في منتج يُباع. منصة تبيع القوالب تحتاج ترخيصًا لكل خط باسم المنصة، وتوثيقه في سجل واحد. ومنعُ نشر قالب خطُّه غير مثبت قاعدة في النظام، لا تنبيهًا يُتجاهل.</p>
+ </div>`;
+}
+
+function vNotes(){
+ return `<div class="card"><h1>قرارات تُحسم قبل أول سطر</h1>
+ <p class="hint">خمسة بنود يتعطّل عليها هذا النوع من المشاريع عادة بعد التسليم لا قبله.</p>
+ <table><thead><tr><th>القرار</th><th>لو أُجّل</th><th>الموقف في هذا النموذج</th></tr></thead><tbody>
+ <tr><td>القالب: بيانات أم كود؟</td><td>كل قالب جديد يحتاج مبرمجًا، فيصير بند «إضافة قوالب مستقبلًا» وهمًا</td><td>القالب سجل بيانات، والحقول تُستخرج من تخطيطه. جرّبه في لوحة الإدارة</td></tr>
+ <tr><td>ترخيص خطوط القوالب</td><td>مطالبة حقوقية بعد بيع مئات الدعوات</td><td>عمود ترخيص لكل خط، والنشر ممنوع بلا ترخيص مثبت</td></tr>
+ <tr><td>التعديل بعد الشراء: مفتوح للأبد أم مغلق؟</td><td>نزاعات استرجاع، وتعديل دعوة بعد توزيع رابطها على المدعوين</td><td>قرار صاحب المنصة: نقترح نافذة تعديل محددة ثم تثبيت الدعوة، ويُكتب في الشروط</td></tr>
+ <tr><td>الرابط العام: خاص بالمدعو أم واحد للجميع؟</td><td>تأكيدات حضور بلا هوية، وأعداد لا يمكن الاعتماد عليها</td><td>رابط لكل مدعو مع عدد مقاعده، والتأكيد ينسب إليه</td></tr>
+ <tr><td>إدخال العميل داخل الصفحة</td><td>زبون واحد يحقن سكربتًا في صفحة يفتحها مئات المدعوين</td><td>كل قيمة تُهرَّب قبل العرض، وفي الاستوديو تجربة تُثبتها</td></tr>
+ </tbody></table>
+ <h3>خريطة الصفحات</h3>
+ <p>الموقع المرجعي الذي أرسلته يعلن صفحاته بنفسه: القوالب، الاستوديو، الدفع، صفحة الدعوة العامة، لوحة العميل، إدارة الخطوط، لوحة الإدارة، التهيئة، خدمة العملاء، والسياسات. فالعمل ليس «موقع دعوات» بل عشر شاشات، وهذا النموذج يغطي أربعًا منها عاملة: المعرض، الاستوديو، صفحة المدعو، والإدارة.</p>
+ </div>`;
+}
+
+/* ======================= التوجيه والأحداث ======================= */
+let view='gal';
+function render(){
+ if(location.hash.indexOf('#guest/')===0) view='guest';
+ document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===view));
+ $('#app').innerHTML = view==='gal'?vGal():view==='studio'?vStudio():view==='guest'?vGuest():view==='admin'?vAdmin():vNotes();
+ if(view==='gal'){
+  document.querySelectorAll('.pick').forEach(p=>p.onclick=()=>{S.tpl=p.dataset.t;S.paid=false;render()});
+  $('#pay').onclick=()=>{S.paid=true;render()};
+  $('#reset').onclick=()=>{S.paid=false;location.hash='';render()};
+ }
+ if(view==='studio'){
+  document.querySelectorAll('[data-k]').forEach(i=>i.oninput=()=>{S.v[i.dataset.k]=i.value;
+   const t=tpl(),m=missing();
+   $('.card:last-child .inv').outerHTML=renderInv(t,S.v).replace(/^<div/,'<div');
+   $('#pub').disabled=!(S.paid&&!m.length);
+  });
+  $('#pub').onclick=()=>{location.hash=encodeLink();$('#pubmsg').textContent='تم النشر. رابط المدعو في شريط العنوان، وتبويب «صفحة المدعو» يفتحه.'};
+ }
+ if(view==='guest'){
+  document.querySelectorAll('[data-rsvp]').forEach(b=>b.onclick=()=>{
+   $('#rsvpmsg').textContent=b.dataset.rsvp==='yes'?'شكرًا، سُجّل حضورك وأُضيف لعدد المقاعد.':'سُجّل اعتذارك، وشكرًا لإبلاغك.'});
+  document.querySelectorAll('[data-cyc]').forEach(b=>b.onclick=()=>{
+   const g=S.guests[+b.dataset.cyc]; g.st=g.st==='yes'?'no':g.st==='no'?'?':'yes'; render()});
+ }
+ if(view==='admin'){
+  $('#addt').onclick=()=>{
+   if(!TEMPLATES.find(t=>t.id==='sand')) TEMPLATES.push({id:'sand',name:'رملي بالجهة الداعية',style:'t-sand',price:45,
+    font:{name:'Amiri',licence:'ok',src:'خط مفتوح المصدر (OFL)'},
+    layout:'<p class="pre">{{host}}</p><h4>{{name1}} و{{name2}}</h4><p class="when">{{date}} · {{time}}</p><p class="where">{{place}}</p><p class="msg">{{msg}}</p>'});
+   $('#admmsg').textContent='أُضيف. افتح المعرض لتراه، ثم اختره وافتح الاستوديو: حقل «الجهة الداعية» ظهر وحده.';
+   render();
+  };
+  $('#addbad').onclick=()=>{
+   if(!TEMPLATES.find(t=>t.id==='bad')) TEMPLATES.push({id:'bad',name:'قالب بخط تجاري',style:'t-sand',price:59,
+    font:{name:'خط تجاري',licence:'unknown',src:'ترخيص غير مثبت'},
+    layout:'<h4>{{name1}}</h4><p class="when">{{date}}</p><p class="where">{{place}}</p>'});
+   $('#admmsg').textContent='أُضيف لكنه غير قابل للنشر: عمود الترخيص يمنعه حتى يُرفع ترخيص الخط.';
+   render();
+  };
+ }
+}
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>{view=a.dataset.v;if(view!=='guest')location.hash='';render()});
+window.addEventListener('hashchange',()=>{if(location.hash.indexOf('#guest/')===0){view='guest';render()}});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>اختبار تعريب قالب Cleanin: ما يكسر العربية قبل أن يُكسر</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#14181f;--mut:#5c6675;--line:#e3e7ee;--bg:#f7f8fb;--ok:#0f7b56;--bad:#b4231f;--acc:#1b5fd9}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Cairo,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+  .wrap{max-width:60rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+  h1{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.45;margin:0 0 .5rem}
+  .sub{color:var(--mut);margin:0 0 2.5rem}
+  section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem;margin:0 0 1.25rem}
+  h2{font-size:1.15rem;margin:0 0 1rem}
+  .lab{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+  @media(max-width:620px){.lab{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:10px;padding:1rem;background:#fcfcfe}
+  .card h3{margin:0 0 .75rem;font-size:.95rem;color:var(--mut);font-weight:600}
+  .spec{font:400 30px/1.9 serif;direction:rtl;display:inline-block}
+  .spec span.ib{display:inline-block}
+  .num{font-weight:800;font-size:1.05rem}
+  .good{color:var(--ok)} .bad{color:var(--bad)}
+  table{width:100%;border-collapse:collapse;font-size:.93rem}
+  th,td{text-align:right;padding:.6rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600}
+  code{font-family:ui-monospace,monospace;background:#eef1f7;padding:.1rem .35rem;border-radius:4px;direction:ltr;display:inline-block;font-size:.88em}
+  .pill{display:inline-block;font-size:.8rem;padding:.15rem .55rem;border-radius:999px;background:#eef1f7;color:var(--mut)}
+  .pill.r{background:#fdeceb;color:var(--bad)} .pill.g{background:#e8f6f0;color:var(--ok)}
+  ul{margin:.5rem 0;padding-inline-start:1.2rem}
+  footer{color:var(--mut);font-size:.9rem;text-align:center;margin-top:2rem}
+</style>
+<body>
+<div class="wrap">
+  <h1>تعريب قالب Cleanin: أربعة أشياء تكسر النص العربي، مقيسة لا مُخمَّنة</h1>
+  <p class="sub">قُرئت صفحة قالبكم الرئيسية (193 كيلوبايت) وصفحة المنتج على ThemeForest، وأُعيد الاختبار في المتصفح. الأرقام في هذه الصفحة تُحسب أمامك الآن.</p>
+
+  <section>
+    <h2>١. الاختبار الذي يكسر العربية فعلًا: تحريك الحروف فردًا فردًا</h2>
+    <p>قالبكم يستعمل <code>GSAP SplitText</code> و<code>jQuery lettering/circleType</code> و<code>typed.js</code>، وكلها تقسم النص إلى حرف في كل عنصر. والتقسيم وحده لا يضرّ، لكن أيّ حركة (إزاحة أو دوران أو ظهور) تُجبر الحرف على <code>display:inline-block</code>، وعندها ينقطع تشكيل العربية وتتفكك الكلمة إلى حروف منفصلة. والقياس:</p>
+    <div class="lab">
+      <div class="card"><h3>نص متصل (كما يجب أن يظهر)</h3><div class="spec" id="a">شركة النظافة</div><p class="num good">العرض: <span id="wa">…</span> بكسل <span class="pill g">سليم</span></p></div>
+      <div class="card"><h3>الحروف مُحرَّكة فردًا (كما يفعل القالب)</h3><div class="spec" id="b"></div><p class="num bad">العرض: <span id="wb">…</span> بكسل <span class="pill r">متفكك</span></p></div>
+    </div>
+    <p class="num">الفرق المقيس الآن في متصفحك: <span class="bad" id="diff">…</span>. وهذا ليس خطأ خطّ ولا خطأ ترجمة، فلا يظهر في أي مراجعة نصية، ويظهر لأول زائر عربي.</p>
+    <p><strong>الحل:</strong> التحريك بالكلمة لا بالحرف، أو إبقاء النص سطرًا واحدًا وتحريك قناع فوقه. النتيجة نفس الحركة، والكلمة تبقى متصلة.</p>
+  </section>
+
+  <section>
+    <h2>٢. ما وجدته في ملف صفحتكم بالعدد</h2>
+    <table>
+      <tr><th>الفحص</th><th>النتيجة</th><th>ما يعنيه للتعريب</th></tr>
+      <tr><td><code>owl-carousel</code></td><td class="num">٦ في الصفحة الرئيسية وحدها</td><td>Owl 2 يحتاج <code>rtl:true</code> في تهيئته لا في CSS؛ مع <code>dir="rtl"</code> وحده تسير الشرائح بالمقلوب. ست تهيئات تُعدّل.</td></tr>
+      <tr><td>أدوات Bootstrap للمسافات (<code>ms-/me-/ml-/mr-</code>)</td><td class="num">صفر</td><td>أهم نتيجة: التخطيط لا يعتمد على Bootstrap، فاستبدال <code>bootstrap.rtl.css</code> لن يصلح شيئًا تقريبًا. القلب الحقيقي في ملف <code>style.css</code> الخاص بالقالب، ويُحوَّل بخصائص منطقية أو بتمرير RTLCSS.</td></tr>
+      <tr><td><code>dir</code> على <code>&lt;html&gt;</code> و<code>bootstrap.rtl</code></td><td class="num">غير موجودين</td><td>لا يوجد أي دعم RTL في القالب، وصفحة المنتج لا تذكره في قائمة الخصائص.</td></tr>
+      <tr><td>الخطوط</td><td class="num">رابط واحد، خطّان: Exo وHeebo</td><td>طلبت ملف الخطوط من Google Fonts وقرأت نطاقاته: Exo فيه لاتيني ولاتيني موسّع وفيتنامي ورموز، وHeebo فيه عبري ولاتيني، ولا عربي في أيّهما. فالنص العربي يسقط على خط النظام الافتراضي ويختلف شكله من جهاز لجهاز. يلزم خط عربي بأوزانه داخل متغيرات CSS لا في كل عنصر.</td></tr>
+      <tr><td><code>twentytwenty</code> (قبل/بعد)</td><td class="num">١</td><td>مقبضه واتجاه القصّ مثبّتان لليسار؛ في RTL يقطع الصورة من الجهة الخطأ.</td></tr>
+      <tr><td><code>jarallax</code></td><td class="num">٦</td><td>لا يتأثر بالاتجاه. لا عمل فيه.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>٣. شيئان من صفحة المنتج نفسها قبل أن تُنفق عليهما</h2>
+    <ul>
+      <li><strong>صور المعاينة غير مضمَّنة في ملف الشراء.</strong> هذا نصّ البائع: «The images any media/elements used in the template are not included in the main download file, they are only for the preview purpose». ومصادرها Shutterstock وFreepik ومرخّصة له لا لكم. فالموقع بعد التركيب لن يشبه المعاينة حتى تُجلب صور. وأبسط طريق: صور عملكم الحقيقي، فهي أصدق لشركة نظافة من صور مخزنية.</li>
+      <li><strong>ليست لوحة تحكم.</strong> القالب واجهات Laravel 12 بصفحاتها، وصفحة المنتج لا تذكر أي لوحة إدارة. فمن يعرض عليكم «تعريب لوحة التحكم» يصف شيئًا ليس في شرائكم؛ وإن كانت النصوص مكتوبة داخل ملفات Blade مباشرة فالصحيح نقلها إلى <code>lang/ar.json</code>، وإلا محا أول تحديث للقالب كل التعريب.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>٤. النطاق الذي أنصح به</h2>
+    <p>القالب فيه ٥ نسخ رئيسية و٦٩+ صفحة. وشركة نظافة لا تحتاجها. فالتعريب على ما ستنشرونه فعلًا: صفحة رئيسية واحدة، ومن ٦ إلى ٨ صفحات داخلية (من نحن، الخدمات، تفاصيل خدمة، الأسعار، تواصل، طلب خدمة). والباقي يُترك كما هو حتى تحتاجوه، فلا تدفعون على صفحات لا تفتح.</p>
+  </section>
+
+  <footer>أُعدّت هذه الصفحة لطلب «تعديل اسكريب» على خمسات. فيصل فهد المطيري</footer>
+</div>
+<script>
+  (function(){
+    var w='شركة النظافة', a=document.getElementById('a'), b=document.getElementById('b');
+    b.innerHTML=[].map.call(w,function(ch){return '<span class="ib">'+(ch===' '?'&nbsp;':ch)+'</span>'}).join('');
+    function m(){
+      var wa=a.getBoundingClientRect().width, wb=b.getBoundingClientRect().width;
+      document.getElementById('wa').textContent=wa.toFixed(1);
+      document.getElementById('wb').textContent=wb.toFixed(1);
+      document.getElementById('diff').textContent='+'+((wb/wa-1)*100).toFixed(0)+'% أوسع، أي أن الحروف انفصلت';
+      return [wa,wb];
+    }
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(m); else m();
+    m();
+  })();
+</script>
+</body>
+</html>

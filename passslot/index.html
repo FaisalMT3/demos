@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بطاقات Apple Wallet على PassSlot — نموذج عملي</title>
+<style>
+  :root{
+    --ink:#121b19; --muted:#5c6b67; --line:#e2e6e4; --paper:#f7f6f3;
+    --card:#0f3d33; --card2:#2f7d6b; --accent:#a7d6c9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:17px/1.75 system-ui,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+  button{font:inherit}
+  .wrap{max-width:62rem;margin:0 auto;padding:clamp(1.2rem,4vw,3rem)}
+  header p{color:var(--muted);margin:.4rem 0 0}
+  h1{font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.4;margin:0;font-weight:800}
+  h2{font-size:1.25rem;margin:0 0 .6rem;font-weight:700}
+  section{margin-top:clamp(2rem,5vw,3.2rem)}
+  .lead{font-size:1.05rem}
+  bdi,code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;direction:ltr;unicode-bidi:isolate}
+  code{background:#eceeed;padding:.1em .35em;border-radius:.3em;font-size:.88em}
+  pre{background:#0f1613;color:#e8efec;padding:1rem 1.1rem;border-radius:.8rem;overflow-x:auto;
+      font:14px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;direction:ltr;text-align:left} /* rtl-check: ignore — shell commands stay LTR */
+  pre .c{color:#8fae9f}
+  .grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));align-items:start}
+  .box{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.1rem 1.25rem}
+  .box h3{margin:0 0 .4rem;font-size:1rem}
+  .box p{margin:0;color:var(--muted);font-size:.95rem}
+
+  /* ---- the pass ---- */
+  .stage{display:flex;flex-direction:column;align-items:center;gap:.9rem}
+  .pass{width:min(21rem,100%);min-height:28rem;border-radius:1.3rem;background:#fff;
+        box-shadow:0 1.5rem 3rem -1rem #0f3d3340,0 .2rem .6rem #0f3d3318;overflow:hidden;
+        display:flex;flex-direction:column}
+  .pass .top{background:linear-gradient(135deg,var(--card),var(--card2));color:#fff;padding:.9rem 1rem .4rem}
+  .row{display:flex;align-items:center;gap:.7rem}
+  .row img.logo{height:1.6rem;width:auto;filter:brightness(0) invert(1)}
+  .fld{min-width:0}
+  .fld .lbl{font-size:.66rem;font-weight:700;color:var(--accent);text-transform:none}
+  .fld .val{font-size:1rem;font-weight:600}
+  .me-auto{margin-inline-start:auto;text-align:end}
+  .strip{position:relative;background:linear-gradient(135deg,var(--card),var(--card2));
+         min-height:6.6rem;display:flex;align-items:center;padding:0 1rem;color:#fff}
+  .strip .big{font-size:2.6rem;font-weight:800;line-height:1.1}
+  .flds{padding:.9rem 1rem;display:grid;gap:.85rem}
+  .flds .line{display:flex;gap:1rem;justify-content:space-between}
+  .flds .lbl{font-size:.64rem;font-weight:700;color:#8aa39b}
+  .flds .val{font-size:.92rem;font-weight:600;color:var(--ink)}
+  .code{margin-top:auto;border-top:1px solid var(--line);padding:.9rem;text-align:center}
+  .code img{width:7.2rem;height:7.2rem;image-rendering:pixelated}
+  .code .alt{font-size:.72rem;color:var(--muted)}
+  .back{padding:1rem 1.1rem;display:grid;gap:.9rem}
+  .back .lbl{font-size:.68rem;font-weight:700;color:#8aa39b}
+  .back .val{font-size:.9rem}
+  .hidden{display:none}
+  .toggle{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45rem 1.1rem;cursor:pointer}
+  .hint{color:var(--muted);font-size:.9rem}
+
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  th,td{text-align:start;padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.8rem;color:var(--muted);font-weight:700}
+  .yes{color:#1b6b4f;font-weight:700}
+  .no{color:#9a3b2f;font-weight:700}
+  ol.steps{padding-inline-start:1.3rem;margin:0}
+  ol.steps li{margin-bottom:.5rem}
+  ul.tight{margin:.3rem 0 0;padding-inline-start:1.2rem}
+  footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>بطاقة متجر في Apple Wallet، وشهادة <bdi>pass.p12</bdi> بلا جهاز Mac</h1>
+  <p>نموذج عملي: بطاقة حقيقية مبنية وموقّعة على Linux، لا صورة تصميم.</p>
+</header>
+
+<section>
+  <h2>١. البطاقة</h2>
+  <p class="lead">هذه بطاقة ولاء لمتجر تجريبي («متجر الواحة»)، مبنية من ملف
+    <bdi>pass.json</bdi> حقيقي بالحقول نفسها التي تقرأها محفظة آبل: حقل رئيسي على الشريط،
+    حقول فرعية ومساعدة، رمز <bdi>QR</bdi> مولّد من الرقم التسلسلي، وظهر البطاقة بالشروط والشرح.</p>
+  <div class="stage">
+    <div class="pass" id="pass">
+      <div class="top">
+        <div class="row">
+          <img class="logo" src="assets/logo.png" alt="شعار متجر الواحة">
+          <div class="fld me-auto">
+            <div class="lbl">الفئة</div>
+            <div class="val">ذهبية</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="front">
+        <div class="strip">
+          <div>
+            <div class="lbl" style="font-size:.68rem;font-weight:700;color:var(--accent)">رصيد النقاط</div>
+            <div class="big"><bdi>1,250</bdi></div>
+          </div>
+        </div>
+        <div class="flds">
+          <div class="line">
+            <div class="fld"><div class="lbl">العضو</div><div class="val">نواف ن.</div></div>
+            <div class="fld"><div class="lbl">عضو منذ</div><div class="val"><bdi>2026-03-14</bdi></div></div>
+          </div>
+          <div class="line">
+            <div class="fld"><div class="lbl">المتبقي للمكافأة القادمة</div><div class="val"><bdi>250</bdi> نقطة</div></div>
+            <div class="fld"><div class="lbl">الفرع</div><div class="val">الرياض — العليا</div></div>
+          </div>
+        </div>
+        <div class="code">
+          <img src="assets/qr.png" alt="رمز QR يحمل الرقم التسلسلي">
+          <div class="alt"><bdi>OASIS-000148</bdi></div>
+        </div>
+      </div>
+
+      <div id="backside" class="back hidden">
+        <div><div class="lbl">كيف تجمع النقاط</div>
+          <div class="val">نقطة واحدة لكل ريال. اعرض رمز البطاقة عند الدفع.</div></div>
+        <div><div class="lbl">المكافأة</div>
+          <div class="val">خصم <bdi>50</bdi> ريالًا عند كل <bdi>1,500</bdi> نقطة.</div></div>
+        <div><div class="lbl">خدمة العملاء</div>
+          <div class="val">الأحد — الخميس، <bdi dir="ltr">9:00 ص – 6:00 م</bdi></div></div>
+        <div><div class="lbl">الشروط</div>
+          <div class="val">البطاقة غير قابلة للتحويل، وتنتهي النقاط بعد <bdi>12</bdi> شهرًا من آخر عملية شراء.</div></div>
+        <div><div class="lbl">إشعار الموقع</div>
+          <div class="val">«متجر الواحة قريب منك — اعرض بطاقتك»، يظهر على شاشة القفل داخل <bdi>150</bdi> مترًا من الفرع.</div></div>
+      </div>
+    </div>
+    <button class="toggle" id="flip" type="button">اعرض ظهر البطاقة</button>
+    <p class="hint">الحقول كلها قابلة للتغيير: الاسم، اللون، الشعار، النقاط، الفروع، ونص الإشعار.</p>
+  </div>
+</section>
+
+<section>
+  <h2>٢. الشهادة بلا جهاز Mac</h2>
+  <p class="lead">شرط الطلب كان توفّر جهاز Mac. الحقيقة أن ما يفعله الـ Mac هنا هو إنشاء مفتاح
+    وطلب توقيع (<bdi>CSR</bdi>) عبر Keychain Access، وهذا نفسه يُنتَج بأداة <code>openssl</code>
+    على أي نظام. والنتيجة ملف <bdi>pass.p12</bdi> واحد بالصيغة التي تطلبها PassSlot:</p>
+<pre><span class="c"># 1) المفتاح وطلب التوقيع — عندنا</span>
+openssl genrsa -out pass.key 2048
+openssl req -new -key pass.key -out pass.csr \
+  -subj "/emailAddress=you@example.com/CN=Your Name/C=SA"
+
+<span class="c"># 2) ترفع أنت pass.csr في حسابك: Certificates → + → Pass Type ID
+#    وتعيد لنا pass.cer — بلا كلمة مرور حسابك ولا وصول إليه</span>
+
+<span class="c"># 3) التحويل إلى p12 — عندنا</span>
+openssl x509 -inform der -in pass.cer -out pass.pem
+openssl pkcs12 -export -legacy -inkey pass.key -in pass.pem -out pass.p12</pre>
+  <p>وبعدها تُبنى البطاقة نفسها: ملف <bdi>pass.json</bdi>، ثم <bdi>manifest.json</bdi> الذي يحمل
+    بصمة <bdi>SHA-1</bdi> لكل ملف، ثم توقيع <bdi>PKCS#7</bdi> منفصل على المانيفست، ثم ضغط الكل
+    في ملف <bdi>.pkpass</bdi>. هذه بصمات البطاقة المعروضة أعلاه كما وُلّدت فعلًا:</p>
+<pre>pass.json    e4c9d5accc56b72eda45a9403e9e4b3761696e8b
+icon.png     f6b61b1234eb968cd201ea5418832384a554ea08
+icon@2x.png  130d1ecac4243967bf2c7075532083c0a7fa500e
+logo.png     3ec594c30f6e2d1eb2eabcf2504fb4680bbb6dff
+strip.png    586b2afe81caf63d407d9080b7ed08e24f3dba12</pre>
+</section>
+
+<section>
+  <h2>٣. ما تم التحقق منه فعليًا</h2>
+  <p class="lead">السلسلة كلها تُبنى بأمر واحد ويفحصها <bdi>selfcheck.sh</bdi> بـ
+    <strong>٢١ تحققًا، جميعها ناجحة</strong>، ومنها تحققان معاكسان: إن عُدِّل محتوى البطاقة
+    يجب أن تُكسر البصمات، وإن عُدِّل المانيفست يجب أن يسقط التوقيع.</p>
+  <table>
+    <tr><th>التحقق</th><th>النتيجة</th></tr>
+    <tr><td>السلسلة بُنيت على Linux لا على macOS</td><td class="yes">ناجح</td></tr>
+    <tr><td>طلب التوقيع <bdi>CSR</bdi> صحيح التوقيع بلا Keychain</td><td class="yes">ناجح</td></tr>
+    <tr><td>المفتاح الخاص داخل <bdi>p12</bdi> يطابق شهادته</td><td class="yes">ناجح</td></tr>
+    <tr><td>الـ <bdi>p12</bdi> يُفتح بكلمة المرور الصحيحة ويرفض الخاطئة</td><td class="yes">ناجح</td></tr>
+    <tr><td>ملف <bdi>.pkpass</bdi> يحتوي الملفات السبعة التي تطلبها المحفظة</td><td class="yes">ناجح</td></tr>
+    <tr><td>كل بصمة في المانيفست تطابق بايتات الملف</td><td class="yes">ناجح</td></tr>
+    <tr><td>التوقيع يتحقق مقابل الشهادة المُصدِّرة</td><td class="yes">ناجح</td></tr>
+    <tr><td>تعديل محتوى البطاقة يكسر البصمات</td><td class="yes">ناجح (مقصود)</td></tr>
+    <tr><td>تعديل المانيفست يُسقط التوقيع</td><td class="yes">ناجح (مقصود)</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>٤. حدود واضحة قبل الاتفاق</h2>
+  <div class="grid">
+    <div class="box">
+      <h3>الاختبار النهائي على iPhone لا أستطيع إجراءه</h3>
+      <p>لا يوجد عندي جهاز iOS. أُسلّمك بطاقة اختبار + قائمة فحص من ست خطوات، والإضافة إلى
+        المحفظة على جهازك تتم منك أمامي، وأي خلل أعدّله مجانًا حتى تُضاف البطاقة بسلاسة.</p>
+    </div>
+    <div class="box">
+      <h3>لن أطلب كلمة مرور حسابك</h3>
+      <p>حساب Apple Developer يبقى بيدك: ترفع أنت <bdi>pass.csr</bdi> وتعيد <bdi>pass.cer</bdi>.
+        المفتاح الخاص يُسلّم إليك ويُحذف من عندي بعد الاستلام.</p>
+    </div>
+    <div class="box">
+      <h3>خطة PassSlot المجانية تكفي للانطلاق</h3>
+      <p>الخطة المجانية: <bdi>1,000</bdi> بطاقة و<bdi>Pass Type ID</bdi> واحد، مع مصمم البطاقات
+        وتحديثات غير محدودة. لا داعي لخطة <bdi>29$</bdi> شهريًا قبل أن تتجاوز هذا الحد.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  نموذج أعدّه فيصل فهد المطيري لعرض على خمسات. «متجر الواحة» اسم تجريبي والتصميم كله أصلي.
+  البطاقة المعروضة موقّعة بشهادة محلية للاختبار، والبطاقة النهائية تُوقّع بشهادة حسابك.
+</footer>
+
+</div>
+<script>
+  var f = document.getElementById('front'), b = document.getElementById('backside'),
+      t = document.getElementById('flip');
+  t.addEventListener('click', function () {
+    var back = b.classList.toggle('hidden') === false;
+    f.classList.toggle('hidden', back);
+    t.textContent = back ? 'اعرض وجه البطاقة' : 'اعرض ظهر البطاقة';
+  });
+</script>
+</body>
+</html>

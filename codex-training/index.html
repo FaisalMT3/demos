@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نموذج حزمة برنامج تدريبي: Codex وأدوات البرمجة بالذكاء الاصطناعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213d;--mut:#5d6b7a;--line:#dde3ea;--bg:#f4f6f8;--card:#fff;--acc:#1b4965;--ok:#1d7a3a;--warn:#b25e00;--bad:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--ink);color:#fff;padding:.7rem 1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+nav{display:flex;gap:.3rem;flex-wrap:wrap}
+nav a{color:#cfe0ea;text-decoration:none;padding:.25rem .7rem;border-radius:6px;cursor:pointer}
+nav a.on{background:#ffffff1f;color:#fff}
+.note{background:#fff8e6;border-bottom:1px solid #f0dca8;padding:.45rem 1rem;font-size:.85rem}
+main{max-width:1020px;margin:1rem auto;padding:0 1rem 3rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;margin-bottom:1rem;overflow-x:auto}
+h1{font-size:1.25rem;margin:.2rem 0 .7rem}h2{font-size:1.02rem;margin:.2rem 0 .5rem}h3{font-size:.93rem;margin:.8rem 0 .3rem}
+.row{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem}
+@media(max-width:760px){.row{grid-template-columns:1fr}}
+label{display:block;font-weight:600;font-size:.88rem;margin-top:.55rem}
+input,select{font:inherit}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:8px;padding:.45rem 1rem;font:inherit;font-weight:600;cursor:pointer}
+.btn.alt{background:#fff;color:var(--acc);border:1px solid var(--acc)}
+.btn.sm{padding:.22rem .6rem;font-size:.85rem}
+table{width:100%;border-collapse:collapse;min-width:430px}
+th,td{text-align:start;padding:.4rem;border-bottom:1px solid var(--line);font-size:.9rem;vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:.83rem}
+.tag{display:inline-block;padding:0 .5rem;border-radius:99px;font-size:.8rem;font-weight:600}
+.ok{color:var(--ok);background:#e5f3e9}.warn{color:var(--warn);background:#fdf0e1}.bad{color:var(--bad);background:#fbe9e7}.neu{color:var(--mut);background:#eef1f4}
+.hint{color:var(--mut);font-size:.83rem;font-weight:400}
+.big{font-size:1.6rem;font-weight:700}
+ul{margin:.3rem 0;padding-inline-start:1.2rem}li{margin-bottom:.3rem}
+ol{margin:.3rem 0;padding-inline-start:1.3rem}
+pre{background:#0f1b2d;color:#dce7f2;padding:.6rem .8rem;border-radius:8px;overflow-x:auto;direction:ltr;text-align:left;font-size:.84rem;line-height:1.6;margin:.4rem 0}
+.sess{border:1px solid var(--line);border-radius:9px;margin-bottom:.5rem;overflow:hidden}
+.sess>summary{cursor:pointer;padding:.55rem .8rem;font-weight:600;background:#f7f9fb;list-style:none}
+.sess>summary::-webkit-details-marker{display:none}
+.sess>summary small{color:var(--mut);font-weight:400}
+.sess .body{padding:.6rem .9rem;border-top:1px solid var(--line)}
+.tl{display:grid;grid-template-columns:4.6rem 1fr;gap:.2rem .6rem;font-size:.89rem}
+.tl b{color:var(--acc);direction:ltr;text-align:start}
+.crit{border-bottom:1px solid var(--line);padding:.45rem 0}
+.crit:last-child{border-bottom:0}
+.sc{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.25rem}
+.sc button{border:1px solid var(--line);background:#fff;border-radius:7px;padding:.15rem .6rem;font:inherit;font-size:.85rem;cursor:pointer}
+.sc button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.bar{height:8px;background:#eef1f4;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc)}
+.wm{position:fixed;inset-inline-end:.6rem;inset-block-end:.6rem;background:#14213de6;color:#fff;font-size:.78rem;padding:.3rem .6rem;border-radius:99px;z-index:9;pointer-events:none}
+.stamp{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:8;overflow:hidden}
+.stamp span{font:700 clamp(2rem,9vw,5rem)/1 "IBM Plex Sans Arabic",sans-serif;color:#14213d;opacity:.05;transform:rotate(-24deg);white-space:nowrap}
+num{direction:ltr;unicode-bidi:isolate}
+code{background:#eef1f4;padding:0 .25rem;border-radius:4px;direction:ltr;unicode-bidi:isolate;font-size:.9em}
+</style>
+</head>
+<body>
+<header><b>⌘ حزمة برنامج تدريبي — Codex وأدوات البرمجة</b>
+<nav id="nav"><a data-v="kids" class="on">مسار الأطفال</a><a data-v="adults">مسار الكبار</a><a data-v="eval">بطاقة التقييم</a><a data-v="track">متابعة المتدربين</a><a data-v="upd">تحديث المادة</a></nav></header>
+<div class="note">هذا نموذج للمادة التدريبية نفسها: مسارَان كاملان، نص الجلسة دقيقة بدقيقة، بطاقة تقييم تحسب الدرجة، ولوحة متابعة تحسب التقدّم وتُشير للمتعثرين.</div>
+<main id="app"></main>
+<div class="stamp"><span>نموذج عرض — فيصل فهد</span></div>
+<div class="wm">نموذج — فيصل فهد المطيري</div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+/* ================= مسار الأطفال (٩–١٤ سنة) — ٦ جلسات × ٤٥ دقيقة =================
+   قاعدة المسار: لا طرفية، لا مفاتيح API، لا تثبيت. كل شيء من المتصفح وبنتيجة
+   يراها الطفل في نهاية الجلسة نفسها. */
+const KIDS=[
+ {t:'ماذا يفهم الحاسوب من كلامي؟',goal:'يكتب الطفل وصفاً واضحاً لبرنامج صغير ويرى الفرق بين وصف غامض ووصف دقيق.',
+  min:[[0,5,'عرض: صفحة جاهزة بناها متدرب سابق في ٤٥ دقيقة'],[5,12,'نشاط ورقي: اكتب تعليمات لرسم منزل، ويُنفّذها المدرّب حرفياً'],[12,30,'كل طفل يكتب وصفاً لصفحة «عن نفسي» ويحصل على الصفحة'],[30,40,'إضافة واحدة بطلبه: لون، صورة، زر'],[40,45,'يُعرض عمل ثلاثة أطفال على الشاشة']],
+  prompts:['اصنع لي صفحة عنوانها «أنا راكان» فيها صورة قطة وثلاث جمل عن هواياتي بخط كبير وخلفية سماوية','كبّر العنوان واجعل القطة تكبر قليلاً عندما أمرر الفأرة عليها'],
+  out:'صفحة «عن نفسي» تعمل في المتصفح باسم الطفل.',
+  trap:{sign:'الطفل يكتب «اصنع لي لعبة» وينتظر',say:'نسأله: لعبة لمن؟ وماذا يحدث عند الفوز؟ ثم يُعاد الطلب بثلاث جمل. التحويل من رغبة إلى وصف هو مهارة الجلسة.'}},
+ {t:'أول لعبة: التقط الفاكهة',goal:'يبني الطفل لعبة فيها لاعب يتحرك وهدف ونقاط، ويعدّل قاعدة واحدة فيها بنفسه.',
+  min:[[0,5,'مراجعة: ما الوصف الجيد؟'],[5,15,'بناء اللعبة بثلاثة طلبات متتابعة'],[15,30,'كل طفل يغيّر قاعدة: سرعة، عدد الأرواح، شكل اللاعب'],[30,40,'تحدّي: أعلى نقاط في دقيقتين'],[40,45,'حفظ الملف ومشاركته مع الأهل']],
+  prompts:['اصنع لعبة في صفحة واحدة: سلة تتحرك يميناً ويساراً بالأسهم، تسقط فاكهة من الأعلى، وكل فاكهة تُلتقط = نقطة','اجعل اللعبة تنتهي بعد ثلاث فواكه ضائعة وتظهر النقاط النهائية'],
+  out:'ملف لعبة واحد يفتح بالنقر المزدوج ويعمل دون إنترنت.',
+  trap:{sign:'اللعبة تعمل لكن الطفل لا يعرف أي سطر فعل ماذا',say:'نطلب تغييراً صغيراً جداً (سرعة السلة) ونريه السطر الذي تغيّر. التملّك يبدأ من تعديل واحد يفهمه، لا من قراءة الملف كله.'}},
+ {t:'لماذا لا يعمل؟ خطوات الإصلاح',goal:'يميّز الطفل بين «الصفحة بيضاء» و«الزر لا يستجيب» و«الشكل خاطئ»، ويصف الخلل بدقة.',
+  min:[[0,8,'المدرّب يكسر ثلاث صفحات أمامهم ويصف كل خلل بجملة'],[8,25,'كل طفل يستلم صفحة مكسورة ويصلحها بوصف الخلل'],[25,38,'يكسر الطفل صفحة زميله عمداً، والزميل يصلحها'],[38,45,'لوحة: ثلاث جمل تصف ثلاثة أخطاء']],
+  prompts:['الزر «ابدأ» لا يفعل شيئاً عند النقر، بينما زر «إعادة» يعمل. أصلح السبب فقط ولا تغيّر الشكل','النص يظهر خارج الصندوق على الجوال فقط. أصلحه'],
+  out:'ثلاث صفحات مكسورة أُصلحت، وبطاقة «كيف أصف الخلل» بخط الطفل.',
+  trap:{sign:'الطفل يقول «ما ضبط» ويعيد الطلب نفسه مرات',say:'نمنع إعادة الطلب نفسه: يصف ما رآه بالضبط وما توقّعه. الوصف الدقيق للخلل هو نصف الحل، وهذه أهم جلسة في المسار.'}},
+ {t:'صفحتي على الإنترنت',goal:'يرفع الطفل عمله إلى رابط حقيقي يفتحه من جوال والديه.',
+  min:[[0,6,'لماذا الملف على جهازي لا يراه أحد؟'],[6,20,'الرفع خطوة بخطوة على حساب التدريب (حساب الجهة، لا حسابات شخصية)'],[20,33,'ضبط العنوان والوصف وصورة المشاركة'],[33,42,'كل طفل يفتح رابط زميله ويكتب ملاحظة واحدة'],[42,45,'إرسال الروابط لأولياء الأمور']],
+  prompts:['اكتب لي عنوان الصفحة ووصفاً قصيراً يظهر عند مشاركتها في واتساب','صغّر الصورة حتى تُفتح الصفحة بسرعة على الجوال'],
+  out:'رابط يعمل لكل طفل.',
+  trap:{sign:'طفل يريد نشر اسمه الكامل وصورته ومدرسته',say:'قاعدة ثابتة تُقال في أول دقيقة: الاسم الأول فقط، لا صور شخصية، لا اسم مدرسة، لا موقع. تُراجع كل صفحة قبل الرفع.'}},
+ {t:'مشروعي الخاص',goal:'يختار الطفل مشروعه ويبنيه على مراحل مع خطة مكتوبة من ثلاث خطوات.',
+  min:[[0,8,'ثلاثة أمثلة لمشاريع بحجم مناسب، وثلاثة أكبر من الوقت'],[8,15,'كل طفل يكتب خطته: ما يراه المستخدم، ماذا يفعل، ما النتيجة'],[15,38,'بناء بالتتابع: خطوة ثم تجربة ثم الخطوة التالية'],[38,45,'مراجعة الخطة: ما أُنجز وما بقي للجلسة القادمة']],
+  prompts:['اصنع الخطوة الأولى فقط: شاشة بداية فيها اسم اللعبة وزر «العب». لا تضف شيئاً آخر','الآن أضف شاشة اللعب، واتركني أجرّبها قبل النتائج'],
+  out:'مشروع مكتمل جزئياً + خطة مكتوبة بخط الطفل.',
+  trap:{sign:'الطفل يطلب كل شيء في طلب واحد فيضيع',say:'قاعدة الخطوة الواحدة: طلب واحد، تجربة، ثم التالي. نُظهر له كيف يفشل الطلب العريض أمامه مرة واحدة ليقتنع.'}},
+ {t:'يوم العرض',goal:'يعرض الطفل مشروعه في دقيقتين ويجيب عن سؤالين.',
+  min:[[0,10,'تدريب على العرض: ما بنيت؟ ما أصعب خطوة؟ ما التالي؟'],[10,32,'العروض أمام المجموعة وأولياء الأمور'],[32,40,'بطاقة التقييم تُملأ أمام كل طفل مع تعليق إيجابي محدد'],[40,45,'تسليم ملف المشاريع والروابط']],
+  prompts:['اكتب لي ثلاث جمل أقولها عند عرض مشروعي','أضف صفحة فيها رابط لكل مشروع بنيته في الدورة'],
+  out:'عرض مسجّل + صفحة تجمع أعمال الطفل الستة.',
+  trap:{sign:'الطفل يقرأ من الورقة ولا ينظر للشاشة',say:'نُلغي الورقة ونضع ثلاث كلمات فقط على الشريحة. العرض يُدرّب مرتين قبل الجلسة، لا في الجلسة.'}}
+];
+
+/* ================= مسار الكبار — ٦ جلسات × ٩٠ دقيقة =================
+   يفترض معرفة أساسية بالطرفية وgit. الهدف: استخدام احترافي ومُراجَع، لا «اكتب لي الكود». */
+const ADULTS=[
+ {t:'الإعداد والنموذج الذهني',goal:'يشغّل المتدرب الأداة على مشروع حقيقي ويعرف ماذا تقرأ وماذا تعدّل وماذا تُنفّذ.',
+  min:[[0,10,'ماذا يختلف عن مساعد الإكمال في المحرر؟'],[10,30,'التثبيت، تسجيل الدخول، أول مهمة على مستودع تجريبي'],[30,55,'أوضاع الموافقة: اقتراح / تعديل تلقائي / تنفيذ كامل، ومتى يُسمح بكل وضع'],[55,80,'ملف AGENTS.md: الأوامر، أسلوب الكود، ما يُمنع لمسه'],[80,90,'واجب: AGENTS.md لمستودع المتدرب نفسه']],
+  prompts:['اقرأ المستودع واكتب لي في ملف واحد: كيف يُشغّل، كيف تُجرى الاختبارات، وأين منطق الدفع. لا تعدّل شيئاً','أضف AGENTS.md يشرح أوامر البناء والاختبار وأن مجلد migrations لا يُعدّل يدوياً'],
+  out:'مستودع المتدرب فيه AGENTS.md مُجرَّب، ومهمة قراءة واحدة منفّذة.',
+  trap:{sign:'المتدرب يمنح التنفيذ الكامل على مستودع العمل من أول دقيقة',say:'قاعدة الجلسة: فرع جديد + وضع الاقتراح على أي كود حقيقي، والتنفيذ الكامل في بيئة معزولة فقط. تُكتب القاعدة على السبورة وتبقى طوال البرنامج.'}},
+ {t:'من المهمة إلى التعديل المُراجَع',goal:'ينجز المتدرب تعديلاً على كود موجود ويقرأ الفرق سطراً سطراً قبل الدمج.',
+  min:[[0,10,'مراجعة واجب AGENTS.md'],[10,20,'كتابة المهمة: السياق، المطلوب، معيار الانتهاء'],[20,55,'تمرين: إضافة ميزة صغيرة لمستودع موحّد'],[55,75,'قراءة الفرق: ما خارج النطاق؟ ما حُذف بلا طلب؟'],[75,90,'رفض التعديل وإعادة صياغة المهمة']],
+  prompts:['في ملف cart.js أضف خصماً نسبياً للأعضاء، وحدّث الاختبارات. لا تلمس ملفات أخرى','أعطني الفرق فقط ولا تنفّذ شيئاً حتى أوافق'],
+  out:'طلب دمج واحد يعمل، مع قائمة الملاحظات التي رفضها المتدرب ولماذا.',
+  trap:{sign:'الفرق يعمل فيُدمج دون قراءة',say:'نضع خللاً مقصوداً في أحد التمارين (حذف تحقّق من المدخلات). من يدمج دون قراءة يراه في الجلسة التالية في بيانات تجريبية مكسورة.'}},
+ {t:'الاختبارات أولاً مع الأداة',goal:'يكتب المتدرب الاختبار قبل التنفيذ ويجعل الأداة تعمل داخل حدود الاختبار.',
+  min:[[0,15,'لماذا الاختبار هو أدق وصف للمطلوب'],[15,45,'تمرين: اختبارات فاشلة أولاً، ثم التنفيذ حتى تنجح'],[45,70,'اختبار حالة حدّية يكتشفها المتدرب لا الأداة'],[70,90,'قياس: كم مرة أُعيدت المحاولة قبل النجاح']],
+  prompts:['اكتب اختبارات فاشلة لدالة تحسب الزكاة على مبالغ تحت النصاب وعنده وفوقه، ولا تكتب التنفيذ','شغّل الاختبارات وأصلح التنفيذ فقط حتى تنجح كلها، ولا تغيّر الاختبارات'],
+  out:'وحدة فيها اختبارات تُعرّف السلوك، كتبها المتدرب لا الأداة.',
+  trap:{sign:'الأداة تعدّل الاختبار ليطابق الكود',say:'جملة صريحة في كل مهمة: الاختبارات لا تُعدَّل. ومن علامات الخطر أن تنجح كل الاختبارات من المحاولة الأولى — يُراجَع الفرق.'}},
+ {t:'المشاريع الكبيرة والسياق',goal:'يعمل المتدرب على مستودع كبير دون أن تضيع الأداة أو تعيد كتابة ما لا يلزم.',
+  min:[[0,15,'لماذا يفشل الطلب العريض على ٥٠ ألف سطر'],[15,45,'تقسيم مهمة كبيرة إلى ثلاث مهام بمعايير انتهاء'],[45,70,'حصر النطاق: ملفات محددة، أوامر محددة، ممنوعات'],[70,90,'مهام متوازية ومتى تكون خطأً']],
+  prompts:['لا تبنِ الميزة. اكتب خطة من ثلاث خطوات، كل خطوة قابلة للدمج وحدها، وقل لي ما سيتعطّل في كل خطوة','نفّذ الخطوة الأولى فقط في الملفات الثلاثة المذكورة، ولا تعدّل التهيئة'],
+  out:'خطة تنفيذ لمهمة حقيقية من عمل المتدرب + أول خطوة مدموجة.',
+  trap:{sign:'إعادة هيكلة واسعة غير مطلوبة تظهر في الفرق',say:'الممنوعات تُكتب في المهمة لا تُترك للفهم: لا إعادة تسمية، لا ترقية حزم، لا تنسيق ملفات لم تُمسّ.'}},
+ {t:'الأمان والترخيص والبيانات',goal:'يعرف المتدرب ما لا يُرسَل، وما لا يُسلَّم للعميل، وكيف يُفحص الناتج.',
+  min:[[0,20,'الأسرار: مفاتيح، ملفات .env، بيانات عملاء حقيقية'],[20,45,'فحص الفرق: مدخلات غير محقّقة، صلاحيات مفتوحة، تسجيل بيانات حساسة'],[45,70,'الترخيص والمصادر، وما يُقال للعميل'],[70,90,'قائمة فحص ما قبل التسليم، تُطبّق على عمل الجلسة الثانية']],
+  prompts:['افحص هذا الفرق واذكر فقط: أي مدخل غير محقّق، أي صلاحية أوسع من اللازم، أي تسجيل لبيانات شخصية','أخرج أي مفتاح من الكود إلى متغيرات بيئة، وأضف مثالاً في .env.example'],
+  out:'قائمة فحص ما قبل التسليم (صفحة واحدة) طُبّقت على كود المتدرب.',
+  trap:{sign:'لصق ملف إعداد فيه مفتاح حقيقي في المهمة',say:'تمرين إلزامي: كل متدرب يبحث في مستودعه عن مفتاح مكشوف قبل نهاية الجلسة. من وجد مفتاحاً يُبطله فوراً.'}},
+ {t:'مشروع التخرج وقياس الأثر',goal:'يسلّم المتدرب ميزة كاملة من مشروعه بمعايير انتهاء مكتوبة، ويقيس ما تغيّر في وقته.',
+  min:[[0,15,'عرض الخطط ومعايير الانتهاء'],[15,60,'العمل على المشروع ومراجعة المدرّب فرداً فرداً'],[60,80,'العروض: الفرق، الاختبارات، ما رُفض من اقتراحات الأداة'],[80,90,'بطاقة التقييم + خطة الثلاثين يوماً القادمة']],
+  prompts:['اكتب وصف طلب الدمج: ما تغيّر، كيف يُجرَّب، وما لم يُنجز','أنشئ قائمة فحص للمراجع تطابق معايير الانتهاء التي كتبتها'],
+  out:'طلب دمج مدموج في مشروع المتدرب + بطاقة تقييم ممتلئة.',
+  trap:{sign:'المتدرب يعرض ما بنته الأداة ولا يشرح قراراته',say:'في العرض يُسأل سؤالان ثابتان: أي اقتراح رفضته ولماذا، وأي اختبار كتبته بنفسك. من لا يجيب لا يُعدّ متقناً حتى لو عمل الكود.'}}
+];
+
+/* ================= بطاقة التقييم =================
+   خمسة معايير بأوزان مجموعها ١٠٠، كل معيار ٠–٣. */
+const RUBRIC=[
+ {k:'spec',w:25,t:'صياغة المهمة',lv:['طلب غامض من جملة','يذكر المطلوب دون معيار انتهاء','مهمة فيها سياق ومطلوب ومعيار انتهاء','يضيف الممنوعات وحصر الملفات مسبقاً']},
+ {k:'review',w:25,t:'مراجعة الناتج',lv:['يدمج دون قراءة','يقرأ سريعاً ولا يلاحظ ما خرج عن النطاق','يقرأ الفرق سطراً سطراً ويعلّق','يرفض ويعيد الصياغة بسبب مكتوب']},
+ {k:'debug',w:20,t:'وصف الخلل والإصلاح',lv:['«ما ضبط» وإعادة الطلب نفسه','يصف الخلل عموماً','يصف ما رآه وما توقّعه ويعزل الملف','يصنع حالة إعادة إنتاج أصغر قبل الإصلاح']},
+ {k:'test',w:20,t:'الاختبار قبل التنفيذ',lv:['لا اختبارات','اختبارات كتبتها الأداة ولم تُراجَع','يكتب اختبارات للحالة الطبيعية','يكتب حالات حدّية ويمنع تعديل الاختبارات']},
+ {k:'safety',w:10,t:'الأمان والأسرار',lv:['يلصق أسراراً في المهام','يعرف القاعدة ولا يطبّقها','لا أسرار في الكود ويستخدم متغيرات البيئة','يفحص الفرق أمنياً قبل التسليم']}
+];
+const LEVELS=[[85,'متقدّم: يعمل بإشراف خفيف','ok'],[70,'متوسط: يحتاج مراجعة على التعديلات الكبيرة','ok'],[55,'مبتدئ متقدّم: يحتاج متابعة في كل مهمة','warn'],[0,'يحتاج دعماً: يُعاد تدريبه على جلستَي الصياغة والمراجعة','bad']];
+function rubricScore(sel){ // sel = {k:0..3}
+ let s=0; for(const c of RUBRIC) s+=(sel[c.k]||0)/3*c.w;
+ return Math.round(s);
+}
+function levelOf(score){ for(const [min,label,cls] of LEVELS) if(score>=min) return {min,label,cls}; }
+function weakest(sel){ // أقل معيار بعد ترجيح الأثر، لتوليد جملة الملاحظة
+ let worst=null;
+ for(const c of RUBRIC){const v=sel[c.k]||0; const loss=(3-v)/3*c.w; if(!worst||loss>worst.loss) worst={c,v,loss};}
+ return worst;
+}
+function feedback(sel){
+ const sc=rubricScore(sel), lv=levelOf(sc), w=weakest(sel);
+ const strong=RUBRIC.filter(c=>(sel[c.k]||0)===3).map(c=>c.t);
+ let s=`الدرجة ${sc}/100 — ${lv.label}.`;
+ if(strong.length) s+=` أتقن: ${strong.join('، ')}.`;
+ if(w.loss>0) s+=` الخطوة القادمة: ${w.c.t} — المستوى المطلوب «${w.c.lv[Math.min(w.v+1,3)]}».`;
+ else s+=' لا توجد فجوة في المعايير الخمسة.';
+ return s;
+}
+
+/* ================= لوحة متابعة المتدربين =================
+   حضور/تسليم لكل جلسة: p=حاضر ومسلّم، a=غائب، l=حاضر بلا تسليم */
+const TRAINEES=[
+ {n:'ريان ع.',track:'kids',m:['p','p','p','p','p','p'],sc:{spec:3,review:2,debug:3,test:2,safety:3}},
+ {n:'لمى س.',track:'kids',m:['p','p','l','p','p','p'],sc:{spec:2,review:2,debug:2,test:2,safety:3}},
+ {n:'عبدالله ح.',track:'kids',m:['p','a','a','l','p','p'],sc:{spec:1,review:1,debug:1,test:0,safety:2}},
+ {n:'نورة م.',track:'kids',m:['p','p','p','l','l','p'],sc:{spec:2,review:1,debug:2,test:1,safety:2}},
+ {n:'م. سلطان ف.',track:'adults',m:['p','p','p','p','p','p'],sc:{spec:3,review:3,debug:3,test:3,safety:3}},
+ {n:'م. هند ق.',track:'adults',m:['p','p','p','l','p','p'],sc:{spec:3,review:2,debug:2,test:2,safety:2}},
+ {n:'م. فهد ب.',track:'adults',m:['p','l','a','a','l','l'],sc:{spec:1,review:1,debug:2,test:0,safety:1}},
+ {n:'م. ريم ط.',track:'adults',m:['p','p','l','l','p','p'],sc:{spec:2,review:2,debug:2,test:1,safety:3}}
+];
+const done=t=>t.m.filter(x=>x==='p').length;
+const pct=t=>Math.round(done(t)/t.m.length*100);
+function risk(t){ // متعثر: غيابان متتاليان، أو درجة تحت ٥٥، أو تسليمان ناقصان متتاليان
+ const sc=rubricScore(t.sc);
+ for(let i=1;i<t.m.length;i++){
+  if(t.m[i]==='a'&&t.m[i-1]==='a') return {yes:true,why:'غيابان متتاليان'};
+  if(t.m[i]!=='p'&&t.m[i-1]!=='p') return {yes:true,why:'جلستان بلا تسليم'};
+ }
+ if(sc<55) return {yes:true,why:`الدرجة ${sc} تحت ٥٥`};
+ return {yes:false,why:''};
+}
+
+/* ================= العرض ================= */
+let view=(location.hash||'#kids').slice(1);
+if(!['kids','adults','eval','track','upd'].includes(view))view='kids';
+const sel={spec:2,review:1,debug:2,test:1,safety:2};
+let trackFilter='all';
+
+function sessCard(s,i,len,openFirst){
+ const total=s.min[s.min.length-1][1];
+ return `<details class="sess"${openFirst&&i===0?' open':''}>
+ <summary>الجلسة ${i+1}: ${esc(s.t)} <small>— ${total} دقيقة</small></summary>
+ <div class="body">
+  <p><b>الهدف:</b> ${esc(s.goal)}</p>
+  <h3>سير الجلسة</h3>
+  <div class="tl">${s.min.map(([a,b,l])=>`<b><num>${a}–${b}</num></b><span>${esc(l)}</span>`).join('')}</div>
+  <h3>المهام التي يكتبها المتدرب بنفسه</h3>
+  ${s.prompts.map(p=>`<pre>${esc(p)}</pre>`).join('')}
+  <h3>ما يخرج به المتدرب</h3><p>${esc(s.out)}</p>
+  <h3>العقبة المتوقعة وما يفعله المدرّب</h3>
+  <p><span class="tag warn">العلامة</span> ${esc(s.trap.sign)}<br><span class="tag ok">التصرّف</span> ${esc(s.trap.say)}</p>
+ </div></details>`;
+}
+
+function vTrack(list,title,sub,rules){
+ return `<div class="card"><h1>${title}</h1><p class="hint">${sub}</p>
+  <p>${rules.map(r=>`<span class="tag neu">${esc(r)}</span>`).join(' ')}</p></div>
+ ${list.map((s,i)=>sessCard(s,i,list.length,true)).join('')}`;
+}
+
+function vEval(){
+ const sc=rubricScore(sel), lv=levelOf(sc);
+ return `<div class="row">
+ <div class="card"><h1>بطاقة تقييم المتدرب</h1>
+  <p class="hint">خمسة معايير، كل معيار أربعة مستويات موصوفة. الدرجة والملاحظة تُحسبان فوراً، فتُملأ البطاقة أمام المتدرب في آخر جلسة.</p>
+  ${RUBRIC.map(c=>`<div class="crit"><label>${esc(c.t)} <span class="hint">— وزن <num>${c.w}</num></span></label>
+   <div class="sc" data-k="${c.k}">${c.lv.map((l,i)=>`<button data-v="${i}" class="${(sel[c.k]||0)===i?'on':''}"><num>${i}</num> · ${esc(l)}</button>`).join('')}</div></div>`).join('')}
+ </div>
+ <div class="card"><h2>النتيجة</h2>
+  <p class="big" id="score"><num>${sc}</num>/100</p>
+  <div class="bar"><i style="width:${sc}%"></i></div>
+  <p><span class="tag ${lv.cls}">${esc(lv.label)}</span></p>
+  <h3>الملاحظة المكتوبة للمتدرب</h3>
+  <p id="fb">${esc(feedback(sel))}</p>
+  <h3>ما تُستخدم فيه</h3>
+  <ul><li>تقرير لولي الأمر أو لجهة العمل بلغة محددة لا بعبارات عامة.</li>
+   <li>قرار إعادة جلسة بعينها بدل إعادة الدورة كلها.</li>
+   <li>مقارنة قبل/بعد لنفس المتدرب في دورة لاحقة.</li></ul>
+ </div></div>`;
+}
+
+function vTrackBoard(){
+ const rows=TRAINEES.filter(t=>trackFilter==='all'||t.track===trackFilter);
+ const atRisk=rows.filter(t=>risk(t).yes);
+ return `<div class="card"><h1>لوحة متابعة المتدربين</h1>
+  <p class="hint">الحضور والتسليم لكل جلسة، ونسبة الإنجاز ودرجة البطاقة محسوبتان. «متعثر» قاعدة مكتوبة لا تقدير: غيابان متتاليان، أو جلستان بلا تسليم، أو درجة تحت ٥٥.</p>
+  <p>${[['all','الكل'],['kids','الأطفال'],['adults','الكبار']].map(([k,l])=>`<button class="btn ${trackFilter===k?'':'alt'} sm" data-f="${k}">${l}</button>`).join(' ')}
+   &nbsp;<span class="tag ${atRisk.length?'bad':'ok'}">متعثرون: <num>${atRisk.length}</num> من <num>${rows.length}</num></span></p>
+  <table><thead><tr><th>المتدرب</th><th>المسار</th><th>الجلسات</th><th>الإنجاز</th><th>الدرجة</th><th>الحالة</th></tr></thead><tbody>
+  ${rows.map(t=>{const r=risk(t),s=rubricScore(t.sc);return `<tr>
+   <td>${esc(t.n)}</td><td>${t.track==='kids'?'أطفال':'كبار'}</td>
+   <td><num>${t.m.map(m=>m==='p'?'●':m==='l'?'◐':'○').join(' ')}</num></td>
+   <td><num>${pct(t)}%</num></td><td><num>${s}</num></td>
+   <td>${r.yes?`<span class="tag bad">متعثر — ${esc(r.why)}</span>`:'<span class="tag ok">منتظم</span>'}</td></tr>`}).join('')}
+  </tbody></table>
+  <p class="hint"><num>●</num> حاضر ومسلّم · <num>◐</num> حاضر بلا تسليم · <num>○</num> غائب</p>
+  <h3>ماذا يُفعل بالمتعثر</h3>
+  <ul><li>رسالة واحدة بعد أول غياب، وجلسة تعويض مسجّلة لا إعادة شرح للمجموعة.</li>
+   <li>تسليم مصغّر: خطوة واحدة من الجلسة الفائتة تُقبل بدل المشروع كامل.</li>
+   <li>بعد غيابين متتاليين يُبلَّغ منسّق البرنامج، لأن المكان له تكلفة.</li></ul>
+ </div>`;
+}
+
+function vUpd(){
+ return `<div class="card"><h1>كيف تبقى المادة محدّثة</h1>
+ <p class="hint">أدوات البرمجة بالذكاء الاصطناعي تتغيّر كل أسابيع. المادة المبنية على لقطات شاشة لواجهة تموت سريعاً، والمبنية على مهارات تبقى.</p>
+ <h3>ما لا يتغيّر وما يتغيّر</h3>
+ <table><thead><tr><th>طبقة</th><th>أمثلة</th><th>عمرها</th></tr></thead><tbody>
+ <tr><td>المهارة</td><td>صياغة المهمة، معيار الانتهاء، قراءة الفرق، وصف الخلل، الاختبار أولاً</td><td>سنوات — هي ٨٠٪ من المادة</td></tr>
+ <tr><td>النمط</td><td>ملف تعليمات للمستودع، أوضاع الموافقة، تنفيذ معزول، مهام متوازية</td><td>أشهر</td></tr>
+ <tr><td>الواجهة</td><td>أسماء الأوامر، مواضع الأزرار، أسماء النماذج، الحدود والأسعار</td><td>أسابيع — تُعزل في ملحق واحد</td></tr>
+ </tbody></table>
+ <h3>الإجراء الشهري</h3>
+ <ol><li>تشغيل تمارين الجلسات الست على أحدث إصدار، وتسجيل ما تغيّر فعلاً.</li>
+  <li>تحديث ملحق الواجهة والأوامر فقط، وتثبيت رقم الإصدار في أول صفحة من دليل المدرّب.</li>
+  <li>إعادة تصوير المقاطع المتأثرة وحدها، لا الدورة كلها.</li>
+  <li>سجل تغييرات مؤرّخ في الدليل، فيعرف أي مدرّب ما استُجدّ.</li></ol>
+ <h3>ما يُسلَّم في الحزمة</h3>
+ <ul><li>دليل المدرّب لكل جلسة: الهدف، التوقيت، نص الشرح، العقبات والتصرّف.</li>
+  <li>ملف المتدرب: المهام التي يكتبها بنفسه، التمارين، المشروع، ومعايير الانتهاء.</li>
+  <li>المشاريع الجاهزة: الصفحات واللعبة والمستودعات التدريبية مع الأخطاء المقصودة.</li>
+  <li>بطاقة التقييم ولوحة المتابعة كملف يعمل (الموجود في هذه الصفحة)، لا كصورة.</li>
+  <li>قواعد السلامة للأطفال وقائمة فحص ما قبل التسليم للكبار.</li></ul>
+ <h3>قيد مذكور صراحةً</h3>
+ <p>هذه الحزمة هي <b>المادة ونظام التقييم</b>: تُسلَّم جاهزة ليقدّمها مدرّبكم. تقديم الجلسات المباشرة على الكاميرا والحضور في الرياض أو مكة ليسا جزءاً من هذا العرض.</p>
+ </div>`;
+}
+
+function render(){
+ document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===view));
+ $('#app').innerHTML =
+  view==='kids'  ? vTrack(KIDS,'مسار الأطفال (٩–١٤ سنة) — ٦ جلسات × ٤٥ دقيقة','كل جلسة تنتهي بشيء يعمل ويراه الطفل، والمهارة المستهدفة هي وصف المطلوب لا حفظ الأوامر.',['من المتصفح فقط','بلا طرفية','بلا مفاتيح','حساب الجهة لا حسابات الأطفال']) :
+  view==='adults'? vTrack(ADULTS,'مسار الكبار — ٦ جلسات × ٩٠ دقيقة','يفترض معرفة بالطرفية وgit. الهدف استخدام احترافي مُراجَع على مستودعات حقيقية.',['فرع جديد دائماً','وضع الاقتراح على الكود الحقيقي','التنفيذ الكامل في بيئة معزولة','لا أسرار في المهام']) :
+  view==='eval'  ? vEval() :
+  view==='track' ? vTrackBoard() : vUpd();
+ if(view==='eval') document.querySelectorAll('.sc').forEach(g=>g.onclick=e=>{
+  const b=e.target.closest('button'); if(!b)return; sel[g.dataset.k]=+b.dataset.v; render();
+ });
+ if(view==='track') document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{trackFilter=b.dataset.f;render()});
+}
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>{view=a.dataset.v;location.hash='#'+view;render()});
+window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v&&v!==view){view=v;render()}});
+render();
+</script>
+</body>
+</html>

@@ -115,7 +115,7 @@ function renderInv(t,v,opt){
   if(k==='time'&&x) x=AR(x);
   return esc(x);                       // نص العميل يُهرَّب دائمًا قبل العرض
  });
- const map=v.map?`<p class="where"><a href="${esc(v.map)}" target="_blank" rel="noopener">الموقع على الخريطة</a></p>`:'';
+ const map=/^https?:\/\//i.test(v.map||'')?`<p class="where"><a href="${esc(v.map)}" target="_blank" rel="noopener">الموقع على الخريطة</a></p>`:'';
  return `<div class="inv ${t.style}">${body}${o.map===false?'':map}</div>`;
 }
 

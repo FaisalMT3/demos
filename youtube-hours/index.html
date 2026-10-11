@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حاسبة شرط 4000 ساعة مشاهدة على يوتيوب</title>
+<meta name="description" content="أداة تحسب، بأرقام قناتك نفسها، ما يلزم للوصول إلى 4000 ساعة مشاهدة عامة في 12 شهرًا: المشاهدات المطلوبة، عدد الفيديوهات، والمدة. وتوضح ما لا يُحسب أصلًا.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#120F14">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#120F14; --panel:#1A1620; --card:#221C29; --line:#352C3E;
+  --ink:#F1EDF4; --ink-2:#C3B9CC; --muted:#938A9D;
+  --accent:#C9A961; --good:#4E9E7A; --bad:#C8604F;
+  --body:"Readex Pro",system-ui,"Noto Sans Arabic",sans-serif;
+  --display:"Scheherazade New",serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1rem/1.85 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-weight:400;line-height:1.35}
+.wrap{width:min(100% - 2rem,70rem);margin-inline:auto}
+a{color:var(--accent)}
+bdi{font-feature-settings:"tnum"}
+
+.top{padding:3rem 0 2.2rem;border-bottom:1px solid var(--line)}
+.badge{display:inline-block;font-size:.72rem;letter-spacing:.18em;color:var(--accent);margin-bottom:.8rem}
+.top h1{font-family:var(--display);font-size:clamp(1.9rem,4.4vw,3rem)}
+.top p{color:var(--ink-2);max-width:58ch;margin:.9rem 0 0}
+
+section{padding:2.6rem 0;border-bottom:1px solid var(--line)}
+section h2{font-family:var(--display);font-size:clamp(1.4rem,3vw,2rem);margin-bottom:.4rem}
+section h2+p{color:var(--ink-2);max-width:60ch;margin:0 0 1.6rem}
+
+/* rules */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:.9rem;list-style:none;padding:0;margin:0}
+.rules li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+.rules .k{display:flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:.06em;margin-bottom:.5rem}
+.rules .yes .k{color:var(--good)} .rules .no .k{color:var(--bad)}
+.rules .k .dot{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.rules p{margin:0;font-size:.92rem;color:var(--ink-2)}
+.rules strong{color:var(--ink);font-weight:400}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:22rem 1fr;gap:clamp(1.2rem,3vw,2.5rem);align-items:start}
+@media(max-width:860px){.calc{grid-template-columns:1fr}}
+.form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.4rem}
+.tabs{display:flex;gap:.4rem;margin-bottom:1.3rem}
+.tabs button{flex:1;background:none;border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:.5rem;
+  font:inherit;font-size:.82rem;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.tabs button[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:#1A1308}
+.field{margin-bottom:1.15rem}
+.field label{display:flex;justify-content:space-between;align-items:baseline;font-size:.86rem;color:var(--ink-2);margin-bottom:.45rem;gap:.6rem}
+.field label .v{color:var(--accent);font-size:.95rem}
+.field input[type=range]{width:100%;accent-color:var(--accent);direction:ltr}
+.hint{font-size:.74rem;color:var(--muted);margin-top:.3rem}
+
+.out{display:grid;gap:1rem}
+.verdict{border-radius:16px;padding:1.3rem 1.4rem;border:1px solid var(--line);background:var(--card)}
+.verdict.ok{border-color:rgba(78,158,122,.5);background:rgba(78,158,122,.1)}
+.verdict.no{border-color:rgba(200,96,79,.5);background:rgba(200,96,79,.1)}
+.verdict .h{font-family:var(--display);font-size:clamp(1.25rem,2.6vw,1.7rem);line-height:1.5}
+.verdict p{margin:.6rem 0 0;color:var(--ink-2);font-size:.93rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.8rem}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+.tile .n{font-size:1.5rem;color:var(--ink);line-height:1.3}
+.tile .l{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:.7rem .8rem;border-bottom:1px solid var(--line);text-align:start}
+th{font-weight:400;color:var(--muted);font-size:.78rem;letter-spacing:.05em}
+tbody tr:last-child td{border-bottom:none}
+td.num{color:var(--accent)}
+.wd{color:var(--bad)}
+
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.9rem;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+.step .s{font-size:.72rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.45rem}
+.step h3{font-size:1rem;margin-bottom:.35rem}
+.step p{margin:0;font-size:.88rem;color:var(--ink-2)}
+
+.honest{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.5rem;max-width:62rem}
+.honest ul{margin:.8rem 0 0;padding-inline-start:1.2rem;color:var(--ink-2);font-size:.93rem}
+.honest li{margin-bottom:.5rem}
+footer{padding:2.4rem 0 3.2rem;color:var(--muted);font-size:.84rem}
+footer .src{margin-top:.8rem}
+footer .src a{display:block;direction:ltr;text-align:start;font-size:.78rem;margin-top:.2rem}
+#selftest{position:fixed;inset-block-end:0;inset-inline-start:0;background:#000;color:#0f0;font:12px/1.6 monospace;
+  padding:.6rem .9rem;max-width:100%;white-space:pre;z-index:9;direction:ltr;display:none}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <span class="badge">نموذج حساب، لا يُنشر ولا يُستخدم تجاريًا</span>
+  <h1>شرط الـ 4000 ساعة: ما يلزم قناتك بالأرقام</h1>
+  <p>قبل أي اتفاق على عدد فيديوهات أو ميزانية، تُحسب المعادلة مرة واحدة: طول الفيديو × نسبة الاستمرار × المشاهدات.
+     الصفحة تحسبها بأرقامك، وتقول لك صراحة متى لا يتحقق الشرط بهذا المعدل أبدًا.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2>ما يُحسب وما لا يُحسب</h2>
+  <p>الشرط شرطان معًا: <bdi dir="ltr">1,000</bdi> مشترك، ومعهما أحد الأمرين. هذه ليست آراء، بل نص سياسة يوتيوب، والمصادر في آخر الصفحة.</p>
+  <ul class="rules">
+    <li class="yes"><span class="k"><span class="dot"></span>يُحسب</span>
+      <p><strong><bdi dir="ltr">4,000</bdi> ساعة مشاهدة عامة</strong> للفيديوهات الطويلة خلال آخر <bdi dir="ltr">12</bdi> شهرًا. نافذة متجددة، لا مجموع تراكمي.</p></li>
+    <li class="yes"><span class="k"><span class="dot"></span>بديل</span>
+      <p><strong><bdi dir="ltr">10</bdi> مليون مشاهدة Shorts</strong> خلال <bdi dir="ltr">90</bdi> يومًا. مسار مستقل تمامًا عن الساعات.</p></li>
+    <li class="no"><span class="k"><span class="dot"></span>لا يُحسب</span>
+      <p>ساعات مشاهدة <strong>Shorts</strong> من موجز Shorts لا تُضاف إلى الـ<bdi dir="ltr">4,000</bdi> ساعة، مهما بلغت.</p></li>
+    <li class="no"><span class="k"><span class="dot"></span>لا يُحسب</span>
+      <p>الفيديوهات <strong>الخاصة أو غير المدرجة أو المحذوفة</strong>، والبث المباشر غير المحوَّل إلى فيديو.</p></li>
+    <li class="no"><span class="k"><span class="dot"></span>لا يُحسب</span>
+      <p>مشاهدات <strong>الحملات الإعلانية على يوتيوب</strong> نفسه. (الزيارات من إعلان خارجي يقود إلى الفيديو مشاهدات عادية وتُحسب.)</p></li>
+    <li class="no"><span class="k"><span class="dot"></span>خطر</span>
+      <p>المشاهدات <strong>المُشترَاة</strong> ليست «ساعات صالحة»: تُفلتر عند المراجعة، وقد تُرفض القناة بسببها.</p></li>
+  </ul>
+</div></section>
+
+<section><div class="wrap">
+  <h2>احسب بأرقامك</h2>
+  <p>غيّر الأرقام إلى واقع قناتك. «نسبة الاستمرار» هي متوسط مدة المشاهدة مقسومًا على طول الفيديو، وتجدها في YouTube Studio.</p>
+  <div class="calc">
+    <form class="form" id="f" onsubmit="return false">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" id="t-long" aria-selected="true">فيديو طويل</button>
+        <button type="button" role="tab" id="t-short" aria-selected="false">Shorts</button>
+      </div>
+      <div class="field">
+        <label for="len">طول الفيديو <span class="v"><bdi dir="ltr" id="len-v">12</bdi> دقيقة</span></label>
+        <input type="range" id="len" min="1" max="40" step="1" value="12">
+      </div>
+      <div class="field">
+        <label for="ret">نسبة الاستمرار <span class="v"><bdi dir="ltr" id="ret-v">30</bdi>٪</span></label>
+        <input type="range" id="ret" min="5" max="90" step="1" value="30">
+        <div class="hint">المعتاد للمحتوى التعليمي العربي الطويل: بين <bdi dir="ltr">25</bdi>٪ و<bdi dir="ltr">40</bdi>٪.</div>
+      </div>
+      <div class="field">
+        <label for="views">مشاهدات الفيديو الواحد <span class="v"><bdi dir="ltr" id="views-v">500</bdi></span></label>
+        <input type="range" id="views" min="50" max="20000" step="50" value="500">
+      </div>
+      <div class="field">
+        <label for="per">فيديوهات شهريًا <span class="v"><bdi dir="ltr" id="per-v">20</bdi></span></label>
+        <input type="range" id="per" min="1" max="60" step="1" value="20">
+      </div>
+    </form>
+    <div class="out">
+      <div class="verdict" id="verdict"><div class="h" id="v-h"></div><p id="v-p"></p></div>
+      <div class="tiles">
+        <div class="tile"><div class="n"><bdi dir="ltr" id="o-avd"></bdi> دقيقة</div><div class="l">متوسط مدة المشاهدة للفيديو</div></div>
+        <div class="tile"><div class="n"><bdi dir="ltr" id="o-month"></bdi> ساعة</div><div class="l">ساعات مشاهدة في الشهر</div></div>
+        <div class="tile"><div class="n"><bdi dir="ltr" id="o-views"></bdi></div><div class="l">إجمالي المشاهدات اللازمة للـ4000 ساعة</div></div>
+        <div class="tile"><div class="n"><bdi dir="ltr" id="o-vids"></bdi></div><div class="l">عدد الفيديوهات اللازمة بهذا المعدل</div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>الطول يحسم المسألة، لا العدد</h2>
+  <p>كل صف أدناه يوصل إلى الـ<bdi dir="ltr">4,000</bdi> ساعة نفسها. العمود الأخير هو المشاهدات التي يلزم جمعها في <bdi dir="ltr">12</bdi> شهرًا.</p>
+  <table>
+    <thead><tr><th>الصيغة</th><th>نسبة الاستمرار</th><th>دقائق مشاهدة لكل مشاهدة</th><th>المشاهدات اللازمة</th></tr></thead>
+    <tbody id="cmp"></tbody>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <h2>خطة <bdi dir="ltr">90</bdi> يومًا على هذه الأرقام</h2>
+  <p>لا يبدأ الإنتاج قبل أن تُعتمد الصيغة والطول، لأن تغييرهما بعد <bdi dir="ltr">30</bdi> فيديو يعني إعادة العمل كله.</p>
+  <div class="plan">
+    <div class="step"><div class="s">الأسبوع ١</div><h3>قراءة أرقام القناة</h3>
+      <p>متوسط مدة المشاهدة الحالي لكل فيديو، ومن أين تأتي الزيارات، وأي فيديو احتفظ بالمشاهد أطول. القرار يُبنى على بياناتك لا على العموميات.</p></div>
+    <div class="step"><div class="s">الأسبوع ١</div><h3>تثبيت الصيغة</h3>
+      <p>طول الفيديو ونوعه وعنوانه وبنيته الداخلية، مع هدف معلن لنسبة الاستمرار يُقاس بعد كل دفعة.</p></div>
+    <div class="step"><div class="s">الأسابيع ٢ إلى ١٢</div><h3>إنتاج بدفعات</h3>
+      <p>دفعات منتظمة بجدول نشر ثابت، وكل دفعة تُقاس قبل التي بعدها، فيُعدّل ما يحتاج تعديلًا مبكرًا.</p></div>
+    <div class="step"><div class="s">شهريًا</div><h3>تقرير بالأرقام</h3>
+      <p>الساعات المتحققة فعليًا مقابل الساعات المطلوبة شهريًا، والفارق وسببه. إن كان المعدل لا يوصل، يُقال في حينه.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>ما لا يُوعد به</h2>
+  <div class="honest">
+    <p>الساعات نتيجة مشاهدات جمهور حقيقي، ولا يملكها مُنفّذ ولا يضمنها.</p>
+    <ul>
+      <li>لا يُضمن رقم <bdi dir="ltr">4,000</bdi> ساعة في تاريخ محدد. ما يُضمن هو إنتاج مُتفق عليه بموعد مُتفق عليه، وقياسٌ صادق بعده.</li>
+      <li>من يضمن لك الساعات إما يشتري مشاهدات، وهذه تُفلتر وتُعرّض القناة للرفض، أو يخمّن.</li>
+      <li>إن أظهرت أرقامك أن المعدل المطلوب أكبر من طاقة القناة اليوم، يُقال لك هذا قبل الدفع لا بعده.</li>
+      <li>النافذة متجددة: <bdi dir="ltr">12</bdi> شهرًا متحركة. فالمعدل الشهري المستمر هو ما يوصل، لا الحشد مرة واحدة.</li>
+    </ul>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>© <bdi dir="ltr">2026</bdi> فيصل فهد المطيري. نموذج حساب مُعدّ لعرض طريقة العمل.</div>
+  <div class="src">المصادر، نص سياسة يوتيوب نفسه:
+    <a href="https://support.google.com/youtube/answer/72851" target="_blank" rel="noopener">support.google.com/youtube/answer/72851</a>
+    <a href="https://support.google.com/youtube/answer/72902" target="_blank" rel="noopener">support.google.com/youtube/answer/72902</a>
+  </div>
+</div></footer>
+
+<pre id="selftest"></pre>
+<script>
+const H=4000, MIN=H*60;                 // 240,000 watch minutes inside the rolling 12 months
+const $=id=>document.getElementById(id);
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+let shorts=false;
+
+function model(len,ret,views,per){
+  const avd=len*ret/100;                       // average view duration, minutes
+  const perVideo=views*avd/60;                 // watch hours one video earns
+  const monthly=perVideo*per;
+  return {avd, perVideo, monthly,
+    yearly: monthly*12,
+    needViews: MIN/avd,                        // views needed for 4,000 h at this AVD
+    needVideos: (MIN/avd)/views,
+    months: monthly>0 ? H/monthly : Infinity};
+}
+
+function render(){
+  const len=+$('len').value, ret=+$('ret').value, views=+$('views').value, per=+$('per').value;
+  $('len-v').textContent=len; $('ret-v').textContent=ret;
+  $('views-v').textContent=fmt(views); $('per-v').textContent=per;
+  const m=model(len,ret,views,per), v=$('verdict');
+
+  $('o-avd').textContent=m.avd.toFixed(1);
+  $('o-month').textContent=fmt(m.monthly);
+  $('o-views').textContent=fmt(m.needViews);
+  $('o-vids').textContent=fmt(m.needVideos);
+
+  if(shorts){
+    v.className='verdict no';
+    $('v-h').textContent='بهذه الصيغة لا يتقدّم شرط الساعات ولا دقيقة واحدة';
+    $('v-p').innerHTML='ساعات Shorts لا تُحسب في الـ<bdi dir="ltr">4,000</bdi> ساعة. المسار الوحيد لـShorts هو '+
+      '<bdi dir="ltr">10</bdi> مليون مشاهدة في <bdi dir="ltr">90</bdi> يومًا، أي نحو <bdi dir="ltr">'+fmt(10e6/90)+
+      '</bdi> مشاهدة كل يوم. وبمعدلك الحالي (<bdi dir="ltr">'+fmt(views*per/30)+'</bdi> مشاهدة يوميًا) هذا ليس هدفًا واقعيًا. '+
+      'الطريق العملي هو فيديو طويل، ولو بقيت Shorts للتعريف بالقناة.';
+  } else if(m.yearly < H){
+    v.className='verdict no';
+    $('v-h').innerHTML='بهذا المعدل لا يتحقق الشرط أبدًا، لا بعد سنة ولا بعد خمس';
+    $('v-p').innerHTML='النافذة متجددة <bdi dir="ltr">12</bdi> شهرًا، فالمتحقق سنويًا هو <bdi dir="ltr">'+fmt(m.yearly)+
+      '</bdi> ساعة فقط، والقديم يسقط من الحساب كلما تقدّم التاريخ. المطلوب <bdi dir="ltr">'+fmt(H/12)+
+      '</bdi> ساعة شهريًا على الأقل، أي <bdi dir="ltr">'+fmt((H/12)/(m.perVideo||1))+
+      '</bdi> فيديو شهريًا بنفس المشاهدات، أو مشاهدات أعلى، أو فيديو أطول يُشاهَد أكثر.';
+  } else {
+    v.className='verdict ok';
+    $('v-h').innerHTML='الشرط قابل للتحقق في نحو <bdi dir="ltr">'+m.months.toFixed(1)+'</bdi> شهرًا';
+    $('v-p').innerHTML='بشرط الاستمرار على <bdi dir="ltr">'+per+'</bdi> فيديو شهريًا و<bdi dir="ltr">'+fmt(views)+
+      '</bdi> مشاهدة للفيديو. يلزم <bdi dir="ltr">'+fmt(H/12)+'</bdi> ساعة شهريًا، ومعدلك <bdi dir="ltr">'+
+      fmt(m.monthly)+'</bdi> ساعة. وإن نزلت المشاهدات أو تأخّر النشر، يتمدد التاريخ بالنسبة نفسها.';
+  }
+
+  const rows=[['Shorts بطول دقيقة','60',null],['فيديو طويل، دقيقة واحدة','50',1*0.5],
+              ['فيديو طويل، <bdi dir="ltr">10</bdi> دقائق','30',10*0.3],
+              ['فيديو طويل، <bdi dir="ltr">20</bdi> دقيقة','35',20*0.35]];
+  $('cmp').innerHTML=rows.map(([name,pct,avd])=>'<tr><td>'+name+'</td><td><bdi dir="ltr">'+pct+'</bdi>٪</td>'+
+    (avd===null
+      ? '<td class="wd">لا تُحسب</td><td class="wd">غير ممكن بهذا المسار</td>'
+      : '<td><bdi dir="ltr">'+avd.toFixed(1)+'</bdi></td><td class="num"><bdi dir="ltr">'+fmt(MIN/avd)+'</bdi></td>')+
+    '</tr>').join('');
+}
+
+$('f').addEventListener('input',render);
+function tab(isShorts){
+  shorts=isShorts;
+  $('t-short').setAttribute('aria-selected',isShorts); $('t-long').setAttribute('aria-selected',!isShorts);
+  if(isShorts){$('len').value=1;$('ret').value=60;} else {$('len').value=12;$('ret').value=30;}
+  render();
+}
+$('t-short').onclick=()=>tab(true); $('t-long').onclick=()=>tab(false);
+render();
+
+// one runnable check: the arithmetic, not the layout. open with ?selftest
+if(location.search.includes('selftest')){
+  const t=[],ok=(n,a,b,tol)=>t.push((Math.abs(a-b)<=(tol||0.5)?'PASS ':'FAIL ')+n+'  got='+a.toFixed(2)+' want='+b);
+  const a=model(12,30,500,20);                 // avd 3.6 min
+  ok('avd',a.avd,3.6,.01);
+  ok('hours per video',a.perVideo,500*3.6/60,.01);
+  ok('monthly',a.monthly,600,.01);
+  ok('months to 4000',a.months,4000/600,.01);
+  ok('views for 4000h',a.needViews,240000/3.6,1);
+  const b=model(1,60,500,20);                  // the short-form trap: 100 h/mo = 1,200 h/yr
+  ok('1-min yearly under 4000',b.yearly,1200,.01);
+  t.push((b.yearly<4000?'PASS ':'FAIL ')+'1-min rate never reaches the rolling window');
+  const st=$('selftest'); st.style.display='block';
+  st.textContent=t.join('\n')+'\n'+(t.some(x=>x.startsWith('FAIL'))?'*** FAILED ***':'all passed');
+  document.title='selftest='+(t.some(x=>x.startsWith('FAIL'))?'FAIL':'pass');
+}
+</script>
+</body>
+</html>

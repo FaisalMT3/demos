@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نموذج موقع جمعية خيرية — طلبات المساعدة العينية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10243a;--mut:#5d6b7a;--line:#dde3ea;--bg:#f4f6f8;--card:#fff;--acc:#15616d;--ok:#1d7a3a;--warn:#b25e00;--bad:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--ink);color:#fff;padding:.7rem 1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+header b{font-size:1.05rem}
+nav{display:flex;gap:.3rem;flex-wrap:wrap}
+nav a{color:#cfe0ea;text-decoration:none;padding:.25rem .7rem;border-radius:6px;cursor:pointer}
+nav a.on{background:#ffffff1f;color:#fff}
+.note{background:#fff8e6;border-bottom:1px solid #f0dca8;padding:.45rem 1rem;font-size:.85rem}
+main{max-width:1060px;margin:1rem auto;padding:0 1rem 3rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;margin-bottom:1rem;overflow-x:auto}
+h1{font-size:1.3rem;margin:.2rem 0 .8rem}h2{font-size:1.05rem;margin:.2rem 0 .6rem}h3{font-size:.95rem;margin:.9rem 0 .3rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem;margin-bottom:1rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem}
+.stat span{display:block;color:var(--mut);font-size:.85rem}.stat b{font-size:1.6rem}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:start;padding:.5rem .45rem;border-bottom:1px solid var(--line);vertical-align:top;font-size:.92rem}
+th{color:var(--mut);font-weight:600;font-size:.85rem}
+.tag{display:inline-block;padding:0 .5rem;border-radius:99px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.ok{color:var(--ok);background:#e5f3e9}.warn{color:var(--warn);background:#fdf0e1}.bad{color:var(--bad);background:#fbe7e6}.neu{color:var(--mut);background:#eef1f4}
+a{color:var(--acc)}
+.btn{display:inline-block;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:.5rem 1rem;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.alt{background:#fff;color:var(--acc);border:1px solid var(--acc)}
+.btn.sm{padding:.25rem .6rem;font-size:.85rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem}
+@media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}.hide-sm{display:none}table{font-size:.88rem;min-width:430px}}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.2rem;margin-top:.6rem}
+input,select,textarea{width:100%;font:inherit;padding:.5rem;border:1px solid var(--line);border-radius:8px;background:#fff}
+.hint{color:var(--mut);font-size:.82rem;font-weight:400}
+.err{color:var(--bad);font-size:.85rem;font-weight:600}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.3rem}
+.chips label{display:inline-flex;gap:.3rem;align-items:center;margin:0;font-weight:400;border:1px solid var(--line);border-radius:99px;padding:.2rem .6rem;background:#fff;cursor:pointer}
+.chips input{width:auto}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:.6rem;counter-reset:s}
+.flow div{border:1px solid var(--line);border-radius:8px;padding:.6rem;background:#fafcfc;font-size:.9rem}
+.flow div::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--acc);color:#fff;font-size:.8rem;margin-inline-end:.4rem}
+.quote{border:1px solid var(--line);border-radius:10px;padding:.7rem;background:#fafcfc}
+.quote.best{border-color:var(--acc);box-shadow:0 0 0 2px #15616d22}
+.quote b{font-size:1.25rem}
+.switch{display:flex;gap:.5rem;align-items:center;background:#eef6f7;border:1px solid #cfe3e6;border-radius:8px;padding:.5rem .7rem;margin:.6rem 0}
+.switch input{width:auto}
+ul{margin:.3rem 0;padding-inline-start:1.2rem}li{margin-bottom:.25rem}
+code{font-family:ui-monospace,monospace;font-size:.85em;direction:ltr;unicode-bidi:isolate}
+.wm{position:fixed;inset-inline-end:.6rem;inset-block-end:.6rem;background:#10243ae6;color:#fff;font-size:.78rem;padding:.3rem .6rem;border-radius:99px;z-index:9;pointer-events:none}
+.stamp{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:8;overflow:hidden}
+.stamp span{font:700 clamp(2rem,9vw,5rem)/1 "IBM Plex Sans Arabic",sans-serif;color:#10243a;opacity:.055;transform:rotate(-24deg);white-space:nowrap}
+.photo{width:92px;height:70px;object-fit:cover;border:1px solid var(--line);border-radius:6px;background:#eef1f4}
+</style>
+<style>
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;margin:.6rem 0}
+.steps div{border:1px solid var(--line);border-radius:8px;padding:.5rem .6rem;background:#fafcfc;font-size:.88rem}
+.file{display:flex;gap:.5rem;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:8px;padding:.35rem .6rem;margin-top:.3rem;background:#fafcfc;font-size:.88rem}
+.sec{border-inline-start:3px solid var(--acc);padding-inline-start:.7rem;margin:.7rem 0}
+.bar{display:flex;gap:.4rem;flex-wrap:wrap;align-items:end;margin-bottom:.6rem}
+.bar>div{flex:1 1 150px}
+</style>
+</head>
+<body>
+<header><b>🤲 جمعية البر — طلبات المساعدة</b>
+<nav id="nav">
+<a data-v="apply" class="on">تقديم طلب</a><a data-v="track">متابعة طلبي</a><a data-v="admin">لوحة الإدارة</a><a data-v="scope">النطاق والأمان</a>
+</nav></header>
+<div class="note">نموذج يعمل فعلًا: قدّم طلبًا، تابعه برقم الطلب والهاتف، ثم افتحه من لوحة الإدارة وغيّر حالته. البيانات وهمية وتُحفظ في متصفحك وحده ولا تُرسل لأي جهة. <a id="reset">إعادة البيانات</a></div>
+<main id="app"></main>
+<div class="stamp"><span>نموذج عرض — فيصل فهد</span></div>
+<div class="wm">نموذج — فيصل فهد المطيري</div>
+<script>
+const KINDS=['طعام','إيواء / ملجأ','كسوة وملابس','علاج وخدمات صحية','مساعدة أخرى'];
+const ST={new:'جديد',review:'قيد المراجعة',accepted:'مقبول',progress:'قيد التنفيذ',delivered:'تم التسليم',rejected:'مرفوض'};
+const STC={new:'neu',review:'warn',accepted:'ok',progress:'warn',delivered:'ok',rejected:'bad'};
+const OPEN=['new','review','accepted','progress'];   // حالات «مفتوحة»: طلب قائم لم يُغلق بعد
+const MAXMB=2, MAXFILES=3;
+const OKTYPES={jpg:'ffd8ff',jpeg:'ffd8ff',png:'89504e47',pdf:'25504446'};  // الامتداد + التوقيع، لا الامتداد وحده
+
+/* ---------- قواعد يمكن اختبارها ---------- */
+// الرقم القومي المصري ١٤ رقمًا، والهوية السعودية ١٠ أرقام تبدأ بـ١ أو ٢
+function nidOk(v){const s=String(v||'').replace(/\D/g,'');return s.length===14||(s.length===10&&/^[12]/.test(s))}
+const phoneOk=v=>/^\+?\d{9,15}$/.test(String(v||'').replace(/[\s-]/g,''));
+// فحص المرفق: الحجم، وعدّ الملفات، والامتداد من القائمة المسموحة، والتوقيع الفعلي للملف
+function checkFile(f,count){
+  const ext=String(f.name||'').split('.').pop().toLowerCase();
+  if(count>=MAXFILES) return 'الحد ' + MAXFILES + ' مرفقات للطلب الواحد.';
+  if(f.size>MAXMB*1048576) return 'حجم ' + f.name + ' أكبر من ' + MAXMB + ' ميجابايت.';
+  if(!OKTYPES[ext]) return 'الامتدادات المسموحة: JPG و PNG و PDF فقط (رُفض .' + ext + ').';
+  if(f.sig && !String(f.sig).toLowerCase().startsWith(OKTYPES[ext])) return 'محتوى ' + f.name + ' لا يطابق امتداده، فهو ليس ' + ext.toUpperCase() + ' فعليًا.';
+  return '';
+}
+// المستند لا يُفتح برابط مباشر: اسم عشوائي + مرور إجباري على نقطة تتحقق من الصلاحية
+const rnd=()=>Math.random().toString(36).slice(2,10)+Math.random().toString(36).slice(2,6);
+function openDoc(actor,ref,key){
+  const r=db.requests.find(x=>x.ref===ref); if(!r) return {code:404};
+  if(!r.docs.some(d=>d.key===key)) return {code:404};
+  if(actor&&actor.admin) return {code:200,served:'/docs/'+key};
+  if(actor&&actor.phone&&actor.phone===r.phone) return {code:200,served:'/docs/'+key};
+  return {code:403};                                   // أي زائر آخر، وإن عرف الرابط
+}
+// المتابعة بلا تسجيل: رقم الطلب + الهاتف معًا، والرد واحد في كل الحالات الخاطئة
+function lookup(ref,phone){
+  const r=db.requests.find(x=>x.ref===String(ref||'').trim().toUpperCase());
+  if(!r||r.phone!==String(phone||'').trim()) return {ok:false,msg:'لا يوجد طلب بهذا الرقم مع هذا الهاتف.'};
+  return {ok:true,r};
+}
+// منع الطلب المكرر: نفس الهوية ولها طلب مفتوح
+const openOf=nid=>db.requests.find(r=>r.nid===nid&&OPEN.includes(r.status));
+
+const SEED={
+ requests:[
+  {ref:'BR-2041',name:'أم أحمد عبد الرحمن',phone:'01011110001',address:'شبرا الخيمة، شارع الترعة، عمارة ٧',nid:'28604121201234',kind:'طعام',note:'أرملة ومعها ثلاثة أطفال في المدارس، والدخل من عمل يومي متوقف هذا الشهر.',docs:[{key:rnd(),name:'الهوية.jpg',size:412000}],status:'review',reason:'',created:Date.now()-50*36e5,notifs:[{t:Date.now()-49*36e5,text:'استلمنا طلبك وهو قيد المراجعة.'}]},
+  {ref:'BR-2042',name:'محمود السيد حسن',phone:'01011110002',address:'المرج، شارع المدرسة، منزل ١٢',nid:'29011150100987',kind:'علاج وخدمات صحية',note:'تحاليل ومتابعة سكر لوالدي، والتقارير مرفقة.',docs:[{key:rnd(),name:'تقرير-طبي.pdf',size:980000},{key:rnd(),name:'الهوية.jpg',size:350000}],status:'accepted',reason:'',created:Date.now()-28*36e5,notifs:[{t:Date.now()-27*36e5,text:'تم قبول طلبك، وسيتواصل معك فريق الجمعية للتنفيذ.'}]},
+  {ref:'BR-2043',name:'سعاد محمد علي',phone:'01011110003',address:'الزاوية الحمراء، شارع ٦',nid:'27905030101111',kind:'كسوة وملابس',note:'كسوة شتوية لطفلين، مقاس ٨ و١٢ سنة.',docs:[],status:'new',reason:'',created:Date.now()-5*36e5,notifs:[]}],
+ log:[]};
+
+let db=JSON.parse(localStorage.charityaid||'null')||structuredClone(SEED);
+const save=()=>localStorage.charityaid=JSON.stringify(db);
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const L=s=>'<bdi dir="ltr">'+s+'</bdi>';
+const kb=n=>L((n/1024).toFixed(0)+' ك.ب');
+const ago=t=>{const h=Math.round((Date.now()-t)/36e5);return h<1?'قبل دقائق':h<24?'قبل '+h+' ساعة':'قبل '+Math.round(h/24)+' يوم'};
+const badge=r=>'<span class="tag '+STC[r.status]+'">'+ST[r.status]+'</span>';
+const nextRef=()=>'BR-'+(db.requests.reduce((m,r)=>Math.max(m,+r.ref.split('-')[1]||2040),2040)+1);
+const logit=t=>{db.log.unshift({t:Date.now(),text:t});db.log=db.log.slice(0,14)};
+const notify=(r,text)=>r.notifs.unshift({t:Date.now(),text});
+
+let view=(location.hash||'#apply').slice(1);
+if(!['apply','track','admin','scope'].includes(view))view='apply';
+let actor=null, picked=[], flash='';
+
+function render(){
+ [...document.querySelectorAll('#nav a')].forEach(a=>a.classList.toggle('on',a.dataset.v===view));
+ $('#app').innerHTML={apply:vApply,track:vTrack,admin:vAdmin,scope:vScope}[view]();
+ wire();
+}
+
+/* ---------- تقديم طلب ---------- */
+function vApply(){
+ return (flash?'<div class="card" style="border-color:#1d7a3a"><h2 class="ok tag">تم الإرسال</h2><p>'+flash+'</p></div>':'')+`
+ <div class="card">
+  <h1>تقديم طلب مساعدة</h1>
+  <p class="hint">صفحة واحدة، بلا تسجيل ولا كلمة مرور. املأ البيانات وأرفق ما يثبت الحالة، ويصلك رقم طلب تتابع به.</p>
+  <div class="steps"><div>١. تملأ الطلب</div><div>٢. تستلم رقم الطلب</div><div>٣. الجمعية تراجع</div><div>٤. يصلك إشعار بالحالة</div></div>
+  <div class="grid2">
+   <div><label>الاسم الكامل</label><input id="a-name" placeholder="الاسم كما في الهوية"></div>
+   <div><label>رقم الهاتف</label><input id="a-phone" inputmode="tel" placeholder="01xxxxxxxxx"></div>
+   <div><label>الرقم القومي / الهوية</label><input id="a-nid" inputmode="numeric" placeholder="١٤ رقمًا أو ١٠ للهوية السعودية"></div>
+   <div><label>نوع المساعدة المطلوبة</label><select id="a-kind">${KINDS.map(k=>'<option>'+k+'</option>').join('')}</select>
+    <span class="hint">الجمعية لا تقدّم مساعدات مالية نقدية.</span></div>
+  </div>
+  <label>العنوان</label><input id="a-addr" placeholder="الحي والشارع ورقم المنزل">
+  <label>وصف الحالة</label><textarea id="a-note" rows="3" placeholder="عدد أفراد الأسرة، ومصدر الدخل، وما تحتاجه تحديدًا"></textarea>
+  <label>المستندات <span class="hint">الهوية أو تقرير طبي أو إثبات حالة — JPG أو PNG أو PDF، حتى ${MAXMB} ميجابايت للملف و${MAXFILES} ملفات</span></label>
+  <input id="a-file" type="file" accept=".jpg,.jpeg,.png,.pdf" multiple>
+  <div id="a-files">${picked.map((f,i)=>'<div class="file"><span>'+esc(f.name)+' · '+kb(f.size)+'</span><button class="btn sm alt" data-rm="'+i+'">حذف</button></div>').join('')}</div>
+  <p id="a-err" class="err"></p>
+  <p><button class="btn" id="a-send">أرسل الطلب</button></p>
+ </div>`;
+}
+
+/* ---------- متابعة ---------- */
+function vTrack(){
+ const r=actor&&actor.ref?(db.requests.find(x=>x.ref===actor.ref)||null):null;
+ return `
+ <div class="card">
+  <h1>متابعة الطلب</h1>
+  <p class="hint">رقم الطلب مع رقم الهاتف الذي قدّمت به. لا تظهر أي بيانات إن لم يتطابقا، حتى لا يقرأ أحد حالة غيره.</p>
+  <div class="bar">
+   <div><label>رقم الطلب</label><input id="t-ref" placeholder="BR-2041" value="${esc((actor&&actor.ref)||'BR-2041')}"></div>
+   <div><label>رقم الهاتف</label><input id="t-phone" inputmode="tel" value="${esc((actor&&actor.phone)||'01011110001')}"></div>
+   <div style="flex:0 0 auto"><button class="btn" id="t-go">اعرض الحالة</button></div>
+  </div>
+  <p id="t-err" class="err"></p>
+ </div>
+ ${r?`<div class="card">
+  <h2>${esc(r.ref)} · ${esc(r.kind)} ${badge(r)}</h2>
+  <p class="hint">قُدّم ${ago(r.created)} · ${esc(r.name)}</p>
+  ${r.status==='rejected'?'<p class="err">سبب الاعتذار: '+esc(r.reason||'—')+'</p>':''}
+  <h3>المرفقات</h3>
+  ${r.docs.length?r.docs.map(d=>'<div class="file"><span>'+esc(d.name)+' · '+kb(d.size)+'</span><button class="btn sm alt" data-doc="'+d.key+'">افتح</button></div>').join(''):'<p class="hint">لا مرفقات.</p>'}
+  <h3>الإشعارات المرسلة إليك</h3>
+  ${r.notifs.length?'<ul>'+r.notifs.map(n=>'<li>'+esc(n.text)+' <span class="hint">'+ago(n.t)+'</span></li>').join('')+'</ul>':'<p class="hint">لا إشعارات بعد.</p>'}
+  <p id="t-doc" class="hint"></p>
+ </div>`:''}`;
+}
+
+/* ---------- لوحة الإدارة ---------- */
+function vAdmin(){
+ if(!actor||!actor.admin) return `<div class="card"><h1>لوحة الإدارة</h1>
+  <p class="hint">في الموقع الحقيقي دخول بحساب واسم مستخدم وكلمة مرور وجلسة محمية. هنا زر واحد للاطلاع على الشكل.</p>
+  <p><button class="btn" id="ad-in">دخول بصفة مسؤول الجمعية</button></p></div>`;
+ const f=db.filter||(db.filter={kind:'',status:'',q:''});
+ const rows=db.requests.filter(r=>(!f.kind||r.kind===f.kind)&&(!f.status||r.status===f.status)&&
+   (!f.q||[r.ref,r.name,r.phone,r.address,r.nid].join(' ').includes(f.q)))
+   .sort((a,b)=>b.created-a.created);
+ const n=s=>db.requests.filter(r=>r.status===s).length;
+ return `
+ <div class="stats">
+  <div class="stat"><span>كل الطلبات</span><b>${L(db.requests.length)}</b></div>
+  <div class="stat"><span>جديدة</span><b>${L(n('new'))}</b></div>
+  <div class="stat"><span>قيد المراجعة</span><b>${L(n('review'))}</b></div>
+  <div class="stat"><span>قيد التنفيذ</span><b>${L(n('progress'))}</b></div>
+  <div class="stat"><span>تم التسليم</span><b>${L(n('delivered'))}</b></div>
+ </div>
+ <div class="card">
+  <h2>الطلبات (${L(rows.length)})</h2>
+  <div class="bar">
+   <div><label>نوع المساعدة</label><select id="f-kind"><option value="">الكل</option>${KINDS.map(k=>'<option'+(f.kind===k?' selected':'')+'>'+k+'</option>').join('')}</select></div>
+   <div><label>الحالة</label><select id="f-status"><option value="">الكل</option>${Object.entries(ST).map(([k,v])=>'<option value="'+k+'"'+(f.status===k?' selected':'')+'>'+v+'</option>').join('')}</select></div>
+   <div><label>بحث بالاسم أو الهاتف أو الهوية أو رقم الطلب</label><input id="f-q" value="${esc(f.q)}"></div>
+  </div>
+  ${rows.length?rows.map(r=>`<div class="card" style="background:#fafcfc">
+   <h3>${esc(r.ref)} · ${esc(r.name)} · ${esc(r.kind)} ${badge(r)}</h3>
+   <p class="hint">${L(esc(r.phone))} · هوية ${L(esc(r.nid))} · ${esc(r.address)} · ${ago(r.created)}</p>
+   <p>${esc(r.note)}</p>
+   ${r.docs.map(d=>'<div class="file"><span>'+esc(d.name)+' · '+kb(d.size)+'</span><button class="btn sm alt" data-doc="'+d.key+'" data-ref="'+r.ref+'">افتح</button></div>').join('')}
+   ${r.status==='rejected'?'<p class="err">سبب الاعتذار: '+esc(r.reason||'—')+'</p>':''}
+   <p style="margin-top:.6rem">${Object.entries(ST).filter(([k])=>k!=='new'&&k!==r.status)
+      .map(([k,v])=>'<button class="btn sm '+(k==='rejected'?'alt':'')+'" data-set="'+k+'" data-ref="'+r.ref+'">'+v+'</button> ').join('')}</p>
+  </div>`).join(''):'<p class="hint">لا طلبات مطابقة.</p>'}
+ </div>
+ <div class="card"><h2>سجل العمل</h2>
+  ${db.log.length?'<ul>'+db.log.map(l=>'<li>'+esc(l.text)+' <span class="hint">'+ago(l.t)+'</span></li>').join('')+'</ul>':'<p class="hint">لا حركات بعد.</p>'}
+  <p class="hint">كل تغيير حالة يُسجَّل باسم من نفّذه ووقته، فيُعرف من راجع كل حالة.</p>
+ </div>`;
+}
+
+/* ---------- النطاق والأمان ---------- */
+function vScope(){
+ return `<div class="card">
+ <h1>ما في هذا النموذج، وما يُسلَّم فعلًا</h1>
+ <div class="sec"><h3>يعمل أمامك الآن</h3><ul>
+  <li>نموذج التقديم بالتحقق كاملًا: الهوية، والهاتف، وحجم المرفق ونوعه الفعلي.</li>
+  <li>متابعة بلا تسجيل برقم الطلب + الهاتف، ورد واحد لكل محاولة خاطئة بلا تلميح.</li>
+  <li>لوحة إدارة بالفلترة والبحث وتغيير الحالة وسبب الاعتذار وسجل عمل.</li>
+  <li>إشعار يُجهَّز للمتقدم عند كل تغيير حالة.</li>
+ </ul></div>
+ <div class="sec"><h3>ما يُضاف في الموقع المسلَّم ولا يظهر في نموذج صفحة واحدة</h3><ul>
+  <li>قاعدة بيانات وجلسات دخول للإدارة، وتخزين المرفقات خارج مجلد الموقع العام.</li>
+  <li>إرسال البريد فعليًا، والواتساب أو الرسائل القصيرة عبر مرسل معتمد.</li>
+  <li>شهادة SSL على نطاق الجمعية، ونسخ احتياطي دوري.</li>
+ </ul></div>
+ <div class="sec"><h3>عن «خلو تام من الثغرات»</h3>
+  <p>لا يصحّ لأحد أن يضمن خلوًا تامًا كتابةً. المضمون هو هذه القائمة بالتحديد، وأي ثغرة تظهر خلال الدعم تُصلَح مجانًا:</p>
+  <ul>
+   <li><b>SQL Injection:</b> استعلامات مجهّزة بمعاملات (prepared statements)، بلا بناء نص استعلام من مدخلات.</li>
+   <li><b>XSS:</b> تهريب كل مخرج (الاسم ووصف الحالة والعنوان)، وهو مفعّل في هذا النموذج: اكتب اسمًا بين وسوم وسيظهر كنص.</li>
+   <li><b>CSRF:</b> رمز لكل نموذج، وكل تغيير حالة عبر POST لا GET.</li>
+   <li><b>المرفقات:</b> امتداد مسموح + توقيع الملف نفسه، واسم عشوائي، وبلا تنفيذ في مجلد الرفع. و<b>SVG ممنوع</b> لأنه يحمل سكربتًا يعمل من نطاق الموقع.</li>
+   <li><b>المستندات:</b> لا رابط مباشر. كل فتح يمرّ على نقطة تتحقق من الصلاحية، وغير المصرّح له يُرد عليه 403 وإن عرف الرابط.</li>
+   <li><b>الأرقام القومية:</b> تُعرض للإدارة فقط، وتُحذف هي والمستندات بعد مدة تحدّدونها.</li>
+  </ul></div>
+ <div class="sec"><h3>ثلاث ملاحظات على الطلب نفسه</h3><ul>
+  <li><b>الحالات الأربع تنقص حالة نهائية.</b> «قيد التنفيذ» بلا «تم التسليم» يعني أن الحالة تبقى مفتوحة للأبد، ولا تستطيع الجمعية أن تَعُدّ ما سلّمته فعلًا. أُضيفت هنا.</li>
+  <li><b>«مرفوض» بلا سبب مكتوب يعيد المتقدم إلى الهاتف.</b> السبب إلزامي في النموذج، ويظهر له في صفحة المتابعة.</li>
+  <li><b>طلب مكرر بنفس الهوية</b> يُرفض ويُعرض رقم الطلب القائم، وإلا دخلت الحالة مرتين في القوائم.</li>
+ </ul></div>
+</div>`;
+}
+
+/* ---------- الربط ---------- */
+function wire(){
+ if($('#a-file'))$('#a-file').onchange=async e=>{
+  for(const f of [...e.target.files]){
+   const sig=[...new Uint8Array(await f.slice(0,4).arrayBuffer())].map(b=>b.toString(16).padStart(2,'0')).join('');
+   const err=checkFile({name:f.name,size:f.size,sig},picked.length);
+   if(err){$('#a-err').textContent=err;continue}
+   picked.push({name:f.name,size:f.size});
+  }
+  const keep=$('#a-err').textContent; render(); if($('#a-err'))$('#a-err').textContent=keep;
+ };
+ document.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{picked.splice(+b.dataset.rm,1);render()});
+ if($('#a-send'))$('#a-send').onclick=()=>{
+  const g=id=>$('#'+id).value.trim(), e=m=>{$('#a-err').textContent=m;return false};
+  const name=g('a-name'),phone=g('a-phone'),nid=g('a-nid').replace(/\D/g,''),addr=g('a-addr'),note=g('a-note');
+  if(name.length<5)return e('اكتب الاسم الكامل.');
+  if(!phoneOk(phone))return e('رقم الهاتف غير صحيح.');
+  if(!nidOk(nid))return e('الرقم القومي ١٤ رقمًا، والهوية السعودية ١٠ أرقام تبدأ بـ١ أو ٢.');
+  if(!addr)return e('العنوان مطلوب لتسليم المساعدة العينية.');
+  if(note.length<20)return e('اكتب وصفًا للحالة لا يقل عن عشرين حرفًا.');
+  const dup=openOf(nid); if(dup)return e('يوجد طلب قائم بهذه الهوية رقمه '+dup.ref+' وحالته «'+ST[dup.status]+'». تابعه من صفحة المتابعة.');
+  const r={ref:nextRef(),name,phone,address:addr,nid,kind:$('#a-kind').value,note,
+    docs:picked.map(f=>({key:rnd(),name:f.name,size:f.size})),status:'new',reason:'',created:Date.now(),notifs:[]};
+  notify(r,'استلمنا طلبك رقم '+r.ref+' وهو قيد المراجعة.');
+  db.requests.push(r);logit('طلب جديد '+r.ref+' — '+r.kind);picked=[];save();
+  flash='رقم طلبك '+r.ref+'. احفظه، وتابع به مع رقم هاتفك من صفحة «متابعة طلبي». وصلك إشعار بالاستلام.';
+  render();flash='';
+ };
+ if($('#t-go'))$('#t-go').onclick=()=>{
+  const res=lookup($('#t-ref').value,$('#t-phone').value);
+  if(!res.ok){actor=null;const m=res.msg;render();$('#t-err').textContent=m;return}
+  actor={ref:res.r.ref,phone:res.r.phone};render();
+ };
+ document.querySelectorAll('[data-doc]').forEach(b=>b.onclick=()=>{
+  const ref=b.dataset.ref||(actor&&actor.ref), res=openDoc(actor,ref,b.dataset.doc);
+  const msg=res.code===200?'فُتح المستند عبر نقطة مصرّح بها: '+res.served:'الرد '+res.code+' — الرابط وحده لا يكفي لفتح مستند.';
+  if($('#t-doc'))$('#t-doc').textContent=msg;else alert(msg);
+ });
+ if($('#ad-in'))$('#ad-in').onclick=()=>{actor={admin:true,who:'مسؤول الجمعية'};render()};
+ ['kind','status','q'].forEach(k=>{const el=$('#f-'+k);if(el)el.onchange=el.oninput=()=>{db.filter[k]=el.value;save();render()}});
+ document.querySelectorAll('[data-set]').forEach(b=>b.onclick=()=>{
+  const r=db.requests.find(x=>x.ref===b.dataset.ref), s=b.dataset.set;
+  if(s==='rejected'){
+   const why=prompt('سبب الاعتذار (يظهر للمتقدم، ولا يقل عن عشرة أحرف):','');
+   if(!why||why.trim().length<10)return alert('لا يُسجَّل الاعتذار بلا سبب مكتوب.');
+   r.reason=why.trim();
+  }
+  r.status=s;notify(r,'حالة طلبك '+r.ref+' صارت: '+ST[s]+(s==='rejected'?' — '+r.reason:''));
+  logit((actor.who||'الإدارة')+': '+r.ref+' → '+ST[s]);save();render();
+ });
+}
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>{view=a.dataset.v;location.hash='#'+view;actor=actor&&actor.admin?actor:null;render()});
+$('#reset').onclick=()=>{localStorage.removeItem('charityaid');db=structuredClone(SEED);actor=null;picked=[];render()};
+render();
+</script>
+</body>
+</html>

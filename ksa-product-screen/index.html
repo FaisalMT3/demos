@@ -147,6 +147,7 @@ bdi{font-variant-numeric:tabular-nums}
     <div><label for="orders">عدد الطلبات المتوقعة شهريًا</label><input id="orders" type="number" value="300"></div>
   </div>
   <label class="chk"><input id="vatreg" type="checkbox" checked> مسجّل في ضريبة القيمة المضافة (يُخصم ضريبة الاستيراد، ويُحصّل <bdi>15%</bdi> على البيع)</label>
+  <label class="chk"><input id="local" type="checkbox"> شراء محلي بلا استيراد (مورد أو محمصة أو معمل داخل المملكة): تسقط الجمارك ورسم الخدمة وضريبة الاستيراد، وتصبح التكلفة الواصلة هي سعر المورد كما هو</label>
 
   <div class="out">
     <h3>التكلفة الواصلة للوحدة</h3>
@@ -211,11 +212,13 @@ const VAT = 0.15, FEE_RATE = 0.0015, FEE_MIN = 15, FEE_MAX = 500;
 
 // نموذج الحساب كدالة نقية، حتى تُختبر بأرقام معلومة لا عبر الصفحة.
 function model(i) {
-  const customsValue = i.fob + i.freight;                       // قيمة البضاعة مع الشحن والتأمين، وهي وعاء حساب الرسوم
-  const duty = customsValue * i.duty;
+  // الشراء المحلي لا يمر بجمرك: لا رسم خدمة ولا ضريبة استيراد، ورسم الخدمة له حدّ أدنى 15 ريالًا
+  // فلو طُبّق على شحنة محلية لحمّلها كلفة لا وجود لها.
+  const customsValue = i.local ? i.fob : i.fob + i.freight;     // قيمة البضاعة مع الشحن والتأمين، وهي وعاء حساب الرسوم
+  const duty = i.local ? 0 : customsValue * i.duty;
   const units = Math.max(1, i.shipunits);
-  const fee = Math.min(FEE_MAX, Math.max(FEE_MIN, FEE_RATE * i.fob * units)) / units;
-  const importVat = (customsValue + duty + fee) * VAT;          // قابلة للخصم للمسجّل، وتكلفة فعلية لغير المسجّل
+  const fee = i.local ? 0 : Math.min(FEE_MAX, Math.max(FEE_MIN, FEE_RATE * i.fob * units)) / units;
+  const importVat = i.local ? 0 : (customsValue + duty + fee) * VAT; // قابلة للخصم للمسجّل، وتكلفة فعلية لغير المسجّل
   const landed = customsValue + duty + fee + (i.vatreg ? 0 : importVat);
   const net = i.vatreg ? i.price / (1 + VAT) : i.price;         // صافي الإيراد بعد ضريبة المخرجات
   const keep = 1 - i.ret;
@@ -238,7 +241,7 @@ function read() {
   return {price: n('price'), fob: n('fob'), freight: n('freight'), duty: n('duty') / 100,
     shipunits: n('shipunits'), lastmile: n('lastmile'), mdr: n('mdr') / 100, cac: n('cac'),
     ret: n('ret') / 100, repeat: n('repeat') / 100, fixed: n('fixed'), orders: n('orders'),
-    vatreg: document.getElementById('vatreg').checked};
+    vatreg: document.getElementById('vatreg').checked, local: document.getElementById('local').checked};
 }
 
 function calc() {
@@ -275,6 +278,7 @@ function calc() {
 
 document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
 document.getElementById('vatreg').addEventListener('change', calc);
+document.getElementById('local').addEventListener('change', calc);
 calc();
 
 // اختبارات الحساب: ?selftest
@@ -319,6 +323,16 @@ if (location.search.includes('selftest')) {
      'lifetime contribution is exactly zero at the lifetime ad ceiling');
   ok(near(model({...base, repeat: .99}).ordersPerCustomer, 20),
      'the repeat rate is capped at 95% so a typo cannot return an infinite customer value');
+
+  const loc = model({...base, local: true});
+  ok(near(loc.duty, 0) && near(loc.fee, 0) && near(loc.importVat, 0),
+     'a domestic purchase pays no duty, no customs service fee and no import VAT');
+  ok(near(loc.landed, base.fob),
+     'a domestic landed cost is the supplier price itself, with no freight and no 15 SAR fee floor added');
+  ok(model({...base, local: true, vatreg: false}).landed === loc.landed,
+     'VAT registration cannot change a domestic landed cost, because no import VAT exists to deduct');
+  ok(loc.landed < model(base).landed,
+     'the same supplier price lands cheaper domestically than imported');
 
   document.getElementById('st').textContent =
     out.join('\n') + '\n\n' + out.filter(l => l.startsWith('PASS')).length + ' / ' + out.length + ' passed';

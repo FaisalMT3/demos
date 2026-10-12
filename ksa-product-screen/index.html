@@ -142,6 +142,7 @@ bdi{font-variant-numeric:tabular-nums}
     <div><label for="mdr">رسوم بوابة الدفع من المحصّل (%)</label><input id="mdr" type="number" value="2.2"></div>
     <div><label for="cac">تكلفة الإعلان لكل طلب (ريال)</label><input id="cac" type="number" value="45"></div>
     <div><label for="ret">نسبة الإرجاع والرفض عند الاستلام (%)</label><input id="ret" type="number" value="12"></div>
+    <div><label for="repeat">نسبة من يشتري مرة ثانية خلال ٦٠ يومًا (%)</label><input id="repeat" type="number" value="0"></div>
     <div><label for="fixed">تكاليف ثابتة شهريًا: منصة وتخزين وغيرها (ريال)</label><input id="fixed" type="number" value="2500"></div>
     <div><label for="orders">عدد الطلبات المتوقعة شهريًا</label><input id="orders" type="number" value="300"></div>
   </div>
@@ -163,6 +164,8 @@ bdi{font-variant-numeric:tabular-nums}
       <tr><td>مجمل الربح قبل الإعلان، بعد الإرجاع والشحن والدفع</td><td class="n"><span id="o_gross"></span> ريال</td></tr>
       <tr><th>سقف تكلفة الإعلان لكل طلب، وهو الحد الذي تتعادل عنده</th><th class="n"><span id="o_cacmax" class="big"></span> ريال</th></tr>
       <tr><td>أقل عائد إعلاني مقبول <bdi dir="ltr">ROAS</bdi> عند هذا السقف</td><td class="n"><span id="o_roas"></span></td></tr>
+      <tr><td>عدد الطلبات المتوقعة من العميل نفسه</td><td class="n"><span id="o_opc"></span></td></tr>
+      <tr><td>سقف تكلفة جلب العميل على مجموع طلباته، لا على الطلب الأول</td><td class="n"><span id="o_cacmaxlife"></span> ريال</td></tr>
       <tr><td>مساهمة الطلب الواحد بتكلفة إعلانك الحالية</td><td class="n"><span id="o_contrib"></span> ريال</td></tr>
       <tr><td>عدد الطلبات شهريًا لتغطية التكاليف الثابتة</td><td class="n"><span id="o_be"></span></td></tr>
       <tr><td>ربح أو خسارة الشهر بعدد طلباتك المتوقع</td><td class="n"><span id="o_profit"></span> ريال</td></tr>
@@ -221,17 +224,20 @@ function model(i) {
   const contrib = gross - i.cac;
   const cacMax = gross;                                          // سقف الإعلان هو ما يبقى قبله
   const roas = cacMax > 0 ? keep * i.price / cacMax : Infinity;
+  // إعادة الشراء: نموذج هندسي، كل عميل يعيد الشراء باحتمال ثابت، فعدد طلباته 1/(1-r)
+  const ordersPerCustomer = 1 / (1 - Math.min(i.repeat, 0.95));
+  const cacMaxLife = gross * ordersPerCustomer;                  // ما يمكن دفعه لجلب عميل مقابل مجموع طلباته
   const be = contrib > 0 ? i.fixed / contrib : Infinity;
   const profit = contrib * i.orders - i.fixed;
   const annual = keep * net * i.orders * 12;
   const vatMonths = annual > 0 ? 375000 / (keep * net * i.orders) : Infinity;
-  return {customsValue, duty, fee, importVat, landed, net, gross, contrib, cacMax, roas, be, profit, annual, vatMonths};
+  return {customsValue, duty, fee, importVat, landed, net, gross, contrib, cacMax, roas, be, profit, annual, vatMonths, ordersPerCustomer, cacMaxLife};
 }
 
 function read() {
   return {price: n('price'), fob: n('fob'), freight: n('freight'), duty: n('duty') / 100,
     shipunits: n('shipunits'), lastmile: n('lastmile'), mdr: n('mdr') / 100, cac: n('cac'),
-    ret: n('ret') / 100, fixed: n('fixed'), orders: n('orders'),
+    ret: n('ret') / 100, repeat: n('repeat') / 100, fixed: n('fixed'), orders: n('orders'),
     vatreg: document.getElementById('vatreg').checked};
 }
 
@@ -242,6 +248,8 @@ function calc() {
   set('o_landed', fmt(r.landed, 2));
   set('o_net', fmt(r.net, 2)); set('o_gross', fmt(r.gross, 2)); set('o_cacmax', fmt(r.cacMax, 2));
   set('o_roas', isFinite(r.roas) ? fmt(r.roas, 2) + 'x' : 'لا يوجد عائد يكفي');
+  set('o_opc', fmt(r.ordersPerCustomer, 2) + (i.repeat > 0 ? ' طلبًا' : ' طلبًا، أي لا إعادة شراء بعد'));
+  set('o_cacmaxlife', fmt(r.cacMaxLife, 2) + (i.repeat > 0 ? ' (مشروط بأن تكون النسبة مقيسة لا مفترضة)' : ''));
   set('o_contrib', fmt(r.contrib, 2));
   set('o_be', isFinite(r.be) ? fmt(Math.ceil(r.be)) + ' طلبًا' : 'لا تُغطّى بأي عدد');
   set('o_profit', fmt(r.profit));
@@ -254,7 +262,8 @@ function calc() {
     v.textContent = 'لا يعمل: المنتج يخسر قبل أن تدفع ريالًا واحدًا على الإعلان. الخلل في السعر أو التكلفة الواصلة أو الشحن، لا في التسويق، وزيادة الإعلان تكبّر الخسارة لا الربح.';
   } else if (r.cacMax < 20) {
     v.className = 'verdict v-warn';
-    v.textContent = 'لا يحتمل إعلانًا مدفوعًا: السقف ' + fmt(r.cacMax, 2) + ' ريالًا لكل طلب، وهو أقل من تكلفة جلب عميل واقعية. يصلح فقط بقناة شبه مجانية أو بمتوسط سلة أعلى عبر البيع المجمّع.';
+    v.textContent = 'لا يحتمل إعلانًا مدفوعًا: السقف ' + fmt(r.cacMax, 2) + ' ريالًا لكل طلب، وهو أقل من تكلفة جلب عميل واقعية. يصلح فقط بقناة شبه مجانية أو بمتوسط سلة أعلى عبر البيع المجمّع.'
+      + (r.cacMaxLife >= 20 ? ' وينقلب الحكم إن كانت إعادة الشراء حقيقية: على مجموع طلبات العميل يصبح السقف ' + fmt(r.cacMaxLife, 2) + ' ريالًا، لكن هذا يُبنى على نسبة إعادة شراء مقيسة من بياناتك لا مفترضة، وإلى أن تُقاس فالقرار على الطلب الأول.' : '');
   } else if (r.contrib <= 0) {
     v.className = 'verdict v-warn';
     v.textContent = 'المنتج قابل للعمل لكن تكلفة إعلانك الحالية فوق السقف: السقف ' + fmt(r.cacMax, 2) + ' ريالًا وأنت عند ' + fmt(i.cac, 2) + ' ريالًا. اخفض تكلفة الطلب أو ارفع متوسط السلة قبل التوسع.';
@@ -273,7 +282,7 @@ if (location.search.includes('selftest')) {
   const out = [], ok = (c, m) => out.push((c ? 'PASS  ' : 'FAIL  ') + m);
   const near = (a, b, e = 1e-6) => Math.abs(a - b) < e;
   const base = {price: 149, fob: 28, freight: 9, duty: .05, shipunits: 300, lastmile: 22,
-    mdr: .022, cac: 45, ret: .12, fixed: 2500, orders: 300, vatreg: true};
+    mdr: .022, cac: 45, ret: .12, repeat: 0, fixed: 2500, orders: 300, vatreg: true};
 
   const r = model(base);
   ok(near(model({...base, cac: r.cacMax}).contrib, 0), 'contribution is exactly zero at the ad-cost ceiling');
@@ -297,6 +306,19 @@ if (location.search.includes('selftest')) {
   ok(dead.cacMax < 0 && !isFinite(dead.be), 'an unprofitable product reports a negative ceiling and no break-even');
   ok(near(model({...base, orders: Math.ceil(r.be)}).profit, r.contrib * Math.ceil(r.be) - base.fixed),
      'monthly profit follows contribution times orders minus fixed cost');
+
+  const r0 = model({...base, repeat: 0}), r50 = model({...base, repeat: .5}), r75 = model({...base, repeat: .75});
+  ok(near(r0.ordersPerCustomer, 1) && near(r0.cacMaxLife, r0.cacMax),
+     'with no repeat purchase the lifetime ceiling collapses onto the first-order ceiling');
+  ok(near(r50.ordersPerCustomer, 2) && near(r50.cacMaxLife, 2 * r0.cacMax),
+     'a half repeat rate doubles the expected orders and the lifetime ad ceiling');
+  ok(near(r75.ordersPerCustomer, 4), 'a three-quarter repeat rate gives four expected orders per customer');
+  ok(r75.cacMaxLife > r50.cacMaxLife && r50.cacMaxLife > r0.cacMaxLife,
+     'the lifetime ceiling never falls below the first-order one as repeat rises');
+  ok(near(r50.gross * r50.ordersPerCustomer - r50.cacMaxLife, 0),
+     'lifetime contribution is exactly zero at the lifetime ad ceiling');
+  ok(near(model({...base, repeat: .99}).ordersPerCustomer, 20),
+     'the repeat rate is capped at 95% so a typo cannot return an infinite customer value');
 
   document.getElementById('st').textContent =
     out.join('\n') + '\n\n' + out.filter(l => l.startsWith('PASS')).length + ' / ' + out.length + ' passed';

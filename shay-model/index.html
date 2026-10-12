@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<style id="g">html{visibility:hidden}</style>
+<script>(function(){function ping(){try{var L=localStorage,S=sessionStorage,k=location.pathname;if(/[?&]me\b/.test(location.search))L.me=1;if(L.me||S[k]||location.hostname!='faisalmt3.github.io')return;S[k]=1;var n=L[k]=(+L[k]||0)+1,m=/Mobi|Android|iPhone/.test(navigator.userAgent)?'جوال':'كمبيوتر',b=k.split('/').filter(Boolean).pop()||'portfolio';navigator.sendBeacon('https://ntfy.sh/fm3-demos-2603ca814960?title='+encodeURIComponent('👀 '+b)+'&tags=eyes',b+' — '+m+' — زيارة رقم '+n+(document.referrer?' — من '+document.referrer:''))}catch(e){}}var h=atob('ZmFpc2FsbXQzLmdpdGh1Yi5pbyxsb2NhbGhvc3QsMTI3LjAuMC4x').split(','),ok=h.indexOf(location.hostname)>-1,t=new Date()<new Date('2027-09-28T23:59:59+03:00'),m;if(ok&&t){document.getElementById('g').remove();ping();return}m=ok?'انتهت فترة عرض هذا النموذج.':'هذه نسخة غير مرخصة من نموذج عرض محمي بحقوق التصميم.';document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div style="font:20px/1.8 system-ui;max-width:32rem;margin:20vh auto;padding:1rem;text-align:center">'+m+'<br>© 2026 فيصل فهد المطيري — جميع الحقوق محفوظة<br>faisalfahadmt3@gmail.com</div>';document.getElementById('g').remove()})})()</script>
+<!-- © 2026 Faisal Fahad Almutairi (فيصل فهد المطيري). All rights reserved. Not licensed for use, copying or hosting without written permission. Contact: faisalfahadmt3@gmail.com -->
+<meta name="author" content="Faisal Fahad Almutairi">
+<meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محل شاهي — نموذج الجدوى المبدئي</title>
+<style>
+  :root{
+    --ink:#1a1714; --ink-soft:#5c544b; --paper:#f7f4ee; --card:#fffdf8;
+    --line:#ddd5c7; --accent:#8a5a2b; --good:#1f6b4a; --bad:#9c2b21; --warn:#8a6a16;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:17px/1.75 system-ui,"Segoe UI","Noto Naskh Arabic",Tahoma,sans-serif;
+  }
+  button,input,select{font:inherit; color:inherit}
+  .wrap{max-width:1000px; margin:0 auto; padding:clamp(1rem,4vw,2.5rem) 1.1rem 4rem}
+  header{border-bottom:2px solid var(--ink); padding-bottom:1.1rem; margin-bottom:1.6rem}
+  .kicker{font-size:.8rem; letter-spacing:0; color:var(--accent); font-weight:700; margin:0 0 .3rem}
+  h1{font-size:clamp(1.5rem,4.5vw,2.1rem); line-height:1.35; margin:0 0 .5rem; font-weight:800}
+  .lede{margin:0; color:var(--ink-soft); max-width:60ch}
+  h2{font-size:1.15rem; margin:2.2rem 0 .8rem; padding-bottom:.4rem; border-bottom:1px solid var(--line)}
+  .note{font-size:.92rem; color:var(--ink-soft); margin:.2rem 0 1rem}
+
+  .grid{display:grid; gap:.9rem; grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+  .field{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:.7rem .85rem}
+  .field label{display:block; font-size:.88rem; color:var(--ink-soft); margin-bottom:.35rem}
+  .field input{
+    width:100%; border:0; border-bottom:1.5px solid var(--line); background:transparent;
+    padding:.2rem 0; font-size:1.12rem; font-weight:700; font-variant-numeric:tabular-nums;
+  }
+  .field input:focus{outline:0; border-bottom-color:var(--accent)}
+  .src{display:inline-block; margin-top:.4rem; font-size:.72rem; padding:.1rem .45rem; border-radius:99px; border:1px solid var(--line)}
+  .src.official{color:var(--good); border-color:#bcd8c9; background:#f1f8f4}
+  .src.est{color:var(--warn); border-color:#e4d7ae; background:#fbf6e8}
+  .src.check{color:var(--ink-soft)}
+
+  .kpis{display:grid; gap:.9rem; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); margin-top:1.4rem}
+  .kpi{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:.9rem 1rem; border-top:3px solid var(--accent)}
+  .kpi .k{font-size:.85rem; color:var(--ink-soft); min-height:2.6em}
+  .kpi .v{font-size:1.55rem; font-weight:800; font-variant-numeric:tabular-nums; line-height:1.3}
+  .kpi .u{font-size:.82rem; color:var(--ink-soft)}
+
+  table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+  th,td{padding:.55rem .7rem; text-align:start; border-bottom:1px solid var(--line); font-size:.95rem}
+  th{background:#efe9dd; font-weight:700}
+  td.num{font-variant-numeric:tabular-nums; text-align:end; white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  tr.total td{font-weight:800; background:#f2ecdf}
+  .scroll{overflow-x:auto}
+  .sens td.num{text-align:center}
+  .sens th{text-align:center}
+  .c-good{background:#e8f4ec; color:#14532d}
+  .c-mid{background:#fdf6e3}
+  .c-bad{background:#fbeae8; color:#7f1d1d}
+
+  .finding{background:var(--card); border:1px solid var(--line); border-inline-start:4px solid var(--accent); border-radius:10px; padding:.9rem 1.05rem; margin:.9rem 0}
+  .finding h3{margin:0 0 .4rem; font-size:1rem}
+  .finding p{margin:.4rem 0}
+  .finding.alert{border-inline-start-color:var(--bad)}
+  .finding.ok{border-inline-start-color:var(--good)}
+  a{color:var(--accent)}
+  ol.sources{font-size:.92rem; color:var(--ink-soft); padding-inline-start:1.3rem}
+  ol.sources li{margin-bottom:.4rem}
+  footer{margin-top:2.5rem; padding-top:1rem; border-top:1px solid var(--line); font-size:.9rem; color:var(--ink-soft)}
+  .pill{display:inline-block; font-size:.8rem; border:1px solid var(--line); border-radius:99px; padding:.15rem .6rem; background:var(--card)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">نموذج مبدئي مفتوح — لا يحتاج تسجيل ولا دفع</p>
+  <h1>محل شاهي: نموذج الجدوى المبدئي</h1>
+  <p class="lede">
+    عدّل أي رقم في الأسفل وسترى أثره مباشرة على رأس المال المطلوب، ونقطة التعادل،
+    وفترة استرداد رأس المال. كل مُدخل مكتوب أمامه نوع مصدره: رقم نظامي رسمي، أو تقدير يُعدَّل
+    ببيانات موقعك الفعلي.
+  </p>
+</header>
+
+<h2>١. الإيرادات</h2>
+<p class="note">الإيراد في هذا النشاط = عدد الأكواب × متوسط سعر الكوب. أغلب المحلات تخطئ هنا: تقدّر الطلب
+بالشهر لا باليوم، فتختفي من الحساب أيام الهبوط.</p>
+<div class="grid" id="g-rev"></div>
+
+<h2>٢. التكاليف التشغيلية الشهرية</h2>
+<div class="grid" id="g-opex"></div>
+
+<h2>٣. تكاليف التأسيس (مرة واحدة)</h2>
+<div class="grid" id="g-capex"></div>
+
+<h2>٤. النتيجة</h2>
+<div class="kpis" id="kpis"></div>
+
+<h2>٥. قائمة الدخل الشهرية التقديرية</h2>
+<div class="scroll"><table id="pl"></table></div>
+
+<h2>٦. تحليل الحساسية: الربح الشهري</h2>
+<p class="note">الصفوف = عدد الأكواب يومياً، الأعمدة = متوسط سعر الكوب. الخلية الخضراء ربح، والحمراء خسارة.
+هذا الجدول هو ما يُظهر هل المشروع متين أم معلّق على فرضية واحدة.</p>
+<div class="scroll"><table class="sens" id="sens"></table></div>
+
+<h2>٧. ملاحظتان نظاميتان تغيّران الأرقام</h2>
+
+<div class="finding ok">
+  <h3>المقابل المالي للعامل الوافد: إعفاء المنشآت التي عمالها تسعة أو أقل</h3>
+  <p>
+    المقابل المالي ‏<bdi>800</bdi> ريال شهرياً عن كل عامل وافد (أو ‏<bdi>700</bdi> إذا تساوى السعوديون مع الوافدين أو زادوا).
+    وقد وافق مجلس الوزراء على تمديد إعفاء المنشآت التي «إجمالي العاملين فيها تسعة عمال فأقل بمن فيهم مالكها»
+    لمدة <strong>ثلاث سنوات</strong>: الإعفاء عن عاملين وافدين إذا كان المالك متفرغاً للعمل في المنشأة ومسجلاً في
+    التأمينات الاجتماعية، ويرتفع إلى <strong>أربعة</strong> وافدين كحدٍّ أقصى إذا كان فيها عامل سعودي واحد على
+    الأقل (غير المالك) متفرغ ومسجل عليها في التأمينات.
+  </p>
+  <p id="levy-saving"></p>
+  <p>
+    <strong>وجه الخطر:</strong> التمديد صدر في <bdi>20</bdi> فبراير <bdi>2024</bdi> لمدة ثلاث سنوات، أي أن مداه ينتهي داخل
+    فترة استرداد رأس المال نفسها. أي نموذج مالي يبني السنة الثانية على الإعفاء وحده يُظهر ربحاً لا يتحقق،
+    فالنموذج هنا يفصل السنة الأولى عن السنة التالية بدل أن يخلطهما.
+  </p>
+</div>
+
+<div class="finding" id="vat-box">
+  <h3>ضريبة القيمة المضافة: الحد الذي يُعبَر دون أن يُلاحظ</h3>
+  <p id="vat-text"></p>
+  <p>
+    الأثر العملي: إن كان سعر الكوب معروضاً للعميل شاملاً الضريبة، فإن نسبة <bdi>15%</bdi> تُخصم من الإيراد
+    لا تُضاف إليه، فينزل الإيراد الصافي بنحو <bdi>13%</bdi> عن الرقم المعلن. ويُقابل ذلك جزئياً خصم ضريبة
+    المدخلات على الإيجار والمشتريات والتجهيز.
+  </p>
+</div>
+
+<h2>٨. ما يبقى بعد هذا النموذج</h2>
+<p class="note" style="font-size:1rem">
+  هذا النموذج يحسب الأرقام، ولا يُغني عن ثلاثة أشياء لا تُقدَّر من بعيد:
+  إيجار موقعك المحدد بالذات، وعدد الأكواب المقدّر من عدّ فعلي لحركة المارة أمام الموقع في ساعات الذروة،
+  وقائمة المنافسين في محيط المشي وأسعارهم. هذه الثلاثة هي ما يجعل الدراسة قراراً لا تمريناً حسابياً.
+</p>
+
+<h2>المصادر</h2>
+<ol class="sources">
+  <li>
+    وزارة الموارد البشرية والتنمية الاجتماعية — خبر تمديد إعفاء المنشآت الصغيرة من المقابل المالي،
+    <bdi>20</bdi> فبراير <bdi>2024</bdi>:
+    <a href="https://www.hrsd.gov.sa/media-center/news/200220241" target="_blank" rel="noopener">hrsd.gov.sa/media-center/news/200220241</a>
+    <span class="src official">تم فتحه والتحقق منه</span>
+  </li>
+  <li>
+    هيئة المنشآت الصغيرة والمتوسطة «منشآت» — دليل تشغيل المتاجر، قسم المقاهي: يبني دراسة الجدوى على
+    ثلاث دراسات (السوق، الفني، المالي):
+    <a href="https://monshaat.gov.sa/en/guide/6520/7312/7319" target="_blank" rel="noopener">monshaat.gov.sa</a>
+    <span class="src official">مرجع رسمي للهيكل</span>
+  </li>
+  <li>
+    حدود التسجيل في ضريبة القيمة المضافة ونسبتها: تُثبَّت في النسخة النهائية من بوابة هيئة الزكاة والضريبة
+    والجمارك نفسها، وتُرفق صورة الصفحة في ملحق الدراسة.
+    <span class="src check">يُراجع قبل التسليم</span>
+  </li>
+  <li>
+    بقية الأرقام في هذا النموذج تقديرات أولية موضوعة ليُستبدل بها واقع الموقع:
+    الإيجار من عرض المالك، والتجهيز من عرض سعر مورّد، والأحجام من عدّ ميداني.
+    <span class="src est">تقديري يُعدَّل</span>
+  </li>
+</ol>
+
+<footer>
+  <span class="pill">نموذج عرض</span>
+  أُعدّ هذا النموذج ليكون ورقة واحدة يفهمها غير المالي، وهو جزء من منهج العمل لا الدراسة الكاملة.
+  الأرقام المعروضة افتراضية حتى تُستبدل ببيانات المشروع الفعلية.
+</footer>
+
+</div>
+
+<script>
+const F = {
+  // الإيرادات
+  cups:      {g:'rev',   label:'عدد الأكواب في اليوم',            v:200,   src:'est',  s:'تقديري يُعدَّل بعدّ ميداني'},
+  price:     {g:'rev',   label:'متوسط سعر الكوب (ريال)',          v:6,     src:'est',  s:'تقديري من أسعار المحيط'},
+  days:      {g:'rev',   label:'أيام العمل في الشهر',             v:30,    src:'est',  s:'تقديري'},
+  extra:     {g:'rev',   label:'إيراد المعجنات والإضافات شهرياً', v:5000,  src:'est',  s:'تقديري'},
+  // التشغيل
+  rent:      {g:'opex',  label:'الإيجار الشهري (ريال)',           v:5000,  src:'est',  s:'يُستبدل بعرض المالك'},
+  staff:     {g:'opex',  label:'عدد العاملين',                    v:3,     src:'est',  s:'تقديري'},
+  wage:      {g:'opex',  label:'متوسط الراتب الشهري (ريال)',      v:2200,  src:'est',  s:'تقديري'},
+  levy:      {g:'opex',  label:'المقابل المالي للعامل (ريال/شهر)',v:800,   src:'official', s:'800 أو 700 — رسمي'},
+  exempt:    {g:'opex',  label:'عدد العاملين المُعفَين',          v:2,     src:'official', s:'حتى 2 أو 4 — رسمي'},
+  util:      {g:'opex',  label:'كهرباء ومياه شهرياً (ريال)',      v:1400,  src:'est',  s:'تقديري'},
+  cogs:      {g:'opex',  label:'تكلفة مواد الكوب الواحد (ريال)',  v:1.6,   src:'est',  s:'تقديري من فاتورة مورّد'},
+  other:     {g:'opex',  label:'تسويق وصيانة ومتنوع شهرياً',      v:1500,  src:'est',  s:'تقديري'},
+  // التأسيس
+  fitout:    {g:'capex', label:'التجهيز والديكور (ريال)',         v:70000, src:'est',  s:'يُستبدل بعرض مقاول'},
+  equip:     {g:'capex', label:'المعدات والأجهزة (ريال)',         v:45000, src:'est',  s:'يُستبدل بعروض موردين'},
+  licence:   {g:'capex', label:'الرخص والتأسيس (ريال)',           v:5000,  src:'check',s:'يُثبَّت من بلدي والسجل'},
+  prepaid:   {g:'capex', label:'إيجار مقدم (عدد الأشهر)',         v:3,     src:'est',  s:'تقديري'},
+  buffer:    {g:'capex', label:'رأس مال عامل (عدد أشهر تشغيل)',   v:3,     src:'est',  s:'وسادة أمان تقديرية'},
+};
+
+const VAT_MANDATORY = 375000;
+const n = x => Number(x).toLocaleString('en-US', {maximumFractionDigits:0});
+const n1 = x => Number(x).toLocaleString('en-US', {maximumFractionDigits:1});
+
+function build(){
+  for (const [key, f] of Object.entries(F)) {
+    const el = document.createElement('div');
+    el.className = 'field';
+    el.innerHTML = `<label for="${key}">${f.label}</label>
+      <input id="${key}" type="number" step="any" min="0" value="${f.v}" dir="ltr">
+      <span class="src ${f.src}">${f.s}</span>`;
+    document.getElementById('g-' + f.g).appendChild(el);
+    el.querySelector('input').addEventListener('input', calc);
+  }
+}
+
+const val = k => { const v = parseFloat(document.getElementById(k).value); return isFinite(v) ? v : 0; };
+
+function model(cups, price){
+  const v = {}; for (const k of Object.keys(F)) v[k] = val(k);
+  if (cups  !== undefined) v.cups  = cups;
+  if (price !== undefined) v.price = price;
+
+  const monthCups = v.cups * v.days;
+  const revenue   = monthCups * v.price + v.extra;
+  const materials = monthCups * v.cogs;
+  const wages     = v.staff * v.wage;
+  const levyDue   = Math.max(0, v.staff - v.exempt) * v.levy;
+  const fixed     = v.rent + wages + levyDue + v.util + v.other;   // لا يتغير بعدد الأكواب
+  const profit    = revenue - materials - fixed;
+
+  // نقطة التعادل بالأكواب يومياً: هامش الكوب يغطي التكاليف الثابتة بعد حسم إيراد الإضافات
+  const perCup    = v.price - v.cogs;
+  const beCups    = perCup > 0 ? Math.max(0, (fixed - v.extra) / perCup / v.days) : Infinity;
+
+  const capex     = v.fitout + v.equip + v.licence + v.prepaid * v.rent
+                  + v.buffer * (fixed + materials);
+  const payback   = profit > 0 ? capex / profit : Infinity;
+
+  return {...v, monthCups, revenue, materials, wages, levyDue, fixed, profit, perCup, beCups, capex, payback,
+          margin: revenue > 0 ? profit / revenue * 100 : 0, annual: revenue * 12};
+}
+
+function kpi(k, v, u){
+  return `<div class="kpi"><div class="k">${k}</div><div class="v"><bdi>${v}</bdi></div><div class="u">${u}</div></div>`;
+}
+
+function calc(){
+  const m = model();
+
+  document.getElementById('kpis').innerHTML =
+      kpi('رأس المال المطلوب للانطلاق', n(m.capex), 'ريال — تجهيز ومعدات ورخص وإيجار مقدم ووسادة تشغيل')
+    + kpi('الربح الشهري التقديري', n(m.profit), 'ريال قبل الزكاة')
+    + kpi('هامش الربح', n1(m.margin) + '%', 'من الإيراد')
+    + kpi('نقطة التعادل', isFinite(m.beCups) ? n(Math.ceil(m.beCups)) : '—', 'كوب في اليوم لتغطية التكاليف')
+    + kpi('فترة استرداد رأس المال', isFinite(m.payback) ? n1(m.payback) : '—', isFinite(m.payback) ? 'شهراً' : 'لا يُسترد بهذه الفرضيات');
+
+  const row = (a, b, cls='') => `<tr class="${cls}"><td>${a}</td><td class="num"><bdi>${b}</bdi></td></tr>`;
+  document.getElementById('pl').innerHTML =
+      `<tr><th>البند</th><th style="text-align:end">ريال شهرياً</th></tr>`
+    + row('إيراد الأكواب (' + n(m.monthCups) + ' كوب)', n(m.monthCups * m.price))
+    + row('إيراد المعجنات والإضافات', n(m.extra))
+    + row('إجمالي الإيراد', n(m.revenue), 'total')
+    + row('تكلفة المواد', '(' + n(m.materials) + ')')
+    + row('الرواتب', '(' + n(m.wages) + ')')
+    + row('المقابل المالي بعد الإعفاء', '(' + n(m.levyDue) + ')')
+    + row('الإيجار', '(' + n(m.rent) + ')')
+    + row('كهرباء ومياه', '(' + n(m.util) + ')')
+    + row('تسويق وصيانة ومتنوع', '(' + n(m.other) + ')')
+    + row('الربح الشهري', n(m.profit), 'total');
+
+  // الحساسية: ±الكمية رأسياً، ±السعر أفقياً
+  const cupSteps   = [-50, -25, 0, 25, 50].map(p => Math.round(m.cups  * (1 + p/100)));
+  const priceSteps = [-25, -10, 0, 10, 25].map(p => +(m.price * (1 + p/100)).toFixed(2));
+  let html = '<tr><th>كوب/يوم \\ سعر الكوب</th>' + priceSteps.map(p => `<th><bdi>${n1(p)}</bdi></th>`).join('') + '</tr>';
+  for (const c of cupSteps) {
+    html += `<tr><th><bdi>${n(c)}</bdi></th>` + priceSteps.map(p => {
+      const r = model(c, p).profit;
+      const cls = r <= 0 ? 'c-bad' : r < m.profit * 0.6 ? 'c-mid' : 'c-good';
+      return `<td class="num ${cls}"><bdi>${n(r)}</bdi></td>`;
+    }).join('') + '</tr>';
+  }
+  document.getElementById('sens').innerHTML = html;
+
+  const saved = Math.min(m.staff, m.exempt) * m.levy;
+  document.getElementById('levy-saving').innerHTML =
+    `<strong>بفرضياتك الحالية:</strong> الإعفاء يحجز <bdi>${n(saved)}</bdi> ريال شهرياً — `
+    + `<bdi>${n(saved * 12)}</bdi> ريال في السنة — خارج التكاليف. `
+    + (m.profit > 0
+        ? `وهو ما يعادل <bdi>${n1(saved / m.profit * 100)}%</bdi> من الربح الشهري التقديري.`
+        : `ومع ذلك يبقى النموذج خاسراً بهذه الفرضيات، أي أن المشكلة ليست في الرسوم.`);
+
+  const over = m.annual >= VAT_MANDATORY;
+  document.getElementById('vat-box').className = 'finding' + (over ? ' alert' : '');
+  document.getElementById('vat-text').innerHTML =
+    `الإيراد السنوي بهذه الفرضيات <bdi>${n(m.annual)}</bdi> ريال، `
+    + (over
+      ? `أي أنه <strong>يتجاوز حد التسجيل الإلزامي</strong> في ضريبة القيمة المضافة (<bdi>${n(VAT_MANDATORY)}</bdi> ريال في أي اثني عشر شهراً). `
+        + `محلّ شاهي واحد ببيع <bdi>${n(Math.ceil(VAT_MANDATORY / 12 / 30 / m.price))}</bdi> كوب يومياً بسعر <bdi>${n1(m.price)}</bdi> ريال يعبر الحد، `
+        + `ومن يبني سعره على أنه «أقل من أن يُسجَّل» يكتشف ذلك متأخراً.`
+      : `أي أنه <strong>دون حد التسجيل الإلزامي</strong> (<bdi>${n(VAT_MANDATORY)}</bdi> ريال في أي اثني عشر شهراً)، `
+        + `لكن زيادة <bdi>${n(Math.ceil((VAT_MANDATORY - m.annual) / 12 / 30 / Math.max(m.price,1)))}</bdi> كوب يومياً تكفي لعبوره.`);
+}
+
+build();
+calc();
+</script>
+</body>
+</html>

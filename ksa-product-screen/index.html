@@ -324,6 +324,7 @@ function hairExample() {
   const sar = v => fmt(v, 2);
   return '<h3>مثال محسوب على ميزانية <bdi>10,000</bdi> ريال: ثلاثة أصناف للتوضيح فقط</h3>'
     + '<p class="note">كل رقم موسوم «افتراضي للتوضيح» ليس رقمك ولا عرض مورّد، بل مثال يبيّن أين يذهب المال. الخانات أعلاه تبقى فارغة، ولا يصدر حكم إلا على أرقامك أنت.</p>'
+    + '<p class="note" id="samplelink">شكل الورقة المدفوعة كاملة: <a href="assets/sample-haircare-serum.pdf" target="_blank" rel="noopener">نموذج PDF لسيروم <bdi>100</bdi> مل</a>، بالحساب والحكم والبنود المفتوحة. أرقامه افتراضية للتوضيح، وليس لعميل.</p>'
     + '<table id="extable"><tr><th>البند</th>' + rs.map(x => '<th class="n">' + x.s.name + '</th>').join('') + '<th>نوع المصدر</th></tr>'
     + sec('أرقام افتراضية للتوضيح، تُستبدل بأرقامك')
     + row('سعر الوحدة من المورّد (ريال)', x => sar(x.s.fob), X)
@@ -497,6 +498,8 @@ if (location.search.includes('selftest')) {
   // 8 صفوف افتراضية؛ صف البند ونسبة الرسوم صار رسميًا في 2026-10-14
   ok(document.querySelectorAll('#extable .b4').length >= 8 && !document.querySelector('#extable .b1 + .b4, #extable .b4 + .b1'),
      'illustrative figures carry their own badge and never share a cell with the authority badge');
+  ok(document.querySelector('#samplelink a')?.getAttribute('href') === 'assets/sample-haircare-serum.pdf' && /افتراضية/.test(document.getElementById('samplelink').textContent),
+     'the hair-care preset links the fictional-numbers sample PDF and says its numbers are illustrative');
   ok(['price', 'fob', 'freight', 'duty', 'shipunits', 'compl'].every(k => document.getElementById(k).value === '') && hv.textContent.startsWith('لا حكم'),
      'the worked example writes nothing into the calculator, which stays blank with no verdict');
   // الأرقام المثبّتة في 2026-10-14، واحد لكل رقم، والمصادر في evidence-haircare/zatca-2026-10-14

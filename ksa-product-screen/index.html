@@ -49,6 +49,8 @@ li{margin-bottom:6px}
 .b1{background:#ECF6F3;color:#0A5245}
 .b2{background:#FBF4E4;color:var(--warn)}
 .b3{background:#F0F1F3;color:var(--ink2)}
+.b4{background:#F3ECFB;color:#5B2E91;border:1px dashed #B79AD9}
+tr.sec td{background:var(--bg2);font-weight:800}
 footer{margin-top:40px;border-top:1px solid var(--line);padding:20px 0 50px;font-size:15px;color:var(--ink2)}
 bdi{font-variant-numeric:tabular-nums}
 #st{white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:14px;direction:ltr;text-align:start;background:var(--bg2);border-radius:var(--r);padding:14px;margin-top:14px}
@@ -132,12 +134,20 @@ bdi{font-variant-numeric:tabular-nums}
 <p>غيّر أي رقم وستتحدث النتيجة فورًا. الأرقام المبدئية هي مثال لمنتج بسعر <bdi>149</bdi> ريالًا، وليست افتراضًا عن مشروعك.</p>
 
 <div class="calc">
+  <label for="preset">نقطة البداية</label>
+  <select id="preset" style="width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:12px">
+    <option value="general">مثال عام: منتج بسعر 149 ريالًا</option>
+    <option value="hair">عناية بالشعر، مستوردة، بعلامتك الخاصة</option>
+  </select>
+  <div id="presetinfo"></div>
+  <div id="example"></div>
   <div class="grid">
     <div><label for="price">سعر البيع للمستهلك شاملًا الضريبة (ريال)</label><input id="price" type="number" value="149"></div>
     <div><label for="fob">تكلفة الوحدة من المورد (ريال)</label><input id="fob" type="number" value="28"></div>
     <div><label for="freight">الشحن الدولي والتأمين للوحدة (ريال)</label><input id="freight" type="number" value="9"></div>
     <div><label for="duty">نسبة الرسوم الجمركية للبند (%)</label><input id="duty" type="number" value="5"></div>
     <div><label for="shipunits">عدد الوحدات في الشحنة الواحدة</label><input id="shipunits" type="number" value="300"></div>
+    <div><label for="compl">تكلفة المطابقة لكل شحنة: شهادة أو تحاليل (ريال)</label><input id="compl" type="number" value="0"></div>
     <div><label for="lastmile">الشحن المحلي للطلب (ريال)</label><input id="lastmile" type="number" value="22"></div>
     <div><label for="mdr">رسوم بوابة الدفع من المحصّل (%)</label><input id="mdr" type="number" value="2.2"></div>
     <div><label for="cac">تكلفة الإعلان لكل طلب (ريال)</label><input id="cac" type="number" value="45"></div>
@@ -155,6 +165,7 @@ bdi{font-variant-numeric:tabular-nums}
       <tr><td>قيمة البضاعة مع الشحن والتأمين</td><td class="n"><span id="o_cv"></span> ريال</td></tr>
       <tr><td>الرسوم الجمركية</td><td class="n"><span id="o_duty"></span> ريال</td></tr>
       <tr><td>رسم الخدمة الجمركية، موزّعًا على وحدات الشحنة</td><td class="n"><span id="o_fee"></span> ريال</td></tr>
+      <tr><td>تكلفة المطابقة، موزّعة على وحدات الشحنة</td><td class="n"><span id="o_compl"></span> ريال</td></tr>
       <tr><td>ضريبة الاستيراد <bdi>15%</bdi> على المجموع</td><td class="n"><span id="o_ivat"></span> ريال</td></tr>
       <tr><th>التكلفة الواصلة الفعلية للوحدة</th><th class="n"><span id="o_landed"></span> ريال</th></tr>
     </table>
@@ -219,7 +230,9 @@ function model(i) {
   const units = Math.max(1, i.shipunits);
   const fee = i.local ? 0 : Math.min(FEE_MAX, Math.max(FEE_MIN, FEE_RATE * i.fob * units)) / units;
   const importVat = i.local ? 0 : (customsValue + duty + fee) * VAT; // قابلة للخصم للمسجّل، وتكلفة فعلية لغير المسجّل
-  const landed = customsValue + duty + fee + (i.vatreg ? 0 : importVat);
+  // المطابقة (شهادة قبل الشحن أو تحاليل عينات) تُدفع على الإرسالية داخل المملكة، فلا تدخل وعاء الرسوم
+  const compl = (i.compl || 0) / units;
+  const landed = customsValue + duty + fee + compl + (i.vatreg ? 0 : importVat);
   const net = i.vatreg ? i.price / (1 + VAT) : i.price;         // صافي الإيراد بعد ضريبة المخرجات
   const keep = 1 - i.ret;
   // المساهمة محسوبة على الطلب المُقدَّم لا المُسلَّم: الإعلان ورسوم الدفع يُدفعان على المرفوض أيضًا
@@ -234,19 +247,103 @@ function model(i) {
   const profit = contrib * i.orders - i.fixed;
   const annual = keep * net * i.orders * 12;
   const vatMonths = annual > 0 ? 375000 / (keep * net * i.orders) : Infinity;
-  return {customsValue, duty, fee, importVat, landed, net, gross, contrib, cacMax, roas, be, profit, annual, vatMonths, ordersPerCustomer, cacMaxLife};
+  return {customsValue, duty, fee, compl, importVat, landed, net, gross, contrib, cacMax, roas, be, profit, annual, vatMonths, ordersPerCustomer, cacMaxLife};
 }
 
 function read() {
   return {price: n('price'), fob: n('fob'), freight: n('freight'), duty: n('duty') / 100,
-    shipunits: n('shipunits'), lastmile: n('lastmile'), mdr: n('mdr') / 100, cac: n('cac'),
+    shipunits: n('shipunits'), compl: n('compl'), lastmile: n('lastmile'), mdr: n('mdr') / 100, cac: n('cac'),
     ret: n('ret') / 100, repeat: n('repeat') / 100, fixed: n('fixed'), orders: n('orders'),
     vatreg: document.getElementById('vatreg').checked, local: document.getElementById('local').checked};
 }
 
+// كل خانة موسومة بنوع مصدرها: you = رقمك أو عرض سعر مكتوب، est = تقدير، auth = صفحة الجهة الرسمية.
+// الخانة الفارغة متروكة عمدًا: لا حكم قبل أن يُكتب فيها رقم حقيقي.
+const SRC = {auth: ['b1', 'من صفحة الجهة الرسمية'], est: ['b2', 'تقدير'], you: ['b3', 'مدخل منك']};
+const PRESETS = {
+  general: {vatreg: true, local: false, f: {price: [149], fob: [28], freight: [9], duty: [5], shipunits: [300], compl: [0],
+    lastmile: [22], mdr: [2.2], cac: [45], ret: [12], repeat: [0], fixed: [2500], orders: [300]}},
+  hair: {vatreg: false, local: false, f: {
+    price: ['', 'you', 'سعر السوق من أعلى المنافسين لنفس الحجم، لا سعر نتمناه'],
+    fob: ['', 'you', 'من عرض المورّد المكتوب، بعد إدراج المنتج باسم علامتك'],
+    freight: ['', 'you', 'من عرض الشاحن للوحدة، شاملًا التأمين'],
+    duty: ['', 'you', 'تُستخرج من حاسبة الرسوم في منصة هيئة الزكاة والضريبة والجمارك على البند الذي يكتبه المورّد'],
+    shipunits: ['', 'you', 'عدد عبوات الدفعة الأولى. كل صنف إضافي إدراج مستقل ومطابقة مستقلة'],
+    compl: ['', 'you', 'عرض جهة تقويم المطابقة قبل الشحن، أو التحاليل إن وصلت الشحنة بلا شهادة: قائمة الهيئة لأسعار المختبرات المعينة (2023) تسعّر المعامل الواحد لمنتجات الشعر بين 154 و700 ريال قبل الضريبة، وعدد المعاملات المطلوبة غير منشور'],
+    lastmile: [22, 'est', 'متوسط شحن داخلي لطرد صغير، يُستبدل بعقد شركة الشحن'],
+    mdr: [2.2, 'est', 'البوابات لا تنشر نسبتها، تُستبدل بعرض السعر المكتوب'],
+    cac: [45, 'est', 'تكلفة إعلان لكل طلب، تُستبدل بأول حملة تجريبية'],
+    ret: [12, 'est', 'نسبة إرجاع ورفض عند الاستلام، تُستبدل ببياناتك'],
+    repeat: [0, 'you', 'صفر حتى تُقاس، فالصفحة لا تحتسب نسبة إعادة شراء مفترضة'],
+    fixed: ['', 'you', 'يشمل التخزين المرخّص: نظام منتجات التجميل يشترط ترخيص المستودع من هيئة الغذاء والدواء، ومنها رخصة مساحة مستأجرة من مستودع مرخص، ورسمها غير منشور'],
+    orders: ['', 'you', 'عدد الطلبات المتوقع شهريًا']}}
+};
+
+// مثال محسوب لميزانية 10,000 ريال. كل سعر وكمية ونسبة رسوم فيه افتراضي للتوضيح، ولا يدخل خانات الحاسبة ولا حكمها.
+// أسعار الفحوص من قائمة الهيئة لأسعار المختبرات الخاصة المعينة (2023)، واختيار الفحصين لكل صنف افتراضي.
+const HAIR_EX = {budget: 10000,
+  common: {duty: .05, lastmile: 22, mdr: .022, ret: .12, repeat: 0, cac: 0, fixed: 0, orders: 0, vatreg: false, local: false},
+  s: [
+    {name: 'سيروم <bdi>100</bdi> مل', fob: 8, freight: 2, shipunits: 500, price: 79, tests: [['بقايا البوليمرات', 700], ['الكحول', 439]]},
+    {name: 'شامبو <bdi>250</bdi> مل', fob: 6, freight: 3.5, shipunits: 600, price: 49, tests: [['1,4-ديوكسان', 600], ['MIT', 445]]},
+    {name: 'زيت <bdi>50</bdi> مل', fob: 5, freight: 1, shipunits: 800, price: 59, tests: [['رقم البيروكسيد', 160], ['رقم الحموضة', 154]]}]};
+
+function hairExample() {
+  const B = (c, t) => '<span class="b ' + c + '">' + t + '</span>', X = B('b4', 'افتراضي للتوضيح');
+  const rs = HAIR_EX.s.map(s => ({s, r: model({...HAIR_EX.common, ...s, compl: s.tests.reduce((a, [, p]) => a + p, 0)})}));
+  const row = (label, f, badge) => '<tr><td>' + label + '</td>' + rs.map(x => '<td class="n">' + f(x) + '</td>').join('') + '<td>' + badge + '</td></tr>';
+  const sec = t => '<tr class="sec"><td colspan="' + (rs.length + 2) + '">' + t + '</td></tr>';
+  const sar = v => fmt(v, 2);
+  return '<h3>مثال محسوب على ميزانية <bdi>10,000</bdi> ريال: ثلاثة أصناف للتوضيح فقط</h3>'
+    + '<p class="note">كل رقم موسوم «افتراضي للتوضيح» ليس رقمك ولا عرض مورّد، بل مثال يبيّن أين يذهب المال. الخانات أعلاه تبقى فارغة، ولا يصدر حكم إلا على أرقامك أنت.</p>'
+    + '<table id="extable"><tr><th>البند</th>' + rs.map(x => '<th class="n">' + x.s.name + '</th>').join('') + '<th>نوع المصدر</th></tr>'
+    + sec('أرقام افتراضية للتوضيح، تُستبدل بأرقامك')
+    + row('سعر الوحدة من المورّد (ريال)', x => sar(x.s.fob), X)
+    + row('الشحن الدولي والتأمين للوحدة (ريال)', x => sar(x.s.freight), X)
+    + row('عدد العبوات في الشحنة', x => fmt(x.s.shipunits), X)
+    + row('سعر الرف للمستهلك (ريال)', x => sar(x.s.price), X)
+    + row('نسبة الرسوم الجمركية للبند', () => '<bdi>5%</bdi>', X + ' ' + B('b3', 'البند غير متحقق'))
+    + row('الفحصان المختاران للصنف', x => x.s.tests.map(([t, p]) => t + ' <bdi>' + p + '</bdi>').join('<br>'), X + ' ' + B('b3', 'الاختيار فقط'))
+    + sec('بنود منظِّمة يحسبها النموذج كما هي')
+    + row('رسم الخدمة الجمركية للشحنة: <bdi>0.15%</bdi> بحد أدنى <bdi>15</bdi> وأعلى <bdi>500</bdi>', x => sar(x.r.fee * x.s.shipunits), B('b2', 'رسمي، صفحة المصدر تُراجع'))
+    + row('ضريبة الاستيراد <bdi>15%</bdi> للشحنة (غير مسجّل، فهي تكلفة)', x => sar(x.r.importVat * x.s.shipunits), B('b2', 'رسمي، صفحة المصدر تُراجع'))
+    + row('كلفة الفحصين للشحنة، بأسعار قائمة الهيئة (<bdi>154</bdi> إلى <bdi>700</bdi> للفحص)', x => sar(x.r.compl * x.s.shipunits), B('b1', 'قائمة هيئة الغذاء والدواء 2023'))
+    + sec('تقديرات تشغيل من إعداد الحاسبة')
+    + row('الشحن المحلي <bdi>22</bdi>، البوابة <bdi>2.2%</bdi>، الإرجاع <bdi>12%</bdi>', () => '—', B('b2', 'تقدير'))
+    + sec('الناتج على هذه الأرقام الافتراضية')
+    + row('التكلفة الواصلة للوحدة (ريال)', x => sar(x.r.landed), X)
+    + row('نقد الشحنة الواصلة من <bdi>10,000</bdi> ريال', x => fmt(x.r.landed * x.s.shipunits) + ' (يبقى ' + fmt(HAIR_EX.budget - x.r.landed * x.s.shipunits) + ')', X)
+    + row('<b>سقف تكلفة الإعلان لكل طلب (ريال)</b>', x => '<b class="ceil">' + sar(x.r.cacMax) + '</b>', X)
+    + '</table><p class="note" style="margin-bottom:14px">ما يبقى من الميزانية ليس ربحًا: منه رسم ترخيص المستودع أو المساحة المستأجرة وكلفة شهادة المطابقة قبل الشحن، وكلاهما غير منشور ويُطلب عرض سعره كتابةً. ولاحظ في الشامبو كيف يأكل الشحن المحلي المقدّر معظم هامش عبوة بسعر <bdi>49</bdi> ريالًا. هذا يوضح طريقة الحساب فقط، ولا يصلح حكمًا على أي صنف قبل أرقامك.</p>';
+}
+
+function applyPreset(name) {
+  const p = PRESETS[name], rows = [];
+  document.getElementById('example').innerHTML = name === 'hair' ? hairExample() : '';
+  for (const [id, [v, src, note]] of Object.entries(p.f)) {
+    document.getElementById(id).value = v;
+    if (src) rows.push('<tr><td>' + document.querySelector('label[for=' + id + ']').textContent + '</td><td class="n">' + (v === '' ? 'فارغة' : v)
+      + '</td><td><span class="b ' + SRC[src][0] + '">' + SRC[src][1] + '</span></td><td>' + note + '</td></tr>');
+  }
+  document.getElementById('vatreg').checked = p.vatreg;
+  document.getElementById('local').checked = p.local;
+  document.getElementById('presetinfo').innerHTML = rows.length ? '<table><tr><th>الخانة</th><th>القيمة</th><th>نوع المصدر</th><th>من أين يأتي الرقم</th></tr>'
+    + rows.join('') + '<tr><td>التسجيل في ضريبة القيمة المضافة</td><td class="n">غير مسجّل</td><td><span class="b b3">مدخل منك</span></td><td>غيّره إن كنت مسجلًا</td></tr>'
+    + '<tr><td>ضريبة الاستيراد ورسم الخدمة الجمركية</td><td class="n">15% و0.15% (15 إلى 500 ريال)</td><td><span class="b b1">من صفحة الجهة الرسمية</span></td><td>مثبّتة داخل الحساب، ومصادرها في القسم ١</td></tr></table>' : '';
+}
+
 function calc() {
   const i = read(), r = model(i), set = (k, v) => document.getElementById(k).textContent = v;
-  set('o_cv', fmt(r.customsValue, 2)); set('o_duty', fmt(r.duty, 2)); set('o_fee', fmt(r.fee, 2));
+  const v = document.getElementById('o_verdict');
+  const missing = [...document.querySelectorAll('.grid input')].filter(e => e.value.trim() === '');
+  if (missing.length) {
+    document.querySelectorAll('.out span[id^=o_]').forEach(s => s.textContent = '—');
+    v.className = 'verdict v-warn';
+    v.textContent = 'لا حكم قبل أرقامك: ' + missing.map(e => e.labels[0].textContent).join('، ')
+      + '. هذه الخانات متروكة فارغة عمدًا حتى لا يُبنى قرار على رقم مخترع.';
+    return;
+  }
+  set('o_cv', fmt(r.customsValue, 2)); set('o_duty', fmt(r.duty, 2)); set('o_fee', fmt(r.fee, 2)); set('o_compl', fmt(r.compl, 2));
   set('o_ivat', fmt(r.importVat, 2) + (i.vatreg ? ' (تُخصم، فلا تدخل التكلفة)' : ' (تكلفة فعلية لغير المسجّل)'));
   set('o_landed', fmt(r.landed, 2));
   set('o_net', fmt(r.net, 2)); set('o_gross', fmt(r.gross, 2)); set('o_cacmax', fmt(r.cacMax, 2));
@@ -259,7 +356,6 @@ function calc() {
   set('o_vat', r.vatMonths <= 12 ? 'بعد نحو ' + fmt(Math.ceil(r.vatMonths)) + ' شهرًا من هذا المعدل'
     : 'لا تعبره بهذا المعدل خلال سنة، إيرادك السنوي نحو ' + fmt(r.annual) + ' ريال');
 
-  const v = document.getElementById('o_verdict');
   if (r.cacMax <= 0) {
     v.className = 'verdict v-no';
     v.textContent = 'لا يعمل: المنتج يخسر قبل أن تدفع ريالًا واحدًا على الإعلان. الخلل في السعر أو التكلفة الواصلة أو الشحن، لا في التسويق، وزيادة الإعلان تكبّر الخسارة لا الربح.';
@@ -279,6 +375,7 @@ function calc() {
 document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
 document.getElementById('vatreg').addEventListener('change', calc);
 document.getElementById('local').addEventListener('change', calc);
+document.getElementById('preset').addEventListener('change', e => { applyPreset(e.target.value); calc(); });
 calc();
 
 // اختبارات الحساب: ?selftest
@@ -333,6 +430,47 @@ if (location.search.includes('selftest')) {
      'VAT registration cannot change a domestic landed cost, because no import VAT exists to deduct');
   ok(loc.landed < model(base).landed,
      'the same supplier price lands cheaper domestically than imported');
+
+  ok(near(model({...base, compl: 0}).landed, r.landed),
+     'a zero conformity cost leaves every earlier result unchanged');
+  ok(near(model({...base, compl: 1200}).landed - r.landed, 1200 / base.shipunits),
+     'a per-shipment conformity cost is spread over the shipment units, outside the duty and VAT base');
+  ok(model({...base, compl: 1200, shipunits: 50}).landed > model({...base, compl: 1200, shipunits: 500}).landed,
+     'the same conformity cost weighs more on a small first shipment');
+  const H = PRESETS.hair.f;
+  ok(['fob', 'freight', 'shipunits', 'compl', 'price', 'duty'].every(k => H[k][0] === ''),
+     'the hair-care preset leaves supplier price, shipping, quantity, conformity, shelf price and duty blank');
+  ok(Object.values(H).every(([, s, note]) => s in SRC && note),
+     'every hair-care preset field carries a source badge and a note');
+  ok(Object.entries(H).every(([k, [v, s]]) => v === '' || s !== 'you' || k === 'repeat'),
+     'no field badged as the buyer\'s input is pre-filled, except the repeat rate held at zero');
+  ok(Object.keys(H).every(k => k in PRESETS.general.f) && Object.keys(H).length === document.querySelectorAll('.grid input').length,
+     'the hair-care preset covers every calculator input, no more and no less');
+  applyPreset('hair'); calc();
+  const hv = document.getElementById('o_verdict');
+  ok(hv.textContent.startsWith('لا حكم') && document.getElementById('o_cacmax').textContent === '—',
+     'with the hair-care preset blank the page refuses a verdict instead of computing on zeros');
+  ok(document.querySelectorAll('#presetinfo .b').length === Object.keys(H).length + 2 && document.querySelectorAll('#presetinfo .b1').length === 1,
+     'the hair-care preset shows a source badge on every row, with the built-in authority figures badged as such');
+  const ceils = [...document.querySelectorAll('#extable .ceil')];
+  ok(HAIR_EX.s.length === 3 && ceils.length === 3 && ceils.every(c => /\d/.test(c.textContent)),
+     'the hair-care worked example renders three scenarios, each with an ad-cost ceiling');
+  ok(HAIR_EX.s.every((s, k) => ceils[k].textContent === fmt(model({...HAIR_EX.common, ...s, compl: s.tests.reduce((a, [, p]) => a + p, 0)}).cacMax, 2)),
+     'each example ceiling is the model itself run on that scenario, not a typed-in number');
+  ok(HAIR_EX.s.every(s => model({...HAIR_EX.common, ...s, compl: s.tests.reduce((a, [, p]) => a + p, 0)}).landed * s.shipunits <= HAIR_EX.budget),
+     'every example shipment fits inside the 10,000 SAR budget, landed with fee, import VAT and tests');
+  ok(HAIR_EX.s.every(s => s.tests.every(([, p]) => p >= 154 && p <= 700)),
+     'every example test price sits inside the 154 to 700 SAR range of the SFDA 2023 list');
+  ok([...document.querySelectorAll('#extable tr')].filter(t => !t.classList.contains('sec') && t.querySelector('td')).every(t => t.querySelector('.b')),
+     'every example row carries a source badge, so no invented figure reads as verified');
+  ok(document.querySelectorAll('#extable .b4').length >= 9 && !document.querySelector('#extable .b1 + .b4, #extable .b4 + .b1'),
+     'illustrative figures carry their own badge and never share a cell with the authority badge');
+  ok(['price', 'fob', 'freight', 'duty', 'shipunits', 'compl'].every(k => document.getElementById(k).value === '') && hv.textContent.startsWith('لا حكم'),
+     'the worked example writes nothing into the calculator, which stays blank with no verdict');
+  applyPreset('general'); calc();
+  ok(document.getElementById('example').innerHTML === '', 'the worked example disappears on the general preset');
+  ok(near(+document.getElementById('price').value, 149) && !document.getElementById('o_verdict').textContent.startsWith('لا حكم'),
+     'switching back to the general example restores a full verdict');
 
   document.getElementById('st').textContent =
     out.join('\n') + '\n\n' + out.filter(l => l.startsWith('PASS')).length + ' / ' + out.length + ' passed';

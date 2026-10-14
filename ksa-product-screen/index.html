@@ -404,6 +404,9 @@ document.querySelectorAll('input').forEach(el => el.addEventListener('input', ca
 document.getElementById('vatreg').addEventListener('change', calc);
 document.getElementById('local').addEventListener('change', calc);
 document.getElementById('preset').addEventListener('change', e => { applyPreset(e.target.value); calc(); });
+// ?preset=hair يفتح الصفحة على نقطة البداية مباشرة، ليصل الرابط بلا خطوة اختيار
+const qp = new URLSearchParams(location.search).get('preset');
+if (Object.hasOwn(PRESETS, qp)) { document.getElementById('preset').value = qp; applyPreset(qp); }
 calc();
 
 // اختبارات الحساب: ?selftest

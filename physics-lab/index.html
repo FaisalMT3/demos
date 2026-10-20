@@ -8,272 +8,40 @@
 <meta name="copyright" content="© 2026 Faisal Fahad Almutairi. All rights reserved.">
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>نموذج محاكاة تجارب الفيزياء</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>انتهت الفترة التجريبية</title>
 <style>
-:root{--ink:#14213d;--mut:#5d6b7a;--line:#dde3ea;--bg:#f4f6f8;--card:#fff;--acc:#1b4965;--ok:#1d7a3a;--warn:#b25e00;--bad:#b3261e}
-*{box-sizing:border-box}
-body{margin:0;font:15px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
-header{background:var(--ink);color:#fff;padding:.7rem 1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-nav{display:flex;gap:.3rem;flex-wrap:wrap}
-nav a{color:#cfe0ea;text-decoration:none;padding:.25rem .7rem;border-radius:6px;cursor:pointer}
-nav a.on{background:#ffffff1f;color:#fff}
-.note{background:#fff8e6;border-bottom:1px solid #f0dca8;padding:.45rem 1rem;font-size:.85rem}
-main{max-width:1000px;margin:1rem auto;padding:0 1rem 3rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;margin-bottom:1rem;overflow-x:auto}
-h1{font-size:1.25rem;margin:.2rem 0 .7rem}h2{font-size:1.02rem;margin:.2rem 0 .5rem}h3{font-size:.93rem;margin:.8rem 0 .3rem}
-canvas{width:100%;max-width:100%;background:#fff;border:1px solid var(--line);border-radius:8px;display:block;touch-action:none}
-.row{display:grid;grid-template-columns:1.35fr 1fr;gap:1rem}
-@media(max-width:760px){.row{grid-template-columns:1fr}}
-label{display:block;font-weight:600;font-size:.88rem;margin-top:.55rem}
-input[type=range]{width:100%}
-input,select{font:inherit}
-.val{float:inline-end;color:var(--acc);font-weight:700}
-.btn{background:var(--acc);color:#fff;border:0;border-radius:8px;padding:.45rem 1rem;font:inherit;font-weight:600;cursor:pointer}
-.btn.alt{background:#fff;color:var(--acc);border:1px solid var(--acc)}
-.btn.sm{padding:.22rem .6rem;font-size:.85rem}
-table{width:100%;border-collapse:collapse;min-width:360px}
-th,td{text-align:start;padding:.4rem;border-bottom:1px solid var(--line);font-size:.9rem}
-th{color:var(--mut);font-weight:600;font-size:.83rem}
-.tag{display:inline-block;padding:0 .5rem;border-radius:99px;font-size:.8rem;font-weight:600}
-.ok{color:var(--ok);background:#e5f3e9}.warn{color:var(--warn);background:#fdf0e1}.neu{color:var(--mut);background:#eef1f4}
-.hint{color:var(--mut);font-size:.83rem;font-weight:400}
-.big{font-size:1.5rem;font-weight:700}
-ul{margin:.3rem 0;padding-inline-start:1.2rem}li{margin-bottom:.3rem}
-.wm{position:fixed;inset-inline-end:.6rem;inset-block-end:.6rem;background:#14213de6;color:#fff;font-size:.78rem;padding:.3rem .6rem;border-radius:99px;z-index:9;pointer-events:none}
-.stamp{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:8;overflow:hidden}
-.stamp span{font:700 clamp(2rem,9vw,5rem)/1 "IBM Plex Sans Arabic",sans-serif;color:#14213d;opacity:.05;transform:rotate(-24deg);white-space:nowrap}
-num{direction:ltr;unicode-bidi:isolate}
+@font-face{font-family:"Alexandria";src:url(/assets/fonts/alexandria-ar.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#0B0B0A;--ink:#F4F4F1;--mute:#8C8C86;--raise:#161615;--line:#2A2A28}
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;display:grid;place-items:center;padding:2rem 1.25rem;background:var(--bg);color:var(--ink);font:400 1.05rem/1.8 "Alexandria",system-ui,sans-serif}
+main{width:100%;max-width:30rem;text-align:center}
+h1{font-weight:900;font-size:clamp(2rem,7vw,2.75rem);line-height:1.25;margin-bottom:.75rem}
+p{color:var(--mute);margin-bottom:2rem}
+nav{display:grid;gap:.75rem}
+a{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.25rem;border:1px solid var(--line);border-radius:.75rem;background:var(--raise);color:var(--ink);text-decoration:none;font-weight:600}
+a span{color:var(--mute);font-weight:400;font-size:.9rem;direction:ltr}
+a:hover,a:focus-visible{border-color:var(--ink);outline:none}
+a.wa{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+a.wa span{color:#4A4A46}
+small{display:block;margin-top:2.5rem;color:var(--mute);font-size:.8rem}
 </style>
 </head>
 <body>
-<header><b>⚗ محاكاة تجارب الفيزياء</b>
-<nav id="nav"><a data-v="pend" class="on">تجربة البندول</a><a data-v="proj">تجربة المقذوفات</a><a data-v="about">كيف تُبنى</a></nav></header>
-<div class="note">نموذج يعمل: غيّر القيم، شغّل التجربة، سجّل القراءات في الجدول، واستخرج النتيجة كما في المختبر.</div>
-<main id="app"></main>
-<div class="stamp"><span>نموذج عرض — فيصل فهد</span></div>
-<div class="wm">نموذج — فيصل فهد المطيري</div>
+<main>
+<h1>انتهت الفترة التجريبية</h1>
+<p>هذا النموذج كان متاحًا لفترة تجريبية وانتهت. لإكمال العمل أو طلب نسخة كاملة، تواصل معي من هنا:</p>
+<nav>
+<a class="wa" id="wa" href="https://wa.me/966549978811">واتساب <span>+966 54 997 8811</span></a>
+<a href="https://mostaql.com/u/Faisalwork">مستقل <span>mostaql.com/u/Faisalwork</span></a>
+<a href="https://khamsat.com/user/faisalfahadmt3">خمسات <span>khamsat.com/user/faisalfahadmt3</span></a>
+</nav>
+<small>© 2026 فيصل فهد المطيري</small>
+</main>
 <script>
-const $=s=>document.querySelector(s);
-const n2=x=>Number(x).toFixed(2), n3=x=>Number(x).toFixed(3);
-let view=(location.hash||'#pend').slice(1); if(!['pend','proj','about'].includes(view))view='pend';
-let raf=null;
-
-/* ===================== تجربة البندول =====================
-   θ'' = -(g/L)·sinθ - b·θ'   (semi-implicit Euler, 8 substeps/frame)
-   The point of the lab: T = 2π√(L/g) is the SMALL-ANGLE result; at a wide
-   release angle the measured period is longer, so g computed from it comes
-   out too small. The simulation reproduces that instead of hiding it.      */
-const P={L:1.00,g:9.81,b:0.00,th0:15*Math.PI/180,th:0,w:0,t:0,run:false,trials:[],cross:[],osc:0,t0:0};
-
-function vPend(){return `
-<div class="row">
- <div class="card">
-  <h1>تجربة البندول البسيط: قياس تسارع الجاذبية</h1>
-  <canvas id="cv" width="640" height="340"></canvas>
-  <p class="hint" id="read"></p>
-  <p><button class="btn" id="go">تشغيل</button>
-   <button class="btn alt" id="stop">إيقاف</button>
-   <button class="btn alt" id="rec">سجّل ١٠ ذبذبات</button>
-   <button class="btn alt sm" id="clr">مسح الجدول</button></p>
- </div>
- <div class="card">
-  <h2>الضبط</h2>
-  <label>طول الخيط L <span class="val"><num id="vL"></num> m</span><input type="range" id="L" min="0.2" max="2" step="0.05" value="${P.L}"></label>
-  <label>تسارع الجاذبية g <span class="val"><num id="vg"></num> m/s²</span><input type="range" id="g" min="1.6" max="24.8" step="0.01" value="${P.g}"></label>
-  <label>زاوية الإطلاق <span class="val"><num id="va"></num>°</span><input type="range" id="a" min="2" max="80" step="1" value="${Math.round(P.th0*180/Math.PI)}"></label>
-  <label>معامل التخميد b <span class="val"><num id="vb"></num></span><input type="range" id="b" min="0" max="1" step="0.02" value="${P.b}"></label>
-  <h3>النتيجة من القراءة</h3>
-  <div id="res" class="hint">شغّل التجربة ثم اضغط «سجّل ١٠ ذبذبات».</div>
- </div>
-</div>
-<div class="card"><h2>جدول القراءات</h2>
- <table><tr><th>م</th><th>L (m)</th><th>الزاوية</th><th>زمن ١٠ ذبذبات (s)</th><th>T (s)</th><th>g المحسوبة</th><th>الانحراف</th></tr>
- <tbody id="tb"><tr><td colspan="7" class="hint">لا قراءات بعد.</td></tr></tbody></table>
- <p class="hint">g تُحسب من القراءة نفسها بالعلاقة <num>g = 4π²L / T²</num>، لا من القيمة المضبوطة في المحاكاة، ولهذا يظهر الانحراف.</p>
-</div>`;}
-
-function pendStep(dt){
- const sub=8,h=dt/sub;
- for(let i=0;i<sub;i++){
-  const a=-(P.g/P.L)*Math.sin(P.th)-P.b*P.w;
-  const wOld=P.w; P.w+=a*h; P.th+=P.w*h; P.t+=h;
-  if(wOld>0!==P.w>0||P.th===0){} // (no-op: crossings are detected on θ below)
-  if(prevTh<=0&&P.th>0) P.cross.push(P.t);  // one full oscillation per upward zero crossing
-  prevTh=P.th;
- }
-}
-let prevTh=0;
-function drawPend(){
- const c=$('#cv'); if(!c)return; const x=c.getContext('2d'),W=c.width,H=c.height;
- x.clearRect(0,0,W,H);
- const px=W/2, py=40, scale=(H-110)/2.0, Lp=P.L*scale;
- const bx=px+Lp*Math.sin(P.th), by=py+Lp*Math.cos(P.th);
- x.strokeStyle='#dde3ea'; x.beginPath(); x.moveTo(px-70,py); x.lineTo(px+70,py); x.stroke();
- x.setLineDash([4,5]); x.strokeStyle='#c7d0da'; x.beginPath(); x.moveTo(px,py); x.lineTo(px,py+Lp+20); x.stroke(); x.setLineDash([]);
- x.strokeStyle='#1b4965'; x.lineWidth=2; x.beginPath(); x.moveTo(px,py); x.lineTo(bx,by); x.stroke();
- x.fillStyle='#1b4965'; x.beginPath(); x.arc(bx,by,13,0,7); x.fill();
- x.fillStyle='#14213d'; x.font='600 14px system-ui'; x.direction='ltr';
- x.fillText('t = '+n2(P.t)+' s', 12, 22);
- x.fillText('θ = '+n2(P.th*180/Math.PI)+'°', 12, 42);
- // live θ(t) trace
- trace.push(P.th); if(trace.length>W-20) trace.shift();
- x.strokeStyle='#b25e00'; x.lineWidth=1.3; x.beginPath();
- trace.forEach((t,i)=>{const yy=H-45-t*(55/Math.max(0.3,P.th0)); i?x.lineTo(10+i,yy):x.moveTo(10+i,yy)}); x.stroke();
- x.strokeStyle='#eceff3'; x.beginPath(); x.moveTo(10,H-45); x.lineTo(W-10,H-45); x.stroke();
-}
-let trace=[];
-function loop(ts){
- if(!P.run){raf=null;return}
- pendStep(1/60); drawPend();
- const r=$('#read'); if(r) r.innerHTML=`الزمن <num>${n2(P.t)}</num> s · الذبذبات المكتملة <num>${Math.max(0,P.cross.length-1)}</num>`;
- if(P.recording&&P.cross.length-P.recStart>=11){ finishRec(); }
- raf=requestAnimationFrame(loop);
-}
-function finishRec(){
- const t10=P.cross[P.recStart+10]-P.cross[P.recStart]; // 10 full oscillations
- const T=t10/10, gMeas=4*Math.PI*Math.PI*P.L/(T*T), err=(gMeas-P.g)/P.g*100;
- P.trials.push({L:P.L,ang:Math.round(P.th0*180/Math.PI),t10,T,g:gMeas,err});
- P.recording=false; renderTrials();
- $('#res').innerHTML=`<div class="big"><num>g = ${n3(gMeas)}</num> m/s²</div>
-  <p class="hint">من <num>T = ${n3(T)}</num> s، والمضبوط <num>${n2(P.g)}</num> m/s².
-  الانحراف <b class="${Math.abs(err)<1?'tag ok':'tag warn'}"><num>${err>0?'+':''}${n2(err)}%</num></b></p>
-  ${Math.abs(err)>1?`<p class="hint">الانحراف ليس خطأً في المحاكاة: علاقة <num>T = 2π√(L/g)</num> مشتقة لزوايا صغيرة، وعند
-  <num>${Math.round(P.th0*180/Math.PI)}°</num> يطول الزمن الدوري فتظهر g أصغر. أنزل الزاوية إلى <num>5°</num> وأعد القياس.</p>`:''}`;
-}
-function renderTrials(){
- const tb=$('#tb'); if(!tb)return;
- tb.innerHTML=P.trials.length?P.trials.map((t,i)=>`<tr><td>${i+1}</td><td><num>${n2(t.L)}</num></td><td><num>${t.ang}°</num></td>
-  <td><num>${n2(t.t10)}</num></td><td><num>${n3(t.T)}</num></td><td><num>${n3(t.g)}</num></td>
-  <td><span class="tag ${Math.abs(t.err)<1?'ok':'warn'}"><num>${t.err>0?'+':''}${n2(t.err)}%</num></span></td></tr>`).join(''):
-  '<tr><td colspan="7" class="hint">لا قراءات بعد.</td></tr>';
-}
-function wirePend(){
- const sync=()=>{$('#vL').textContent=n2(P.L);$('#vg').textContent=n2(P.g);$('#va').textContent=Math.round(P.th0*180/Math.PI);$('#vb').textContent=n2(P.b)};
- const reset=()=>{P.th=P.th0;P.w=0;P.t=0;P.cross=[];prevTh=P.th;trace=[];drawPend()};
- $('#L').oninput=e=>{P.L=+e.target.value;sync();reset()};
- $('#g').oninput=e=>{P.g=+e.target.value;sync();reset()};
- $('#a').oninput=e=>{P.th0=+e.target.value*Math.PI/180;sync();reset()};
- $('#b').oninput=e=>{P.b=+e.target.value;sync();reset()};
- $('#go').onclick=()=>{if(!P.run){P.run=true;if(!raf)raf=requestAnimationFrame(loop)}};
- $('#stop').onclick=()=>{P.run=false};
- $('#rec').onclick=()=>{
-  if(P.b>0.3){$('#res').innerHTML='<span class="tag warn">التخميد عالٍ</span> <span class="hint">السعة تتلاشى قبل اكتمال ١٠ ذبذبات، أنزل b.</span>';return}
-  P.recording=true;P.recStart=Math.max(0,P.cross.length-1);P.run=true;if(!raf)raf=requestAnimationFrame(loop);
-  $('#res').innerHTML='<span class="hint">جارٍ القياس… اتركها حتى تكتمل ١٠ ذبذبات.</span>';
- };
- $('#clr').onclick=()=>{P.trials=[];renderTrials();$('#res').innerHTML='<span class="hint">شغّل التجربة ثم اضغط «سجّل ١٠ ذبذبات».</span>'};
- sync();reset();renderTrials();
- P.run=true; raf=requestAnimationFrame(loop);   // swings on open: an empty canvas looks broken
-}
-
-/* ===================== تجربة المقذوفات =====================
-   مع مقاومة هواء خطية: a = g - (k/m)·v  . الفائدة التعليمية: المدى الأقصى
-   يكون عند 45° في الفراغ فقط، ومع المقاومة ينزل تحت 45°.                */
-const Q={v0:22,ang:45,k:0.08,m:1,shots:[]};
-function vProj(){return `
-<div class="row">
- <div class="card"><h1>تجربة المقذوفات: أثر مقاومة الهواء على المدى</h1>
-  <canvas id="pc" width="640" height="340"></canvas>
-  <p class="hint" id="pread"></p>
-  <p><button class="btn" id="fire">إطلاق</button>
-   <button class="btn alt" id="sweep">جرّب كل الزوايا واستخرج الأفضل</button>
-   <button class="btn alt sm" id="pclr">مسح</button></p>
- </div>
- <div class="card"><h2>الضبط</h2>
-  <label>السرعة الابتدائية <span class="val"><num id="pv"></num> m/s</span><input type="range" id="v0" min="5" max="45" step="1" value="${Q.v0}"></label>
-  <label>زاوية الإطلاق <span class="val"><num id="pa"></num>°</span><input type="range" id="an" min="5" max="85" step="1" value="${Q.ang}"></label>
-  <label>معامل المقاومة k <span class="val"><num id="pk"></num></span><input type="range" id="k" min="0" max="0.3" step="0.01" value="${Q.k}"></label>
-  <label>الكتلة m <span class="val"><num id="pm"></num> kg</span><input type="range" id="m" min="0.2" max="3" step="0.1" value="${Q.m}"></label>
-  <h3>النتيجة</h3><div id="pres" class="hint">اضغط «إطلاق».</div>
- </div>
-</div>
-<div class="card"><h2>الرميات المسجلة</h2>
-<table><tr><th>م</th><th>v₀</th><th>الزاوية</th><th>k</th><th>المدى (m)</th><th>أعلى ارتفاع (m)</th><th>زمن التحليق (s)</th></tr>
-<tbody id="ptb"><tr><td colspan="7" class="hint">لا رميات بعد.</td></tr></tbody></table></div>`;}
-
-function flight(v0,angDeg,k,m,g=9.81){ // RK-free: small fixed step is enough and stays readable
- const dt=0.002, a=angDeg*Math.PI/180; let x=0,y=0,vx=v0*Math.cos(a),vy=v0*Math.sin(a),t=0,hmax=0;
- const path=[[0,0]];
- while(y>=0&&t<60){
-  const ax=-(k/m)*vx, ay=-g-(k/m)*vy;
-  vx+=ax*dt; vy+=ay*dt; x+=vx*dt; y+=vy*dt; t+=dt;
-  if(y>hmax)hmax=y;
-  if(path.length<9000) path.push([x,y]);
- }
- const last=path[path.length-1], prev=path[path.length-2]||last;      // interpolate the ground hit
- const f=prev[1]===last[1]?0:prev[1]/(prev[1]-last[1]);
- const range=prev[0]+f*(last[0]-prev[0]);
- return {range,hmax,t,path};
-}
-function drawProj(shots,best){
- const c=$('#pc'); if(!c)return; const x=c.getContext('2d'),W=c.width,H=c.height;
- x.clearRect(0,0,W,H);
- const maxX=Math.max(20,...shots.map(s=>s.range))*1.08, maxY=Math.max(6,...shots.map(s=>s.hmax))*1.25;
- const X=v=>30+v/maxX*(W-50), Y=v=>H-30-v/maxY*(H-60);
- x.strokeStyle='#dde3ea'; x.beginPath(); x.moveTo(20,H-30); x.lineTo(W-10,H-30); x.stroke();
- x.fillStyle='#8b96a3'; x.font='12px system-ui'; x.direction='ltr';
- for(let i=1;i<=4;i++){const v=maxX*i/4; x.fillText(v.toFixed(0)+' m',X(v)-14,H-12)}
- shots.forEach((s,i)=>{
-  x.strokeStyle=i===shots.length-1?'#1b4965':'#bcc8d4'; x.lineWidth=i===shots.length-1?2:1;
-  x.beginPath(); s.path.forEach((p,j)=>{j?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1]))}); x.stroke();
- });
- if(best){x.fillStyle='#1d7a3a';x.font='600 13px system-ui';x.fillText('best '+best.ang+'°  →  '+best.range.toFixed(1)+' m',36,24)}
-}
-function wireProj(){
- const sync=()=>{$('#pv').textContent=Q.v0;$('#pa').textContent=Q.ang;$('#pk').textContent=n2(Q.k);$('#pm').textContent=n2(Q.m)};
- ['v0','an','k','m'].forEach(id=>{const el=$('#'+id); el.oninput=e=>{Q[{v0:'v0',an:'ang',k:'k',m:'m'}[id]]=+e.target.value;sync()}});
- $('#fire').onclick=()=>{
-  const r=flight(Q.v0,Q.ang,Q.k,Q.m); Q.shots.push({...r,v0:Q.v0,ang:Q.ang,k:Q.k});
-  const vac=flight(Q.v0,Q.ang,0,Q.m);
-  $('#pres').innerHTML=`<div class="big"><num>${n2(r.range)}</num> m</div>
-   <p class="hint">أعلى ارتفاع <num>${n2(r.hmax)}</num> m · زمن التحليق <num>${n2(r.t)}</num> s<br>
-   في الفراغ بالقيم نفسها: <num>${n2(vac.range)}</num> m، أي فرق <num>${n2(vac.range-r.range)}</num> m بسبب المقاومة.</p>`;
-  drawProj(Q.shots); renderShots();
- };
- $('#sweep').onclick=()=>{
-  let best={ang:0,range:-1};
-  for(let a=5;a<=85;a++){const r=flight(Q.v0,a,Q.k,Q.m); if(r.range>best.range)best={ang:a,range:r.range}}
-  const vacBest=(()=>{let b={ang:0,range:-1};for(let a=5;a<=85;a++){const r=flight(Q.v0,a,0,Q.m);if(r.range>b.range)b={ang:a,range:r.range}}return b})();
-  Q.ang=best.ang; $('#an').value=best.ang; sync();
-  const r=flight(Q.v0,best.ang,Q.k,Q.m); Q.shots.push({...r,v0:Q.v0,ang:best.ang,k:Q.k});
-  drawProj(Q.shots,best); renderShots();
-  $('#pres').innerHTML=`<div class="big"><num>${best.ang}°</num></div>
-   <p class="hint">أفضل زاوية للمدى عند <num>k=${n2(Q.k)}</num> هي <num>${best.ang}°</num> بمدى <num>${n2(best.range)}</num> m،
-   بينما في الفراغ تكون <num>${vacBest.ang}°</num>. كلما زادت المقاومة نزلت الزاوية المثلى تحت <num>45°</num>.</p>`;
- };
- $('#pclr').onclick=()=>{Q.shots=[];drawProj([]);renderShots();$('#pres').innerHTML='<span class="hint">اضغط «إطلاق».</span>'};
- sync(); drawProj([]); renderShots(); $('#fire').click();   // one shot on open so the chart is never empty
-}
-function renderShots(){
- const tb=$('#ptb'); if(!tb)return;
- tb.innerHTML=Q.shots.length?Q.shots.map((s,i)=>`<tr><td>${i+1}</td><td><num>${s.v0}</num></td><td><num>${s.ang}°</num></td>
-  <td><num>${n2(s.k)}</num></td><td><num>${n2(s.range)}</num></td><td><num>${n2(s.hmax)}</num></td><td><num>${n2(s.t)}</num></td></tr>`).join(''):
-  '<tr><td colspan="7" class="hint">لا رميات بعد.</td></tr>';
-}
-
-function vAbout(){return `
-<div class="card"><h1>كيف تُبنى هذه التجارب</h1>
- <ul>
-  <li><b>معادلة حركة تُحَلّ عدديًا، لا رسم متحرك.</b> البندول هنا يحل <num>θ'' = −(g/L)·sinθ − b·θ'</num> خطوة بخطوة، ولم تُستعمل الصيغة الجاهزة للزوايا الصغيرة. ولهذا تظهر الظاهرة الحقيقية: عند زاوية إطلاق واسعة يطول الزمن الدوري، فتخرج g المحسوبة من القراءة أصغر من المضبوطة. الرسم المتحرك المصنوع بـ <num>sin</num> جاهزة لا يُظهر هذا أبدًا، وهو بالضبط ما يُفترض أن يتعلمه الطالب.</li>
-  <li><b>الطالب يقيس ثم يحسب.</b> زر «سجّل ١٠ ذبذبات» يحاكي ساعة الإيقاف في المختبر، والجدول يحسب <num>g = 4π²L/T²</num> من القراءة نفسها لا من القيمة المضبوطة، ويظهر نسبة الانحراف.</li>
-  <li><b>المقذوف مع مقاومة الهواء:</b> <num>a = −g − (k/m)·v</num>، ومعه مسح لكل الزوايا يستخرج الزاوية المثلى. النتيجة التي يراها الطالب بنفسه: <num>45°</num> صحيحة في الفراغ فقط، ومع المقاومة تنزل الزاوية المثلى.</li>
-  <li><b>يعمل في المتصفح بلا تنصيب:</b> صفحة واحدة تفتح على الجوال واللوح والحاسب، وتُدرج داخل أي منصة تعليمية أو نظام إدارة تعلم.</li>
-  <li><b>قابل للتوسعة:</b> ورقة عمل للطالب، تصدير الجدول إلى Excel، أسئلة بعد التجربة مع تصحيح آلي، ولوحة للمعلم تعرض قراءات الطلاب.</li>
- </ul>
- <p class="hint">تجارب أخرى من النوع نفسه: قانون هوك والنابض، السقوط الحر، الدارات الكهربائية البسيطة، العدسات، الموجات والتداخل، الكتلة والزخم في التصادمات، الغازات المثالية.</p>
-</div>`;}
-
-function render(){
- if(raf){cancelAnimationFrame(raf);raf=null} P.run=false;
- [...document.querySelectorAll('#nav a')].forEach(a=>a.classList.toggle('on',a.dataset.v===view));
- $('#app').innerHTML={pend:vPend,proj:vProj,about:vAbout}[view]();
- if(view==='pend')wirePend(); if(view==='proj')wireProj();
-}
-document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>{view=a.dataset.v;location.hash='#'+view;render()});
-render();
+// Prefill the WhatsApp message with the demo's name so the chat says which trial it is about.
+var s = location.pathname.split('/').filter(Boolean).pop();
+if (s) document.getElementById('wa').href += '?text=' + encodeURIComponent('مرحبًا فيصل، انتهت تجربة نموذج «' + s + '» وأبغى أكمل.');
 </script>
 </body>
 </html>
